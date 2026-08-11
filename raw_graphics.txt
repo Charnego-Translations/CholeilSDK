@@ -1,0 +1,41 @@
+; Uncompressed (raw, unencoded) graphics blocks -- unlike gfx_out/, these are
+; NOT LZ-Toshio compressed, so there's no header to auto-detect them from;
+; each entry here was found and hand-verified individually (see project
+; history/commit messages for how). Format: 0xADDRESS,lengthBytes,columns
+;
+; These blocks are NOT known to be referenced by any pointer table or direct
+; code address we've found (unlike gfx_out/'s compressed blocks), so
+; RawGraphicsInserter can only write changes IN PLACE at the same fixed
+; length -- there is no relocation fallback for these. Growing the tile
+; count isn't possible; recoloring/redrawing within the existing tile count
+; is.
+;
+; 0x000e56: the boot SEGA logo (12x4 tiles, 96x32px). Real palette not
+; confirmed yet (a nearby palette bank at 0x111280 was found and every slot
+; in it renders the logo "legibly" when tried, which just means the shapes
+; are high-contrast enough to read under almost any palette -- not a real
+; confirmation. Using default grayscale until an actual verified match is
+; found).
+0xe56,1536,12
+;
+; 0x00abbf2: the "PULSA START" (Spanish "PRESS START") text itself (11x1
+; tiles). Palette confirmed via known_palettes.txt (0x548) -- text renders
+; perfectly legible.
+;
+; (This was originally catalogued as the full 32x5 tile block at 0xaa9b2,
+; including a decorative leaf/flower border and an attempted extension back
+; to 0xa8a52 for a fence/sky/flower scene. On closer look the surrounding
+; tiles (the border, the extended scene, and the blank ground tiles that
+; pad out the rest of the 32-wide row) are trash/noise, not real assets --
+; only this row's text glyphs (tile columns 18-28 of the original row 4)
+; are the genuine confirmed content. Trimmed down to just that.)
+0xabbf2,352,11
+;
+; 0x00acaf6: the "(c)1994 SEGA ENTERPRISES, LTD." copyright text (28x1
+; tiles). No real palette confirmed -- it happens to render correctly with
+; the default grayscale since the text is a plain white-on-black design.
+;
+; (Originally catalogued as 33 tiles, including a small sparkle/ornament
+; glyph right after "LTD." -- that turned out to be trash, not part of the
+; real asset, so it's been trimmed off. Only the text itself remains.)
+0xacaf6,896,28

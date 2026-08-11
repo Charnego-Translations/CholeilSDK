@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import net.krusher.FreeSpaceScanner;
 
@@ -84,6 +85,7 @@ public final class GraphicsInserter {
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<Block> blocks = loadBlocks(graphicsOffsetsPath);
+        Map<Integer, Integer> knownPalettes = KnownPalettes.load(KnownPalettes.DEFAULT_PATH);
         System.out.println("Loaded " + blocks.size() + " cataloged graphics block(s).");
 
         Context ctx = new Context(rom, graphicsOffsetsPath);
@@ -91,7 +93,11 @@ public final class GraphicsInserter {
 
         for (Block blk : blocks) {
             String pngPath = Paths.get(gfxOutDir, String.format("gfx_%06x.png", blk.offset)).toString();
-            Outcome outcome = processBlock(ctx, blk, pngPath, DEFAULT_PALETTE, COLUMNS);
+            // Must match whatever palette GraphicsExtractor used to render this PNG,
+            // or decoding pixels back to indices silently picks the wrong ones.
+            Integer paletteAddr = knownPalettes.get(blk.offset);
+            int[] palette = paletteAddr != null ? TileRenderer.readGenesisPalette(rom, paletteAddr) : DEFAULT_PALETTE;
+            Outcome outcome = processBlock(ctx, blk, pngPath, palette, COLUMNS);
             switch (outcome) {
                 case DELETED: deleted++; break;
                 case UNCHANGED: unchanged++; break;

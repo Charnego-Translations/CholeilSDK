@@ -1,0 +1,23 @@
+; Confirmed real CRAM palettes for specific compressed graphics blocks, found
+; by tracing the 68k disassembly (not guessed) -- these are used instead of
+; the default grayscale ramp by GraphicsExtractor's `extract` and
+; GraphicsInserter's bulk mode. Format: 0xBLOCK_OFFSET,0xPALETTE_OFFSET
+;
+; 0x000548: 32-byte palette embedded uncompressed in the boot code, copied
+; via 8 back-to-back `movel` instructions straight into CRAM (verified by
+; finding that exact copy in the disassembly). It's the palette for the
+; boot-time font/HUD/sprite bundle loaded right after it -- confirmed by
+; rendering all four blocks below with it: full alphabet+kanji font,
+; "ENEMY" HUD text and health icons, more HUD icons, and a full enemy
+; sprite sheet, all with correct, coherent colors.
+0xf2000,0x548
+0xf3000,0x548
+0xf4800,0x548
+0xfd000,0x548
+;
+; RawGraphicsExtractor/Inserter also consult this file, keyed by the raw
+; block's own address (see raw_graphics.txt):
+; 0x00abbf2 ("PULSA START" text, trimmed down from the original 0xaa9b2
+; block -- see raw_graphics.txt) also uses 0x548 -- confirmed, the text
+; renders perfectly legible.
+0xabbf2,0x548

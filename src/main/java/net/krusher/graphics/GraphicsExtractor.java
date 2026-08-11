@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 
 /**
  * CLI for finding and dumping LZ-Toshio-compressed graphics blocks.
@@ -83,8 +84,9 @@ public class GraphicsExtractor {
         Path outPath = Paths.get(outDir);
         Files.createDirectories(outPath);
 
-        int[] palette = TileRenderer.defaultGrayscalePalette();
-        int ok = 0, failed = 0;
+        int[] defaultPalette = TileRenderer.defaultGrayscalePalette();
+        Map<Integer, Integer> knownPalettes = KnownPalettes.load(KnownPalettes.DEFAULT_PATH);
+        int ok = 0, failed = 0, realPalette = 0;
 
         for (int offset : offsets) {
             LzToshio.Result r = LzToshio.tryDecompress(rom, offset, Integer.MAX_VALUE, Integer.MAX_VALUE);
@@ -93,12 +95,19 @@ public class GraphicsExtractor {
                 failed++;
                 continue;
             }
+            int[] palette = defaultPalette;
+            Integer paletteAddr = knownPalettes.get(offset);
+            if (paletteAddr != null) {
+                palette = TileRenderer.readGenesisPalette(rom, paletteAddr);
+                realPalette++;
+            }
             BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, 16, 2);
             String fileName = String.format("gfx_%06x.png", offset);
             TileRenderer.writePng(img, outPath.resolve(fileName).toString());
             ok++;
         }
-        System.out.println("Extracted " + ok + " tile sheets to " + outDir + " (" + failed + " skipped)");
+        System.out.println("Extracted " + ok + " tile sheets to " + outDir + " (" + failed + " skipped, "
+                + realPalette + " used a confirmed real palette)");
     }
 
     static void printUsage() {

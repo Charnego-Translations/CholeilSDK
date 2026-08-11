@@ -9,11 +9,13 @@ import java.io.IOException;
  *
  * Usage:
  *   x   extract everything: script.txt, pointers.txt, graphics_offsets.txt,
- *       gfx_out/, stray_text.txt (prune stray_text.txt by hand before `i`)
+ *       gfx_out/, raw_gfx_out/, stray_text.txt (prune stray_text.txt by
+ *       hand before `i`)
  *   i   insert everything: free_space.txt (rescanned), Choleil.md (dialogue
  *       from script.txt, then whatever's left in stray_text.txt, then
- *       graphics recompiled from gfx_out/ -- delete a PNG to leave that
- *       block untouched; edited PNGs must keep their original resolution)
+ *       compressed graphics from gfx_out/, then raw graphics from
+ *       raw_gfx_out/ -- delete a PNG to leave that block untouched; edited
+ *       PNGs must keep their original resolution)
  */
 public class CholeilSDK
 {
@@ -23,6 +25,8 @@ public class CholeilSDK
     static final String POINTERS = "pointers.txt";
     static final String GRAPHICS_OFFSETS = "graphics_offsets.txt";
     static final String GFX_OUT = "gfx_out";
+    static final String RAW_GRAPHICS = "raw_graphics.txt";
+    static final String RAW_GFX_OUT = "raw_gfx_out";
     static final String FREE_SPACE = "free_space.txt";
     static final String STRAY_TEXT = "stray_text.txt";
     static final String OUT_ROM = "Choleil.md";
@@ -51,6 +55,10 @@ public class CholeilSDK
             net.krusher.graphics.GraphicsExtractor.extract( ROM, GRAPHICS_OFFSETS, GFX_OUT );
 
             System.out.println();
+            System.out.println("=== extracting raw (uncompressed) graphics ===");
+            net.krusher.graphics.RawGraphicsExtractor.main( new String[] { ROM, RAW_GRAPHICS, RAW_GFX_OUT } );
+
+            System.out.println();
             System.out.println("=== scanning for stray text ===");
             StrayTextScanner.main( new String[] { ROM, SCRIPT, GRAPHICS_OFFSETS, STRAY_TEXT } );
         }
@@ -70,6 +78,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
             net.krusher.graphics.GraphicsInserter.main( new String[] { OUT_ROM, GFX_OUT, GRAPHICS_OFFSETS, OUT_ROM } );
+
+            System.out.println();
+            System.out.println("=== inserting raw (uncompressed) graphics ===");
+            net.krusher.graphics.RawGraphicsInserter.main( new String[] { OUT_ROM, RAW_GFX_OUT, RAW_GRAPHICS, OUT_ROM } );
         }
     }
 }
