@@ -5,6 +5,18 @@
 ; len= is the ORIGINAL byte budget at that address -- these strings are
 ; referenced by fixed absolute address in code, not a relocatable pointer
 ; table, so replacement text must fit in the same space or be shorter.
+;
+; The two blocks below (ROM header domestic/overseas name fields) were added
+; by hand, not by the scan -- they're "SOLEIL" padded with 42 spaces each,
+; and the scanner's diversity filter (rejects text with too few distinct
+; letters relative to length, tuned to reject padding-heavy coincidental
+; matches in code/graphics data) throws out space-padded fields like these.
+
+==== ascii addr=0x120 len=48 ====
+SOLEIL                                          
+
+==== ascii addr=0x150 len=48 ====
+SOLEIL                                          
 
 ==== ascii addr=0x568 len=40 ====
       DEVELOPED FOR USE ONLY WITH       
