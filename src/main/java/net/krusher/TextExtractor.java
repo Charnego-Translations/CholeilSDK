@@ -3,6 +3,8 @@ package net.krusher;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Dumps the main script text (and its pointer structure) out of the
@@ -27,6 +29,18 @@ import java.nio.file.Paths;
  *   - Text bytes are read until 0xFF (end of string). 0xFE is a line
  *     break within the text box. 0xF1 inserts the player's name. 0xF2
  *     marks a Yes/No choice prompt.
+ *
+ * Deduplication: many string-table slots across different rooms/NPCs point
+ * at the exact same textAddr -- the original data already shares that one
+ * copy. The first slot seen for a given textAddr gets the full text; every
+ * later slot pointing at the same address gets a single-line
+ * "<SAME room=R npc=N str=S>" reference to that first slot instead of a
+ * repeated copy, so a translator only has to edit it once. TextInserter
+ * resolves these back to real text before encoding -- and because a
+ * reference always stays byte-identical to its target, the original
+ * pointer-sharing (see TextInserter's Group/representativeAddr writeup)
+ * keeps working reliably instead of being accidentally split apart by two
+ * copy-pasted translations drifting out of sync.
  */
 public class TextExtractor {
 
@@ -49,6 +63,8 @@ public class TextExtractor {
 
         int totalStrings = 0;
         int unknownBytes = 0;
+        int dedupedStrings = 0;
+        Map<Integer, int[]> firstSeenByTextAddr = new HashMap<Integer, int[]>();
 
         for (int roomIndex = 0; roomIndex < roomCount; roomIndex++) {
             int roomOffset = readU32(rom, SCRIPT_BASE + roomIndex * 4);
@@ -77,9 +93,6 @@ public class TextExtractor {
                               .append(" is outside expected script bounds\n");
                     }
 
-                    int[] unk = new int[1];
-                    String text = decodeString(rom, textAddr, table, unk);
-                    unknownBytes += unk[0];
                     totalStrings++;
 
                     script.append("==== room=").append(roomIndex)
@@ -88,7 +101,21 @@ public class TextExtractor {
                           .append(" textAddr=0x").append(Integer.toHexString(textAddr))
                           .append(" ptrFieldAddr=0x").append(Integer.toHexString(ptrFieldAddr))
                           .append(" ====\n");
-                    script.append(text).append("\n\n");
+
+                    int[] firstSeen = firstSeenByTextAddr.get(textAddr);
+                    if (firstSeen == null) {
+                        int[] unk = new int[1];
+                        String text = decodeString(rom, textAddr, table, unk);
+                        unknownBytes += unk[0];
+                        firstSeenByTextAddr.put(textAddr, new int[]{roomIndex, npcIndex, strIndex});
+                        script.append(text).append("\n\n");
+                    } else {
+                        dedupedStrings++;
+                        script.append("<SAME room=").append(firstSeen[0])
+                              .append(" npc=").append(firstSeen[1])
+                              .append(" str=").append(firstSeen[2])
+                              .append(">\n\n");
+                    }
 
                     pointers.append(roomIndex).append(',')
                             .append(npcIndex).append(',')
@@ -103,7 +130,8 @@ public class TextExtractor {
         Files.write(Paths.get(ptrPath), pointers.toString().getBytes("UTF-8"));
 
         System.out.println("Rooms: " + roomCount);
-        System.out.println("Strings extracted: " + totalStrings);
+        System.out.println("Strings extracted: " + totalStrings + " (" + firstSeenByTextAddr.size() + " unique, "
+                + dedupedStrings + " deduped to a \"<SAME ...>\" reference)");
         System.out.println("Unknown byte occurrences: " + unknownBytes);
         System.out.println("Script written to: " + outPath);
         System.out.println("Pointer map written to: " + ptrPath);

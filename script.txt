@@ -412,7 +412,7 @@ que te guste.
 ==== room=3 npc=0 str=0 textAddr=0x1c135a ptrFieldAddr=0x1c1348 ====
 PACO: <NAME>, creo que
 deberías informar al Rey
-de que es tu 14{62} cumpleaños.
+de que es tu 14º cumpleaños.
 
 
 ==== room=3 npc=0 str=1 textAddr=0x1c13a4 ptrFieldAddr=0x1c134a ====
@@ -517,7 +517,7 @@ enseguida.
 
 
 ==== room=3 npc=1 str=4 textAddr=0x1c188e ptrFieldAddr=0x1c16e0 ====
-{E0}0{62}
+{E0}0º
 ANITA: Comprendo ...
 Siento habértelo preguntado
 tantas veces pero tengo
@@ -767,7 +767,7 @@ valiente. Salvó esta
 ciudad muchas veces con
 esa espada. Basta
 de recuerdos, vienes a
-informarme de tu 14{62}
+informarme de tu 14º
 cumpleaños, ¿verdad? Te
 concederé acceso al Campo
 de Entrenamiento Rafresa.
@@ -2204,7 +2204,7 @@ pingüino ...!
 
 
 ==== room=20 npc=1 str=0 textAddr=0x1c69cc ptrFieldAddr=0x1c69c8 ====
-PIG{62}I: Gracias a ti soy
+PIGºI: Gracias a ti soy
 libre. Como ves soy un
 pingüino. Solía vivir en
 la helada isla de Fresa,
@@ -2257,33 +2257,19 @@ voladora se une al grupo.
 
 
 ==== room=22 npc=0 str=0 textAddr=0x1c6b68 ptrFieldAddr=0x1c6b66 ====
-NARRACION: Parece un pájaro,
-pero está muy quemado.
-Sólo se ven cenizas.
-
+<SAME room=21 npc=0 str=0>
 
 ==== room=22 npc=1 str=0 textAddr=0x1c6bb6 ptrFieldAddr=0x1c6bb2 ====
-PATOSO: No te dejaré
-pasar. Pasa si te
-atreves.
-
+<SAME room=21 npc=1 str=0>
 
 ==== room=22 npc=1 str=1 textAddr=0x1c6be8 ptrFieldAddr=0x1c6bb4 ====
-PATOSO: ¡Boing!
-
+<SAME room=21 npc=1 str=1>
 
 ==== room=22 npc=2 str=0 textAddr=0x1c6bfe ptrFieldAddr=0x1c6bfa ====
-FELI: ¡Por fin estoy libre!
-Pensé que estaba acabada
-cuando me tragó ese
-pomposo. Muchas gracias.
-Da gusto estar viva.
-
+<SAME room=21 npc=2 str=0>
 
 ==== room=22 npc=2 str=1 textAddr=0x1c6c76 ptrFieldAddr=0x1c6bfc ====
-NARRACION: Feli, la ardilla
-voladora se une al grupo.
-
+<SAME room=21 npc=2 str=1>
 
 ==== room=23 npc=0 str=0 textAddr=0x1c6cb8 ptrFieldAddr=0x1c6cb6 ====
 {F3}
@@ -2319,37 +2305,19 @@ isla de Fresa.
 
 
 ==== room=24 npc=0 str=0 textAddr=0x1c6cb8 ptrFieldAddr=0x1c6cb6 ====
-{F3}
-
-
-
+<SAME room=23 npc=0 str=0>
 
 ==== room=24 npc=1 str=0 textAddr=0x1c6cc2 ptrFieldAddr=0x1c6cbe ====
-CIRO: No me gustan los
-héroes porque normalmente
-son unos engreídos. Me dan
-ganas de ladrarles, pero
-estoy siendo paciente por mi
-dueño, lo está pasando bien.
-
+<SAME room=23 npc=1 str=0>
 
 ==== room=24 npc=1 str=1 textAddr=0x1c6d62 ptrFieldAddr=0x1c6cc0 ====
-CIRO: Si quieres saber del
-héroe, Luis, se fué a la
-isla de Fresa.
-
+<SAME room=23 npc=1 str=1>
 
 ==== room=24 npc=2 str=0 textAddr=0x1c6da8 ptrFieldAddr=0x1c6da6 ====
-{F3}
-
-
-
+<SAME room=23 npc=2 str=0>
 
 ==== room=24 npc=3 str=0 textAddr=0x1c6db0 ptrFieldAddr=0x1c6dae ====
-{F3}
-
-
-
+<SAME room=23 npc=3 str=0>
 
 ==== room=25 npc=0 str=0 textAddr=0x1c6dc0 ptrFieldAddr=0x1c6dba ====
 ANCIANA: ¡Oh, gracias!
@@ -2790,143 +2758,61 @@ en la vida!
 
 
 ==== room=31 npc=0 str=0 textAddr=0x1c7dd6 ptrFieldAddr=0x1c7dc0 ====
-BRUJA: Ah, eres tú, Fangoso.
-Hueles a niño humano ...
-Veo que Klin te echó un
-hechizo de metamorfosis,
-Le dije que no lo hiciera.
-Lo siento mucho. Pero
-¡Fangoso quería
-hacerse humano!
-
+<SAME room=30 npc=0 str=0>
 
 ==== room=31 npc=0 str=1 textAddr=0x1c7e90 ptrFieldAddr=0x1c7dc2 ====
-BRUJA: Debido a mi
-edad, sé más de los humanos
-que Klin. En verdad quieres
-volver a tu forma humana,
-¿tengo razón?
-<YESNO>
-
+<SAME room=30 npc=0 str=1>
 
 ==== room=31 npc=0 str=2 textAddr=0x1c7f06 ptrFieldAddr=0x1c7dc4 ====
-{E0} ü
-BRUJA: Sí, sí. Pero ni yo
-puedo devolvértela tan
-fácilmente. Debes resolverlo
-tú solo.
-
+<SAME room=30 npc=0 str=2>
 
 ==== room=31 npc=0 str=3 textAddr=0x1c7f62 ptrFieldAddr=0x1c7dc6 ====
-BRUJA: Ya veo ... Entonces
-te quedarás así para
-siempre.
-
+<SAME room=30 npc=0 str=3>
 
 ==== room=31 npc=0 str=4 textAddr=0x1c7f9c ptrFieldAddr=0x1c7dc8 ====
-BRUJA: Ya veo. Voy a darte
-otra oportunidad. Estoy
-preparando un hechizo. Si lo
-superas con tu ingenio, te
-devolveré tu forma original.
-
+<SAME room=30 npc=0 str=4>
 
 ==== room=31 npc=0 str=5 textAddr=0x1c8026 ptrFieldAddr=0x1c7dca ====
-BRUJA: Ve a la habitación de
-al lado y sigue las
-instrucciones del espejo.
-
+<SAME room=30 npc=0 str=5>
 
 ==== room=31 npc=0 str=6 textAddr=0x1c8072 ptrFieldAddr=0x1c7dcc ====
-BRUJA: ¡Lo conseguiste!
-No está mal para ser tan
-pequeño, ¿eh? Bien, te
-devolveré tu forma original.
-¡Abra ... Cadabra ... Yaaaa!
-
+<SAME room=30 npc=0 str=6>
 
 ==== room=31 npc=0 str=7 textAddr=0x1c80f6 ptrFieldAddr=0x1c7dce ====
-BRUJA: Cumplí mi palabra.
-Vuelves a tener forma
-humana. Tu esfuerzo ha ...
-¿qué? ¿Has oído algo?
-
+<SAME room=30 npc=0 str=7>
 
 ==== room=31 npc=0 str=8 textAddr=0x1c8158 ptrFieldAddr=0x1c7dd0 ====
-ORUGA: ¡Eh, espera! He hecho
-mi trabajo y puede que no te
-sea de gran ayuda, pero ...
-me caes muy bien. Quizá ...
-¿podríamos ser amigos?
-
+<SAME room=30 npc=0 str=8>
 
 ==== room=31 npc=0 str=9 textAddr=0x1c81e2 ptrFieldAddr=0x1c7dd2 ====
-La oruga se une al grupo
-
+<SAME room=30 npc=0 str=9>
 
 ==== room=31 npc=0 str=10 textAddr=0x1c81fc ptrFieldAddr=0x1c7dd4 ====
-BRUJA: Te has ganado hasta
-el corazón de esta oruga.
-Muy extraño, sin duda.
-De todos modos, mantén tu
-ingenio y tu perseverancia.
-
+<SAME room=30 npc=0 str=10>
 
 ==== room=31 npc=1 str=0 textAddr=0x1c828a ptrFieldAddr=0x1c8280 ====
-BRUJA: Ya ha empezado.
-¿O necesitas una
-explicación?
-<YESNO>
-
+<SAME room=30 npc=1 str=0>
 
 ==== room=31 npc=1 str=1 textAddr=0x1c82c2 ptrFieldAddr=0x1c8282 ====
-BRUJA: Los pájaros comen
-orugas. Las orugas comen
-flores. Los pájaros no comen
-flores. Mientras que sigas
-en la alfombra esto no podrá
-suceder. Con esto en mente,
-debes llevarlos a los tres
-a la alfombra roja.
-
+<SAME room=30 npc=1 str=1>
 
 ==== room=31 npc=1 str=2 textAddr=0x1c8396 ptrFieldAddr=0x1c8284 ====
-Ahora, a trabajar.
-
+<SAME room=30 npc=1 str=2>
 
 ==== room=31 npc=1 str=3 textAddr=0x1c83aa ptrFieldAddr=0x1c8286 ====
-BRUJA: Fracasaste. Pero no
-te desanimes. Inténtalo
-otra vez.
-
+<SAME room=30 npc=1 str=3>
 
 ==== room=31 npc=1 str=4 textAddr=0x1c83e8 ptrFieldAddr=0x1c8288 ====
-BRUJA: ¡Lo conseguiste!
-Mantendré mi palabra.
-Ven conmigo.
-
+<SAME room=30 npc=1 str=4>
 
 ==== room=31 npc=2 str=0 textAddr=0x1c8426 ptrFieldAddr=0x1c8424 ====
-PAJARO: Por fin me libré
-de este "experimento".
-Ahora puedo relajarme.
-
+<SAME room=30 npc=2 str=0>
 
 ==== room=31 npc=3 str=0 textAddr=0x1c8470 ptrFieldAddr=0x1c846e ====
-ORUGA: ¡Eres muy listo!
-Pensé que te resultaría
-demasiado difícil. Te
-respeto. ¿Son todos los
-humanos tan listos como tú?
-
+<SAME room=30 npc=3 str=0>
 
 ==== room=31 npc=4 str=0 textAddr=0x1c84ee ptrFieldAddr=0x1c84ec ====
-FLOR: Soy una flor.
-¡Cómo odio este experimento!
-¡No volveré a hacer un
-experimento como éste
-en la vida!
-
+<SAME room=30 npc=4 str=0>
 
 ==== room=32 npc=0 str=0 textAddr=0x1c8570 ptrFieldAddr=0x1c8562 ====
 MAMA FANGOSA: Los humanos
@@ -3169,7 +3055,7 @@ algo así.
 
 
 ==== room=35 npc=1 str=2 textAddr=0x1c935a ptrFieldAddr=0x1c9264 ====
-PIG{62}I: Entonces, ¿vas a
+PIGºI: Entonces, ¿vas a
 vivir aquí deprimido el
 resto de tu vida?
 
@@ -3229,39 +3115,22 @@ No para hasta el último.
 
 
 ==== room=37 npc=0 str=0 textAddr=0x1c9486 ptrFieldAddr=0x1c9484 ====
-{F3}
-
-
-
+<SAME room=36 npc=0 str=0>
 
 ==== room=37 npc=1 str=0 textAddr=0x1c9492 ptrFieldAddr=0x1c948c ====
-{F3}
-
-
-
+<SAME room=36 npc=1 str=0>
 
 ==== room=37 npc=1 str=1 textAddr=0x1c9498 ptrFieldAddr=0x1c948e ====
-{F3}
-
-
-
+<SAME room=36 npc=1 str=1>
 
 ==== room=37 npc=1 str=2 textAddr=0x1c949e ptrFieldAddr=0x1c9490 ====
-{F3}
-
-
-
+<SAME room=36 npc=1 str=2>
 
 ==== room=37 npc=2 str=0 textAddr=0x1c94a8 ptrFieldAddr=0x1c94a4 ====
-Ascensor rápido.
-No para hasta el último.
-
+<SAME room=36 npc=2 str=0>
 
 ==== room=37 npc=2 str=1 textAddr=0x1c94d4 ptrFieldAddr=0x1c94a6 ====
--Fuera de servicio-
-Ascensor rápido.
-No para hasta el último.
-
+<SAME room=36 npc=2 str=1>
 
 ==== room=38 npc=0 str=0 textAddr=0x1c951e ptrFieldAddr=0x1c951a ====
 ROXIE: ¡Eh, tú! ¡No me
@@ -3276,7 +3145,7 @@ nunca hasta arriba ...
 
 
 ==== room=38 npc=1 str=0 textAddr=0x1c95a6 ptrFieldAddr=0x1c95a4 ====
-PIG{62}I: Oye, <NAME>.
+PIGºI: Oye, <NAME>.
 Si quieres llegar hasta
 arriba deberías ir a Fresa,
 mi ciudad. Está al otro
@@ -3372,7 +3241,7 @@ cuida de Pigüi por favor, y
 
 
 ==== room=43 npc=0 str=2 textAddr=0x1c99dc ptrFieldAddr=0x1c9916 ====
-PIG{62}I: <NAME> me
+PIGºI: <NAME> me
 salvó la vida. Es un buen
 tipo. Quiero quedarme aquí
 contigo pero también quiero
@@ -3589,82 +3458,40 @@ convivir felizmente ...
 
 
 ==== room=46 npc=0 str=0 textAddr=0x1ca21e ptrFieldAddr=0x1ca21c ====
-Seguiré cantando para
-siempre, incluso en San
-Cielo.
-
+<SAME room=45 npc=0 str=0>
 
 ==== room=46 npc=1 str=0 textAddr=0x1ca256 ptrFieldAddr=0x1ca254 ====
-No sé cuánto tiempo llevo
-aquí. El tiempo no importa.
-
+<SAME room=45 npc=1 str=0>
 
 ==== room=46 npc=2 str=0 textAddr=0x1ca290 ptrFieldAddr=0x1ca28e ====
-¿Un nombre? Eso es sólo una
-etiqueta, algo innecesario.
-
+<SAME room=45 npc=2 str=0>
 
 ==== room=46 npc=3 str=0 textAddr=0x1ca2cc ptrFieldAddr=0x1ca2ca ====
-Sabía hace mucho que
-vendrías. Por duro que sea,
-no abandones.
-
+<SAME room=45 npc=3 str=0>
 
 ==== room=46 npc=4 str=0 textAddr=0x1ca30e ptrFieldAddr=0x1ca30c ====
-Cualquiera puede comunicarse
-aquí, animal o humano. Todos
-usamos el mismo lenguaje.
-
+<SAME room=45 npc=4 str=0>
 
 ==== room=46 npc=5 str=0 textAddr=0x1ca366 ptrFieldAddr=0x1ca364 ====
-Aquí puedo relajarme. No
-tengo que preocuparme de
-pasar a la historia.
-
+<SAME room=45 npc=5 str=0>
 
 ==== room=46 npc=6 str=0 textAddr=0x1ca3b0 ptrFieldAddr=0x1ca3ae ====
-He vivido demasiado
-tiempo ...  Hay más malos
-tiempos que buenos.
-
+<SAME room=45 npc=6 str=0>
 
 ==== room=46 npc=7 str=0 textAddr=0x1ca3f6 ptrFieldAddr=0x1ca3f4 ====
-¿Por qué a todos los que
-viven aquí abajo les gusta
-luchar? No lo entiendo.
-
+<SAME room=45 npc=7 str=0>
 
 ==== room=46 npc=8 str=0 textAddr=0x1ca44a ptrFieldAddr=0x1ca444 ====
-Las flores te aman. Se ponen
-a bailar cuando pasas. Si
-tocas todas las flores este
-lugar se pondrá muy alegre.
-
+<SAME room=45 npc=8 str=0>
 
 ==== room=46 npc=8 str=1 textAddr=0x1ca4ba ptrFieldAddr=0x1ca446 ====
-¡Oh, qué maravilloso! Nunca
-he visto flores que bailen
-tan contentas. Debes ser una
-persona muy amable. Por tu
-amabilidad te daré una
-manzana de la vida.
-
+<SAME room=45 npc=8 str=1>
 
 ==== room=46 npc=8 str=2 textAddr=0x1ca556 ptrFieldAddr=0x1ca448 ====
-Es tan maravilloso ver esto.
-Creo que las flores son
-sensibles a tu energía.
-
+<SAME room=45 npc=8 str=2>
 
 ==== room=46 npc=9 str=0 textAddr=0x1ca5a6 ptrFieldAddr=0x1ca5a4 ====
-Aunque estoy aquí, mi esposa
-está esperando que vuelva
-al peligroso Valle de las
-Dalias. La vida está llena
-de ironías. Si no hubiera
-lucha, la familia podría
-convivir felizmente ...
-
+<SAME room=45 npc=9 str=0>
 
 ==== room=47 npc=0 str=0 textAddr=0x1ca664 ptrFieldAddr=0x1ca660 ====
 DRAGON: Qué valiente eres
@@ -3859,66 +3686,34 @@ ganó la medalla de plata.
 
 
 ==== room=50 npc=0 str=0 textAddr=0x1cae36 ptrFieldAddr=0x1cae32 ====
-{F3}
-
-
-
+<SAME room=49 npc=0 str=0>
 
 ==== room=50 npc=0 str=1 textAddr=0x1cae3c ptrFieldAddr=0x1cae34 ====
-APRENDIZ: Si me das una vez
-más estaré en peligro. Por
-eso estoy desesperado.
-
+<SAME room=49 npc=0 str=1>
 
 ==== room=50 npc=1 str=0 textAddr=0x1cae90 ptrFieldAddr=0x1cae8c ====
-{F3}
-
-
-
+<SAME room=49 npc=1 str=0>
 
 ==== room=50 npc=1 str=1 textAddr=0x1cae96 ptrFieldAddr=0x1cae8e ====
-GUERRERO: Ayyyy ... Sufrí
-la enfermedad de los viajes
-cuando me arrojaron hacia
-atrás.
-
+<SAME room=49 npc=1 str=1>
 
 ==== room=50 npc=2 str=0 textAddr=0x1caef0 ptrFieldAddr=0x1caeee ====
-{E0} {8B}
-NARRACION: <NAME>
-ganó la medalla de plata.
-
+<SAME room=49 npc=2 str=0>
 
 ==== room=51 npc=0 str=0 textAddr=0x1cae36 ptrFieldAddr=0x1cae32 ====
-{F3}
-
-
-
+<SAME room=49 npc=0 str=0>
 
 ==== room=51 npc=0 str=1 textAddr=0x1cae3c ptrFieldAddr=0x1cae34 ====
-APRENDIZ: Si me das una vez
-más estaré en peligro. Por
-eso estoy desesperado.
-
+<SAME room=49 npc=0 str=1>
 
 ==== room=51 npc=1 str=0 textAddr=0x1cae90 ptrFieldAddr=0x1cae8c ====
-{F3}
-
-
-
+<SAME room=49 npc=1 str=0>
 
 ==== room=51 npc=1 str=1 textAddr=0x1cae96 ptrFieldAddr=0x1cae8e ====
-GUERRERO: Ayyyy ... Sufrí
-la enfermedad de los viajes
-cuando me arrojaron hacia
-atrás.
-
+<SAME room=49 npc=1 str=1>
 
 ==== room=51 npc=2 str=0 textAddr=0x1caef0 ptrFieldAddr=0x1caeee ====
-{E0} {8B}
-NARRACION: <NAME>
-ganó la medalla de plata.
-
+<SAME room=49 npc=2 str=0>
 
 ==== room=52 npc=0 str=0 textAddr=0x1caf26 ptrFieldAddr=0x1caf22 ====
 {F3}
@@ -3952,35 +3747,19 @@ la medalla de oro.
 
 
 ==== room=53 npc=0 str=0 textAddr=0x1caf26 ptrFieldAddr=0x1caf22 ====
-{F3}
-
-
-
+<SAME room=52 npc=0 str=0>
 
 ==== room=53 npc=0 str=1 textAddr=0x1caf2c ptrFieldAddr=0x1caf24 ====
-GUERRERO: ¡Jolín! ...
-¡Fuego! ... Este método de
-entrenamiento es realmente
-cruel.
-
+<SAME room=52 npc=0 str=1>
 
 ==== room=53 npc=1 str=0 textAddr=0x1caf84 ptrFieldAddr=0x1caf80 ====
-{F3}
-
-
-
+<SAME room=52 npc=1 str=0>
 
 ==== room=53 npc=1 str=1 textAddr=0x1caf8a ptrFieldAddr=0x1caf82 ====
-APRENDIZ: ¡Eh! ¡Salta tú
-solo! No es justo que te
-ayude un guepardo.
-
+<SAME room=52 npc=1 str=1>
 
 ==== room=53 npc=2 str=0 textAddr=0x1cafd2 ptrFieldAddr=0x1cafd0 ====
-{E0} {8C}
-NARRACION: <NAME> ganó
-la medalla de oro.
-
+<SAME room=52 npc=2 str=0>
 
 ==== room=54 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
 ANCIANA: Por aquí salen
@@ -4007,52 +3786,22 @@ puede enseñarte.
 
 
 ==== room=55 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
-ANCIANA: Por aquí salen
-monstruos de los agujeros de
-la roca. Debe ser un truco
-pero me temo que no tengo
-ni idea de cómo se hace.
-
+<SAME room=54 npc=0 str=0>
 
 ==== room=55 npc=0 str=1 textAddr=0x1cb088 ptrFieldAddr=0x1cb000 ====
-ANCIANA: ¿Quieres decir que
-todo este valle es un gran
-monstruo? ¡Qué horrible!
-Espera, eso quiere decir que
-esta casa está levantada
-encima del monstruo.
-Señor, apiádate ...
-
+<SAME room=54 npc=0 str=1>
 
 ==== room=55 npc=0 str=2 textAddr=0x1cb138 ptrFieldAddr=0x1cb002 ====
-ANCIANA: Sigue habiendo
-muchas cosas que ni la edad
-puede enseñarte.
-
+<SAME room=54 npc=0 str=2>
 
 ==== room=56 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
-ANCIANA: Por aquí salen
-monstruos de los agujeros de
-la roca. Debe ser un truco
-pero me temo que no tengo
-ni idea de cómo se hace.
-
+<SAME room=54 npc=0 str=0>
 
 ==== room=56 npc=0 str=1 textAddr=0x1cb088 ptrFieldAddr=0x1cb000 ====
-ANCIANA: ¿Quieres decir que
-todo este valle es un gran
-monstruo? ¡Qué horrible!
-Espera, eso quiere decir que
-esta casa está levantada
-encima del monstruo.
-Señor, apiádate ...
-
+<SAME room=54 npc=0 str=1>
 
 ==== room=56 npc=0 str=2 textAddr=0x1cb138 ptrFieldAddr=0x1cb002 ====
-ANCIANA: Sigue habiendo
-muchas cosas que ni la edad
-puede enseñarte.
-
+<SAME room=54 npc=0 str=2>
 
 ==== room=57 npc=0 str=0 textAddr=0x1cb188 ptrFieldAddr=0x1cb184 ====
 LOLA: Hay mapaches que se
@@ -4411,44 +4160,16 @@ ponérselos.
 
 
 ==== room=65 npc=0 str=0 textAddr=0x1cc3f0 ptrFieldAddr=0x1cc3ec ====
-El ciclón arrastró a Dorotea
-y se perdió. Me alegro mucho
-de que esté a salvo. Dijo
-que viajó al pasado. ¿Estaba
-soñando?
-
+<SAME room=64 npc=0 str=0>
 
 ==== room=65 npc=0 str=1 textAddr=0x1cc46c ptrFieldAddr=0x1cc3ee ====
-NARRACION: ¡<NAME> ganó
-los zapatos mágicos!
-
-Con estos zapatos puedes
-viajar en el tiempo y volver
-del pasado.
-
-<NAME> decide
-ponérselos.
-
+<SAME room=64 npc=0 str=1>
 
 ==== room=66 npc=0 str=0 textAddr=0x1cc3f0 ptrFieldAddr=0x1cc3ec ====
-El ciclón arrastró a Dorotea
-y se perdió. Me alegro mucho
-de que esté a salvo. Dijo
-que viajó al pasado. ¿Estaba
-soñando?
-
+<SAME room=64 npc=0 str=0>
 
 ==== room=66 npc=0 str=1 textAddr=0x1cc46c ptrFieldAddr=0x1cc3ee ====
-NARRACION: ¡<NAME> ganó
-los zapatos mágicos!
-
-Con estos zapatos puedes
-viajar en el tiempo y volver
-del pasado.
-
-<NAME> decide
-ponérselos.
-
+<SAME room=64 npc=0 str=1>
 
 ==== room=67 npc=0 str=0 textAddr=0x1cc4f8 ptrFieldAddr=0x1cc4f4 ====
 Mi padre lleva yendo al
@@ -4558,27 +4279,13 @@ al grupo!
 
 
 ==== room=70 npc=0 str=0 textAddr=0x1cc9dc ptrFieldAddr=0x1cc9da ====
-Este bosque parece un lugar
-tranquilo para vivir, ¿no
-crees? Solía vivir en
-Nenúfar, pero voy a empezar
-una nueva vida aquí. Es un
-buen sitio. Seguro que puedo
-hacer muchos amigos aquí.
-
+<SAME room=69 npc=0 str=0>
 
 ==== room=70 npc=1 str=0 textAddr=0x1cca9c ptrFieldAddr=0x1cca98 ====
-ARMI: Soy un armadillo.
-Estaba disfrutando del agua.
-Gracias por nada ... Vaya,
-tienes muchos amigos aquí.
-¿Puedo unirme a vosotros?
-
+<SAME room=69 npc=1 str=0>
 
 ==== room=70 npc=1 str=1 textAddr=0x1ccb22 ptrFieldAddr=0x1cca9a ====
-¡Armi el armadillo se une
-al grupo!
-
+<SAME room=69 npc=1 str=1>
 
 ==== room=71 npc=0 str=0 textAddr=0x1ccb66 ptrFieldAddr=0x1ccb64 ====
 ¡Por favor, créeme! No soy
@@ -5758,157 +5465,55 @@ verdadera forma.
 
 
 ==== room=92 npc=0 str=0 textAddr=0x1d0438 ptrFieldAddr=0x1d0426 ====
-{E0}0h
-MADRE MONSTRUO: Ese
-cuerno ... ¡Ese cuerno que
-tienes es mío! ¿Por qué? No
-debería haber dos cuernos
-míos en este mundo.
-¿Quién eres?
-
+<SAME room=91 npc=0 str=0>
 
 ==== room=92 npc=0 str=1 textAddr=0x1d04c4 ptrFieldAddr=0x1d0428 ====
-{E0}0i
-NARRACION: <NAME>
-comenzó a contar la historia
-del mundo de la luz, las
-formas vivientes y la
-historia pasada ... Madre
-Monstruo escuchó a
-<NAME> sin inmutarse.
-
+<SAME room=91 npc=0 str=1>
 
 ==== room=92 npc=0 str=2 textAddr=0x1d0560 ptrFieldAddr=0x1d042a ====
-{E0}0j
-MADRE MONSTRUO: Parece
-mentira que si no fuera por
-ese cuerno no tendríamos
-mundo futuro ni otras formas
-vivientes. Y, ¿qué es "la
-luz"? ¿Lo contrario de la
-oscuridad? Igual que las
-estrellas del cielo, tan
-llenas de misterios ...
-
+<SAME room=91 npc=0 str=2>
 
 ==== room=92 npc=0 str=3 textAddr=0x1d064c ptrFieldAddr=0x1d042c ====
-Cuando nació este planeta
-hubo una explosión que
-afectó a nuestro mundo.
-Cuando recuperamos el
-sentido nos encontrábamos
-en este planeta. Intentamos
-muchas veces volver a
-nuestro planeta pero la
-puerta parece estar sellada
-con algún tipo de energía.
-Si destruimos esta energía
-se abrirán las puertas, pero
-la energía es tan poderosa.
-
+<SAME room=91 npc=0 str=3>
 
 ==== room=92 npc=0 str=4 textAddr=0x1d079c ptrFieldAddr=0x1d042e ====
-{E0}0k
-NARRACION: Fue el destino
-quien envió aquí a estos
-monstruos. No podían
-regresar a su planeta, pero
-aún así no estaban
-destinados a vivir solos en
-este mundo. ¿Quién puede
-culparles? Que los
-monstruos son malvados es
-sólo cómo los perciben los
-humanos. Por primera vez en
-su vida <NAME>
-comprendió la situación en
-que se encontraban los
-monstruos. Los sacrificios
-y los baños de sangre
-... ¿crees que podemos
-alcanzar la paz así?
-
+<SAME room=91 npc=0 str=4>
 
 ==== room=92 npc=0 str=5 textAddr=0x1d094a ptrFieldAddr=0x1d0430 ====
-{E0}0l
-Humano, quizá puedas abrir
-la puerta al Mundo
-Subterráneo. ¡Pero es
-peligroso! Muchos de
-nuestros amigos perdieron
-así la vida.
-
+<SAME room=91 npc=0 str=5>
 
 ==== room=92 npc=0 str=6 textAddr=0x1d09d0 ptrFieldAddr=0x1d0432 ====
-Esa mirada en tus ojos ...
-¿vas a ir de verdad? No
-tienes que perder la vida
-ahora. ... Te lo preguntaré
-otra vez, ¿vas a ir de
-verdad?
-<YESNO>
-
+<SAME room=91 npc=0 str=6>
 
 ==== room=92 npc=0 str=7 textAddr=0x1d0a5c ptrFieldAddr=0x1d0434 ====
-{E0}0n
-Entonces no diré más. Rezaré
-por tu seguridad.
-
+<SAME room=91 npc=0 str=7>
 
 ==== room=92 npc=0 str=8 textAddr=0x1d0a90 ptrFieldAddr=0x1d0436 ====
-Has tomado una decisión
-difícil. Debemos respetar
-que quieras salvar tu
-propia vida ...
-
+<SAME room=91 npc=0 str=8>
 
 ==== room=92 npc=1 str=0 textAddr=0x1d0af0 ptrFieldAddr=0x1d0aea ====
-¿Conoces los cinco sentidos?
-<YESNO>
-
+<SAME room=91 npc=1 str=0>
 
 ==== room=92 npc=1 str=1 textAddr=0x1d0b10 ptrFieldAddr=0x1d0aec ====
-Ya veo que los conoces.
-Eso está bien.
-
+<SAME room=91 npc=1 str=1>
 
 ==== room=92 npc=1 str=2 textAddr=0x1d0b38 ptrFieldAddr=0x1d0aee ====
-Estos son los cinco sentidos
-que experimenta el mundo
-exterior: la vista, el oído,
-el tacto, el olfato y el
-gusto. Recuérdalos.
-
+<SAME room=91 npc=1 str=2>
 
 ==== room=92 npc=2 str=0 textAddr=0x1d0bbc ptrFieldAddr=0x1d0bba ====
-Tienes un aspecto extraño,
-¿no? Pero seré tu amigo.
-
+<SAME room=91 npc=2 str=0>
 
 ==== room=92 npc=3 str=0 textAddr=0x1d0bf4 ptrFieldAddr=0x1d0bf2 ====
-Es peligroso ahí delante.
-No te acerques.
-
+<SAME room=91 npc=3 str=0>
 
 ==== room=92 npc=4 str=0 textAddr=0x1d0c22 ptrFieldAddr=0x1d0c20 ====
-Los cinco sentidos protegen
-la Energía Espíritu. Es muy
-difícil vencerla.
-
+<SAME room=91 npc=4 str=0>
 
 ==== room=92 npc=5 str=0 textAddr=0x1d0c70 ptrFieldAddr=0x1d0c6e ====
-Muchos han ido antes a
-destruir a la Energía
-Espíritu, pero ninguno
-ha regresado.
-
+<SAME room=91 npc=5 str=0>
 
 ==== room=92 npc=6 str=0 textAddr=0x1d0cc6 ptrFieldAddr=0x1d0cc4 ====
-NARRACION: Cuando se
-purifique la puerta de los
-sentidos, aparecerá la
-verdadera forma.
-
+<SAME room=91 npc=6 str=0>
 
 ==== room=93 npc=0 str=0 textAddr=0x1d0d30 ptrFieldAddr=0x1d0d22 ====
 KLIN... ¡Lárgate! Estoy muy
@@ -5969,62 +5574,25 @@ bosques, ahora ¡piérdete!
 
 
 ==== room=94 npc=0 str=0 textAddr=0x1d0d30 ptrFieldAddr=0x1d0d22 ====
-KLIN... ¡Lárgate! Estoy muy
-ocupado.
-
+<SAME room=93 npc=0 str=0>
 
 ==== room=94 npc=0 str=1 textAddr=0x1d0d54 ptrFieldAddr=0x1d0d24 ====
-KLIN: ¿Mamá Fangosa se ha
-enterado? Al fin y al cabo
-es una madre. ¿Estaba
-triste?
-<YESNO>
-
+<SAME room=93 npc=0 str=1>
 
 ==== room=94 npc=0 str=2 textAddr=0x1d0daa ptrFieldAddr=0x1d0d26 ====
-{E0} ñ
-KLIN: Ya veo. ¿Qué pasa?
-Pero Fangoso iba muy en
-serio. Se enamoró de una
-humana ... Yo obviamente
-intenté evitarlo pero iba
-tan en serio que le eché una
-mano. Usé mi magia para
-intercambiaros a Fangoso
-y a ti.
-
+<SAME room=93 npc=0 str=2>
 
 ==== room=94 npc=0 str=3 textAddr=0x1d0e82 ptrFieldAddr=0x1d0d28 ====
-KLIN: No te preocupes tanto
-por ser un fangoso. Acéptalo
-y continúa tu vida lo mejor
-que puedas ...
-
+<SAME room=93 npc=0 str=3>
 
 ==== room=94 npc=0 str=4 textAddr=0x1d0ee8 ptrFieldAddr=0x1d0d2a ====
-KLIN: Se lo prometí a
-Fangoso. Debo deshacer mi
-magia a toda costa ... Lo
-siento mucho por Mamá
-Fangosa ... y por ti, claro.
-¡Tuviste mala suerte, eso
-es todo!
-
+<SAME room=93 npc=0 str=4>
 
 ==== room=94 npc=0 str=5 textAddr=0x1d0f8a ptrFieldAddr=0x1d0d2c ====
-KLIN: ¿Eres Fangoso? No. Tú
-eres humano. Debes ser mi
-maestra la bruja, ¿verdad?
-¿Tenías que hacer esto?
-Pero ... no sé porqué pero
-me siento aliviado.
-
+<SAME room=93 npc=0 str=5>
 
 ==== room=94 npc=0 str=6 textAddr=0x1d1024 ptrFieldAddr=0x1d0d2e ====
-KLIN: Odio a cualquiera que
-use una espada en estos
-bosques, ahora ¡piérdete!
-
+<SAME room=93 npc=0 str=6>
 
 ==== room=95 npc=0 str=0 textAddr=0x1d107a ptrFieldAddr=0x1d1078 ====
 {F3}
@@ -6552,191 +6120,70 @@ cumpleaños, ¡fue horrible!
 
 
 ==== room=103 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=103 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=104 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=104 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=105 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=105 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=106 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=106 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=107 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=107 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=108 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=108 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=109 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=109 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=110 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=110 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=111 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=111 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=112 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=112 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=113 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
-PEPE: ¡Hola, <NAME>!
-Mañana es tu cumpleaños,
-¿verdad? Estoy deseando ir
-a la fiesta.
-
+<SAME room=102 npc=0 str=0>
 
 ==== room=113 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
-PACO: ¿Qué tal, amigo? Me
-invitarás a tu fiesta, ¿no?
-Yo no me emocionaría mucho
-por los regalos de tus
-padres. Los míos me
-regalaron un libro para mi
-cumpleaños, ¡fue horrible!
-
+<SAME room=102 npc=1 str=0>
 
 ==== room=114 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
 CARLOS: ¡Tú ganas! Vale, me
@@ -6845,7 +6292,7 @@ HEIDI: El primero en
 completar tres vueltas gana
 la carrera. Botón A para
 acelerar, botón B para
-frenar y Panel{62}D para girar.
+frenar y PanelºD para girar.
 Puedes hablar con el
 guepardo antes de la
 carrera. ¡Buena suerte!
@@ -6901,7 +6348,7 @@ para completar tres vueltas
 alrededor de la pista. Botón
 A para acelerar, botón B
 para los frenos y la marcha
-atrás y Panel{62}D para girar.
+atrás y PanelºD para girar.
 El tiempo aparece en la
 esquina superior derecha de
 la pantalla. ¡Ve a por el
@@ -6909,514 +6356,202 @@ récord, y buena suerte!
 
 
 ==== room=115 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
-CARLOS: ¡Tú ganas! Vale, me
-uniré al grupo como te
-prometí.
-
+<SAME room=114 npc=0 str=0>
 
 ==== room=115 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
-{E0} z
-¡Carlos el guepardo se
-une al grupo!
-
+<SAME room=114 npc=0 str=1>
 
 ==== room=115 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
-¡Oh, no! ¡Carlos el guepardo
-llegó a la meta antes!
-CARLOS: Venga, hazlo lo
-mejor que puedas. ¡Parece
-mentira!
-
+<SAME room=114 npc=0 str=2>
 
 ==== room=115 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. Por 50
-malines iré más despacio,
-pero es inútil si no tienes
-el dinero.
-
+<SAME room=114 npc=0 str=3>
 
 ==== room=115 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. 50 malines e
-iré más despacio, ¿qué
-dices?
-<YESNO>
-
+<SAME room=114 npc=0 str=4>
 
 ==== room=115 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
-{E0}0ü
-CARLOS: ¡Trato hecho! Eres
-un tipo razonable.
-
+<SAME room=114 npc=0 str=5>
 
 ==== room=115 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
-CARLOS: Bien, ¿crees que
-puedes ganarme, eh?
-Adelante, inténtalo.
-
+<SAME room=114 npc=0 str=6>
 
 ==== room=115 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
-CARLOS: Lo siento. No puede
-ir más despacio. La liebre
-se dará cuenta.
-
+<SAME room=114 npc=0 str=7>
 
 ==== room=115 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
-HEIDI: Esto es una pista
-de carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Pero no
-puedes pasar si no tienes el
-dinero. ¿Otra vez quizá?
-
+<SAME room=114 npc=1 str=0>
 
 ==== room=115 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
-{E0}0é
-HEIDI: Esto es una pista de
-carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Gana la
-carrera y el guepardo se te
-unirá. Entonces, ¿te
-gustaría intentarlo?
-<YESNO>
-
+<SAME room=114 npc=1 str=1>
 
 ==== room=115 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
-{E0}0ú
-HEIDI: ¡Vale! El guepardo es
-muy rápido, o sea que hazlo
-lo mejor que puedas.
-
+<SAME room=114 npc=1 str=2>
 
 ==== room=115 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
-HEIDI: ¡Oh, estás dejando
-pasar tu oportunidad!
-Mala suerte ...
-
+<SAME room=114 npc=1 str=3>
 
 ==== room=115 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
-{E0}0¿
-HEIDI: A todo esto, ¿conoces
-las reglas de la carrera?
-<YESNO>
-
+<SAME room=114 npc=1 str=4>
 
 ==== room=115 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
-HEIDI: Entonces vale.
-¡Buena suerte!
-
+<SAME room=114 npc=1 str=5>
 
 ==== room=115 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
-HEIDI: El primero en
-completar tres vueltas gana
-la carrera. Botón A para
-acelerar, botón B para
-frenar y Panel{62}D para girar.
-Puedes hablar con el
-guepardo antes de la
-carrera. ¡Buena suerte!
-
+<SAME room=114 npc=1 str=6>
 
 ==== room=115 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Pero no puedes inscribirte
-si no tienes dinero. ¡Quizá
-la próxima vez!
-
+<SAME room=114 npc=1 str=7>
 
 ==== room=115 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
-{E0}0{58}
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Esto es para ver qué rápido
-puedes correr. ¿Te gustaría
-intentarlo?
-<YESNO>
-
+<SAME room=114 npc=1 str=8>
 
 ==== room=115 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
-{E0}0{59}
-HEIDI: Vale, trato hecho.
-¡Ve a por tu mejor récord!
-¡Buena suerte!
-
+<SAME room=114 npc=1 str=9>
 
 ==== room=115 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
-HEIDI: Oh, mala suerte. La
-próxima vez será mejor.
-
+<SAME room=114 npc=1 str=10>
 
 ==== room=115 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
-{E0}0{5A}
-HEIDI: Ah, a todo esto,
-¿conoces ya las reglas de
-la carrera contra reloj?
-<YESNO>
-
+<SAME room=114 npc=1 str=11>
 
 ==== room=115 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
-HEIDI: Vale, ¡Buena suerte!
-
+<SAME room=114 npc=1 str=12>
 
 ==== room=115 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
-HEIDI: Compites contra reloj
-para completar tres vueltas
-alrededor de la pista. Botón
-A para acelerar, botón B
-para los frenos y la marcha
-atrás y Panel{62}D para girar.
-El tiempo aparece en la
-esquina superior derecha de
-la pantalla. ¡Ve a por el
-récord, y buena suerte!
-
+<SAME room=114 npc=1 str=13>
 
 ==== room=116 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
-CARLOS: ¡Tú ganas! Vale, me
-uniré al grupo como te
-prometí.
-
+<SAME room=114 npc=0 str=0>
 
 ==== room=116 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
-{E0} z
-¡Carlos el guepardo se
-une al grupo!
-
+<SAME room=114 npc=0 str=1>
 
 ==== room=116 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
-¡Oh, no! ¡Carlos el guepardo
-llegó a la meta antes!
-CARLOS: Venga, hazlo lo
-mejor que puedas. ¡Parece
-mentira!
-
+<SAME room=114 npc=0 str=2>
 
 ==== room=116 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. Por 50
-malines iré más despacio,
-pero es inútil si no tienes
-el dinero.
-
+<SAME room=114 npc=0 str=3>
 
 ==== room=116 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. 50 malines e
-iré más despacio, ¿qué
-dices?
-<YESNO>
-
+<SAME room=114 npc=0 str=4>
 
 ==== room=116 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
-{E0}0ü
-CARLOS: ¡Trato hecho! Eres
-un tipo razonable.
-
+<SAME room=114 npc=0 str=5>
 
 ==== room=116 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
-CARLOS: Bien, ¿crees que
-puedes ganarme, eh?
-Adelante, inténtalo.
-
+<SAME room=114 npc=0 str=6>
 
 ==== room=116 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
-CARLOS: Lo siento. No puede
-ir más despacio. La liebre
-se dará cuenta.
-
+<SAME room=114 npc=0 str=7>
 
 ==== room=116 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
-HEIDI: Esto es una pista
-de carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Pero no
-puedes pasar si no tienes el
-dinero. ¿Otra vez quizá?
-
+<SAME room=114 npc=1 str=0>
 
 ==== room=116 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
-{E0}0é
-HEIDI: Esto es una pista de
-carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Gana la
-carrera y el guepardo se te
-unirá. Entonces, ¿te
-gustaría intentarlo?
-<YESNO>
-
+<SAME room=114 npc=1 str=1>
 
 ==== room=116 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
-{E0}0ú
-HEIDI: ¡Vale! El guepardo es
-muy rápido, o sea que hazlo
-lo mejor que puedas.
-
+<SAME room=114 npc=1 str=2>
 
 ==== room=116 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
-HEIDI: ¡Oh, estás dejando
-pasar tu oportunidad!
-Mala suerte ...
-
+<SAME room=114 npc=1 str=3>
 
 ==== room=116 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
-{E0}0¿
-HEIDI: A todo esto, ¿conoces
-las reglas de la carrera?
-<YESNO>
-
+<SAME room=114 npc=1 str=4>
 
 ==== room=116 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
-HEIDI: Entonces vale.
-¡Buena suerte!
-
+<SAME room=114 npc=1 str=5>
 
 ==== room=116 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
-HEIDI: El primero en
-completar tres vueltas gana
-la carrera. Botón A para
-acelerar, botón B para
-frenar y Panel{62}D para girar.
-Puedes hablar con el
-guepardo antes de la
-carrera. ¡Buena suerte!
-
+<SAME room=114 npc=1 str=6>
 
 ==== room=116 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Pero no puedes inscribirte
-si no tienes dinero. ¡Quizá
-la próxima vez!
-
+<SAME room=114 npc=1 str=7>
 
 ==== room=116 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
-{E0}0{58}
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Esto es para ver qué rápido
-puedes correr. ¿Te gustaría
-intentarlo?
-<YESNO>
-
+<SAME room=114 npc=1 str=8>
 
 ==== room=116 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
-{E0}0{59}
-HEIDI: Vale, trato hecho.
-¡Ve a por tu mejor récord!
-¡Buena suerte!
-
+<SAME room=114 npc=1 str=9>
 
 ==== room=116 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
-HEIDI: Oh, mala suerte. La
-próxima vez será mejor.
-
+<SAME room=114 npc=1 str=10>
 
 ==== room=116 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
-{E0}0{5A}
-HEIDI: Ah, a todo esto,
-¿conoces ya las reglas de
-la carrera contra reloj?
-<YESNO>
-
+<SAME room=114 npc=1 str=11>
 
 ==== room=116 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
-HEIDI: Vale, ¡Buena suerte!
-
+<SAME room=114 npc=1 str=12>
 
 ==== room=116 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
-HEIDI: Compites contra reloj
-para completar tres vueltas
-alrededor de la pista. Botón
-A para acelerar, botón B
-para los frenos y la marcha
-atrás y Panel{62}D para girar.
-El tiempo aparece en la
-esquina superior derecha de
-la pantalla. ¡Ve a por el
-récord, y buena suerte!
-
+<SAME room=114 npc=1 str=13>
 
 ==== room=117 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
-CARLOS: ¡Tú ganas! Vale, me
-uniré al grupo como te
-prometí.
-
+<SAME room=114 npc=0 str=0>
 
 ==== room=117 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
-{E0} z
-¡Carlos el guepardo se
-une al grupo!
-
+<SAME room=114 npc=0 str=1>
 
 ==== room=117 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
-¡Oh, no! ¡Carlos el guepardo
-llegó a la meta antes!
-CARLOS: Venga, hazlo lo
-mejor que puedas. ¡Parece
-mentira!
-
+<SAME room=114 npc=0 str=2>
 
 ==== room=117 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. Por 50
-malines iré más despacio,
-pero es inútil si no tienes
-el dinero.
-
+<SAME room=114 npc=0 str=3>
 
 ==== room=117 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
-CARLOS: ¡Liebre tacaña! Sólo
-me paga el 10 por ciento de
-las ganancias. 50 malines e
-iré más despacio, ¿qué
-dices?
-<YESNO>
-
+<SAME room=114 npc=0 str=4>
 
 ==== room=117 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
-{E0}0ü
-CARLOS: ¡Trato hecho! Eres
-un tipo razonable.
-
+<SAME room=114 npc=0 str=5>
 
 ==== room=117 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
-CARLOS: Bien, ¿crees que
-puedes ganarme, eh?
-Adelante, inténtalo.
-
+<SAME room=114 npc=0 str=6>
 
 ==== room=117 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
-CARLOS: Lo siento. No puede
-ir más despacio. La liebre
-se dará cuenta.
-
+<SAME room=114 npc=0 str=7>
 
 ==== room=117 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
-HEIDI: Esto es una pista
-de carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Pero no
-puedes pasar si no tienes el
-dinero. ¿Otra vez quizá?
-
+<SAME room=114 npc=1 str=0>
 
 ==== room=117 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
-{E0}0é
-HEIDI: Esto es una pista de
-carreras. Por 20 malines
-puedes competir contra
-Carlos el guepardo. Gana la
-carrera y el guepardo se te
-unirá. Entonces, ¿te
-gustaría intentarlo?
-<YESNO>
-
+<SAME room=114 npc=1 str=1>
 
 ==== room=117 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
-{E0}0ú
-HEIDI: ¡Vale! El guepardo es
-muy rápido, o sea que hazlo
-lo mejor que puedas.
-
+<SAME room=114 npc=1 str=2>
 
 ==== room=117 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
-HEIDI: ¡Oh, estás dejando
-pasar tu oportunidad!
-Mala suerte ...
-
+<SAME room=114 npc=1 str=3>
 
 ==== room=117 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
-{E0}0¿
-HEIDI: A todo esto, ¿conoces
-las reglas de la carrera?
-<YESNO>
-
+<SAME room=114 npc=1 str=4>
 
 ==== room=117 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
-HEIDI: Entonces vale.
-¡Buena suerte!
-
+<SAME room=114 npc=1 str=5>
 
 ==== room=117 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
-HEIDI: El primero en
-completar tres vueltas gana
-la carrera. Botón A para
-acelerar, botón B para
-frenar y Panel{62}D para girar.
-Puedes hablar con el
-guepardo antes de la
-carrera. ¡Buena suerte!
-
+<SAME room=114 npc=1 str=6>
 
 ==== room=117 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Pero no puedes inscribirte
-si no tienes dinero. ¡Quizá
-la próxima vez!
-
+<SAME room=114 npc=1 str=7>
 
 ==== room=117 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
-{E0}0{58}
-HEIDI: Esto es una pista de
-carreras. Por 10 malines
-puedes correr contra reloj.
-Esto es para ver qué rápido
-puedes correr. ¿Te gustaría
-intentarlo?
-<YESNO>
-
+<SAME room=114 npc=1 str=8>
 
 ==== room=117 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
-{E0}0{59}
-HEIDI: Vale, trato hecho.
-¡Ve a por tu mejor récord!
-¡Buena suerte!
-
+<SAME room=114 npc=1 str=9>
 
 ==== room=117 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
-HEIDI: Oh, mala suerte. La
-próxima vez será mejor.
-
+<SAME room=114 npc=1 str=10>
 
 ==== room=117 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
-{E0}0{5A}
-HEIDI: Ah, a todo esto,
-¿conoces ya las reglas de
-la carrera contra reloj?
-<YESNO>
-
+<SAME room=114 npc=1 str=11>
 
 ==== room=117 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
-HEIDI: Vale, ¡Buena suerte!
-
+<SAME room=114 npc=1 str=12>
 
 ==== room=117 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
-HEIDI: Compites contra reloj
-para completar tres vueltas
-alrededor de la pista. Botón
-A para acelerar, botón B
-para los frenos y la marcha
-atrás y Panel{62}D para girar.
-El tiempo aparece en la
-esquina superior derecha de
-la pantalla. ¡Ve a por el
-récord, y buena suerte!
-
+<SAME room=114 npc=1 str=13>
 
 ==== room=118 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
 ¿Quieres salvar tu
@@ -7435,52 +6570,31 @@ información.
 
 
 ==== room=119 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
-¿Quieres salvar tu
-información ahora?
-
-<YESNO>
-
+<SAME room=118 npc=0 str=0>
 
 ==== room=119 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
-Información salvada.
-
+<SAME room=118 npc=0 str=1>
 
 ==== room=119 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
-No se ha salvado la
-información.
-
+<SAME room=118 npc=0 str=2>
 
 ==== room=120 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
-¿Quieres salvar tu
-información ahora?
-
-<YESNO>
-
+<SAME room=118 npc=0 str=0>
 
 ==== room=120 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
-Información salvada.
-
+<SAME room=118 npc=0 str=1>
 
 ==== room=120 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
-No se ha salvado la
-información.
-
+<SAME room=118 npc=0 str=2>
 
 ==== room=121 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
-¿Quieres salvar tu
-información ahora?
-
-<YESNO>
-
+<SAME room=118 npc=0 str=0>
 
 ==== room=121 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
-Información salvada.
-
+<SAME room=118 npc=0 str=1>
 
 ==== room=121 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
-No se ha salvado la
-información.
-
+<SAME room=118 npc=0 str=2>
 
 ==== room=122 npc=0 str=0 textAddr=0x1d33fe ptrFieldAddr=0x1d33fc ====
 NARRACION: ¡El máximo de

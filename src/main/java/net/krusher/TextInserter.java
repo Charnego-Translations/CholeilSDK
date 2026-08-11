@@ -6,9 +6,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,6 +35,8 @@ public final class TextInserter {
     static final int DEFAULT_GAP_END = 0x1D8000; // known plausible-safe boundary, see soleil.tbl/graphics notes
     static final Pattern HEADER = Pattern.compile(
             "^==== room=(\\d+) npc=(\\d+) str=(\\d+) textAddr=0x([0-9a-fA-F]+) ptrFieldAddr=0x([0-9a-fA-F]+) ====$");
+    static final Pattern SAME_REF = Pattern.compile(
+            "^<SAME room=(\\d+) npc=(\\d+) str=(\\d+)>$");
 
     static final class Entry {
         int room, npc, str;
@@ -73,6 +77,7 @@ public final class TextInserter {
         TblTable table = TblTable.load(tblPath);
         List<Entry> entries = parseScript(scriptPath);
         System.out.println("Parsed " + entries.size() + " entries from " + scriptPath);
+        resolveSameRefs(entries, scriptPath);
 
         int encodeFailures = 0;
         for (Entry e : entries) {
@@ -409,6 +414,49 @@ public final class TextInserter {
             if (cur < f[1]) result.add(new int[]{cur, f[1]});
         }
         return result;
+    }
+
+    /**
+     * Resolves TextExtractor's "<SAME room=R npc=N str=S>" dedup references
+     * (see its class doc) back into real text, in place, before encoding.
+     * Follows chains defensively (normal extractor output never chains --
+     * references always point straight at the first-seen entry -- but a
+     * hand-edit could create one) and fails loudly on a dangling or circular
+     * reference rather than silently encoding the literal marker text.
+     */
+    static void resolveSameRefs(List<Entry> entries, String scriptPath) {
+        Map<String, Entry> byKey = new LinkedHashMap<String, Entry>();
+        for (Entry e : entries) byKey.put(e.room + "," + e.npc + "," + e.str, e);
+
+        for (Entry e : entries) {
+            Matcher m = SAME_REF.matcher(e.text.trim());
+            if (!m.matches()) continue;
+
+            Set<Entry> visited = new HashSet<Entry>();
+            Entry cur = e;
+            Matcher curMatch = m;
+            while (true) {
+                visited.add(cur);
+                String targetKey = curMatch.group(1) + "," + curMatch.group(2) + "," + curMatch.group(3);
+                Entry target = byKey.get(targetKey);
+                if (target == null) {
+                    throw new IllegalArgumentException("room=" + e.room + " npc=" + e.npc + " str=" + e.str
+                            + " in " + scriptPath + " references room=" + curMatch.group(1) + " npc=" + curMatch.group(2)
+                            + " str=" + curMatch.group(3) + ", which doesn't exist.");
+                }
+                Matcher targetMatch = SAME_REF.matcher(target.text.trim());
+                if (!targetMatch.matches()) {
+                    e.text = target.text;
+                    break;
+                }
+                if (visited.contains(target)) {
+                    throw new IllegalArgumentException("circular <SAME ...> reference chain involving room=" + e.room
+                            + " npc=" + e.npc + " str=" + e.str + " in " + scriptPath);
+                }
+                cur = target;
+                curMatch = targetMatch;
+            }
+        }
     }
 
     static List<Entry> parseScript(String path) throws IOException {
