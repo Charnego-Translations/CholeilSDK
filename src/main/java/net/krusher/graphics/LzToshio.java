@@ -117,6 +117,129 @@ public final class LzToshio {
         return r.data;
     }
 
+    private static final int MAX_MATCH = 0xF + 3; // 18
+
+    /**
+     * Compresses {@code input} into a full LZ-Toshio stream (8-byte header
+     * included). Faithful port of the reference tool's greedy encoder --
+     * matches are found by literally scanning every window position each
+     * step (not indexed/hashed), same as the original, since correctness
+     * and fidelity matter far more than encoder speed here. The compressed
+     * bytes won't necessarily match the original 1994 tool's output
+     * byte-for-byte, but decompressing the result always reproduces the
+     * input exactly (verified by the caller in practice via round-trip).
+     */
+    public static byte[] compress(byte[] input) {
+        byte[] window = initWindow();
+        int wndOff = 0xFEE;
+        int size = input.length;
+
+        // Worst case: every byte literal => ~size + size/8 command bytes + 8 header.
+        byte[] out = new byte[size + size / 8 + 64];
+        int readOff = 0;
+        // state[0]=writeOff, state[1]=cmdOff, state[2]=bitsCnt -- mirrors the
+        // reference's writeoff/cmdoff/bitscnt out-params, all mutated together
+        // since allocating a fresh command byte also consumes a writeOff slot.
+        int[] state = { 9, 8, 0 };
+        out[state[1]] = 0;
+
+        int[] repsFrom = new int[2]; // [0]=reps, [1]=from
+
+        while (readOff < size) {
+            int maxPos = (readOff < 0x12) ? (WINDOW_SIZE - (0x12 - readOff)) : WINDOW_SIZE;
+            findMatches(input, readOff, size, wndOff, window, repsFrom, maxPos);
+            int reps = repsFrom[0];
+            int from = repsFrom[1];
+
+            if (reps <= 2) {
+                writeCmdBit(1, out, state);
+                byte b = input[readOff++];
+                out[state[0]++] = b;
+                window[wndOff] = b;
+                wndOff = (wndOff + 1) & WINDOW_MASK;
+            } else {
+                writeCmdBit(0, out, state);
+                int t = ((reps - 3) << 8) & 0x0F00;
+                t |= ((from & 0x0F00) << 4) | (from & 0xFF);
+                out[state[0]++] = (byte) (t & 0xFF);
+                out[state[0]++] = (byte) ((t >> 8) & 0xFF);
+                readOff += reps;
+                for (int i = 0; i < reps; i++) {
+                    byte b = window[from & WINDOW_MASK];
+                    from = (from + 1) & WINDOW_MASK;
+                    window[wndOff] = b;
+                    wndOff = (wndOff + 1) & WINDOW_MASK;
+                }
+            }
+        }
+
+        int retn = state[0];
+        int writeOff = 0;
+        out[writeOff++] = (byte) ((retn - 8) & 0xFF);
+        out[writeOff++] = (byte) (((retn - 8) >> 8) & 0xFF);
+        out[writeOff++] = (byte) (((retn - 8) >> 16) & 0xFF);
+        out[writeOff++] = (byte) (((retn - 8) >> 24) & 0xFF);
+        out[writeOff++] = (byte) (size & 0xFF);
+        out[writeOff++] = (byte) ((size >> 8) & 0xFF);
+        out[writeOff++] = (byte) ((size >> 16) & 0xFF);
+        out[writeOff] = (byte) ((size >> 24) & 0xFF);
+
+        int finalLen = (retn & 1) != 0 ? retn + 1 : retn;
+        byte[] result = new byte[finalLen];
+        System.arraycopy(out, 0, result, 0, retn);
+        return result;
+    }
+
+    /**
+     * Ported directly from write_cmd_bit: if the current command byte is
+     * full (8 bits written), allocate a fresh one at the current write
+     * position first, then pack this bit LSB-first into it.
+     * state = {writeOff, cmdOff, bitsCnt}.
+     */
+    private static void writeCmdBit(int bit, byte[] out, int[] state) {
+        if (state[2] == 8) {
+            state[2] = 0;
+            state[1] = state[0]++;
+            out[state[1]] = 0;
+        }
+        out[state[1]] = (byte) (((bit & 1) << state[2]) | (out[state[1]] & 0xFF));
+        state[2]++;
+    }
+
+    /** Ported from find_matches: greedy longest-match search over the whole window. */
+    private static void findMatches(byte[] input, int readOff, int size, int wndOff, byte[] window, int[] repsFrom, int maxPos) {
+        int reps = 1;
+        int from = 0;
+        int wpos = 0;
+        int tlen = 0;
+
+        while (wpos < maxPos && tlen < MAX_MATCH) {
+            tlen = 0;
+            while (readOff + tlen < size && tlen < MAX_MATCH) {
+                if (((wpos + tlen) & WINDOW_MASK) == wndOff && tlen != 0) {
+                    int index = 0;
+                    while ((readOff + tlen < size && tlen < MAX_MATCH)
+                            && input[readOff + index] == input[readOff + tlen]) {
+                        tlen++;
+                        index++;
+                    }
+                    break;
+                } else if (window[(wpos + tlen) & WINDOW_MASK] == input[readOff + tlen]) {
+                    tlen++;
+                } else {
+                    break;
+                }
+            }
+            if (tlen >= reps) {
+                reps = tlen;
+                from = wpos & WINDOW_MASK;
+            }
+            wpos++;
+        }
+        repsFrom[0] = reps;
+        repsFrom[1] = from;
+    }
+
     private static byte[] initWindow() {
         byte[] w = new byte[WINDOW_SIZE];
         for (int i = 0; i < 0x100; i++) {

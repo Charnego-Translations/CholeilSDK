@@ -85,4 +85,46 @@ public final class TileRenderer {
     public static void writePng(BufferedImage img, String path) throws IOException {
         ImageIO.write(img, "png", new File(path));
     }
+
+    public static BufferedImage readPng(String path) throws IOException {
+        return ImageIO.read(new File(path));
+    }
+
+    /**
+     * Reverse of renderTileSheet for an EXACT tile count (the caller already
+     * knows it, e.g. from the original block's decSize) -- use this whenever
+     * that's available, since a rectangular PNG can't distinguish "the last
+     * row has trailing blank padding tiles" from "there are genuinely that
+     * many tiles" by pixel content alone.
+     */
+    public static byte[] decodeTileSheet(BufferedImage img, int[] palette, int columns, int scale, int tileCount) {
+        int cols = Math.max(1, columns);
+        byte[] data = new byte[tileCount * TILE_BYTES];
+        for (int tile = 0; tile < tileCount; tile++) {
+            int tileX = (tile % cols) * TILE_SIZE;
+            int tileY = (tile / cols) * TILE_SIZE;
+            int base = tile * TILE_BYTES;
+
+            for (int row = 0; row < TILE_SIZE; row++) {
+                for (int col = 0; col < TILE_SIZE; col += 2) {
+                    int leftIdx = nearestPaletteIndex(img.getRGB((tileX + col) * scale, (tileY + row) * scale), palette);
+                    int rightIdx = nearestPaletteIndex(img.getRGB((tileX + col + 1) * scale, (tileY + row) * scale), palette);
+                    data[base + row * 4 + col / 2] = (byte) (((leftIdx & 0xF) << 4) | (rightIdx & 0xF));
+                }
+            }
+        }
+        return data;
+    }
+
+    private static int nearestPaletteIndex(int argb, int[] palette) {
+        int r = (argb >> 16) & 0xFF, g = (argb >> 8) & 0xFF, b = argb & 0xFF;
+        int best = 0, bestDist = Integer.MAX_VALUE;
+        for (int i = 0; i < palette.length; i++) {
+            int pr = (palette[i] >> 16) & 0xFF, pg = (palette[i] >> 8) & 0xFF, pb = palette[i] & 0xFF;
+            int dr = r - pr, dg = g - pg, db = b - pb;
+            int dist = dr * dr + dg * dg + db * db;
+            if (dist < bestDist) { bestDist = dist; best = i; }
+        }
+        return best;
+    }
 }

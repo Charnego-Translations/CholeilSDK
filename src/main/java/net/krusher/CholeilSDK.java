@@ -8,8 +8,12 @@ import java.io.IOException;
  * filenames every tool in this project already agrees on.
  *
  * Usage:
- *   x   extract everything: script.txt, pointers.txt, graphics_offsets.txt, gfx_out/
- *   i   insert everything: free_space.txt (rescanned), Choleil.md
+ *   x   extract everything: script.txt, pointers.txt, graphics_offsets.txt,
+ *       gfx_out/, stray_text.txt (prune stray_text.txt by hand before `i`)
+ *   i   insert everything: free_space.txt (rescanned), Choleil.md (dialogue
+ *       from script.txt, then whatever's left in stray_text.txt, then
+ *       graphics recompiled from gfx_out/ -- delete a PNG to leave that
+ *       block untouched; edited PNGs must keep their original resolution)
  */
 public class CholeilSDK
 {
@@ -20,6 +24,7 @@ public class CholeilSDK
     static final String GRAPHICS_OFFSETS = "graphics_offsets.txt";
     static final String GFX_OUT = "gfx_out";
     static final String FREE_SPACE = "free_space.txt";
+    static final String STRAY_TEXT = "stray_text.txt";
     static final String OUT_ROM = "Choleil.md";
 
     public static void main( String[] args ) throws IOException
@@ -27,8 +32,8 @@ public class CholeilSDK
         if ( args.length < 1 || (!args[0].equals("x") && !args[0].equals("i")) )
         {
             System.out.println("usage:");
-            System.out.println("  x   extract everything (text + graphics)");
-            System.out.println("  i   insert everything (rebuild " + OUT_ROM + " from " + SCRIPT + ")");
+            System.out.println("  x   extract everything (text + graphics + stray text)");
+            System.out.println("  i   insert everything (rebuild " + OUT_ROM + " from " + SCRIPT + " + " + STRAY_TEXT + ")");
             return;
         }
 
@@ -44,6 +49,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== extracting graphics ===");
             net.krusher.graphics.GraphicsExtractor.extract( ROM, GRAPHICS_OFFSETS, GFX_OUT );
+
+            System.out.println();
+            System.out.println("=== scanning for stray text ===");
+            StrayTextScanner.main( new String[] { ROM, SCRIPT, GRAPHICS_OFFSETS, STRAY_TEXT } );
         }
         else
         {
@@ -53,6 +62,14 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting text ===");
             TextInserter.run( ROM, SCRIPT, TBL, FREE_SPACE, OUT_ROM );
+
+            System.out.println();
+            System.out.println("=== inserting stray text ===");
+            StrayTextInserter.main( new String[] { OUT_ROM, STRAY_TEXT, TBL, OUT_ROM } );
+
+            System.out.println();
+            System.out.println("=== recompressing and inserting graphics ===");
+            net.krusher.graphics.GraphicsInserter.main( new String[] { OUT_ROM, GFX_OUT, GRAPHICS_OFFSETS, OUT_ROM } );
         }
     }
 }

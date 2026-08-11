@@ -322,7 +322,7 @@ public final class TextInserter {
      * some emulators/flashcarts do, and every legitimate ROM patcher fixes
      * it as a matter of course.
      */
-    static void fixChecksum(byte[] rom) {
+    public static void fixChecksum(byte[] rom) {
         int sum = 0;
         for (int i = 0x200; i + 1 < rom.length; i += 2) {
             int word = ((rom[i] & 0xFF) << 8) | (rom[i + 1] & 0xFF);

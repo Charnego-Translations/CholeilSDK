@@ -1,0 +1,307 @@
+; Stray text scan results -- unreviewed, may contain false positives from
+; coincidental byte patterns in code/graphics/sound data. Delete any whole
+; block (from '====' to the next '====') you don't want reinserted, then run:
+;   java -cp target/classes net.krusher.StrayTextInserter
+; len= is the ORIGINAL byte budget at that address -- these strings are
+; referenced by fixed absolute address in code, not a relocatable pointer
+; table, so replacement text must fit in the same space or be shorter.
+
+==== ascii addr=0x568 len=40 ====
+      DEVELOPED FOR USE ONLY WITH       
+
+==== ascii addr=0x592 len=40 ====
+    PAL AND FRENCH SECAM MEGA DRIVE     
+
+==== ascii addr=0x32260 len=11 ====
+PARALIZA   
+
+==== ascii addr=0x3226c len=11 ====
+AL TACTO   
+
+==== ascii addr=0x32294 len=11 ====
+REFUERZA   
+
+==== ascii addr=0x322a0 len=11 ====
+HABILIDADES
+
+==== ascii addr=0x322c8 len=11 ====
+QUEMA      
+
+==== ascii addr=0x322d4 len=11 ====
+ENEMIGO    
+
+==== ascii addr=0x322e0 len=11 ====
+CON LLAMA  
+
+==== ascii addr=0x322fc len=11 ====
+CONGELA    
+
+==== ascii addr=0x32308 len=11 ====
+ENEMIGO    
+
+==== ascii addr=0x32330 len=11 ====
+DOBLA LA   
+
+==== ascii addr=0x3233c len=11 ====
+VELOCIDAD  
+
+==== ascii addr=0x32364 len=11 ====
+CRUZA ZONA 
+
+==== ascii addr=0x32370 len=11 ====
+PELIGROSA  
+
+==== ascii addr=0x32398 len=11 ====
+PEGA       
+
+==== ascii addr=0x323a4 len=11 ====
+ENEMIGO    
+
+==== ascii addr=0x323b0 len=11 ====
+A TU ESPADA
+
+==== ascii addr=0x323cc len=11 ====
+DOBLA VELO-
+
+==== ascii addr=0x323d8 len=11 ====
+CIDAD DE   
+
+==== ascii addr=0x323e4 len=11 ====
+ESPADA     
+
+==== ascii addr=0x32400 len=11 ====
+MAPACHE SE 
+
+==== ascii addr=0x3240c len=11 ====
+DISFRAZA   
+
+==== ascii addr=0x32434 len=11 ====
+CE REBOTAR 
+
+==== ascii addr=0x32440 len=11 ====
+ESPADA EN  
+
+==== ascii addr=0x3244c len=11 ====
+LA PARED   
+
+==== ascii addr=0x32474 len=11 ====
+HABILIDAD  
+
+==== ascii addr=0x3249c len=11 ====
+ACTIVA O   
+
+==== ascii addr=0x324a8 len=11 ====
+HACE DE    
+
+==== ascii addr=0x324b4 len=11 ====
+TABLA      
+
+==== ascii addr=0x324d0 len=11 ====
+LAGO       
+
+==== ascii addr=0x324dc len=11 ====
+TE PROTEGE 
+
+==== ascii addr=0x32504 len=11 ====
+BOMBARDEA  
+
+==== ascii addr=0x32510 len=11 ====
+AL ENEMIGO 
+
+==== ascii addr=0x32538 len=11 ====
+USA LA     
+
+==== ascii addr=0x32544 len=11 ====
+ESPADA     
+
+==== ascii addr=0x3265c len=11 ====
+COMBINACION
+
+==== ascii addr=0x32668 len=11 ====
+SIN EFECTO 
+
+==== ascii addr=0x3269c len=11 ====
+REFUERZA   
+
+==== ascii addr=0x326a8 len=11 ====
+EL TACTO   
+
+==== ascii addr=0x326dc len=11 ====
+REFUERZA   
+
+==== ascii addr=0x3271c len=11 ====
+REFUERZA   
+
+==== ascii addr=0x32728 len=11 ====
+HIELO      
+
+==== ascii addr=0x32734 len=11 ====
+MAGICO     
+
+==== ascii addr=0x3275c len=11 ====
+TRIPLICA LA
+
+==== ascii addr=0x32768 len=11 ====
+VELOCIDAD  
+
+==== ascii addr=0x3279c len=11 ====
+REFUERZA   
+
+==== ascii addr=0x327a8 len=11 ====
+ACCION DE  
+
+==== ascii addr=0x327b4 len=11 ====
+PEGAR      
+
+==== ascii addr=0x327dc len=11 ====
+TRIPLICA   
+
+==== ascii addr=0x327e8 len=11 ====
+VELOCIDAD  
+
+==== ascii addr=0x327f4 len=11 ====
+ESPADA     
+
+==== ascii addr=0x3281c len=11 ====
+SIGUE      
+
+==== ascii addr=0x32828 len=11 ====
+REBONTANDO 
+
+==== ascii addr=0x3285c len=11 ====
+SIGUE      
+
+==== ascii addr=0x32868 len=11 ====
+FUNCIONANDO
+
+==== ascii addr=0x3289c len=11 ====
+EL MAS FUER
+
+==== ascii addr=0x328a8 len=11 ====
+TE HIELO   
+
+==== ascii addr=0x328b4 len=11 ====
+MAGICO     
+
+==== ascii addr=0x328dc len=11 ====
+REDUCE PUN-
+
+==== ascii addr=0x328e8 len=11 ====
+TOS SALUD  
+
+==== ascii addr=0x328f4 len=11 ====
+DEL ENEMIGO
+
+==== ascii addr=0x3291c len=11 ====
+REDUCE PUN-
+
+==== ascii addr=0x32928 len=11 ====
+TOS SALUD  
+
+==== ascii addr=0x32934 len=11 ====
+DEL ENEMIGO
+
+==== ascii addr=0x3295c len=11 ====
+REFUERZA   
+
+==== ascii addr=0x32968 len=11 ====
+HABILIDAD  
+
+==== ascii addr=0x3299c len=11 ====
+ES UN      
+
+==== ascii addr=0x329a8 len=11 ====
+SECRETO    
+
+==== ascii addr=0x33af6 len=20 ====
+SELECT BB_RAM NUMBER
+
+==== ascii addr=0x33d02 len=20 ====
+ERASE  BB_RAM NUMBER
+
+==== ascii addr=0x3a1d0 len=16 ====
+SOUND EFFECT NO 
+
+==== ascii addr=0x3b2de len=8 ====
+PRODUCE 
+
+==== ascii addr=0x3b2e7 len=20 ====
+SCENARIO/GAME DESIGN
+
+==== ascii addr=0x3b304 len=12 ====
+MAIN PROGRAM
+
+==== ascii addr=0x3b318 len=12 ====
+SUB PROGRAM 
+
+==== ascii addr=0x3b325 len=16 ====
+  & GAME DESIGN 
+
+==== ascii addr=0x3b336 len=8 ====
+T:TOYOTA
+
+==== ascii addr=0x3b33f len=12 ====
+SUB PROGRAM 
+
+==== ascii addr=0x3b34c len=8 ====
+S:OHTAKE
+
+==== ascii addr=0x3b355 len=12 ====
+CHARACTER   
+
+==== ascii addr=0x3b362 len=20 ====
+  & GRAPHIC DESIGN  
+
+==== ascii addr=0x3b377 len=10 ====
+T:YAMAMOTO
+
+==== ascii addr=0x3b382 len=16 ====
+GRAPHIC DESIGN  
+
+==== ascii addr=0x3b393 len=8 ====
+K:NAGATA
+
+==== ascii addr=0x3b39c len=12 ====
+M:MATSUSHIMA
+
+==== ascii addr=0x3b3a9 len=16 ====
+OBJECT DESIGN   
+
+==== ascii addr=0x3b3ba len=9 ====
+Y:SHIMIZU
+
+==== ascii addr=0x3b3c4 len=8 ====
+K:TAJIMA
+
+==== ascii addr=0x3b3cd len=24 ====
+BOSS CHARACTER DESIGN   
+
+==== ascii addr=0x3b3ed len=12 ====
+GAME DESIGN 
+
+==== ascii addr=0x3b3fa len=9 ====
+ALL@STAFF
+
+==== ascii addr=0x3b404 len=16 ====
+MUSIC COMPOSER  
+
+==== ascii addr=0x3b415 len=9 ====
+M:SHINODA
+
+==== ascii addr=0x3b41f len=16 ====
+SOUND OPERATOR  
+
+==== ascii addr=0x3b430 len=9 ====
+N:IWADARE
+
+==== ascii addr=0x3b43a len=16 ====
+SPECIAL THANKS  
+
+==== ascii addr=0x3b451 len=11 ====
+I:MIZOGUCHI
+
+==== ascii addr=0x3b45d len=20 ====
+EXECTIVE PRODUCER   
+
+==== ascii addr=0x3b472 len=8 ====
+K:AOYAMA
