@@ -9,13 +9,14 @@ import java.io.IOException;
  *
  * Usage:
  *   x   extract everything: script.txt, pointers.txt, graphics_offsets.txt,
- *       gfx_out/, raw_gfx_out/, stray_text.txt (prune stray_text.txt by
- *       hand before `i`)
+ *       gfx_out/, raw_gfx_out/, sprite_gfx_out/, stray_text.txt (prune
+ *       stray_text.txt by hand before `i`)
  *   i   insert everything: free_space.txt (rescanned), Choleil.md (dialogue
  *       from script.txt, then whatever's left in stray_text.txt, then
  *       compressed graphics from gfx_out/, then raw graphics from
- *       raw_gfx_out/ -- delete a PNG to leave that block untouched; edited
- *       PNGs must keep their original resolution)
+ *       raw_gfx_out/, then sprite-mosaic graphics from sprite_gfx_out/ --
+ *       delete a PNG to leave that block untouched; edited PNGs must keep
+ *       their original resolution)
  */
 public class CholeilSDK
 {
@@ -27,6 +28,8 @@ public class CholeilSDK
     static final String GFX_OUT = "gfx_out";
     static final String RAW_GRAPHICS = "raw_graphics.txt";
     static final String RAW_GFX_OUT = "raw_gfx_out";
+    static final String SPRITE_GRAPHICS = "sprite_graphics.txt";
+    static final String SPRITE_GFX_OUT = "sprite_gfx_out";
     static final String FREE_SPACE = "free_space.txt";
     static final String STRAY_TEXT = "stray_text.txt";
     static final String OUT_ROM = "Choleil.md";
@@ -59,6 +62,10 @@ public class CholeilSDK
             net.krusher.graphics.RawGraphicsExtractor.main( new String[] { ROM, RAW_GRAPHICS, RAW_GFX_OUT } );
 
             System.out.println();
+            System.out.println("=== extracting sprite-mosaic graphics ===");
+            net.krusher.graphics.SpriteGraphicsExtractor.main( new String[] { ROM, SPRITE_GRAPHICS, SPRITE_GFX_OUT } );
+
+            System.out.println();
             System.out.println("=== scanning for stray text ===");
             StrayTextScanner.main( new String[] { ROM, SCRIPT, GRAPHICS_OFFSETS, STRAY_TEXT } );
         }
@@ -82,6 +89,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting raw (uncompressed) graphics ===");
             net.krusher.graphics.RawGraphicsInserter.main( new String[] { OUT_ROM, RAW_GFX_OUT, RAW_GRAPHICS, OUT_ROM } );
+
+            System.out.println();
+            System.out.println("=== inserting sprite-mosaic graphics ===");
+            net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { OUT_ROM, SPRITE_GFX_OUT, SPRITE_GRAPHICS, OUT_ROM } );
         }
     }
 }

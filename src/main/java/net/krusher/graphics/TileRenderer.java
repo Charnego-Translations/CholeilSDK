@@ -1,6 +1,8 @@
 package net.krusher.graphics;
 
 import java.awt.image.BufferedImage;
+import java.awt.image.IndexColorModel;
+import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -52,7 +54,7 @@ public final class TileRenderer {
         int cols = Math.max(1, columns);
         int rows = (tileCount + cols - 1) / cols;
 
-        BufferedImage img = new BufferedImage(cols * TILE_SIZE * scale, rows * TILE_SIZE * scale, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage img = createIndexedImage(cols * TILE_SIZE * scale, rows * TILE_SIZE * scale, palette);
 
         for (int tile = 0; tile < tileCount; tile++) {
             int tileX = (tile % cols) * TILE_SIZE;
@@ -66,18 +68,38 @@ public final class TileRenderer {
                     int leftIdx = (b >> 4) & 0xF;
                     int rightIdx = b & 0xF;
 
-                    plotScaled(img, tileX + col, tileY + row, palette[leftIdx], scale);
-                    plotScaled(img, tileX + col + 1, tileY + row, palette[rightIdx], scale);
+                    plotScaled(img, tileX + col, tileY + row, leftIdx, scale);
+                    plotScaled(img, tileX + col + 1, tileY + row, rightIdx, scale);
                 }
             }
         }
         return img;
     }
 
-    private static void plotScaled(BufferedImage img, int x, int y, int argb, int scale) {
+    /**
+     * Builds a PNG-indexed-color (color type 3) image whose palette table is
+     * exactly the given 16 Genesis colors -- so a saved PNG can only ever
+     * contain those colors, and editors show/restrict to the real palette.
+     */
+    static BufferedImage createIndexedImage(int width, int height, int[] palette) {
+        byte[] r = new byte[palette.length];
+        byte[] g = new byte[palette.length];
+        byte[] b = new byte[palette.length];
+        for (int i = 0; i < palette.length; i++) {
+            r[i] = (byte) ((palette[i] >> 16) & 0xFF);
+            g[i] = (byte) ((palette[i] >> 8) & 0xFF);
+            b[i] = (byte) (palette[i] & 0xFF);
+        }
+        IndexColorModel icm = new IndexColorModel(4, palette.length, r, g, b);
+        WritableRaster raster = icm.createCompatibleWritableRaster(width, height);
+        return new BufferedImage(icm, raster, false, null);
+    }
+
+    private static void plotScaled(BufferedImage img, int x, int y, int paletteIndex, int scale) {
+        WritableRaster raster = img.getRaster();
         for (int dy = 0; dy < scale; dy++) {
             for (int dx = 0; dx < scale; dx++) {
-                img.setRGB(x * scale + dx, y * scale + dy, argb);
+                raster.setSample(x * scale + dx, y * scale + dy, 0, paletteIndex);
             }
         }
     }
@@ -110,6 +132,80 @@ public final class TileRenderer {
                     int leftIdx = nearestPaletteIndex(img.getRGB((tileX + col) * scale, (tileY + row) * scale), palette);
                     int rightIdx = nearestPaletteIndex(img.getRGB((tileX + col + 1) * scale, (tileY + row) * scale), palette);
                     data[base + row * 4 + col / 2] = (byte) (((leftIdx & 0xF) << 4) | (rightIdx & 0xF));
+                }
+            }
+        }
+        return data;
+    }
+
+    /**
+     * Renders tiles stored as a sequence of fixed-size sprites (spriteTilesW x
+     * spriteTilesH tiles each), tiles in COLUMN-MAJOR order within each sprite
+     * (Mega Drive sprite convention: tile 0 = col0/row0, tile1 = col0/row1,
+     * ...), sprites placed left-to-right/top-to-bottom in a macro grid of
+     * spritesPerRow columns. Used for assets that aren't a single flat
+     * row-major tile raster (see sprite_graphics.txt).
+     */
+    public static BufferedImage renderSpriteSheet(byte[] data, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale) {
+        int tilesPerSprite = spriteTilesW * spriteTilesH;
+        int spriteCount = Math.max(1, data.length / TILE_BYTES / tilesPerSprite);
+        int spritesPerRow2 = Math.max(1, spritesPerRow);
+        int macroRows = (spriteCount + spritesPerRow2 - 1) / spritesPerRow2;
+
+        int imgW = spritesPerRow2 * spriteTilesW * TILE_SIZE * scale;
+        int imgH = macroRows * spriteTilesH * TILE_SIZE * scale;
+        BufferedImage img = createIndexedImage(imgW, imgH, palette);
+
+        for (int s = 0; s < spriteCount; s++) {
+            int blockX = (s % spritesPerRow2) * spriteTilesW * TILE_SIZE;
+            int blockY = (s / spritesPerRow2) * spriteTilesH * TILE_SIZE;
+            int spriteBase = s * tilesPerSprite * TILE_BYTES;
+            for (int t = 0; t < tilesPerSprite; t++) {
+                int col = t / spriteTilesH;
+                int row = t % spriteTilesH;
+                int tileX = blockX + col * TILE_SIZE;
+                int tileY = blockY + row * TILE_SIZE;
+                int base = spriteBase + t * TILE_BYTES;
+                for (int ry = 0; ry < TILE_SIZE; ry++) {
+                    for (int rx = 0; rx < TILE_SIZE; rx += 2) {
+                        int byteIndex = base + ry * 4 + rx / 2;
+                        int b = byteIndex < data.length ? (data[byteIndex] & 0xFF) : 0;
+                        int leftIdx = (b >> 4) & 0xF;
+                        int rightIdx = b & 0xF;
+                        plotScaled(img, tileX + rx, tileY + ry, leftIdx, scale);
+                        plotScaled(img, tileX + rx + 1, tileY + ry, rightIdx, scale);
+                    }
+                }
+            }
+        }
+        return img;
+    }
+
+    /**
+     * Reverse of renderSpriteSheet for an EXACT tile count.
+     */
+    public static byte[] decodeSpriteSheet(BufferedImage img, int[] palette, int spriteTilesW, int spriteTilesH, int spritesPerRow, int scale, int tileCount) {
+        int tilesPerSprite = spriteTilesW * spriteTilesH;
+        int spriteCount = tileCount / tilesPerSprite;
+        int spritesPerRow2 = Math.max(1, spritesPerRow);
+        byte[] data = new byte[tileCount * TILE_BYTES];
+
+        for (int s = 0; s < spriteCount; s++) {
+            int blockX = (s % spritesPerRow2) * spriteTilesW * TILE_SIZE;
+            int blockY = (s / spritesPerRow2) * spriteTilesH * TILE_SIZE;
+            int spriteBase = s * tilesPerSprite * TILE_BYTES;
+            for (int t = 0; t < tilesPerSprite; t++) {
+                int col = t / spriteTilesH;
+                int row = t % spriteTilesH;
+                int tileX = blockX + col * TILE_SIZE;
+                int tileY = blockY + row * TILE_SIZE;
+                int base = spriteBase + t * TILE_BYTES;
+                for (int ry = 0; ry < TILE_SIZE; ry++) {
+                    for (int rx = 0; rx < TILE_SIZE; rx += 2) {
+                        int leftIdx = nearestPaletteIndex(img.getRGB((tileX + rx) * scale, (tileY + ry) * scale), palette);
+                        int rightIdx = nearestPaletteIndex(img.getRGB((tileX + rx + 1) * scale, (tileY + ry) * scale), palette);
+                        data[base + ry * 4 + rx / 2] = (byte) (((leftIdx & 0xF) << 4) | (rightIdx & 0xF));
+                    }
                 }
             }
         }

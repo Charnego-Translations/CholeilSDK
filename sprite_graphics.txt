@@ -1,0 +1,24 @@
+; Uncompressed graphics blocks stored as SPRITE MOSAICS rather than a flat
+; row-major tile raster -- tiles within each sprite are in Mega Drive
+; COLUMN-MAJOR order (tile0=col0/row0, tile1=col0/row1, ...), and sprites are
+; placed left-to-right/top-to-bottom in a macro grid. Naive row-major
+; rendering (raw_graphics.txt/RawGraphicsExtractor) produces a scrambled mess
+; for these -- use SpriteGraphicsExtractor/Inserter instead.
+; Format: 0xADDRESS,lengthBytes,spritesPerRow,spriteTilesWide,spriteTilesTall
+;
+; 0x00a8d36: the "Soleil" title logo. Found by watching the emulator: a VRAM
+; write breakpoint at 0x80C0 (sprite tile index 0x406, the first tile of the
+; on-screen logo sprite at tile 0x412) showed the source read at ROM 0xa8d56
+; -- but that tile turned out to be the SECOND real tile, not the first: there's
+; one more (near-blank) tile immediately before it. True start is 0xa8d36.
+; 14 sprites of 4x4 tiles (16 tiles/sprite), 7 sprites per row x 2 rows = 224
+; tiles = 7168 bytes, ending exactly at 0xaa956 -- right before "PULSA START"'s
+; real data at 0xaa9b2 (no overlap; going one sprite further pulls in PULSA
+; START's pixels as garbage, confirming this end boundary).
+;
+; Palette not confirmed yet -- currently rendered/decoded with a palette
+; reverse-derived from a player-supplied reference screenshot (dominant
+; quantized colors sorted by luminance), which visually matches well but is
+; NOT a traced, ground-truth CRAM palette. Replace with a real one (e.g. via
+; a CRAM write breakpoint in the emulator) when available.
+0xa8d36,7168,7,4,4
