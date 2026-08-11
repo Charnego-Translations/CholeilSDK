@@ -11,8 +11,9 @@ import java.util.List;
  * CLI for finding and dumping LZ-Toshio-compressed graphics blocks.
  *
  * Usage:
- *   scan    [romPath] [offsetsPath]           - auto-detect candidate blocks, write them to an editable offsets file
- *   extract [romPath] [offsetsPath] [outDir]  - decompress each listed offset and render a PNG tile sheet
+ *   scan    [romPath] [offsetsPath]                                       - auto-detect candidate blocks, write them to an editable offsets file
+ *   extract [romPath] [offsetsPath] [outDir]                              - decompress each listed offset and render a PNG tile sheet (16 cols, grayscale)
+ *   single  <romPath> <hexOffset> <outFile> [paletteHexOffset] [columns]  - decompress one block and render it, optionally with a real CRAM palette
  */
 public class GraphicsExtractor {
 
@@ -36,9 +37,36 @@ public class GraphicsExtractor {
             String offsetsPath = args.length > 2 ? args[2] : "graphics_offsets.txt";
             String outDir = args.length > 3 ? args[3] : "gfx_out";
             extract(romPath, offsetsPath, outDir);
+        } else if (mode.equals("single")) {
+            String romPath = args[1];
+            int offset = (int) Long.parseLong(strip0x(args[2]), 16);
+            String outFile = args[3];
+            Integer paletteOffset = args.length > 4 ? (int) Long.parseLong(strip0x(args[4]), 16) : null;
+            int columns = args.length > 5 ? Integer.parseInt(args[5]) : 16;
+            single(romPath, offset, outFile, paletteOffset, columns);
         } else {
             printUsage();
         }
+    }
+
+    static String strip0x(String s) {
+        return (s.startsWith("0x") || s.startsWith("0X")) ? s.substring(2) : s;
+    }
+
+    static void single(String romPath, int offset, String outFile, Integer paletteOffset, int columns) throws IOException {
+        byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        LzToshio.Result r = LzToshio.tryDecompress(rom, offset, Integer.MAX_VALUE, Integer.MAX_VALUE);
+        if (r == null) {
+            System.out.println("Not a valid LZ-Toshio stream at 0x" + Integer.toHexString(offset));
+            return;
+        }
+        int[] palette = paletteOffset != null
+                ? TileRenderer.readGenesisPalette(rom, paletteOffset)
+                : TileRenderer.defaultGrayscalePalette();
+        BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, columns, 2);
+        TileRenderer.writePng(img, outFile);
+        System.out.println("Wrote " + outFile + " (" + (r.decSize / TileRenderer.TILE_BYTES) + " tiles, "
+                + (paletteOffset != null ? "palette @0x" + Integer.toHexString(paletteOffset) : "default grayscale palette") + ")");
     }
 
     static void scan(String romPath, String offsetsPath) throws IOException {
@@ -75,7 +103,8 @@ public class GraphicsExtractor {
 
     static void printUsage() {
         System.out.println("usage:");
-        System.out.println("  scan    [romPath] [offsetsPath]           - auto-detect LZ-Toshio blocks in the ROM");
-        System.out.println("  extract [romPath] [offsetsPath] [outDir]  - decompress each listed offset and render a PNG tile sheet");
+        System.out.println("  scan    [romPath] [offsetsPath]                                       - auto-detect LZ-Toshio blocks in the ROM");
+        System.out.println("  extract [romPath] [offsetsPath] [outDir]                              - decompress each listed offset and render a PNG tile sheet");
+        System.out.println("  single  <romPath> <hexOffset> <outFile> [paletteHexOffset] [columns]  - decompress one block, optionally with a real CRAM palette");
     }
 }

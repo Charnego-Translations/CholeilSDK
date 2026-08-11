@@ -27,6 +27,26 @@ public final class TileRenderer {
         return pal;
     }
 
+    /**
+     * Reads 16 colors in raw Genesis CRAM format (0000 bbb0 ggg0 rrr0, one
+     * word per color) starting at {@code offset} and converts them to ARGB.
+     */
+    public static int[] readGenesisPalette(byte[] rom, int offset) {
+        int[] pal = new int[16];
+        for (int i = 0; i < 16; i++) {
+            int hi = rom[offset + i * 2] & 0xFF;
+            int lo = rom[offset + i * 2 + 1] & 0xFF;
+            int b3 = (hi >> 1) & 7;
+            int g3 = (lo >> 5) & 7;
+            int r3 = (lo >> 1) & 7;
+            int r = Math.round(r3 * 255f / 7f);
+            int g = Math.round(g3 * 255f / 7f);
+            int b = Math.round(b3 * 255f / 7f);
+            pal[i] = (0xFF << 24) | (r << 16) | (g << 8) | b;
+        }
+        return pal;
+    }
+
     public static BufferedImage renderTileSheet(byte[] data, int[] palette, int columns, int scale) {
         int tileCount = Math.max(1, data.length / TILE_BYTES);
         int cols = Math.max(1, columns);
