@@ -13,10 +13,10 @@
 ; matches in code/graphics data) throws out space-padded fields like these.
 
 ==== ascii addr=0x120 len=48 ====
-SOLEIL                                          
+CHOLEIL                                         
 
 ==== ascii addr=0x150 len=48 ====
-SOLEIL                                          
+CHOLEIL                                         
 
 ==== ascii addr=0x568 len=40 ====
       DEVELOPED FOR USE ONLY WITH       
