@@ -1,0 +1,7573 @@
+; WARNING: text address 0x1c030a is outside expected script bounds
+==== room=0 npc=0 str=0 textAddr=0x1c030a ptrFieldAddr=0x1c0308 ====
+           "Sí"
+           "No"
+
+
+==== room=0 npc=1 str=0 textAddr=0x1c032e ptrFieldAddr=0x1c032c ====
+Ts ... ts ... ts ...
+
+
+==== room=0 npc=2 str=0 textAddr=0x1c0346 ptrFieldAddr=0x1c0344 ====
+
+
+
+==== room=0 npc=3 str=0 textAddr=0x1c0372 ptrFieldAddr=0x1c0348 ====
+Soleil
+
+
+==== room=0 npc=3 str=1 textAddr=0x1c037a ptrFieldAddr=0x1c034a ====
+Soleil
+
+
+==== room=0 npc=3 str=2 textAddr=0x1c0382 ptrFieldAddr=0x1c034c ====
+Rafresa
+
+
+==== room=0 npc=3 str=3 textAddr=0x1c038c ptrFieldAddr=0x1c034e ====
+Valle Dalia
+
+
+==== room=0 npc=3 str=4 textAddr=0x1c039a ptrFieldAddr=0x1c0350 ====
+Playa Anémona
+
+
+==== room=0 npc=3 str=5 textAddr=0x1c03aa ptrFieldAddr=0x1c0352 ====
+Cabo Anémona
+
+
+==== room=0 npc=3 str=6 textAddr=0x1c03b8 ptrFieldAddr=0x1c0354 ====
+Nenúfar
+
+
+==== room=0 npc=3 str=7 textAddr=0x1c03c2 ptrFieldAddr=0x1c0356 ====
+Margarita
+
+
+==== room=0 npc=3 str=8 textAddr=0x1c03ce ptrFieldAddr=0x1c0358 ====
+Iris
+
+
+==== room=0 npc=3 str=9 textAddr=0x1c03d4 ptrFieldAddr=0x1c035a ====
+Pueblo de Iris
+
+
+==== room=0 npc=3 str=10 textAddr=0x1c03e4 ptrFieldAddr=0x1c035c ====
+Lili
+
+
+==== room=0 npc=3 str=11 textAddr=0x1c03ea ptrFieldAddr=0x1c035e ====
+Rosa Mágica
+
+
+==== room=0 npc=3 str=12 textAddr=0x1c03f8 ptrFieldAddr=0x1c0360 ====
+Desierto Camelia
+
+
+==== room=0 npc=3 str=13 textAddr=0x1c040a ptrFieldAddr=0x1c0362 ====
+Palacio Camelia
+
+
+==== room=0 npc=3 str=14 textAddr=0x1c041c ptrFieldAddr=0x1c0364 ====
+Lirio
+
+
+==== room=0 npc=3 str=15 textAddr=0x1c0424 ptrFieldAddr=0x1c0366 ====
+Torre de Babel
+
+
+==== room=0 npc=3 str=16 textAddr=0x1c0434 ptrFieldAddr=0x1c0368 ====
+Castillo Fresa
+
+
+==== room=0 npc=3 str=17 textAddr=0x1c0444 ptrFieldAddr=0x1c036a ====
+Templo Raíz
+
+
+==== room=0 npc=3 str=18 textAddr=0x1c0452 ptrFieldAddr=0x1c036c ====
+Amapola
+
+
+==== room=0 npc=3 str=19 textAddr=0x1c045c ptrFieldAddr=0x1c036e ====
+San Cielo
+
+
+==== room=0 npc=3 str=20 textAddr=0x1c0468 ptrFieldAddr=0x1c0370 ====
+Noche Oscura
+
+
+==== room=1 npc=0 str=0 textAddr=0x1c04a4 ptrFieldAddr=0x1c0478 ====
+Tu aventura quedará salvada
+hasta este punto.
+
+
+==== room=1 npc=0 str=1 textAddr=0x1c04d4 ptrFieldAddr=0x1c047a ====
+Se te retirará el animal A.
+
+
+==== room=1 npc=0 str=2 textAddr=0x1c04f2 ptrFieldAddr=0x1c047c ====
+Se te retirará el animal B.
+
+
+==== room=1 npc=0 str=3 textAddr=0x1c0510 ptrFieldAddr=0x1c047e ====
+  ? ? ? ?
+
+
+==== room=1 npc=0 str=4 textAddr=0x1c051c ptrFieldAddr=0x1c0480 ====
+  ? ? ? ?
+
+
+==== room=1 npc=0 str=5 textAddr=0x1c0528 ptrFieldAddr=0x1c0482 ====
+Misi: Te devolveré la vida
+una vez, cuando mueras.
+
+
+==== room=1 npc=0 str=6 textAddr=0x1c055c ptrFieldAddr=0x1c0484 ====
+Tintín: Morderé al enemigo
+para detenerlo.
+
+
+==== room=1 npc=0 str=7 textAddr=0x1c0588 ptrFieldAddr=0x1c0486 ====
+Moa: Mejoraré la habilidad
+de los otros animales.
+
+
+==== room=1 npc=0 str=8 textAddr=0x1c05bc ptrFieldAddr=0x1c0488 ====
+León: Mi misión es quemar
+a los enemigos con mi melena
+en llamas.
+
+
+==== room=1 npc=0 str=9 textAddr=0x1c0600 ptrFieldAddr=0x1c048a ====
+Pigüi: Utilízame en lúgares
+cálidos. Mi magia puede
+congelar cosas.
+
+
+==== room=1 npc=0 str=10 textAddr=0x1c0646 ptrFieldAddr=0x1c048c ====
+Carlos: Puedes correr
+al doble de velocidad
+cuando esté contigo.
+
+
+==== room=1 npc=0 str=11 textAddr=0x1c0688 ptrFieldAddr=0x1c048e ====
+Dinosaurio: Déjame la
+natación a mí. También
+puedo cruzar zonas
+peligrosas.
+
+
+==== room=1 npc=0 str=12 textAddr=0x1c06d6 ptrFieldAddr=0x1c0490 ====
+Dodo: Lanza tu espada y los
+enemigos y los objetos se
+quedarán pegados a ella.
+
+
+==== room=1 npc=0 str=13 textAddr=0x1c0726 ptrFieldAddr=0x1c0492 ====
+Leviatán: Te haré más rápido
+con tu espada. Te será muy
+útil, humano.
+
+
+==== room=1 npc=0 str=14 textAddr=0x1c076e ptrFieldAddr=0x1c0494 ====
+Perro mapache: Puedo
+transformarme en ti para
+despistar al enemigo.
+
+
+==== room=1 npc=0 str=15 textAddr=0x1c07b4 ptrFieldAddr=0x1c0496 ====
+Feli: Lanza tu espada contra
+un muro y rebotará.
+
+
+==== room=1 npc=0 str=16 textAddr=0x1c07e6 ptrFieldAddr=0x1c0498 ====
+Oruga: Lo siento, pero no
+tengo habilidades
+especiales. Simplemente
+ignórame, ¿vale?
+
+
+==== room=1 npc=0 str=17 textAddr=0x1c083c ptrFieldAddr=0x1c049a ====
+Armadillo: Utilízame como
+tablón. También puedo darle
+a los interruptores por ti.
+
+
+==== room=1 npc=0 str=18 textAddr=0x1c0890 ptrFieldAddr=0x1c049c ====
+Murciélago: Te protegeré muy
+de cerca durante cierto
+tiempo.
+
+
+==== room=1 npc=0 str=19 textAddr=0x1c08ce ptrFieldAddr=0x1c049e ====
+Huevo: Soy un huevo-bomba.
+Exploto para causar daños a
+los enemigos cercanos.
+
+
+==== room=1 npc=0 str=20 textAddr=0x1c091e ptrFieldAddr=0x1c04a0 ====
+Mariposa: Si estoy contigo
+puedes controlar la espada
+que lances.
+
+
+==== room=1 npc=0 str=21 textAddr=0x1c0962 ptrFieldAddr=0x1c04a2 ====
+Dinosaurio: Lo siento, no
+puedo aparecer aquí. Te
+veré en algún sitio.
+
+
+==== room=2 npc=0 str=0 textAddr=0x1c09d4 ptrFieldAddr=0x1c09b4 ====
+MAMA: Y ahora, el momento
+que habéis estado esperando:
+una fiesta de cumpleaños
+para <NAME>. ¡Gracias
+a todos por venir!
+
+
+==== room=2 npc=0 str=1 textAddr=0x1c0a4a ptrFieldAddr=0x1c09b6 ====
+¡Feliz cumpleaños.
+<NAME>! Ya tienes 14
+años. Tengo un regalo
+para ti.
+
+
+==== room=2 npc=0 str=2 textAddr=0x1c0a8e ptrFieldAddr=0x1c09b8 ====
+MAMA: Esta es la espada
+que tu padre solía ceñir.
+Era muy fuerte y afable,
+pero perdió la vida en una
+batalla ... La verdad es que
+no quiero dártela pero es la
+ley de esta tierra que los
+niños de 14 años sigan a
+sus padres a la batalla.
+
+
+==== room=2 npc=0 str=3 textAddr=0x1c0b7c ptrFieldAddr=0x1c09ba ====
+MAMA: ¿ <NAME>, A dónde
+vas? Ha venido a verte
+todo el mundo.
+
+
+==== room=2 npc=0 str=4 textAddr=0x1c0bb6 ptrFieldAddr=0x1c09bc ====
+MAMA: En fin, no fue un
+final feliz, pero debes
+tratar de continuar el buen
+trabajo de tu padre.
+
+
+==== room=2 npc=0 str=5 textAddr=0x1c0c18 ptrFieldAddr=0x1c09be ====
+MAMA: Informa a Su Alteza
+de que has cumplido los
+14 años.
+
+
+==== room=2 npc=0 str=6 textAddr=0x1c0c54 ptrFieldAddr=0x1c09c0 ====
+MAMA: Rezaré siempre
+para que un día traigas la
+paz al mundo.
+
+
+==== room=2 npc=0 str=7 textAddr=0x1c0c94 ptrFieldAddr=0x1c09c2 ====
+MAMA: He oído que has
+encontrado una medalla de
+bronce. ¡Enhorabuena!
+Pero no te excedas.
+
+
+==== room=2 npc=0 str=8 textAddr=0x1c0cf0 ptrFieldAddr=0x1c09c4 ====
+{F3}
+
+
+
+
+==== room=2 npc=0 str=9 textAddr=0x1c0cf6 ptrFieldAddr=0x1c09c6 ====
+MAMA: ¡Ah, has vuelto!
+¿Comprendes lo que te
+estoy diciendo?
+<YESNO>
+
+
+==== room=2 npc=0 str=10 textAddr=0x1c0d36 ptrFieldAddr=0x1c09c8 ====
+MAMA: ¡Me alegro tanto de
+que hayas vuelto a casa!
+Hacía tanto que te marchaste
+que temía que no
+volvieras nunca.
+
+
+==== room=2 npc=0 str=11 textAddr=0x1c0daa ptrFieldAddr=0x1c09ca ====
+MAMA: ¡Dime la verdad,
+jovencito! Recuerda, SOY
+tu madre. Te lo noto en
+los ojos.
+
+
+==== room=2 npc=0 str=12 textAddr=0x1c0dfe ptrFieldAddr=0x1c09cc ====
+MAMA: ¿Qué? ¿Que te has
+comprado  una casa? Pero si
+tienes una casa aquí. No te
+lo permitiré. A propósito,
+no pude encontrar a Tintín.
+Te lo llevaste contigo,
+¿no?
+
+
+
+==== room=2 npc=0 str=13 textAddr=0x1c0ea4 ptrFieldAddr=0x1c09ce ====
+MAMA: Debes cuidar más
+tu salud. No te pases
+con el entrenamiento.
+
+
+==== room=2 npc=0 str=14 textAddr=0x1c0ee8 ptrFieldAddr=0x1c09d0 ====
+MAMA: No puedo encontrar
+a Tintín. Me pregunto si
+estará inspeccionando el
+barrio en busca de
+otros perros.
+
+
+==== room=2 npc=0 str=15 textAddr=0x1c0f56 ptrFieldAddr=0x1c09d2 ====
+MAMA: Luego Tintín estaba
+en el castillo con otro
+perro. Qué amigo más
+noble tienes.
+
+
+==== room=2 npc=1 str=0 textAddr=0x1c0fb0 ptrFieldAddr=0x1c0fac ====
+PACO: Yo también tengo una
+espada, pero no está oxidada
+como ésa. ¡La mía es nueva!
+
+
+==== room=2 npc=1 str=1 textAddr=0x1c1006 ptrFieldAddr=0x1c0fae ====
+PACO: Cuando me toque a mí
+ir, espero que no olvides
+organizarme una despedida
+a mí también.
+
+
+==== room=2 npc=2 str=0 textAddr=0x1c106a ptrFieldAddr=0x1c1064 ====
+ANITA: ¡Feliz cumpleaños,
+<NAME>! ¡Qué espada más
+bonita!
+
+
+==== room=2 npc=2 str=1 textAddr=0x1c10a0 ptrFieldAddr=0x1c1066 ====
+ANITA: Acabo de recordar
+que Luis se marcha hoy.
+¡Vamos a verle antes!
+
+
+==== room=2 npc=2 str=2 textAddr=0x1c10e8 ptrFieldAddr=0x1c1068 ====
+ANITA: ¡Oh, Paco ...!
+Hacerse un héroe no
+es tarea fácil. No lo
+conseguirás a menos
+que te entrenes duramente
+en el campo de
+entrenamiento Rafresa.
+
+
+==== room=2 npc=3 str=0 textAddr=0x1c1184 ptrFieldAddr=0x1c117e ====
+PEPE: ¡Vaya, vaya! ¡Yo
+también quiero una espada!
+¡Estoy deseando
+cumplir los 14!
+
+
+==== room=2 npc=3 str=1 textAddr=0x1c11d8 ptrFieldAddr=0x1c1180 ====
+PEPE: ¿Fuegos artificiales?
+¿Es que se va alguien?
+
+
+==== room=2 npc=3 str=2 textAddr=0x1c120c ptrFieldAddr=0x1c1182 ====
+PEPE: Vamos, ¡ date prisa!
+Quiero ver a Luis. ¡Me cae
+bien porque es fuerte
+y valiente!
+
+
+==== room=2 npc=4 str=0 textAddr=0x1c126c ptrFieldAddr=0x1c1266 ====
+PAPA: <NAME>, ¿qué
+quieres ser cuando crezcas?
+¿Tienes un sueño?
+<YESNO>
+
+
+==== room=2 npc=4 str=1 textAddr=0x1c12ac ptrFieldAddr=0x1c1268 ====
+PAPA: ¡Qué sueño más
+maravilloso! No te olvides
+de seguir soñando.
+
+
+==== room=2 npc=4 str=2 textAddr=0x1c12f0 ptrFieldAddr=0x1c126a ====
+PAPA: Bueno, todavía falta
+mucho. Ya encontrarás algo
+que te guste.
+
+
+==== room=3 npc=0 str=0 textAddr=0x1c135a ptrFieldAddr=0x1c1348 ====
+PACO: <NAME>, creo que
+deberías informar al Rey
+de que es tu 14{62} cumpleaños.
+
+
+==== room=3 npc=0 str=1 textAddr=0x1c13a4 ptrFieldAddr=0x1c134a ====
+PACO: ¡Oye, <NAME>!
+¡He oído que has encontrado
+la medalla de plata! Luego,
+era sólo un rumor...pero si
+la encuentras, házmelo saber
+primero, ¿vale?
+
+
+==== room=3 npc=0 str=2 textAddr=0x1c1436 ptrFieldAddr=0x1c134c ====
+PACO: ¡Oye, <NAME>!
+¡He oído que has encontrado
+la medalla de plata! ¡Guau,
+qué wai! ¿Me la das?
+<YESNO>
+
+
+==== room=3 npc=0 str=3 textAddr=0x1c1496 ptrFieldAddr=0x1c134e ====
+{E0} {84}
+PACO: Gracias, amigo, ¡tú sí
+que eres wai! No pensé que
+me la fueras a dar de
+verdad.
+
+
+==== room=3 npc=0 str=4 textAddr=0x1c14f2 ptrFieldAddr=0x1c1350 ====
+PACO: ¡Tacaño! Eres
+más raro, siempre con
+animales ...
+
+
+==== room=3 npc=0 str=5 textAddr=0x1c152a ptrFieldAddr=0x1c1352 ====
+PACO: ¡Lo siento, amigo!
+Perdí la calma ... ¿has
+cambiado de opinión?
+<YESNO>
+
+
+==== room=3 npc=0 str=6 textAddr=0x1c1574 ptrFieldAddr=0x1c1354 ====
+{E0} {84}
+PACO: Gracias, amigo, ¡tú sí
+que eres wai! No pensé que
+me la fueras a dar de
+verdad.
+
+
+==== room=3 npc=0 str=7 textAddr=0x1c15d0 ptrFieldAddr=0x1c1356 ====
+PACO: ¡Tacaño! Eres
+más raro, siempre con
+animales ...
+
+
+==== room=3 npc=0 str=8 textAddr=0x1c1608 ptrFieldAddr=0x1c1358 ====
+PACO: ¿Qué? ¡¡¡¡Pero esa
+espada es sagrada!!!!
+TE ODIO, TE ODIO,
+TE ODIO, TE ODIO,
+TE ODIO, TE ODIO,
+TE ODIO, TE ODIO,
+TE ODIO, TE ODIO,
+Yo ... snif, snif...
+Ahora, ¿qué te parece eso?
+Ajá, ¡te lo mereces!
+
+
+==== room=3 npc=1 str=0 textAddr=0x1c16e6 ptrFieldAddr=0x1c16d8 ====
+ANITA: El sueño de todo
+hombre es convertirse en
+héroe. Creo que Luis será
+un héroe excelente.
+
+
+==== room=3 npc=1 str=1 textAddr=0x1c1746 ptrFieldAddr=0x1c16da ====
+{E0}0-
+ANITA: ¡<NAME>!
+Tintín quería ir a pasear.
+Estaba aquí hace un minuto
+pero ya no está.
+Si lo ves, ¿te lo
+llevarás contigo?
+
+
+==== room=3 npc=1 str=2 textAddr=0x1c17c2 ptrFieldAddr=0x1c16dc ====
+{E0}0-
+ANITA: No puedes ir sólo.
+Primero debes encontrar a
+Tintín.
+
+
+==== room=3 npc=1 str=3 textAddr=0x1c1804 ptrFieldAddr=0x1c16de ====
+{E0}0^
+ANITA: ¿Vas a pasear con
+Tintín ...?
+Pero si te vas ahora
+no podrás volver
+enseguida.
+¿Te vas de verdad?
+¿Estás totalmente seguro?
+<YESNO>
+
+
+==== room=3 npc=1 str=4 textAddr=0x1c188e ptrFieldAddr=0x1c16e0 ====
+{E0}0{62}
+ANITA: Comprendo ...
+Siento habértelo preguntado
+tantas veces pero tengo
+algo que contarte,
+algo muy importante.
+Pero no importa, te lo
+contaré cuando vuelvas.
+
+
+==== room=3 npc=1 str=5 textAddr=0x1c1934 ptrFieldAddr=0x1c16e2 ====
+ANITA: Entonces vale,
+llévatelo luego. Estaré aquí
+esperándote.
+
+
+==== room=3 npc=1 str=6 textAddr=0x1c1976 ptrFieldAddr=0x1c16e4 ====
+ANITA: Hasta la vista.
+Te veré más tarde.
+
+
+==== room=3 npc=2 str=0 textAddr=0x1c19a6 ptrFieldAddr=0x1c19a2 ====
+PEPE: ¿No hay un castillo
+más adelante? Estoy
+esperando para despedirme
+de Luis.
+
+
+==== room=3 npc=2 str=1 textAddr=0x1c19f8 ptrFieldAddr=0x1c19a4 ====
+PEPE: ¡Vi irse a Luis!
+Tenía un aspecto extraño,
+pero al fin y al cabo él es
+el héroe.
+
+
+==== room=3 npc=3 str=0 textAddr=0x1c1a66 ptrFieldAddr=0x1c1a50 ====
+SABIO: Veo que eres lo
+suficientemente mayor como
+para llevar una
+espada, <NAME>.
+¿Has oído hablar de las
+medallas?
+<YESNO>
+
+
+==== room=3 npc=3 str=1 textAddr=0x1c1ad8 ptrFieldAddr=0x1c1a52 ====
+Sólo con paciencia
+ganarás las medallas.
+
+
+==== room=3 npc=3 str=2 textAddr=0x1c1b02 ptrFieldAddr=0x1c1a54 ====
+El campo de entrenamiento
+tiene pistas para
+principiantes, nivel
+intermedio y experto.
+Puedes ganar medallas de
+bronce, plata y oro
+respectivamente. Una vez
+logres lo bastante como para
+ganar las tres medallas,
+llévaselas al Rey y te las
+cambiará por la Espada
+Sacra - el auténtico
+símbolo de un héroe.
+
+
+==== room=3 npc=3 str=3 textAddr=0x1c1c32 ptrFieldAddr=0x1c1a56 ====
+{F3}
+
+
+
+
+==== room=3 npc=3 str=4 textAddr=0x1c1c38 ptrFieldAddr=0x1c1a58 ====
+Odio seguir preguntándote,
+pero ¿sabes lo de
+las medallas?
+<YESNO>
+
+
+==== room=3 npc=3 str=5 textAddr=0x1c1c76 ptrFieldAddr=0x1c1a5a ====
+Sólo con paciencia
+ganarás las medallas.
+
+
+==== room=3 npc=3 str=6 textAddr=0x1c1ca0 ptrFieldAddr=0x1c1a5c ====
+El campo de entrenamiento
+tiene pistas para
+principiantes, nivel
+intermedio y experto.
+Puedes ganar medallas de
+bronce, plata y oro
+respectivamente. Una vez
+logres lo bastante como para
+ganar las tres medallas,
+llévaselas al Rey y te las
+cambiará por la Espada
+Sacra - el auténtico
+símbolo de un héroe.
+
+
+==== room=3 npc=3 str=7 textAddr=0x1c1dd0 ptrFieldAddr=0x1c1a5e ====
+El sabio le dió una espada
+inmensa a <NAME>.
+
+SABIO: Ja, ja, era sólo una
+broma. Perdóname por
+favor. Ja, ja, ja.
+
+
+==== room=3 npc=3 str=8 textAddr=0x1c1e3e ptrFieldAddr=0x1c1a60 ====
+{E0}0:
+SABIO: Mira la estatua
+de la diosa.
+¿Verdad que es hermosa?
+¿Conoces su
+historia?
+<YESNO>
+
+
+==== room=3 npc=3 str=9 textAddr=0x1c1e98 ptrFieldAddr=0x1c1a62 ====
+SABIO: ¿Verdad que es una
+historia  interesante? A mí
+también me gusta mucho.
+
+
+==== room=3 npc=3 str=10 textAddr=0x1c1ee8 ptrFieldAddr=0x1c1a64 ====
+SABIO: Amor, paz, aire
+y agua ... cada uno
+representa algo
+importante para nosotros.
+No debes olvidar que
+las cosas que damos
+por sentadas son
+las realmente importantes.
+
+
+==== room=3 npc=4 str=0 textAddr=0x1c1f9c ptrFieldAddr=0x1c1f94 ====
+GUERRERO: Solía practicar
+mis técnicas de lucha cerca
+del lago, al norte del Valle
+de las Dalias. Creo que no
+puedo hacerlo más porque
+un horrible conejo
+aterroriza la zona. Es
+imposible negociar con
+él a menos que tú
+consigas hablar con él.
+
+
+==== room=3 npc=4 str=1 textAddr=0x1c2090 ptrFieldAddr=0x1c1f96 ====
+{F3}
+
+
+
+
+==== room=3 npc=4 str=2 textAddr=0x1c2096 ptrFieldAddr=0x1c1f98 ====
+GUERRERO: Estoy preocupado
+por mi familia en Iris.
+Quiero ir a verlos
+enseguida pero no puedo
+hasta que no me
+convierta en héroe. Es
+mi modo de vida.
+
+
+==== room=3 npc=4 str=3 textAddr=0x1c212e ptrFieldAddr=0x1c1f9a ====
+GUERRERO: ¿Crees que
+siempre merodeo por aquí?
+Pues no es verdad porque
+normalmente estoy en el
+campo de entrenemiento.
+Es pura coincidencia que
+nos encontremos siempre
+aquí.
+
+
+==== room=3 npc=5 str=0 textAddr=0x1c21e0 ptrFieldAddr=0x1c21de ====
+CASA DE TINTIN
+¡No le eches de comer
+que va a engordar!
+¡Firmado <NAME>!
+
+
+==== room=3 npc=6 str=0 textAddr=0x1c222a ptrFieldAddr=0x1c2226 ====
+FUENTE DE LOS HEROES
+
+Coje tu espada, chico,
+porque es hora de luchar.
+
+
+==== room=3 npc=6 str=1 textAddr=0x1c2272 ptrFieldAddr=0x1c2228 ====
+FUENTE DE LA DIOSA
+
+Ama a tu enemigo y se
+abrirá el camino.
+
+
+
+==== room=3 npc=7 str=0 textAddr=0x1c22b4 ptrFieldAddr=0x1c22b0 ====
+CASA EN VENTA
+
+¿Te gustaría cambiarte
+de casa?
+
+
+==== room=3 npc=7 str=1 textAddr=0x1c22e4 ptrFieldAddr=0x1c22b2 ====
+ANUNCIO
+
+¡Próxima apertura del
+campo de entrenamiento!
+firmado Lucas
+
+
+==== room=3 npc=8 str=0 textAddr=0x1c232e ptrFieldAddr=0x1c232a ====
+PARQUE
+
+Este parque es de todos.
+Sed amables los unos
+con los otros.
+
+
+==== room=3 npc=8 str=1 textAddr=0x1c2374 ptrFieldAddr=0x1c232c ====
+ANUNCIO
+
+Plano del futuro parque.
+En construcción.
+Prohibido el paso.
+
+
+==== room=4 npc=0 str=0 textAddr=0x1c23da ptrFieldAddr=0x1c23c6 ====
+REY: Bien hecho, Luis.
+Has superado la prueba.
+Aquí tienes tu recompensa.
+
+
+==== room=4 npc=0 str=1 textAddr=0x1c2426 ptrFieldAddr=0x1c23c8 ====
+REY: Tu viaje será largo
+pero sé que lo conseguirás.
+Buena suerte.
+
+
+==== room=4 npc=0 str=2 textAddr=0x1c246a ptrFieldAddr=0x1c23ca ====
+REY: Esa espada ... tú debes
+ser <NAME> ...
+Hacía tiempo. Tu padre era
+extraordinariamente
+valiente. Salvó esta
+ciudad muchas veces con
+esa espada. Basta
+de recuerdos, vienes a
+informarme de tu 14{62}
+cumpleaños, ¿verdad? Te
+concederé acceso al Campo
+de Entrenamiento Rafresa.
+Entrénate mucho,
+jovencito.
+
+
+==== room=4 npc=0 str=3 textAddr=0x1c2594 ptrFieldAddr=0x1c23cc ====
+REY: Puedes irte. Ve y
+practica mucho con tu
+espada y te convertirás
+en un héroe.
+
+
+==== room=4 npc=0 str=4 textAddr=0x1c25e8 ptrFieldAddr=0x1c23ce ====
+{F3}
+
+
+
+
+==== room=4 npc=0 str=5 textAddr=0x1c25ee ptrFieldAddr=0x1c23d0 ====
+REY: ¡Ah, <NAME>!
+Debes entrenar mucho.
+No puedes desanimarte.
+
+
+==== room=4 npc=0 str=6 textAddr=0x1c262a ptrFieldAddr=0x1c23d2 ====
+REY: ¡Bien hecho! Has
+conseguido tres medallas.
+Es todo un logro para un
+jovencito. Aquí tienes la
+Espada Sacra como
+recompensa. Se dice que
+es el auténtico símbolo
+de un héroe. Eres el primer
+joven de 14 años que la
+recibe. Cuídala mucho.
+
+
+==== room=4 npc=0 str=7 textAddr=0x1c271c ptrFieldAddr=0x1c23d4 ====
+<NAME> recibió
+la Espada Sacra.
+
+
+==== room=4 npc=0 str=8 textAddr=0x1c2738 ptrFieldAddr=0x1c23d6 ====
+REY: Ahora se te considera
+un héroe. Espero que
+realices hazañas dignas de
+tu título.
+
+
+==== room=4 npc=0 str=9 textAddr=0x1c2790 ptrFieldAddr=0x1c23d8 ====
+REY: ¡Ah, <NAME>!
+¡Has crecido!
+¿Cómo está tu padre?
+Cuídate, muchacho.
+
+
+==== room=4 npc=1 str=0 textAddr=0x1c27d8 ptrFieldAddr=0x1c27d4 ====
+LUIS: Gracias, su Alteza.
+Esta espada me será
+de gran ayuda.
+
+
+==== room=4 npc=1 str=1 textAddr=0x1c2816 ptrFieldAddr=0x1c27d6 ====
+LUIS: Sí, su Alteza.
+
+
+==== room=4 npc=2 str=0 textAddr=0x1c283c ptrFieldAddr=0x1c282c ====
+CONSEJERO: Rafresa es
+un campo de entrenamiento
+en el que puedes convertirte
+en héroe. Hazlo bien.
+
+
+==== room=4 npc=2 str=1 textAddr=0x1c28a0 ptrFieldAddr=0x1c282e ====
+CONSEJERO: Una sola
+medalla de bronce no basta.
+Vuelve cuando tengas
+las otras dos.
+
+
+==== room=4 npc=2 str=2 textAddr=0x1c28f6 ptrFieldAddr=0x1c2830 ====
+{F3}
+
+
+
+
+==== room=4 npc=2 str=3 textAddr=0x1c28fc ptrFieldAddr=0x1c2832 ====
+CONSEJERO: Tengo el
+presentimiento de que nos
+hemos visto antes en alguna
+parte ... pero no consigo
+recordar.
+
+
+==== room=4 npc=2 str=4 textAddr=0x1c296c ptrFieldAddr=0x1c2834 ====
+CONSEJERO: ¡Ahora lo
+recuerdo! Te pareces al héroe
+de la estatua de la fuente.
+Pero supongo que todos los
+que han ido a la batalla se
+parecen un poco.
+
+
+==== room=4 npc=2 str=5 textAddr=0x1c2a04 ptrFieldAddr=0x1c2836 ====
+{E0}0?
+CONSEJERO: Permite que te
+pregunte, ¿sabes cuál es el
+símbolo de la ciudad
+de Soleil?
+<YESNO>
+
+
+==== room=4 npc=2 str=6 textAddr=0x1c2a62 ptrFieldAddr=0x1c2838 ====
+CONSEJERO: Bien hecho. Veo
+que los niños de hoy en día
+son muy listos.
+
+
+==== room=4 npc=2 str=7 textAddr=0x1c2aaa ptrFieldAddr=0x1c283a ====
+CONSEJERO: ¿Cómo?, ¿no lo
+sabes? Es la estatua de
+la Diosa que hay en la
+fuente. Ve a verla.
+
+
+==== room=4 npc=3 str=0 textAddr=0x1c2b12 ptrFieldAddr=0x1c2b08 ====
+CRIADA: ¡Cuanto trabajo!
+Oye, chico, no te acerques a
+la chimenea. Es peligroso.
+
+
+==== room=4 npc=3 str=1 textAddr=0x1c2b64 ptrFieldAddr=0x1c2b0a ====
+{F3}
+
+
+
+
+==== room=4 npc=3 str=2 textAddr=0x1c2b6a ptrFieldAddr=0x1c2b0c ====
+CRIADA: Mi hermana ha
+desaparecido otra vez. Sólo
+se molesta en limpiar la
+habitación del Rey.
+
+
+==== room=4 npc=3 str=3 textAddr=0x1c2bca ptrFieldAddr=0x1c2b0e ====
+CRIADA: Creo que se trae
+algo entre manos. Actúa de
+modo extraño.
+
+
+==== room=4 npc=3 str=4 textAddr=0x1c2c0e ptrFieldAddr=0x1c2b10 ====
+CRIADA: ¡Qué de trabajo!
+¡Aléjate de los barriles!
+Ese agua es para beber.
+
+
+==== room=4 npc=4 str=0 textAddr=0x1c2c64 ptrFieldAddr=0x1c2c5a ====
+SOLDADO: El Valle de las
+Dalias es un lugar extraño
+en el que aparecen
+monstruos constantemente.
+Antes de ir debes aprender
+en el campo de
+entrenamiento cómo lanzar
+tu espada.
+
+
+
+==== room=4 npc=4 str=1 textAddr=0x1c2d16 ptrFieldAddr=0x1c2c5c ====
+{F3}
+
+
+
+
+==== room=4 npc=4 str=2 textAddr=0x1c2d1c ptrFieldAddr=0x1c2c5e ====
+SOLDADO: Me encontré con mi
+madre en la "casa en
+venta". Parece tener
+grandes problemas
+económicos y se esconde
+de sus acreedores.
+Debería habérmelo contado.
+Somos familia.
+
+
+==== room=4 npc=4 str=3 textAddr=0x1c2dca ptrFieldAddr=0x1c2c60 ====
+SOLDADO: Hace mucho tiempo
+hubo un incidente en que un
+monstruo se escapó de la
+mazmorra del castillo.
+Imagino que ni a los
+monstruos les gusta estar
+encerrados.
+
+
+==== room=4 npc=4 str=4 textAddr=0x1c2e6e ptrFieldAddr=0x1c2c62 ====
+SOLDADO: Oh, <NAME>.
+¿Te gusta visitar castillos,
+verdad?
+
+
+==== room=5 npc=0 str=0 textAddr=0x1c2ee6 ptrFieldAddr=0x1c2ea6 ====
+
+
+==== room=5 npc=0 str=1 textAddr=0x1c2ee8 ptrFieldAddr=0x1c2ea8 ====
+
+
+==== room=5 npc=0 str=2 textAddr=0x1c2eea ptrFieldAddr=0x1c2eaa ====
+
+
+==== room=5 npc=0 str=3 textAddr=0x1c2eec ptrFieldAddr=0x1c2eac ====
+
+
+==== room=5 npc=0 str=4 textAddr=0x1c2eee ptrFieldAddr=0x1c2eae ====
+
+Pueblo de Soleil {4D}{4D}{4D}
+
+
+
+==== room=5 npc=0 str=5 textAddr=0x1c2f06 ptrFieldAddr=0x1c2eb0 ====
+Valle de las Dalias.
+<<<Dirección al campo de
+entrenamiento de Rafresa
+
+
+==== room=5 npc=0 str=6 textAddr=0x1c2f4e ptrFieldAddr=0x1c2eb2 ====
+Dale al interruptor rojo
+para encender el fusible.
+
+
+==== room=5 npc=0 str=7 textAddr=0x1c2f82 ptrFieldAddr=0x1c2eb4 ====
+CASA DE LA SIRENA
+¡Por un tiempo limitado,
+puedes ver a una sirena
+gratis!
+
+
+==== room=5 npc=0 str=8 textAddr=0x1c2fce ptrFieldAddr=0x1c2eb6 ====
+Activa los botones rojos
+saltando sobre ellos.
+
+
+==== room=5 npc=0 str=9 textAddr=0x1c2ffe ptrFieldAddr=0x1c2eb8 ====
+
+
+==== room=5 npc=0 str=10 textAddr=0x1c3000 ptrFieldAddr=0x1c2eba ====
+CASA DE LA FORTUNA
+¿Quieres saber tu futuro?
+
+
+==== room=5 npc=0 str=11 textAddr=0x1c302e ptrFieldAddr=0x1c2ebc ====
+
+
+==== room=5 npc=0 str=12 textAddr=0x1c3030 ptrFieldAddr=0x1c2ebe ====
+Pista para principiantes
+Muy fácil
+Cualquiera puede hacerlo
+
+
+==== room=5 npc=0 str=13 textAddr=0x1c306e ptrFieldAddr=0x1c2ec0 ====
+Pista nivel intermedio
+Inténtalo si tienes la
+habilidad para saltar
+
+
+==== room=5 npc=0 str=14 textAddr=0x1c30b4 ptrFieldAddr=0x1c2ec2 ====
+Pista para expertos
+Inténtalo si puedes
+hacer el salto rápido
+
+
+==== room=5 npc=0 str=15 textAddr=0x1c30f4 ptrFieldAddr=0x1c2ec4 ====
+Los bloques azules sirven
+de fusibles. Conéctalos
+antes de darle al
+interruptor rojo
+
+
+==== room=5 npc=0 str=16 textAddr=0x1c314a ptrFieldAddr=0x1c2ec6 ====
+Se pueden pulsar todos los
+bloques azules. Conéctalos
+todos antes de darle al
+interruptor rojo
+
+
+==== room=5 npc=0 str=17 textAddr=0x1c31aa ptrFieldAddr=0x1c2ec8 ====
+Salta usando el salto
+rápido. El secreto está en
+saltar antes del precipicio
+
+
+==== room=5 npc=0 str=18 textAddr=0x1c31f8 ptrFieldAddr=0x1c2eca ====
+¡Ts ... ts ...! Soy un erizo
+galante. Si me tocas te
+quemarás.
+
+
+==== room=5 npc=0 str=19 textAddr=0x1c3238 ptrFieldAddr=0x1c2ecc ====
+Cruce de monstruos
+¡¡Ten mucho, mucho cuidado!!
+ 
+
+==== room=5 npc=0 str=20 textAddr=0x1c326a ptrFieldAddr=0x1c2ece ====
+Lo siento, ¡calle sin
+salida!
+¡Da media vuelta!
+ 
+
+==== room=5 npc=0 str=21 textAddr=0x1c329c ptrFieldAddr=0x1c2ed0 ====
+
+
+==== room=5 npc=0 str=22 textAddr=0x1c329e ptrFieldAddr=0x1c2ed2 ====
+
+
+==== room=5 npc=0 str=23 textAddr=0x1c32a0 ptrFieldAddr=0x1c2ed4 ====
+
+
+==== room=5 npc=0 str=24 textAddr=0x1c32a2 ptrFieldAddr=0x1c2ed6 ====
+Arriba está la roca de la
+reflexión. A la derecha está
+la roca de la postración.
+Tócala y arrepiéntete.
+
+
+==== room=5 npc=0 str=25 textAddr=0x1c330c ptrFieldAddr=0x1c2ed8 ====
+
+
+==== room=5 npc=0 str=26 textAddr=0x1c330e ptrFieldAddr=0x1c2eda ====
+
+
+==== room=5 npc=0 str=27 textAddr=0x1c3310 ptrFieldAddr=0x1c2edc ====
+
+
+==== room=5 npc=0 str=28 textAddr=0x1c3312 ptrFieldAddr=0x1c2ede ====
+
+
+==== room=5 npc=0 str=29 textAddr=0x1c3314 ptrFieldAddr=0x1c2ee0 ====
+
+
+==== room=5 npc=0 str=30 textAddr=0x1c3316 ptrFieldAddr=0x1c2ee2 ====
+El cielo no puede crear un
+camino para el hombre. La
+respuesta está bajo tus
+pies.
+
+
+==== room=5 npc=0 str=31 textAddr=0x1c336a ptrFieldAddr=0x1c2ee4 ====
+Colócate delante, con un
+perro que muestra el
+camino. Entonces sabrás el
+camino a seguir.
+
+
+==== room=6 npc=0 str=0 textAddr=0x1c33d8 ptrFieldAddr=0x1c33d0 ====
+TINTIN: ¡Guau, guau!
+
+
+==== room=6 npc=0 str=1 textAddr=0x1c33ee ptrFieldAddr=0x1c33d2 ====
+TINTIN: Oh, <NAME>.
+La comida de ayer
+estaba buenísima.
+
+
+==== room=6 npc=0 str=2 textAddr=0x1c3422 ptrFieldAddr=0x1c33d4 ====
+TINTIN: ¿Huh? ¿Comprendes
+lo que digo? Hmm. Ya veo.
+Has visto la extraña
+adivina, ¿no? No te
+preocupes, volverás a tu
+forma natural. ¡Te ayudaré
+a encontrar a la adivina!
+
+
+==== room=6 npc=0 str=3 textAddr=0x1c34ce ptrFieldAddr=0x1c33d6 ====
+¡El perro Tintín se une al
+grupo! Pulsa Start y
+descubre su habilidad
+especial.
+
+
+==== room=6 npc=1 str=0 textAddr=0x1c3526 ptrFieldAddr=0x1c3520 ====
+GALLO: ¡Ki-ki-ri-ki!
+
+
+==== room=6 npc=1 str=1 textAddr=0x1c353c ptrFieldAddr=0x1c3522 ====
+GALLO: Eres humano,
+¿verdad? ¿Cómo es que
+puedes entenderme?
+
+
+==== room=6 npc=1 str=2 textAddr=0x1c357a ptrFieldAddr=0x1c3524 ====
+GALLO: El otro día vi por
+primera vez lo que los
+humanos llaman el Rey.
+Tenía orejas de burro.
+
+
+==== room=6 npc=2 str=0 textAddr=0x1c35e0 ptrFieldAddr=0x1c35da ====
+GALLO: ¡Ki-ki-ri-ki!
+
+
+==== room=6 npc=2 str=1 textAddr=0x1c35f6 ptrFieldAddr=0x1c35dc ====
+GALLO: Dicen que hay un
+pueblo de animales en la
+Costa Anémona.
+Me gustaría ir.
+
+
+==== room=6 npc=2 str=2 textAddr=0x1c3648 ptrFieldAddr=0x1c35de ====
+GALLO: Dicen que se ha
+fugado alguien del pueblo.
+¡Los humanos son tan
+atrevidos! ¿Qué significa
+fugarse?
+
+
+
+==== room=6 npc=3 str=0 textAddr=0x1c36ba ptrFieldAddr=0x1c36b4 ====
+GALLO: Ki, Ki, Ki ....
+Ki-ki-ri-ki!
+
+
+==== room=6 npc=3 str=1 textAddr=0x1c36e0 ptrFieldAddr=0x1c36b6 ====
+GALLO: Las liebres son muy
+precavidas. No se fían de
+los humanos. Si tuvieras
+un animal que te
+comprendiera, puede que
+tuvieras alguna posibilidad.
+
+
+==== room=6 npc=3 str=2 textAddr=0x1c3776 ptrFieldAddr=0x1c36b8 ====
+GALLO: Parece ser que está
+nevando mucho en Iris ...
+Me pregunto si están bien.
+Las hojas de sus rábanos
+son tan sabrosas. Son mi
+comida favorita.
+
+
+==== room=6 npc=4 str=0 textAddr=0x1c3810 ptrFieldAddr=0x1c380a ====
+VACA: Muu ... muu ...
+
+
+==== room=6 npc=4 str=1 textAddr=0x1c3828 ptrFieldAddr=0x1c380c ====
+VACA: Me gustan las flores.
+Aquí puedo relajarme.
+
+
+==== room=6 npc=4 str=2 textAddr=0x1c385c ptrFieldAddr=0x1c380e ====
+VACA: Hay una flor extraña
+en el jardín de delante de
+la iglesia. No es el
+color, ni la forma, es otra
+cosa lo que es diferente.
+Mira con atención.
+
+
+==== room=7 npc=0 str=0 textAddr=0x1c3904 ptrFieldAddr=0x1c38fe ====
+LOLA: La adivina de la
+plaza es muy buena, pero
+hoy no está aquí.
+
+
+==== room=7 npc=0 str=1 textAddr=0x1c3948 ptrFieldAddr=0x1c3900 ====
+LOLA: La casa de la adivina
+está abierta hoy. ¿Por qué
+no la visitas? 
+No sólo predice el
+futuro ..., también puede
+darte buenos consejos.
+
+
+==== room=7 npc=0 str=2 textAddr=0x1c39d4 ptrFieldAddr=0x1c3902 ====
+{F3}
+
+
+
+
+==== room=7 npc=1 str=0 textAddr=0x1c39e0 ptrFieldAddr=0x1c39da ====
+CHICO: Esta plaza es para
+niños. ¿Por qué no vienes
+a jugar con nosotros?
+
+
+==== room=7 npc=1 str=1 textAddr=0x1c3a2c ptrFieldAddr=0x1c39dc ====
+CHICO: Vi a la adivina
+hablando con una flor
+blanca. ¡En serio!
+¡Es verdad!
+
+
+==== room=7 npc=1 str=2 textAddr=0x1c3a7a ptrFieldAddr=0x1c39de ====
+{F3}
+
+
+
+
+==== room=7 npc=2 str=0 textAddr=0x1c3a84 ptrFieldAddr=0x1c3a80 ====
+PEPE: ¡Guau! Esa adivina
+es excelente. ¡Es verdad
+que puede predecirte
+el futuro!
+
+
+==== room=7 npc=2 str=1 textAddr=0x1c3ad8 ptrFieldAddr=0x1c3a82 ====
+{F3}
+
+
+
+
+==== room=7 npc=3 str=0 textAddr=0x1c3ae0 ptrFieldAddr=0x1c3ade ====
+".........................."
+
+
+
+
+==== room=7 npc=4 str=0 textAddr=0x1c3b06 ptrFieldAddr=0x1c3b00 ====
+ADIVINA: Déjame
+ver tu futuro.  No.  Es
+gratis.
+
+
+==== room=7 npc=4 str=1 textAddr=0x1c3b38 ptrFieldAddr=0x1c3b02 ====
+ADIVINA: Tú eres el
+que va a cambiar
+el mundo para bien o
+para mal.
+Pronto experimentarás un
+cambio.  Algo que te
+permitirá ver cosas que
+antes no podías
+ver.
+
+
+==== room=7 npc=4 str=2 textAddr=0x1c3bd8 ptrFieldAddr=0x1c3b04 ====
+ADIVINA: Debes
+controlar tu futuro.
+A pesar de la dificultad,
+no debes abandonar.
+
+
+==== room=7 npc=5 str=0 textAddr=0x1c3c32 ptrFieldAddr=0x1c3c2c ====
+Flor:"..................."
+
+
+
+
+==== room=7 npc=5 str=1 textAddr=0x1c3c50 ptrFieldAddr=0x1c3c2e ====
+FLOR: .................
+..Oh, tú sí que me
+entiendes, como la adivina.
+Los humanos han llegado
+muy lejos. Si puedes
+hablar conmigo, puedes
+hablar con los
+otros animales.
+Acabo de recordar que
+la adivina dijo que
+se iba a Iris.
+
+
+==== room=7 npc=5 str=2 textAddr=0x1c3d34 ptrFieldAddr=0x1c3c30 ====
+FLOR: Ya veo que
+habéis organizado una buena
+fiesta. Esto está bien.
+
+
+==== room=8 npc=0 str=0 textAddr=0x1c3d8c ptrFieldAddr=0x1c3d84 ====
+GUARDA: ¿Qué quieres?
+No puedes entrar sin el
+permiso del Rey.
+
+
+==== room=8 npc=0 str=1 textAddr=0x1c3dcc ptrFieldAddr=0x1c3d86 ====
+GUARDA: Tú debes ser
+<NAME>. El Rey me ha
+dicho que te deje pasar.
+
+
+==== room=8 npc=0 str=2 textAddr=0x1c3e0c ptrFieldAddr=0x1c3d88 ====
+{F3}
+
+
+
+
+==== room=8 npc=0 str=3 textAddr=0x1c3e12 ptrFieldAddr=0x1c3d8a ====
+GUARDA: Entonces, tú eres
+<NAME>, ¿eh? Entrénate
+mucho.
+
+
+==== room=8 npc=1 str=0 textAddr=0x1c3e4c ptrFieldAddr=0x1c3e46 ====
+PACO: Oye, <NAME>. ¿Has
+estado en la plaza al
+oeste de Soleil?
+<YESNO>
+
+
+==== room=8 npc=1 str=1 textAddr=0x1c3e8a ptrFieldAddr=0x1c3e48 ====
+PACO: ¡Vaya gallina! Si
+sigues perdiendo el tiempo
+por aquí ¡nunca te harás
+un héroe!
+
+
+==== room=8 npc=1 str=2 textAddr=0x1c3ee2 ptrFieldAddr=0x1c3e4a ====
+PACO: ¡Eso es! Ahora somos
+guerreros. No hay tiempo
+de jugar, ¿entendido?
+
+
+==== room=8 npc=2 str=0 textAddr=0x1c3f40 ptrFieldAddr=0x1c3f2e ====
+LUCAS: Soy el instructor.
+Conoces el propósito de este
+campo de entrenamiento,
+¿no?
+<YESNO>
+
+
+==== room=8 npc=2 str=1 textAddr=0x1c3f98 ptrFieldAddr=0x1c3f30 ====
+LUCAS: Entonces hazlo
+lo mejor que puedas.
+
+
+==== room=8 npc=2 str=2 textAddr=0x1c3fc4 ptrFieldAddr=0x1c3f32 ====
+LUCAS: Entonces te lo
+explicaré. Tu meta es acabar
+los tres circuitos. Al final
+de cada uno hay un cofre
+del tesoro que contiene
+bronce, plata u oro.
+Debes conseguir los tres.
+Lee las señales y escoge
+el circuito adecuado.
+
+
+==== room=8 npc=2 str=3 textAddr=0x1c40a4 ptrFieldAddr=0x1c3f34 ====
+{E0} H
+LUCAS: Sé que salvaste
+a mi madre, que vive en
+el Valle de las Dalias.
+Muchísimas gracias.
+Pensé que eras sólo un
+muchacho, pero no cabe
+duda de que tienes
+mucho coraje.
+
+
+==== room=8 npc=2 str=4 textAddr=0x1c4154 ptrFieldAddr=0x1c3f36 ====
+LUCAS: Has aprendido lo
+bastante como para terminar
+el circuito intermedio.
+Ten paciencia.
+
+
+==== room=8 npc=2 str=5 textAddr=0x1c41b0 ptrFieldAddr=0x1c3f38 ====
+{F3}
+
+
+
+
+==== room=8 npc=2 str=6 textAddr=0x1c41b6 ptrFieldAddr=0x1c3f3a ====
+LUCAS: Has aprendido lo
+bastante como para ganarte
+cualquier medalla. Hazlo
+lo mejor que puedas.
+
+
+==== room=8 npc=2 str=7 textAddr=0x1c4218 ptrFieldAddr=0x1c3f3c ====
+LUCAS: Creo que no te
+queda nada por aprender
+aquí. Ahora puedes ir al
+castillo. Dale las
+medallas al Rey y te
+recompensará con la Espada
+Sacra, el símbolo del
+auténtico héroe.
+
+
+==== room=8 npc=2 str=8 textAddr=0x1c42ca ptrFieldAddr=0x1c3f3e ====
+LUCAS: ¡Veo que tienes la
+Espada Sacra! Debes ser uno
+de los héroes.
+
+
+==== room=8 npc=3 str=0 textAddr=0x1c4318 ptrFieldAddr=0x1c4310 ====
+APRENDIZ: Debes ser nuevo
+aquí. Deja que te dé algunos
+consejos sobre este lugar.
+Debes aprender a hacer el
+salto de longitud pero aquí
+no puedes hacerlo. Parece
+que sólo podemos hacer el
+circuito de principiantes
+aquí. ¡Tomémonoslo con
+calma, amigo!
+
+
+==== room=8 npc=3 str=1 textAddr=0x1c4414 ptrFieldAddr=0x1c4312 ====
+APRENDIZ: ¿Ya tienes la
+medalla de bronce? Llevo 3
+años intentando conseguirla.
+
+
+==== room=8 npc=3 str=2 textAddr=0x1c4466 ptrFieldAddr=0x1c4314 ====
+{F3}
+
+
+
+
+==== room=8 npc=3 str=3 textAddr=0x1c446c ptrFieldAddr=0x1c4316 ====
+APRENDIZ: Ahora que tienes
+la medalla de bronce no te
+queda nada por hacer aquí.
+
+
+==== room=8 npc=4 str=0 textAddr=0x1c44c0 ptrFieldAddr=0x1c44be ====
+¡<NAME> recoge la
+medalla de bronce!
+
+
+==== room=9 npc=0 str=0 textAddr=0x1c44f8 ptrFieldAddr=0x1c44e4 ====
+LANZADOR DE ESPADAS: Soy un
+experto en lanzar espadas.
+¡Tienes mucha suerte,
+muchacho! Por sólo 20
+malines te enseñaré
+el arte de lanzar espadas.
+¿Qué dices?
+<YESNO>
+
+
+==== room=9 npc=0 str=1 textAddr=0x1c459a ptrFieldAddr=0x1c44e6 ====
+{E0} I
+LANZADOR DE ESPADAS:
+¡Abra-cadabra!
+
+
+==== room=9 npc=0 str=2 textAddr=0x1c45c4 ptrFieldAddr=0x1c44e8 ====
+LANZADOR DE ESPADAS:
+Tú debes ser de los que se
+mueren sin saber lo que
+es la diversión.
+
+
+==== room=9 npc=0 str=3 textAddr=0x1c461e ptrFieldAddr=0x1c44ea ====
+LANZADOR DE ESPADAS:
+Soy un experto en lanzar
+espadas. ¡Tienes mucha
+suerte, muchacho!
+Por sólo 20 malines te
+enseñaré el arte de lanzar
+espadas ...
+Pero parece que no tienes
+bastante dinero. Vuelve
+cuando tengas más.
+
+
+==== room=9 npc=0 str=4 textAddr=0x1c46fa ptrFieldAddr=0x1c44ec ====
+LANZADOR DE ESPADAS: Para
+lanzar tu espada debes
+concentrarte con todas tus
+fuerzas.
+
+
+==== room=9 npc=0 str=5 textAddr=0x1c4750 ptrFieldAddr=0x1c44ee ====
+NARRACION: <NAME>
+aprendió a lanzar su espada.
+Mantén pulsado el botón
+A para concentrarte con
+todas tus fuerzas,
+y luego suéltalo. Ahora
+puedes lanzar tu espada.
+
+
+==== room=9 npc=0 str=6 textAddr=0x1c47f0 ptrFieldAddr=0x1c44f0 ====
+{F3}
+
+
+
+
+==== room=9 npc=0 str=7 textAddr=0x1c47f6 ptrFieldAddr=0x1c44f2 ====
+LANZADOR DE ESPADAS: ¡Hacía
+mucho que no te veía, chico!
+¿Estás usando la habilidad
+que te enseñé?
+<YESNO>
+
+
+==== room=9 npc=0 str=8 textAddr=0x1c485c ptrFieldAddr=0x1c44f4 ====
+LANZADOR DE ESPADAS: Eso
+es bueno. Eres la clase de
+personas que me animan
+a continuar.
+
+
+==== room=9 npc=0 str=9 textAddr=0x1c48b6 ptrFieldAddr=0x1c44f6 ====
+LANZADOR DE ESPADAS: ¿¡COMO!?
+¡No vuelvas a usar esa
+habilidad! ¿Comprendido?
+
+
+==== room=10 npc=0 str=0 textAddr=0x1c4916 ptrFieldAddr=0x1c490a ====
+AMA DE CASA: ¡Ten cuidado!
+Es fácil también perder la
+vida en el campo de
+entrenamiento.
+Pero además de cofres del
+tesoro hay monedas
+escondidas bajo el césped.
+
+
+==== room=10 npc=0 str=1 textAddr=0x1c49b8 ptrFieldAddr=0x1c490c ====
+AMA DE CASA: ¡He oído que
+ganaste la medalla de
+bronce! Para ser tan
+joven, ¡eres
+muy bueno!
+
+
+==== room=10 npc=0 str=2 textAddr=0x1c4a16 ptrFieldAddr=0x1c490e ====
+{F3}
+
+
+
+
+==== room=10 npc=0 str=3 textAddr=0x1c4a1c ptrFieldAddr=0x1c4910 ====
+AMA DE CASA: Fui a ver
+la casa que está en venta y
+me sorprendió ver allí a mi
+marido. El entrenamiento
+era tan duro que huyó, así
+que le dejé algo de dinero.
+
+
+==== room=10 npc=0 str=4 textAddr=0x1c4abc ptrFieldAddr=0x1c4912 ====
+AMA DE CASA: Mientras estaba
+en la casa oí a alguien del
+castillo contar que su madre
+estaba en la misma casa.
+Parece que a mucha gente
+le da por ir ahí.
+
+
+==== room=10 npc=0 str=5 textAddr=0x1c4b58 ptrFieldAddr=0x1c4914 ====
+AMA DE CASA: Somos
+prácticamente recién
+casados y estamos tan
+contentos porque voy a
+tener un bebé pronto.
+
+
+==== room=10 npc=1 str=0 textAddr=0x1c4bc6 ptrFieldAddr=0x1c4bc4 ====
+MARIDO: El bebé nacerá
+pronto. Me pregunto si
+será niño o niña.
+
+
+==== room=11 npc=0 str=0 textAddr=0x1c4c14 ptrFieldAddr=0x1c4c0c ====
+ANCIANO: Mi hermana está en
+el Valle de las Dalias y mi
+sobrino en el campo de
+entrenamiento. Todos están
+en peligro. No puedo ir a
+casa porque no sé lanzar
+mi espada.
+
+
+
+==== room=11 npc=0 str=1 textAddr=0x1c4cbe ptrFieldAddr=0x1c4c0e ====
+ANCIANO: Has rescatado a mi
+hermana del Valle de las
+Dalias. Muchas gracias.
+Prometió esperar a
+su marido. Se ha ido a la
+batalla y ella se negaba a
+volver hasta que él
+regresara.
+
+
+==== room=11 npc=0 str=2 textAddr=0x1c4d74 ptrFieldAddr=0x1c4c10 ====
+{F3}
+
+
+
+
+==== room=11 npc=0 str=3 textAddr=0x1c4d7a ptrFieldAddr=0x1c4c12 ====
+ANCIANO: Quería convertir
+esto en una posada pero no
+tiene sentido porque la
+gente ahora prefiere
+recuperar la salud con
+manzanas. No puedes ganarte
+la vida como posadero pero
+me di cuenta tarde....
+
+
+==== room=11 npc=1 str=0 textAddr=0x1c4e44 ptrFieldAddr=0x1c4e42 ====
+CHICO: Mi familia está en
+misa. Yo me he
+quedado porque
+tengo un resfriado.
+
+
+==== room=12 npc=0 str=0 textAddr=0x1c4eac ptrFieldAddr=0x1c4e96 ====
+MUJER: El diseño del Valle
+de las Dalias es muy
+complicado. También hay
+monstruos. No es lugar
+para niños como tú,
+ni aunque tengan una espada.
+Mantente alejado de allí.
+
+
+==== room=12 npc=0 str=1 textAddr=0x1c4f58 ptrFieldAddr=0x1c4e98 ====
+MUJER: Es importante que
+te entrenes, pero ¿por qué
+no te tomas un descanso
+en el parque al oeste del
+pueblo?
+
+
+==== room=12 npc=0 str=2 textAddr=0x1c4fc8 ptrFieldAddr=0x1c4e9a ====
+{F3}
+
+
+
+
+==== room=12 npc=0 str=3 textAddr=0x1c4fce ptrFieldAddr=0x1c4e9c ====
+MUJER: Hace muchos meses
+que nieva en Iris.
+Es muy extraño.
+
+
+==== room=12 npc=0 str=4 textAddr=0x1c500c ptrFieldAddr=0x1c4e9e ====
+{E0} {95}
+MUJER: Dado que tienes la
+Espada Sacra, ¿querrías
+ser nuestro guardián?
+<YESNO>
+
+
+==== room=12 npc=0 str=5 textAddr=0x1c505c ptrFieldAddr=0x1c4ea0 ====
+{E0} {94}
+MUJER: Veamos si puedes
+estarte callado. Si hablas,
+fracasas, ¿de acuerdo?
+
+
+==== room=12 npc=0 str=6 textAddr=0x1c50ac ptrFieldAddr=0x1c4ea2 ====
+MUJER: Debes estar
+orgulloso de haberte
+convertido en uno de
+nuestros héroes.
+
+
+==== room=12 npc=0 str=7 textAddr=0x1c50fc ptrFieldAddr=0x1c4ea4 ====
+MUJER: ¡Te pillé!, ¡hablaste!
+¿Qué clase de héroe eres
+si no tienes paciencia?
+
+
+==== room=12 npc=0 str=8 textAddr=0x1c514c ptrFieldAddr=0x1c4ea6 ====
+MUJER: Soleil es un pueblo
+muy hermoso con mucho verde.
+¿Sabes por qué?
+<YESNO>
+
+
+==== room=12 npc=0 str=9 textAddr=0x1c5198 ptrFieldAddr=0x1c4ea8 ====
+MUJER: Supongo que es
+obvio si vives en
+este pueblo.
+
+
+==== room=12 npc=0 str=10 textAddr=0x1c51ce ptrFieldAddr=0x1c4eaa ====
+MUJER: Sólo el castillo
+cuenta con un sistema de
+alcantarillado, ninguna de
+las casas normales lo
+tiene ... ¿Me sigues?
+
+
+==== room=12 npc=1 str=0 textAddr=0x1c524a ptrFieldAddr=0x1c5248 ====
+LOLA: Creo que va a haber
+un parque en el Bosque
+Rafresa. No hay nada en el
+bosque, por eso esperaba
+poder hacer algo allí.
+
+
+==== room=13 npc=0 str=0 textAddr=0x1c52de ptrFieldAddr=0x1c52cc ====
+LIEBRE: ...............
+
+
+
+
+==== room=13 npc=0 str=1 textAddr=0x1c52fa ptrFieldAddr=0x1c52ce ====
+LIEBRE: ¿Comprendes lo
+que digo? Qué raro.
+
+
+==== room=13 npc=0 str=2 textAddr=0x1c5326 ptrFieldAddr=0x1c52d0 ====
+LIEBRE: Si quieres avanzar
+más necesitarás mi ayuda.
+Pero no te ayudaré porque
+los humanos no son seres
+dignos de confianza.
+
+
+==== room=13 npc=0 str=3 textAddr=0x1c53a4 ptrFieldAddr=0x1c52d2 ====
+LIEBRE: ¿Ah, sí? Lo dices
+sólo porque él es tu
+Maestro.
+
+
+==== room=13 npc=0 str=4 textAddr=0x1c53de ptrFieldAddr=0x1c52d4 ====
+LIEBRE: Vale, vale.
+Te ayudaré.
+
+
+==== room=13 npc=0 str=5 textAddr=0x1c5400 ptrFieldAddr=0x1c52d6 ====
+LIEBRE: ¡Ahora, salta!
+No lo conseguirás a menos
+que lo intentes tú solo.
+
+
+==== room=13 npc=0 str=6 textAddr=0x1c544c ptrFieldAddr=0x1c52d8 ====
+¡<NAME> reunió coraje
+para saltar!
+
+
+==== room=13 npc=0 str=7 textAddr=0x1c546c ptrFieldAddr=0x1c52da ====
+LIEBRE: El que quiere,
+puede ...
+¿No es eso lo que decís
+los humanos?
+
+
+==== room=13 npc=0 str=8 textAddr=0x1c54b4 ptrFieldAddr=0x1c52dc ====
+LIEBRE: Tenemos el
+presentimiento de que esta
+tierra está
+viva.
+
+
+==== room=13 npc=1 str=0 textAddr=0x1c54fa ptrFieldAddr=0x1c54f6 ====
+TINTIN: No, él no. Es muy
+amable y me fío de él.
+Ayúdale por favor.
+
+
+==== room=13 npc=1 str=1 textAddr=0x1c5540 ptrFieldAddr=0x1c54f8 ====
+TINTIN: Los humanos son
+también animales. Sólo nos
+separa el idioma. Es justo
+decir que un humano que
+habla nuestra lengua es
+nuestro amigo, ¿no?
+
+
+==== room=14 npc=0 str=0 textAddr=0x1c55e2 ptrFieldAddr=0x1c55dc ====
+OSO: ¡Abran paso, abran
+paso! ¡Abran paso a Don Oso!
+
+
+==== room=14 npc=0 str=1 textAddr=0x1c5618 ptrFieldAddr=0x1c55de ====
+OSO: Dicen que venciste al
+pulpo. Teniendo en cuenta
+que sólo eres un  muchacho,
+eres bastante bueno.
+Si quieres correr tan rápido
+como yo, deberías ir al
+pueblo de Iris.
+
+
+==== room=14 npc=0 str=2 textAddr=0x1c56c4 ptrFieldAddr=0x1c55e0 ====
+OSO: ¡Oye! He oído que
+ganaste la carrera contra
+el guepardo también. Puede
+que seas el mejor ...
+...después de mí por
+supuesto.
+
+
+==== room=14 npc=1 str=0 textAddr=0x1c574c ptrFieldAddr=0x1c5746 ====
+PANTERA: Fue idea de Don
+Mono el usar esa roca
+inmensa para bloquear a los
+monstruos. Pero fue mi padre
+el que la puso ahí.
+Sólo mi padre es lo bastante
+fuerte como para moverla.
+
+
+==== room=14 npc=1 str=1 textAddr=0x1c5800 ptrFieldAddr=0x1c5748 ====
+PANTERA: Mi padre te enseñó
+a levantar cosas, ¿a que sí?
+Me preguntaba porqué,
+pero ahora lo sé.
+Después de todo eres el que
+venció al pulpo.
+
+
+==== room=14 npc=1 str=2 textAddr=0x1c5890 ptrFieldAddr=0x1c574a ====
+PANTERA: Ese elefante ... Si
+entrenara más podría ser
+más como papá.
+
+
+==== room=14 npc=2 str=0 textAddr=0x1c58dc ptrFieldAddr=0x1c58d6 ====
+ELEFANTE: Tenemos una puerta
+automática.  Algunos tienen
+que pisarla muchas veces
+para que funcione.
+
+
+==== room=14 npc=2 str=1 textAddr=0x1c5942 ptrFieldAddr=0x1c58d8 ====
+ELEFANTE: Lili está en
+Iris, un pueblo más allá de
+Margarita. En circunstancias
+normales es difícil
+llegar ahí.
+
+
+==== room=14 npc=2 str=2 textAddr=0x1c59b4 ptrFieldAddr=0x1c58da ====
+ELEFANTE: Esa pantera ...
+¿por qué no hace nada
+aparte de relajarse?
+
+
+==== room=14 npc=3 str=0 textAddr=0x1c59fc ptrFieldAddr=0x1c59fa ====
+Casa Tomás, animales de
+alquilar. Si estás buscando
+un compañero, ¡entra!
+
+
+==== room=15 npc=0 str=0 textAddr=0x1c5a50 ptrFieldAddr=0x1c5a4a ====
+ZORRITA: Oí a alguien
+pidiendo ayuda al
+otro lado de esa
+inmensa roca.
+
+
+==== room=15 npc=0 str=1 textAddr=0x1c5a98 ptrFieldAddr=0x1c5a4c ====
+ZORRITA: ¡He oído que has
+derrotado al gran malo!
+Sabía que lo harías.
+
+
+==== room=15 npc=0 str=2 textAddr=0x1c5ae0 ptrFieldAddr=0x1c5a4e ====
+ZORRITA: ¡Vi a una
+apasionada pareja de humanos
+fuera del pueblo! Creo que
+tienen motivos para estar
+allí, ¡quizá estén planeando
+fugarse juntos!
+
+
+==== room=16 npc=0 str=0 textAddr=0x1c5b7e ptrFieldAddr=0x1c5b78 ====
+MONO: He oído que hay un
+animal al otro lado de esa
+inmensa roca, pero no
+podemos hacer nada.
+Puede que lo hiramos
+si la movemos.
+¡No puedo permitir eso!
+
+
+==== room=16 npc=0 str=1 textAddr=0x1c5c1a ptrFieldAddr=0x1c5b7a ====
+MONO: ¡Eso fue muy valiente
+por tu parte! Si no hubieras
+derrotado al pulpo, este
+pueblo habría pasado
+a la historia.
+
+
+==== room=16 npc=0 str=2 textAddr=0x1c5c92 ptrFieldAddr=0x1c5b7c ====
+MONO: Mi antepasado era un
+mono muy valiente. Lo
+respeto mucho. Si no fuera
+por él, hoy no sería el jefe
+del pueblo. Por eso es por
+lo que debo conseguirlo.
+
+
+==== room=16 npc=1 str=0 textAddr=0x1c5d36 ptrFieldAddr=0x1c5d30 ====
+PAULA: Está saliendo lava
+ardiendo de Margarita. Quema
+demasiado para pasar.
+
+
+==== room=16 npc=1 str=1 textAddr=0x1c5d84 ptrFieldAddr=0x1c5d32 ====
+PAULA: No hagas caso a
+mi marido. Lo dice por
+decir, pero en verdad
+te está muy agradecido.
+
+
+==== room=16 npc=1 str=2 textAddr=0x1c5de2 ptrFieldAddr=0x1c5d34 ====
+PAULA: Ah, eres el humano
+del otro día. Muchas gracias
+por vencer al pulpo.
+
+
+==== room=17 npc=0 str=0 textAddr=0x1c5e46 ptrFieldAddr=0x1c5e32 ====
+PAPA ELEFANTE: Puedo
+levantar objetos con mi
+trompa. ¿Quieres saber cómo
+se hace?
+<YESNO>
+
+
+==== room=17 npc=0 str=1 textAddr=0x1c5e9c ptrFieldAddr=0x1c5e34 ====
+{E0} c
+PAPA ELEFANTE: Está bien.
+Levanta esa tabla.
+
+
+==== room=17 npc=0 str=2 textAddr=0x1c5ece ptrFieldAddr=0x1c5e36 ====
+PAPA ELEFANTE: No puedes
+ser un gran hombre si
+dudas sobre algo como esto.
+
+
+==== room=17 npc=0 str=3 textAddr=0x1c5f1a ptrFieldAddr=0x1c5e38 ====
+{E0} e
+PAPA ELEFANTE: Sé positivo.
+Simplemente piensa que
+puedes hacerlo.
+
+
+==== room=17 npc=0 str=4 textAddr=0x1c5f62 ptrFieldAddr=0x1c5e3a ====
+NARRACION: ¡<NAME>
+ha aprendido a levantar
+cosas! Pulsa el botón A
+delante del objeto que
+quieres levantar y
+púlsalo de nuevo para
+lanzarlo. Pulsa A mientras
+saltas para lanzarlo más
+lejos.
+
+
+==== room=17 npc=0 str=5 textAddr=0x1c601c ptrFieldAddr=0x1c5e3c ====
+PAPA ELEFANTE: Es fácil
+si piensas que puedes
+hacerlo. Es como todo en
+la vida.
+
+
+==== room=17 npc=0 str=6 textAddr=0x1c606e ptrFieldAddr=0x1c5e3e ====
+PAPA ELEFANTE: No te dejaré
+irte hasta que sepas
+hacerlo.
+
+
+==== room=17 npc=0 str=7 textAddr=0x1c60aa ptrFieldAddr=0x1c5e40 ====
+PAPA ELEFANTE: ¡Hacía mucho
+que no te veía! ¿Estás bien?
+<YESNO>
+
+
+==== room=17 npc=0 str=8 textAddr=0x1c60e6 ptrFieldAddr=0x1c5e42 ====
+PAPA ELEFANTE: Eso son
+buenas noticias. Sé que eres
+un gran chico. Sigue así.
+
+
+==== room=17 npc=0 str=9 textAddr=0x1c6136 ptrFieldAddr=0x1c5e44 ====
+PAPA ELEFANTE: Eso no está
+bien. Deberías descansar de
+10 a 20 minutos cada hora.
+
+
+==== room=18 npc=0 str=0 textAddr=0x1c6196 ptrFieldAddr=0x1c6192 ====
+{E0} i
+TOMAS: Puedes alquilar a
+tus compañeros aquí.
+Te presentaré a
+algunos.
+
+
+==== room=18 npc=0 str=1 textAddr=0x1c61e2 ptrFieldAddr=0x1c6194 ====
+TOMAS: No puedes tener
+dos animales iguales.
+Vuelve si pierdes
+alguno.
+
+
+==== room=18 npc=1 str=0 textAddr=0x1c6232 ptrFieldAddr=0x1c622a ====
+MISI: Puedo salvarte
+cuando estés en peligro...
+pero sólo puedo hacerlo una
+vez. ¿Quieres alquilarme
+por 50 malines?
+<YESNO>
+
+
+==== room=18 npc=1 str=1 textAddr=0x1c62aa ptrFieldAddr=0x1c622c ====
+{E0}0{FA}
+MISI: Me alegro mucho.
+Volveré a casa de Tomás
+cuando cumpla con mi labor,
+pero no te preocupes.
+
+
+==== room=18 npc=1 str=2 textAddr=0x1c6310 ptrFieldAddr=0x1c622e ====
+MISI: Miau. Qué pena.
+Te arrepentirás cuando
+tengas problemas.
+
+
+==== room=18 npc=1 str=3 textAddr=0x1c6350 ptrFieldAddr=0x1c6230 ====
+MISI: Puedo salvarte
+cuando estés en peligro...
+pero sólo puedo hacerlo una
+vez. Sólo cuesta 50 malines
+pero parece que no tienes
+suficiente dinero.
+
+
+==== room=18 npc=2 str=0 textAddr=0x1c63ee ptrFieldAddr=0x1c63e6 ====
+HUEVO: Soy un huevo-bomba.
+Puedo explotar para causar
+daños a enemigos cercanos.
+Sólo funciono una vez.
+¿Quieres alquilarme
+por 50 malines?
+<YESNO>
+
+
+==== room=18 npc=2 str=1 textAddr=0x1c647e ptrFieldAddr=0x1c63e8 ====
+{E0}0{FB}
+HUEVO: Vale, trato hecho.
+Sabes aprovechar
+las gangas.
+
+
+==== room=18 npc=2 str=2 textAddr=0x1c64ba ptrFieldAddr=0x1c63ea ====
+HUEVO: Vale, lo comprendo.
+¿La próxima vez, quizá?
+
+
+==== room=18 npc=2 str=3 textAddr=0x1c64ee ptrFieldAddr=0x1c63ec ====
+HUEVO: Soy un huevo-bomba.
+Puedo explotar para causar
+daños a enemigos cercanos.
+Sólo funciono una vez,
+pero veo que no tienes
+suficiente dinero. Vuelve
+más tarde cuando
+tengas 50 malines.
+
+
+==== room=18 npc=3 str=0 textAddr=0x1c65b4 ptrFieldAddr=0x1c65ac ====
+MURCIELAGO: Soy un
+murciélago. Puedo protegerte
+de fuertes ataques enemigos
+por un cierto tiempo. Soy
+tuyo por 100 malines.
+¿Qué dices?
+<YESNO>
+
+
+==== room=18 npc=3 str=1 textAddr=0x1c6640 ptrFieldAddr=0x1c65ae ====
+{E0}0{FC}
+MURCIELAGO: ¡Es un placer
+hacer negocios contigo!
+
+
+==== room=18 npc=3 str=2 textAddr=0x1c6678 ptrFieldAddr=0x1c65b0 ====
+MURCIELAGO: Como quieras.
+Avísame cuando cambies
+de opinión.
+
+
+==== room=18 npc=3 str=3 textAddr=0x1c66b6 ptrFieldAddr=0x1c65b2 ====
+MURCIELAGO: Soy un
+murciélago. Puedo protegerte
+de fuertes ataques enemigos
+por cierto tiempo. Soy tuyo
+por 100 malines pero veo
+que no tienes suficiente
+dinero. Lo siento, no puedo
+hacer negocios contigo.
+
+
+==== room=19 npc=0 str=0 textAddr=0x1c6790 ptrFieldAddr=0x1c6788 ====
+FLOR: Oí una voz triste
+procedente del otro lado
+de esa inmensa roca. Debe
+haber un animal ahí.
+Pareces fuerte, ¿por qué
+no mueves la roca y
+echas un vistazo?
+
+
+==== room=19 npc=0 str=1 textAddr=0x1c6830 ptrFieldAddr=0x1c678a ====
+FLOR: ¡Venga! ¡Puedes
+hacerlo! Hace mucho
+viento aquí, procura
+que no te lleve.
+
+
+==== room=19 npc=0 str=2 textAddr=0x1c6882 ptrFieldAddr=0x1c678c ====
+FLOR: ¿Qué? ¡Venciste al
+pulpo! Eres muy valiente
+para ser tan joven.
+
+
+==== room=19 npc=0 str=3 textAddr=0x1c68ca ptrFieldAddr=0x1c678e ====
+FLOR: Gracias a ti
+estamos un poco más
+seguros que antes.
+Estamos en deuda contigo.
+
+
+==== room=20 npc=0 str=0 textAddr=0x1c6928 ptrFieldAddr=0x1c6924 ====
+PULPO: ¿Quién eres tú,
+chico? Si has venido a por
+el pingüino, ¡no puedes
+llevártelo! Toma, ¡mira
+como ataca!
+
+
+==== room=20 npc=0 str=1 textAddr=0x1c6998 ptrFieldAddr=0x1c6926 ====
+{E0} g
+PULPO: ¡Serás, serás inútil,
+pingüino ...!
+
+
+==== room=20 npc=1 str=0 textAddr=0x1c69cc ptrFieldAddr=0x1c69c8 ====
+PIG{62}I: Gracias a ti soy
+libre. Como ves soy un
+pingüino. Solía vivir en
+la helada isla de Fresa,
+pero un terrible monstruo
+la atacó. Me capturaron
+para trabajar como
+esclavo pero ahora he
+decidido ...
+Déjame ir contigo a
+desafiar al monstruo,
+¿vale? Voy a ir aunque
+digas que no.
+
+
+==== room=20 npc=1 str=1 textAddr=0x1c6ae6 ptrFieldAddr=0x1c69ca ====
+NARRACION: ¡Pigüi el
+pingüino se une al grupo!
+Según los animales que
+tengas, pulsa el botón C
+para obtener protección.
+
+
+==== room=21 npc=0 str=0 textAddr=0x1c6b68 ptrFieldAddr=0x1c6b66 ====
+NARRACION: Parece un pájaro,
+pero está muy quemado.
+Sólo se ven cenizas.
+
+
+==== room=21 npc=1 str=0 textAddr=0x1c6bb6 ptrFieldAddr=0x1c6bb2 ====
+PATOSO: No te dejaré
+pasar. Pasa si te
+atreves.
+
+
+==== room=21 npc=1 str=1 textAddr=0x1c6be8 ptrFieldAddr=0x1c6bb4 ====
+PATOSO: ¡Boing!
+
+
+==== room=21 npc=2 str=0 textAddr=0x1c6bfe ptrFieldAddr=0x1c6bfa ====
+FELI: ¡Por fin estoy libre!
+Pensé que estaba acabada
+cuando me tragó ese
+pomposo. Muchas gracias.
+Da gusto estar viva.
+
+
+==== room=21 npc=2 str=1 textAddr=0x1c6c76 ptrFieldAddr=0x1c6bfc ====
+NARRACION: Feli, la ardilla
+voladora se une al grupo.
+
+
+==== room=22 npc=0 str=0 textAddr=0x1c6b68 ptrFieldAddr=0x1c6b66 ====
+NARRACION: Parece un pájaro,
+pero está muy quemado.
+Sólo se ven cenizas.
+
+
+==== room=22 npc=1 str=0 textAddr=0x1c6bb6 ptrFieldAddr=0x1c6bb2 ====
+PATOSO: No te dejaré
+pasar. Pasa si te
+atreves.
+
+
+==== room=22 npc=1 str=1 textAddr=0x1c6be8 ptrFieldAddr=0x1c6bb4 ====
+PATOSO: ¡Boing!
+
+
+==== room=22 npc=2 str=0 textAddr=0x1c6bfe ptrFieldAddr=0x1c6bfa ====
+FELI: ¡Por fin estoy libre!
+Pensé que estaba acabada
+cuando me tragó ese
+pomposo. Muchas gracias.
+Da gusto estar viva.
+
+
+==== room=22 npc=2 str=1 textAddr=0x1c6c76 ptrFieldAddr=0x1c6bfc ====
+NARRACION: Feli, la ardilla
+voladora se une al grupo.
+
+
+==== room=23 npc=0 str=0 textAddr=0x1c6cb8 ptrFieldAddr=0x1c6cb6 ====
+{F3}
+
+
+
+
+==== room=23 npc=1 str=0 textAddr=0x1c6cc2 ptrFieldAddr=0x1c6cbe ====
+CIRO: No me gustan los
+héroes porque normalmente
+son unos engreídos. Me dan
+ganas de ladrarles, pero
+estoy siendo paciente por mi
+dueño, lo está pasando bien.
+
+
+==== room=23 npc=1 str=1 textAddr=0x1c6d62 ptrFieldAddr=0x1c6cc0 ====
+CIRO: Si quieres saber del
+héroe, Luis, se fué a la
+isla de Fresa.
+
+
+==== room=23 npc=2 str=0 textAddr=0x1c6da8 ptrFieldAddr=0x1c6da6 ====
+{F3}
+
+
+
+
+==== room=23 npc=3 str=0 textAddr=0x1c6db0 ptrFieldAddr=0x1c6dae ====
+{F3}
+
+
+
+
+==== room=24 npc=0 str=0 textAddr=0x1c6cb8 ptrFieldAddr=0x1c6cb6 ====
+{F3}
+
+
+
+
+==== room=24 npc=1 str=0 textAddr=0x1c6cc2 ptrFieldAddr=0x1c6cbe ====
+CIRO: No me gustan los
+héroes porque normalmente
+son unos engreídos. Me dan
+ganas de ladrarles, pero
+estoy siendo paciente por mi
+dueño, lo está pasando bien.
+
+
+==== room=24 npc=1 str=1 textAddr=0x1c6d62 ptrFieldAddr=0x1c6cc0 ====
+CIRO: Si quieres saber del
+héroe, Luis, se fué a la
+isla de Fresa.
+
+
+==== room=24 npc=2 str=0 textAddr=0x1c6da8 ptrFieldAddr=0x1c6da6 ====
+{F3}
+
+
+
+
+==== room=24 npc=3 str=0 textAddr=0x1c6db0 ptrFieldAddr=0x1c6dae ====
+{F3}
+
+
+
+
+==== room=25 npc=0 str=0 textAddr=0x1c6dc0 ptrFieldAddr=0x1c6dba ====
+ANCIANA: ¡Oh, gracias!
+La adivina estaba aquí hace
+un momento. Me dijo que
+me escondiera dentro de
+la chimenea porque venía
+el gran monstruo. También
+dijo que vendrías. Lo sabe
+todo, ¿verdad? La conocerás
+cuando vayas al parque.
+Se diría que es más que un
+ser humano normal.
+
+
+==== room=25 npc=0 str=1 textAddr=0x1c6ed4 ptrFieldAddr=0x1c6dbc ====
+ANCIANA: Muchísimas gracias.
+Dale recuerdos a la adivina
+del parque. Si alguna vez
+estás herido, ven por aquí.
+Siempre serás bienvenido.
+
+
+==== room=25 npc=0 str=2 textAddr=0x1c6f5e ptrFieldAddr=0x1c6dbe ====
+{F3}
+
+
+
+
+==== room=25 npc=1 str=0 textAddr=0x1c6f68 ptrFieldAddr=0x1c6f64 ====
+LOBO: La anciana no va a
+salir de la chimenea. ¡Tú
+ocuparás su lugar!
+¡Ja, ja, ja!
+
+
+==== room=25 npc=1 str=1 textAddr=0x1c6fbc ptrFieldAddr=0x1c6f66 ====
+LOBO: ¡No, no puede ser ...!
+Me ha vencido un humano - ¡y
+era un simple niño!
+
+
+==== room=26 npc=0 str=0 textAddr=0x1c7020 ptrFieldAddr=0x1c700e ====
+FLOR: ¡Oiga, señor! Tengo
+información que le será
+útil. Le costará, pero es
+barato, sólo 10 malines.
+¿Qué dice?
+<YESNO>
+
+
+==== room=26 npc=0 str=1 textAddr=0x1c7094 ptrFieldAddr=0x1c7010 ====
+{E0} n
+FLOR: ¡Para que veas!
+Había un adivina, la que
+comprende nuestro idioma,
+igual que tú. ¿Es que nos
+entienden todos los
+humanos hoy en día?
+
+
+==== room=26 npc=0 str=2 textAddr=0x1c7124 ptrFieldAddr=0x1c7012 ====
+FLOR: Ah, ya veo. Un
+tacaño, ¿eh? El mundo
+se está convirtiendo en un
+lugar cada día más difícil.
+
+
+==== room=26 npc=0 str=3 textAddr=0x1c7188 ptrFieldAddr=0x1c7014 ====
+FLOR: ¡Oiga, señor! Tengo
+información que le será
+útil. Le costará, pero es
+barato, sólo 10 malines.
+¿Cómo?, ¿que no tiene
+bastante? Yo sólo hablo
+con humanos que tienen
+bastante dinero para
+hacer negocios.
+
+
+==== room=26 npc=0 str=4 textAddr=0x1c7258 ptrFieldAddr=0x1c7016 ====
+FLOR: ¿Hum? ¿Que qué le pasó
+a la adivina? Claro que
+lo sé ... pero no puedo
+recordarlo. Si me da otros
+10 malines para refrescar mi
+memoria ...
+<YESNO>
+
+
+==== room=26 npc=0 str=5 textAddr=0x1c72ec ptrFieldAddr=0x1c7018 ====
+{E0} o
+FLOR: Gracias, señor.
+Dijo que iba a largarse.
+Después desapareció.
+Fue entonces cuando
+noté este agujero tan
+grande. Ni siquiera sé
+lo que pasó. ¿Se trata
+de un truco humano ...?
+Probablemente no, pero ...
+
+
+==== room=26 npc=0 str=6 textAddr=0x1c73c0 ptrFieldAddr=0x1c701a ====
+FLOR: Ah, ya veo. Un
+tacaño, ¿eh? El mundo
+se está convirtiendo en un
+lugar cada día más difícil.
+
+
+==== room=26 npc=0 str=7 textAddr=0x1c7424 ptrFieldAddr=0x1c701c ====
+FLOR: ¿Hum? ¿Que qué le pasó
+a la adivina? Claro que
+lo sé ...pero no puedo
+recordarlo. Vuelve cuando
+tengas otros 10 malines.
+
+
+==== room=26 npc=0 str=8 textAddr=0x1c74a4 ptrFieldAddr=0x1c701e ====
+FLOR: Lo siento, señor,
+pero no tengo más
+información. Vuelva
+en otro momento.
+
+
+==== room=27 npc=0 str=0 textAddr=0x1c7502 ptrFieldAddr=0x1c74fa ====
+PEDRO: ¿Sabías que hay
+monstruos en forma de
+tocones y oruga en
+el bosque?
+<YESNO>
+
+
+==== room=27 npc=0 str=1 textAddr=0x1c7550 ptrFieldAddr=0x1c74fc ====
+PEDRO: Dicen que el
+monstruo de Amapola
+los está creando con
+magia. Pero es demasiado
+fuerte para que ninguno
+de nosotros pueda
+detenerle.
+
+
+==== room=27 npc=0 str=2 textAddr=0x1c75dc ptrFieldAddr=0x1c74fe ====
+PEDRO: Los tocones y las
+orugas están rondando el
+bosque. Dicen que ésta
+no es su forma original.
+Creo que los han
+creado adrede.
+
+
+==== room=27 npc=0 str=3 textAddr=0x1c7660 ptrFieldAddr=0x1c7500 ====
+PEDRO: He oído que
+venciste a Carlos. Ya veo
+que tendrás un
+brillante futuro.
+
+
+==== room=27 npc=1 str=0 textAddr=0x1c76b2 ptrFieldAddr=0x1c76b0 ====
+SALVA: ¡Oye! Mi linda casita
+está casi terminada.
+
+
+==== room=27 npc=2 str=0 textAddr=0x1c76e8 ptrFieldAddr=0x1c76e6 ====
+ROSITA: ¡Oh, cariño! Me está
+haciendo una linda casita.
+
+
+==== room=28 npc=0 str=0 textAddr=0x1c7728 ptrFieldAddr=0x1c7726 ====
+ALITA: ¿Sabías que pasó algo
+extraño en la Torre de
+Babel? Los humanos ya no
+pueden comunicarse entre sí.
+¿Fue un castigo por algo que
+han hecho?
+
+
+==== room=28 npc=1 str=0 textAddr=0x1c77be ptrFieldAddr=0x1c77bc ====
+TINTIN: ¿Cómo? ¿Qué no
+pueden comunicarse?
+Igual que tú, <NAME>.
+Vamos a la Torre de
+Babel. Puede que
+averigüemos algo.
+
+
+==== room=29 npc=0 str=0 textAddr=0x1c784a ptrFieldAddr=0x1c7838 ====
+PAPA ARDILLA: ¿No eres uno
+de esos animales llamados
+humanos?
+<YESNO>
+
+
+==== room=29 npc=0 str=1 textAddr=0x1c788c ptrFieldAddr=0x1c783a ====
+PAPA ARDILLA: ¡Lárgate! No
+vamos a fiarnos de un
+humano, ¡de ninguna manera!
+
+
+==== room=29 npc=0 str=2 textAddr=0x1c78da ptrFieldAddr=0x1c783c ====
+PAPA ARDILLA: ¡Eso es!
+Ningún humano entiende
+nuestro idioma.
+
+
+==== room=29 npc=0 str=3 textAddr=0x1c791a ptrFieldAddr=0x1c783e ====
+PAPA ARDILLA: ¿Has venido
+aquí a calentarte en este
+clima?
+<YESNO>
+
+
+==== room=29 npc=0 str=4 textAddr=0x1c7958 ptrFieldAddr=0x1c7840 ====
+PAPA ARDILLA: ¡Lárgate!
+Por eso odio a los extraños.
+Son tan insolentes.
+
+
+==== room=29 npc=0 str=5 textAddr=0x1c79a2 ptrFieldAddr=0x1c7842 ====
+PAPA ARDILLA: Eso es.
+La nieve no puede ser
+demasiado fría para ti.
+
+
+==== room=29 npc=0 str=6 textAddr=0x1c79e8 ptrFieldAddr=0x1c7844 ====
+{E0} x
+PAPA ARDILLA: Veo que has
+arreglado el suelo sin que
+te lo pidiera. He cambiado
+de opinión, me caes bien.
+Deja que te recompense.
+
+
+==== room=29 npc=0 str=7 textAddr=0x1c7a70 ptrFieldAddr=0x1c7846 ====
+PAPA ARDILLA: Lo siento, no
+puedo darte demasiadas
+chucherías. Por eso odio
+a los humanos.
+
+
+==== room=29 npc=0 str=8 textAddr=0x1c7acc ptrFieldAddr=0x1c7848 ====
+PAPA ARDILLA: Veo que has
+arreglado el suelo sin que
+te lo pidiera. Gracias.
+
+
+==== room=29 npc=1 str=0 textAddr=0x1c7b22 ptrFieldAddr=0x1c7b1a ====
+MAMA ARDILLA: Estoy
+cocinando. El menú de hoy es
+estofado de nueces. Lo
+siento, pero no hay bastante
+para ti.
+
+
+==== room=29 npc=1 str=1 textAddr=0x1c7b92 ptrFieldAddr=0x1c7b1c ====
+MAMA ARDILLA: ¡Oh! Has
+arreglado nuestra casa.
+Gracias.
+
+
+==== room=29 npc=1 str=2 textAddr=0x1c7bcc ptrFieldAddr=0x1c7b1e ====
+MAMA ARDILLA: Estoy
+cocinando. Vamos a comer
+gachas con nueces. Lo
+siento, pero no tenemos
+suficiente para ti.
+
+
+==== room=29 npc=1 str=3 textAddr=0x1c7c3c ptrFieldAddr=0x1c7b20 ====
+MAMA ARDILLA: Oh, gracias.
+Pero sigo sin tener bastante
+comida para ti.
+
+
+==== room=29 npc=2 str=0 textAddr=0x1c7c8e ptrFieldAddr=0x1c7c86 ====
+HIJO ARDILLA: Mi casa está
+vieja y tiene agujeros.
+
+
+==== room=29 npc=2 str=1 textAddr=0x1c7cc2 ptrFieldAddr=0x1c7c88 ====
+HIJO ARDILLA: ¡Wai! Ya no
+tropezaré en los agujeros.
+¡Los humanos son
+tan fuertes!
+
+
+==== room=29 npc=2 str=2 textAddr=0x1c7d16 ptrFieldAddr=0x1c7c8a ====
+HIJO ARDILLA: ¡Mira mi
+casa! ¡Puedes hacer agujeros
+en todas partes!
+
+
+==== room=29 npc=2 str=3 textAddr=0x1c7d5c ptrFieldAddr=0x1c7c8c ====
+HIJO ARDILLA: Gracias ...
+Pero si te vas ahora, habrá
+más agujeros cuando
+te hayas ido.
+
+
+==== room=30 npc=0 str=0 textAddr=0x1c7dd6 ptrFieldAddr=0x1c7dc0 ====
+BRUJA: Ah, eres tú, Fangoso.
+Hueles a niño humano ...
+Veo que Klin te echó un
+hechizo de metamorfosis,
+Le dije que no lo hiciera.
+Lo siento mucho. Pero
+¡Fangoso quería
+hacerse humano!
+
+
+==== room=30 npc=0 str=1 textAddr=0x1c7e90 ptrFieldAddr=0x1c7dc2 ====
+BRUJA: Debido a mi
+edad, sé más de los humanos
+que Klin. En verdad quieres
+volver a tu forma humana,
+¿tengo razón?
+<YESNO>
+
+
+==== room=30 npc=0 str=2 textAddr=0x1c7f06 ptrFieldAddr=0x1c7dc4 ====
+{E0} ü
+BRUJA: Sí, sí. Pero ni yo
+puedo devolvértela tan
+fácilmente. Debes resolverlo
+tú solo.
+
+
+==== room=30 npc=0 str=3 textAddr=0x1c7f62 ptrFieldAddr=0x1c7dc6 ====
+BRUJA: Ya veo ... Entonces
+te quedarás así para
+siempre.
+
+
+==== room=30 npc=0 str=4 textAddr=0x1c7f9c ptrFieldAddr=0x1c7dc8 ====
+BRUJA: Ya veo. Voy a darte
+otra oportunidad. Estoy
+preparando un hechizo. Si lo
+superas con tu ingenio, te
+devolveré tu forma original.
+
+
+==== room=30 npc=0 str=5 textAddr=0x1c8026 ptrFieldAddr=0x1c7dca ====
+BRUJA: Ve a la habitación de
+al lado y sigue las
+instrucciones del espejo.
+
+
+==== room=30 npc=0 str=6 textAddr=0x1c8072 ptrFieldAddr=0x1c7dcc ====
+BRUJA: ¡Lo conseguiste!
+No está mal para ser tan
+pequeño, ¿eh? Bien, te
+devolveré tu forma original.
+¡Abra ... Cadabra ... Yaaaa!
+
+
+==== room=30 npc=0 str=7 textAddr=0x1c80f6 ptrFieldAddr=0x1c7dce ====
+BRUJA: Cumplí mi palabra.
+Vuelves a tener forma
+humana. Tu esfuerzo ha ...
+¿qué? ¿Has oído algo?
+
+
+==== room=30 npc=0 str=8 textAddr=0x1c8158 ptrFieldAddr=0x1c7dd0 ====
+ORUGA: ¡Eh, espera! He hecho
+mi trabajo y puede que no te
+sea de gran ayuda, pero ...
+me caes muy bien. Quizá ...
+¿podríamos ser amigos?
+
+
+==== room=30 npc=0 str=9 textAddr=0x1c81e2 ptrFieldAddr=0x1c7dd2 ====
+La oruga se une al grupo
+
+
+==== room=30 npc=0 str=10 textAddr=0x1c81fc ptrFieldAddr=0x1c7dd4 ====
+BRUJA: Te has ganado hasta
+el corazón de esta oruga.
+Muy extraño, sin duda.
+De todos modos, mantén tu
+ingenio y tu perseverancia.
+
+
+==== room=30 npc=1 str=0 textAddr=0x1c828a ptrFieldAddr=0x1c8280 ====
+BRUJA: Ya ha empezado.
+¿O necesitas una
+explicación?
+<YESNO>
+
+
+==== room=30 npc=1 str=1 textAddr=0x1c82c2 ptrFieldAddr=0x1c8282 ====
+BRUJA: Los pájaros comen
+orugas. Las orugas comen
+flores. Los pájaros no comen
+flores. Mientras que sigas
+en la alfombra esto no podrá
+suceder. Con esto en mente,
+debes llevarlos a los tres
+a la alfombra roja.
+
+
+==== room=30 npc=1 str=2 textAddr=0x1c8396 ptrFieldAddr=0x1c8284 ====
+Ahora, a trabajar.
+
+
+==== room=30 npc=1 str=3 textAddr=0x1c83aa ptrFieldAddr=0x1c8286 ====
+BRUJA: Fracasaste. Pero no
+te desanimes. Inténtalo
+otra vez.
+
+
+==== room=30 npc=1 str=4 textAddr=0x1c83e8 ptrFieldAddr=0x1c8288 ====
+BRUJA: ¡Lo conseguiste!
+Mantendré mi palabra.
+Ven conmigo.
+
+
+==== room=30 npc=2 str=0 textAddr=0x1c8426 ptrFieldAddr=0x1c8424 ====
+PAJARO: Por fin me libré
+de este "experimento".
+Ahora puedo relajarme.
+
+
+==== room=30 npc=3 str=0 textAddr=0x1c8470 ptrFieldAddr=0x1c846e ====
+ORUGA: ¡Eres muy listo!
+Pensé que te resultaría
+demasiado difícil. Te
+respeto. ¿Son todos los
+humanos tan listos como tú?
+
+
+==== room=30 npc=4 str=0 textAddr=0x1c84ee ptrFieldAddr=0x1c84ec ====
+FLOR: Soy una flor.
+¡Cómo odio este experimento!
+¡No volveré a hacer un
+experimento como éste
+en la vida!
+
+
+==== room=31 npc=0 str=0 textAddr=0x1c7dd6 ptrFieldAddr=0x1c7dc0 ====
+BRUJA: Ah, eres tú, Fangoso.
+Hueles a niño humano ...
+Veo que Klin te echó un
+hechizo de metamorfosis,
+Le dije que no lo hiciera.
+Lo siento mucho. Pero
+¡Fangoso quería
+hacerse humano!
+
+
+==== room=31 npc=0 str=1 textAddr=0x1c7e90 ptrFieldAddr=0x1c7dc2 ====
+BRUJA: Debido a mi
+edad, sé más de los humanos
+que Klin. En verdad quieres
+volver a tu forma humana,
+¿tengo razón?
+<YESNO>
+
+
+==== room=31 npc=0 str=2 textAddr=0x1c7f06 ptrFieldAddr=0x1c7dc4 ====
+{E0} ü
+BRUJA: Sí, sí. Pero ni yo
+puedo devolvértela tan
+fácilmente. Debes resolverlo
+tú solo.
+
+
+==== room=31 npc=0 str=3 textAddr=0x1c7f62 ptrFieldAddr=0x1c7dc6 ====
+BRUJA: Ya veo ... Entonces
+te quedarás así para
+siempre.
+
+
+==== room=31 npc=0 str=4 textAddr=0x1c7f9c ptrFieldAddr=0x1c7dc8 ====
+BRUJA: Ya veo. Voy a darte
+otra oportunidad. Estoy
+preparando un hechizo. Si lo
+superas con tu ingenio, te
+devolveré tu forma original.
+
+
+==== room=31 npc=0 str=5 textAddr=0x1c8026 ptrFieldAddr=0x1c7dca ====
+BRUJA: Ve a la habitación de
+al lado y sigue las
+instrucciones del espejo.
+
+
+==== room=31 npc=0 str=6 textAddr=0x1c8072 ptrFieldAddr=0x1c7dcc ====
+BRUJA: ¡Lo conseguiste!
+No está mal para ser tan
+pequeño, ¿eh? Bien, te
+devolveré tu forma original.
+¡Abra ... Cadabra ... Yaaaa!
+
+
+==== room=31 npc=0 str=7 textAddr=0x1c80f6 ptrFieldAddr=0x1c7dce ====
+BRUJA: Cumplí mi palabra.
+Vuelves a tener forma
+humana. Tu esfuerzo ha ...
+¿qué? ¿Has oído algo?
+
+
+==== room=31 npc=0 str=8 textAddr=0x1c8158 ptrFieldAddr=0x1c7dd0 ====
+ORUGA: ¡Eh, espera! He hecho
+mi trabajo y puede que no te
+sea de gran ayuda, pero ...
+me caes muy bien. Quizá ...
+¿podríamos ser amigos?
+
+
+==== room=31 npc=0 str=9 textAddr=0x1c81e2 ptrFieldAddr=0x1c7dd2 ====
+La oruga se une al grupo
+
+
+==== room=31 npc=0 str=10 textAddr=0x1c81fc ptrFieldAddr=0x1c7dd4 ====
+BRUJA: Te has ganado hasta
+el corazón de esta oruga.
+Muy extraño, sin duda.
+De todos modos, mantén tu
+ingenio y tu perseverancia.
+
+
+==== room=31 npc=1 str=0 textAddr=0x1c828a ptrFieldAddr=0x1c8280 ====
+BRUJA: Ya ha empezado.
+¿O necesitas una
+explicación?
+<YESNO>
+
+
+==== room=31 npc=1 str=1 textAddr=0x1c82c2 ptrFieldAddr=0x1c8282 ====
+BRUJA: Los pájaros comen
+orugas. Las orugas comen
+flores. Los pájaros no comen
+flores. Mientras que sigas
+en la alfombra esto no podrá
+suceder. Con esto en mente,
+debes llevarlos a los tres
+a la alfombra roja.
+
+
+==== room=31 npc=1 str=2 textAddr=0x1c8396 ptrFieldAddr=0x1c8284 ====
+Ahora, a trabajar.
+
+
+==== room=31 npc=1 str=3 textAddr=0x1c83aa ptrFieldAddr=0x1c8286 ====
+BRUJA: Fracasaste. Pero no
+te desanimes. Inténtalo
+otra vez.
+
+
+==== room=31 npc=1 str=4 textAddr=0x1c83e8 ptrFieldAddr=0x1c8288 ====
+BRUJA: ¡Lo conseguiste!
+Mantendré mi palabra.
+Ven conmigo.
+
+
+==== room=31 npc=2 str=0 textAddr=0x1c8426 ptrFieldAddr=0x1c8424 ====
+PAJARO: Por fin me libré
+de este "experimento".
+Ahora puedo relajarme.
+
+
+==== room=31 npc=3 str=0 textAddr=0x1c8470 ptrFieldAddr=0x1c846e ====
+ORUGA: ¡Eres muy listo!
+Pensé que te resultaría
+demasiado difícil. Te
+respeto. ¿Son todos los
+humanos tan listos como tú?
+
+
+==== room=31 npc=4 str=0 textAddr=0x1c84ee ptrFieldAddr=0x1c84ec ====
+FLOR: Soy una flor.
+¡Cómo odio este experimento!
+¡No volveré a hacer un
+experimento como éste
+en la vida!
+
+
+==== room=32 npc=0 str=0 textAddr=0x1c8570 ptrFieldAddr=0x1c8562 ====
+MAMA FANGOSA: Los humanos
+atacan a cualquiera sólo
+por ser monstruos.
+Ten cuidado.
+
+
+==== room=32 npc=0 str=1 textAddr=0x1c85c4 ptrFieldAddr=0x1c8564 ====
+MAMA FANGOSA: ¡......!
+Tú no eres Fangoso, ¿verdad?
+Una madre sabe distinguir a
+su hijo de un impostor.
+Ahora, ¡contéstame! Debes
+ser humano ... Sí, ¿verdad?
+<YESNO>
+
+
+==== room=32 npc=0 str=2 textAddr=0x1c8666 ptrFieldAddr=0x1c8566 ====
+{E0} {4B}
+MAMA FANGOSA: ... Eso pensé.
+Fangoso se enamoró de los
+humanos y quiso convertirse
+en uno. Estoy segura de que
+el joven mago Klin le
+ayudó ... ¿Qué voy a hacer?
+Deberías ir a la casa de
+Klin y pedirle que te
+devuelva a tu forma
+original.
+
+
+==== room=32 npc=0 str=3 textAddr=0x1c875a ptrFieldAddr=0x1c8568 ====
+MAMA FANGOSA: ¡No me
+mientas!
+
+
+==== room=32 npc=0 str=4 textAddr=0x1c877a ptrFieldAddr=0x1c856a ====
+MAMA FANGOSA: Dile a Klin
+que me enteré porque hizo
+una chapuza. Ahora vete.
+
+
+==== room=32 npc=0 str=5 textAddr=0x1c87c8 ptrFieldAddr=0x1c856c ====
+MAMA FANGOSA: Ya veo.
+¿No puede ayudar? Entonces
+debes acudir a la vieja
+bruja, la maestra de Klin.
+Es la única que podrá
+devolverte tu forma. En el
+bosque hay un terreno en
+forma estrellada. Entra y
+pisa el centro diez veces.
+Entonces podrás entrar en la
+casa de la bruja y pedirle
+ayuda.
+
+
+==== room=32 npc=0 str=6 textAddr=0x1c88ec ptrFieldAddr=0x1c856e ====
+MAMA FANGOSA: Entra y pisa
+el centro del terreno en
+forma estrellada diez veces.
+No lo olvides.
+
+
+==== room=32 npc=1 str=0 textAddr=0x1c8952 ptrFieldAddr=0x1c894e ====
+SUAVON: Eso fue peligroso.
+Ese hombre es un héroe.
+Has de tener cuidado.
+
+
+==== room=32 npc=1 str=1 textAddr=0x1c899c ptrFieldAddr=0x1c8950 ====
+SUAVON: Mamá parece tan
+triste últimamente. Me
+pregunto si ha sucedido
+algo ...
+
+
+==== room=32 npc=2 str=0 textAddr=0x1c89f2 ptrFieldAddr=0x1c89ee ====
+PEGAJOSO: No hemos hecho
+nada malo. ¿Por qué nos
+tratan tan mal?
+
+
+==== room=32 npc=2 str=1 textAddr=0x1c8a34 ptrFieldAddr=0x1c89f0 ====
+PEGAJOSO: Ese héroe sigue
+dando vueltas por ahí.
+¿Por qué no se larga?
+
+
+==== room=32 npc=3 str=0 textAddr=0x1c8a80 ptrFieldAddr=0x1c8a7c ====
+PALIDO: Es un sombrero
+humano, ¿verdad? ¿Aún
+quieres hacerte humano?
+¡Olvídalo! No merece
+la pena. Déjalo, ¿vale?
+
+
+==== room=32 npc=3 str=1 textAddr=0x1c8af4 ptrFieldAddr=0x1c8a7e ====
+PALIDO: Klin es aún un
+aprendiz de brujo. No puede
+convertirte en humano.
+
+
+==== room=33 npc=0 str=0 textAddr=0x1c8b4c ptrFieldAddr=0x1c8b4a ====
+SUAVON: Oye, Fangoso, ¿por
+qué no vienes a jugar con
+nosotros?
+
+
+==== room=33 npc=1 str=0 textAddr=0x1c8b8e ptrFieldAddr=0x1c8b8c ====
+PEGAJOSO: ¡Es muy divertido!
+Da gusto jugar en la calle.
+
+
+==== room=33 npc=2 str=0 textAddr=0x1c8bca ptrFieldAddr=0x1c8bc8 ====
+PALIDO: ¡Atención! Viene ese
+humano. Es el héroe.
+Aprisa, ¡corred!
+
+
+==== room=33 npc=3 str=0 textAddr=0x1c8c10 ptrFieldAddr=0x1c8c0e ====
+HEROE: Basta de juegos. Yo
+me encargaré de los fangosos
+de un golpe.
+
+
+==== room=33 npc=4 str=0 textAddr=0x1c8c58 ptrFieldAddr=0x1c8c56 ====
+FANGOSO: Gracias a ti pude
+decirle como me sentía.
+Muchas gracias. No me
+arrepiento de nada porque al
+fin y al cabo los fangosos
+son fangosos y los humanos
+son humanos.
+
+
+==== room=34 npc=0 str=0 textAddr=0x1c8d0e ptrFieldAddr=0x1c8d06 ====
+AROMA: Los humanos
+intentaron construir la
+Torre de Babel para poder
+llegar al cielo. Pero no
+llegaron a terminarla.
+Me pregunto qué pasó.
+
+
+==== room=34 npc=0 str=1 textAddr=0x1c8d9a ptrFieldAddr=0x1c8d08 ====
+AROMA: ¿Ese dinosaurio
+decidió dejar el oasis?
+
+
+==== room=34 npc=0 str=2 textAddr=0x1c8dca ptrFieldAddr=0x1c8d0a ====
+AROMA: Puede que sea un
+desierto, pero es un sitio
+estupendo para vivir.
+También hay agua.
+
+
+==== room=34 npc=0 str=3 textAddr=0x1c8e26 ptrFieldAddr=0x1c8d0c ====
+AROMA: Hay árboles que
+crecen en el desierto y hay
+incluso un manantial de
+agua. Qué maravilloso.
+Este "oasis" es un sueño
+hecho realidad.
+¿No te parece?
+
+
+==== room=34 npc=1 str=0 textAddr=0x1c8eca ptrFieldAddr=0x1c8ec2 ====
+ZORRA: ¡Ese dinosaurio! Le
+pedí que me ayudara a cruzar
+los mares, pero tiene miedo.
+Su cuerpo será muy grande,
+pero no tiene ningún coraje.
+
+
+==== room=34 npc=1 str=1 textAddr=0x1c8f58 ptrFieldAddr=0x1c8ec4 ====
+ZORRA:¡Venga ya! Con un
+dinosaurio puedes cruzar el
+mar fácilmente ... Es cierto.
+Debería quedarme aquí con
+el perfumado Aroma, ¿no?
+
+
+==== room=34 npc=1 str=2 textAddr=0x1c8fde ptrFieldAddr=0x1c8ec6 ====
+ZORRA: Puede que sea un
+desierto, pero es un sitio
+estupendo para vivir.
+También hay agua ... ¡Lo que
+no soporto es tener que
+vivir con alguien tan
+apestoso como Aroma!
+
+
+==== room=34 npc=1 str=3 textAddr=0x1c9088 ptrFieldAddr=0x1c8ec8 ====
+ZORRA: ¿Ves esas ruinas?
+No sé mucho de ellas, pero
+solían pertenecer a
+humanos. Probablemente
+tuvieran una guerra. Les
+gusta luchar entre sí, ¿no?
+
+
+==== room=35 npc=0 str=0 textAddr=0x1c9128 ptrFieldAddr=0x1c9122 ====
+TAPIR: Yo soy Tapir. Esto
+es el desierto de Camelia.
+Está lleno de sueños
+tristes.
+
+
+==== room=35 npc=0 str=1 textAddr=0x1c917c ptrFieldAddr=0x1c9124 ====
+TAPIR: No ha dejado de
+nevar en Iris. Sólo espero
+que no pase nada malo.
+
+
+==== room=35 npc=0 str=2 textAddr=0x1c91c6 ptrFieldAddr=0x1c9126 ====
+TAPIR: Has visto un sueño
+triste. Pero porque tiene
+final sabes que debe haber
+otro principio. Hay mucha
+vida aquí. Cuando una se
+acaba, comienza otra.
+
+
+==== room=35 npc=1 str=0 textAddr=0x1c926c ptrFieldAddr=0x1c9260 ====
+DINOSAURIO: No he salido
+nunca del desierto. ¿Es
+divertido vivir en el mundo
+exterior? Vivir aquí está
+bien y no tengo valor para
+irme. ¿Qué debo hacer?
+
+
+==== room=35 npc=1 str=1 textAddr=0x1c9306 ptrFieldAddr=0x1c9262 ====
+DINOSAURIO: ¿Quieres que
+cruce el mar? No puedo
+hacerlo. Nunca he hecho
+algo así.
+
+
+==== room=35 npc=1 str=2 textAddr=0x1c935a ptrFieldAddr=0x1c9264 ====
+PIG{62}I: Entonces, ¿vas a
+vivir aquí deprimido el
+resto de tu vida?
+
+
+==== room=35 npc=1 str=3 textAddr=0x1c939e ptrFieldAddr=0x1c9266 ====
+DINOSAURIO: ..............
+
+
+==== room=35 npc=1 str=4 textAddr=0x1c93ba ptrFieldAddr=0x1c9268 ====
+DINOSAURIO: ¡Espera! Yo
+también voy. No quiero vivir
+así de deprimido. No sé si
+puedo cruzar el mar, pero
+lo intentaré. Si no lo
+intento, no lo sabré
+nunca, ¿no?
+
+
+==== room=35 npc=1 str=5 textAddr=0x1c945e ptrFieldAddr=0x1c926a ====
+El dinosaurio se une al
+grupo.
+
+
+==== room=36 npc=0 str=0 textAddr=0x1c9486 ptrFieldAddr=0x1c9484 ====
+{F3}
+
+
+
+
+==== room=36 npc=1 str=0 textAddr=0x1c9492 ptrFieldAddr=0x1c948c ====
+{F3}
+
+
+
+
+==== room=36 npc=1 str=1 textAddr=0x1c9498 ptrFieldAddr=0x1c948e ====
+{F3}
+
+
+
+
+==== room=36 npc=1 str=2 textAddr=0x1c949e ptrFieldAddr=0x1c9490 ====
+{F3}
+
+
+
+
+==== room=36 npc=2 str=0 textAddr=0x1c94a8 ptrFieldAddr=0x1c94a4 ====
+Ascensor rápido.
+No para hasta el último.
+
+
+==== room=36 npc=2 str=1 textAddr=0x1c94d4 ptrFieldAddr=0x1c94a6 ====
+-Fuera de servicio-
+Ascensor rápido.
+No para hasta el último.
+
+
+==== room=37 npc=0 str=0 textAddr=0x1c9486 ptrFieldAddr=0x1c9484 ====
+{F3}
+
+
+
+
+==== room=37 npc=1 str=0 textAddr=0x1c9492 ptrFieldAddr=0x1c948c ====
+{F3}
+
+
+
+
+==== room=37 npc=1 str=1 textAddr=0x1c9498 ptrFieldAddr=0x1c948e ====
+{F3}
+
+
+
+
+==== room=37 npc=1 str=2 textAddr=0x1c949e ptrFieldAddr=0x1c9490 ====
+{F3}
+
+
+
+
+==== room=37 npc=2 str=0 textAddr=0x1c94a8 ptrFieldAddr=0x1c94a4 ====
+Ascensor rápido.
+No para hasta el último.
+
+
+==== room=37 npc=2 str=1 textAddr=0x1c94d4 ptrFieldAddr=0x1c94a6 ====
+-Fuera de servicio-
+Ascensor rápido.
+No para hasta el último.
+
+
+==== room=38 npc=0 str=0 textAddr=0x1c951e ptrFieldAddr=0x1c951a ====
+ROXIE: ¡Eh, tú! ¡No me
+escales como si fuera una
+cuerda!
+
+
+==== room=38 npc=0 str=1 textAddr=0x1c9558 ptrFieldAddr=0x1c951c ====
+ROXIE: Me has ... pegado.
+Pero ya no  ... llegarás
+nunca hasta arriba ...
+
+
+==== room=38 npc=1 str=0 textAddr=0x1c95a6 ptrFieldAddr=0x1c95a4 ====
+PIG{62}I: Oye, <NAME>.
+Si quieres llegar hasta
+arriba deberías ir a Fresa,
+mi ciudad. Está al otro
+lado del mar, al sur.
+Allí puedes encontrar
+la planta que crece
+rápidamente. Usala y
+llegarás hasta arriba.
+
+
+==== room=38 npc=2 str=0 textAddr=0x1c9670 ptrFieldAddr=0x1c966e ====
+<NAME> plantó la
+semilla de una planta
+gigante.
+
+
+==== room=39 npc=0 str=0 textAddr=0x1c96a2 ptrFieldAddr=0x1c969e ====
+LEON: Soy el león de la
+melena en llamas. Vengo a
+vencer a los monstruos.
+Por desgracia me capturaron
+justo enfrente de ese
+interruptor. Necesito
+entrenar más a menudo.
+Ahora veamos cuánto sabes.
+
+
+==== room=39 npc=0 str=1 textAddr=0x1c9768 ptrFieldAddr=0x1c96a0 ====
+El leon se une al grupo.
+
+
+==== room=40 npc=0 str=0 textAddr=0x1c978a ptrFieldAddr=0x1c9784 ====
+Una cara muy familiar está
+enterrada bajo el hielo.
+
+
+==== room=40 npc=0 str=1 textAddr=0x1c97c0 ptrFieldAddr=0x1c9786 ====
+{F3}
+
+
+
+
+==== room=40 npc=0 str=2 textAddr=0x1c97c6 ptrFieldAddr=0x1c9788 ====
+LUIS: ¡Oye! Deja de jugar
+conmigo. Estoy helado y me
+derrito.
+
+
+==== room=41 npc=0 str=0 textAddr=0x1c980c ptrFieldAddr=0x1c980a ====
+{F3}
+
+
+
+
+==== room=41 npc=1 str=0 textAddr=0x1c9814 ptrFieldAddr=0x1c9812 ====
+{F3}
+
+
+
+
+==== room=42 npc=0 str=0 textAddr=0x1c9820 ptrFieldAddr=0x1c981e ====
+<NAME> abrió el
+cofre del tesoro. Se
+encontró una semilla de una
+planta gigante.
+
+
+==== room=42 npc=1 str=0 textAddr=0x1c9872 ptrFieldAddr=0x1c986e ====
+MORGANA: ¡Oye! ¡Las semillas
+de Petunia son todas mías!
+No te vas a llevar ninguna.
+
+
+==== room=42 npc=1 str=1 textAddr=0x1c98c8 ptrFieldAddr=0x1c9870 ====
+MORGANA: ¡Grrr! ¡Voy a darte
+una lección que no
+olvidarás nunca!
+
+
+==== room=43 npc=0 str=0 textAddr=0x1c9918 ptrFieldAddr=0x1c9912 ====
+CONEJILLO: ¡Eres tú, Pigüi!
+Me alegro de que estés a
+salvo. Estamos todos
+escondidos aquí. Había
+tantos monstruos que no
+podíamos salir.
+
+
+==== room=43 npc=0 str=1 textAddr=0x1c99a2 ptrFieldAddr=0x1c9914 ====
+CONEJILLO: <NAME>,
+cuida de Pigüi por favor, y
+¡ten cuidado!
+
+
+==== room=43 npc=0 str=2 textAddr=0x1c99dc ptrFieldAddr=0x1c9916 ====
+PIG{62}I: <NAME> me
+salvó la vida. Es un buen
+tipo. Quiero quedarme aquí
+contigo pero también quiero
+ayudarle, así que me voy
+con él.
+
+
+==== room=43 npc=1 str=0 textAddr=0x1c9a62 ptrFieldAddr=0x1c9a5c ====
+PENI: Ves. El monstruo
+llamado Morgana está
+intentando tomar la isla.
+
+
+==== room=43 npc=1 str=1 textAddr=0x1c9aaa ptrFieldAddr=0x1c9a5e ====
+PENI: ¡Muchas gracias! Has
+derrotado al jefe enemigo y
+todo vuelve a ser genial,
+.. y si todo es "genial" eso
+significa que va a hacer
+más calor aquí ..., lo que
+significa, pues ...
+
+
+==== room=43 npc=1 str=2 textAddr=0x1c9b62 ptrFieldAddr=0x1c9a60 ====
+PENI: ¡Muchísimas gracias!
+¡Gracias a ti todo está
+"frío" aquí!
+
+
+==== room=43 npc=2 str=0 textAddr=0x1c9ba8 ptrFieldAddr=0x1c9ba4 ====
+PENIPE: He oído que hay un
+templo llamado Raíz, muy,
+muy por debajo del agua.
+Dicen que está conectado a
+la isla, pero no lo sé ...
+
+
+==== room=43 npc=2 str=1 textAddr=0x1c9c2e ptrFieldAddr=0x1c9ba6 ====
+PENIPE: ¿¡Has visto eso!?
+Se podía ver el Templo Raíz
+por encima del agua.
+
+
+==== room=43 npc=3 str=0 textAddr=0x1c9c80 ptrFieldAddr=0x1c9c7a ====
+COBAYITA: ¿Sabías que hay
+un monstruo llamado Leviatán
+en el templo?
+<YESNO>
+
+
+==== room=43 npc=3 str=1 textAddr=0x1c9cc8 ptrFieldAddr=0x1c9c7c ====
+COBAYITA: Supongo que ya
+sabrás que hay muchos tipos
+de monstruos diferentes.
+
+
+==== room=43 npc=3 str=2 textAddr=0x1c9d18 ptrFieldAddr=0x1c9c7e ====
+COBAYITA: Leviatán será un
+monstruo, pero es tranquilo
+y afable. Todas las
+criaturas submarinas lo
+respetan, a mí me cuesta
+creerlo.
+
+
+==== room=44 npc=0 str=0 textAddr=0x1c9db2 ptrFieldAddr=0x1c9da0 ====
+LEVIATAN: No perdonaré a
+nadie que manche este
+tranquilo mar con baños de
+sangre y masacres.
+
+
+==== room=44 npc=0 str=1 textAddr=0x1c9e10 ptrFieldAddr=0x1c9da2 ====
+LEVIATAN: ... Entonces te
+gustan mucho las batallas.
+Bien, mi plan es este.
+Crearé algo que quieres
+mucho. Echa un vistazo.
+
+
+==== room=44 npc=0 str=2 textAddr=0x1c9e8e ptrFieldAddr=0x1c9da4 ====
+MAMA: ¡... <NAME>!
+¿Dónde estoy? ¿Cómo? No
+puedo moverme.
+
+
+==== room=44 npc=0 str=3 textAddr=0x1c9ec4 ptrFieldAddr=0x1c9da6 ====
+LEVIATAN: Aquí tienes a tu
+madre. Ahora comenzaré la
+batalla tal y como deseas.
+Pero mi ataque irá en todas
+direcciones. Puede que le de
+a tu madre.
+
+
+==== room=44 npc=0 str=4 textAddr=0x1c9f5a ptrFieldAddr=0x1c9da8 ====
+MAMA: No sé qué está
+pasando, pero no te
+preocupes por mi. ¡Lucha!
+Mi vida no es importante.
+Sólo cuida de la tuya y
+lucha lo mejor que puedas.
+
+
+==== room=44 npc=0 str=5 textAddr=0x1c9fec ptrFieldAddr=0x1c9daa ====
+LEVIATAN: Eso es inútil.
+¡No moriré nunca!
+
+
+==== room=44 npc=0 str=6 textAddr=0x1ca018 ptrFieldAddr=0x1c9dac ====
+LEVIATAN: ... Pero has
+protegido bien la vida de
+tu madre. Si hubieras sido
+de los que abandonan a sus
+madres te habría matado.
+Pero esto no es tu madre.
+Es una imagen de tu corazón.
+
+
+==== room=44 npc=0 str=7 textAddr=0x1ca0d0 ptrFieldAddr=0x1c9dae ====
+LEVIATAN: Humano, tienes
+muchos amigos. ¿Es por tu
+perseverancia? Yo soy
+Leviatán, monstruo del Mar
+Profundo. Aunque viva en
+este templo hundido, me
+gusta saber qué pasa en la
+superficie donde existen
+humanos como tú. ¡Elevaré
+este templo! Y ahora es hora
+de que comience mi viaje.
+
+
+==== room=44 npc=0 str=8 textAddr=0x1ca1ec ptrFieldAddr=0x1c9db0 ====
+Leviatán se une al grupo.
+
+
+==== room=45 npc=0 str=0 textAddr=0x1ca21e ptrFieldAddr=0x1ca21c ====
+Seguiré cantando para
+siempre, incluso en San
+Cielo.
+
+
+==== room=45 npc=1 str=0 textAddr=0x1ca256 ptrFieldAddr=0x1ca254 ====
+No sé cuánto tiempo llevo
+aquí. El tiempo no importa.
+
+
+==== room=45 npc=2 str=0 textAddr=0x1ca290 ptrFieldAddr=0x1ca28e ====
+¿Un nombre? Eso es sólo una
+etiqueta, algo innecesario.
+
+
+==== room=45 npc=3 str=0 textAddr=0x1ca2cc ptrFieldAddr=0x1ca2ca ====
+Sabía hace mucho que
+vendrías. Por duro que sea,
+no abandones.
+
+
+==== room=45 npc=4 str=0 textAddr=0x1ca30e ptrFieldAddr=0x1ca30c ====
+Cualquiera puede comunicarse
+aquí, animal o humano. Todos
+usamos el mismo lenguaje.
+
+
+==== room=45 npc=5 str=0 textAddr=0x1ca366 ptrFieldAddr=0x1ca364 ====
+Aquí puedo relajarme. No
+tengo que preocuparme de
+pasar a la historia.
+
+
+==== room=45 npc=6 str=0 textAddr=0x1ca3b0 ptrFieldAddr=0x1ca3ae ====
+He vivido demasiado
+tiempo ...  Hay más malos
+tiempos que buenos.
+
+
+==== room=45 npc=7 str=0 textAddr=0x1ca3f6 ptrFieldAddr=0x1ca3f4 ====
+¿Por qué a todos los que
+viven aquí abajo les gusta
+luchar? No lo entiendo.
+
+
+==== room=45 npc=8 str=0 textAddr=0x1ca44a ptrFieldAddr=0x1ca444 ====
+Las flores te aman. Se ponen
+a bailar cuando pasas. Si
+tocas todas las flores este
+lugar se pondrá muy alegre.
+
+
+==== room=45 npc=8 str=1 textAddr=0x1ca4ba ptrFieldAddr=0x1ca446 ====
+¡Oh, qué maravilloso! Nunca
+he visto flores que bailen
+tan contentas. Debes ser una
+persona muy amable. Por tu
+amabilidad te daré una
+manzana de la vida.
+
+
+==== room=45 npc=8 str=2 textAddr=0x1ca556 ptrFieldAddr=0x1ca448 ====
+Es tan maravilloso ver esto.
+Creo que las flores son
+sensibles a tu energía.
+
+
+==== room=45 npc=9 str=0 textAddr=0x1ca5a6 ptrFieldAddr=0x1ca5a4 ====
+Aunque estoy aquí, mi esposa
+está esperando que vuelva
+al peligroso Valle de las
+Dalias. La vida está llena
+de ironías. Si no hubiera
+lucha, la familia podría
+convivir felizmente ...
+
+
+==== room=46 npc=0 str=0 textAddr=0x1ca21e ptrFieldAddr=0x1ca21c ====
+Seguiré cantando para
+siempre, incluso en San
+Cielo.
+
+
+==== room=46 npc=1 str=0 textAddr=0x1ca256 ptrFieldAddr=0x1ca254 ====
+No sé cuánto tiempo llevo
+aquí. El tiempo no importa.
+
+
+==== room=46 npc=2 str=0 textAddr=0x1ca290 ptrFieldAddr=0x1ca28e ====
+¿Un nombre? Eso es sólo una
+etiqueta, algo innecesario.
+
+
+==== room=46 npc=3 str=0 textAddr=0x1ca2cc ptrFieldAddr=0x1ca2ca ====
+Sabía hace mucho que
+vendrías. Por duro que sea,
+no abandones.
+
+
+==== room=46 npc=4 str=0 textAddr=0x1ca30e ptrFieldAddr=0x1ca30c ====
+Cualquiera puede comunicarse
+aquí, animal o humano. Todos
+usamos el mismo lenguaje.
+
+
+==== room=46 npc=5 str=0 textAddr=0x1ca366 ptrFieldAddr=0x1ca364 ====
+Aquí puedo relajarme. No
+tengo que preocuparme de
+pasar a la historia.
+
+
+==== room=46 npc=6 str=0 textAddr=0x1ca3b0 ptrFieldAddr=0x1ca3ae ====
+He vivido demasiado
+tiempo ...  Hay más malos
+tiempos que buenos.
+
+
+==== room=46 npc=7 str=0 textAddr=0x1ca3f6 ptrFieldAddr=0x1ca3f4 ====
+¿Por qué a todos los que
+viven aquí abajo les gusta
+luchar? No lo entiendo.
+
+
+==== room=46 npc=8 str=0 textAddr=0x1ca44a ptrFieldAddr=0x1ca444 ====
+Las flores te aman. Se ponen
+a bailar cuando pasas. Si
+tocas todas las flores este
+lugar se pondrá muy alegre.
+
+
+==== room=46 npc=8 str=1 textAddr=0x1ca4ba ptrFieldAddr=0x1ca446 ====
+¡Oh, qué maravilloso! Nunca
+he visto flores que bailen
+tan contentas. Debes ser una
+persona muy amable. Por tu
+amabilidad te daré una
+manzana de la vida.
+
+
+==== room=46 npc=8 str=2 textAddr=0x1ca556 ptrFieldAddr=0x1ca448 ====
+Es tan maravilloso ver esto.
+Creo que las flores son
+sensibles a tu energía.
+
+
+==== room=46 npc=9 str=0 textAddr=0x1ca5a6 ptrFieldAddr=0x1ca5a4 ====
+Aunque estoy aquí, mi esposa
+está esperando que vuelva
+al peligroso Valle de las
+Dalias. La vida está llena
+de ironías. Si no hubiera
+lucha, la familia podría
+convivir felizmente ...
+
+
+==== room=47 npc=0 str=0 textAddr=0x1ca664 ptrFieldAddr=0x1ca660 ====
+DRAGON: Qué valiente eres
+por seguirme sin saber lo
+que hacías ... Pero este es
+el final del camino. Yo soy
+el que abrirá la puerta.
+
+
+==== room=47 npc=0 str=1 textAddr=0x1ca6ea ptrFieldAddr=0x1ca662 ====
+DRAGON: No puedo morir aquí
+ ... No ... Yo ... Debo ...
+
+
+==== room=48 npc=0 str=0 textAddr=0x1ca736 ptrFieldAddr=0x1ca72c ====
+CURA: Algo terrible pasó
+aquí hace mucho.
+La gente ya no
+viene... ¡Oh, Santo Padre,
+deja que tu presencia llene
+de nuevo sus corazones!
+
+
+==== room=48 npc=0 str=1 textAddr=0x1ca7c0 ptrFieldAddr=0x1ca72e ====
+{F3}
+
+
+
+
+==== room=48 npc=0 str=2 textAddr=0x1ca7c6 ptrFieldAddr=0x1ca730 ====
+CURA: Me dicen que
+nieva sin parar en
+Iris... ¡Qué miedo!
+El Santo Padre debe estar
+muy enfadado por la
+falta de fe.
+
+
+==== room=48 npc=0 str=3 textAddr=0x1ca83c ptrFieldAddr=0x1ca732 ====
+CURA: ¿Sabes que aquí
+murió un monstruo? Te lo
+han contado. Fue algo
+abominable.
+Si no fuera por eso
+la gente seguiría viniendo.
+
+
+==== room=48 npc=0 str=4 textAddr=0x1ca8be ptrFieldAddr=0x1ca734 ====
+CURA: Jovencito, qué fiel
+eres al venir a ofrecer
+plegarias.
+
+
+==== room=48 npc=1 str=0 textAddr=0x1ca910 ptrFieldAddr=0x1ca8fc ====
+ANITA: Llevo pensando
+desde que tu madre nos
+habló de ello. Luchar está
+bien, pero quitar vidas
+es terrible.
+Si no lo hacemos, el
+monstruo nos matará ...
+¿Qué debemos
+hacer?
+
+
+==== room=48 npc=1 str=1 textAddr=0x1ca9c0 ptrFieldAddr=0x1ca8fe ====
+ANITA: Oye, <NAME>.
+¿No es posible que todos
+vivamos en armonía sin
+herirnos los unos a
+los otros?
+<YESNO>
+
+
+==== room=48 npc=1 str=2 textAddr=0x1caa22 ptrFieldAddr=0x1ca900 ====
+ANITA: ¡La felicidad que
+proviene de las desgracias
+de otros no está bien!
+
+
+==== room=48 npc=1 str=3 textAddr=0x1caa6e ptrFieldAddr=0x1ca902 ====
+ANITA: Yo también quiero
+creerlo. La vida es
+importante para todos.
+
+
+==== room=48 npc=1 str=4 textAddr=0x1caab4 ptrFieldAddr=0x1ca904 ====
+{F3}
+
+
+
+
+==== room=48 npc=1 str=5 textAddr=0x1caaba ptrFieldAddr=0x1ca906 ====
+ANITA: Te he echado tanto
+de menos. ¿ Cómo estás?
+Veo que te has hecho amigo
+de muchos animales,
+¿no?
+
+
+==== room=48 npc=1 str=6 textAddr=0x1cab22 ptrFieldAddr=0x1ca908 ====
+ANITA: Ten cuidado. Como
+sólo soy una niña no puedo
+hacer mucho, pero rezaré
+por ti siempre.
+
+
+==== room=48 npc=1 str=7 textAddr=0x1cab80 ptrFieldAddr=0x1ca90a ====
+ANITA: Entonces has oído
+hablar de los monstruos que
+murieron aquí. ¿Por qué me
+da pena? ¿Crees que había
+que matar a esos
+monstruos?
+<YESNO>
+
+
+==== room=48 npc=1 str=8 textAddr=0x1cac0a ptrFieldAddr=0x1ca90c ====
+ANITA: De acuerdo ... Hay
+monstruos. Enemigos muy
+malvados. Pero cuando
+escaparon, no intentaron
+atacar a nadie... Me
+pregunto por qué.
+
+
+==== room=48 npc=1 str=9 textAddr=0x1cac94 ptrFieldAddr=0x1ca90e ====
+ANITA: ¿¡En serio!? Nunca
+pensé que dirías eso.
+<NAME>,
+Sabía que eras distinto
+del resto de la gente.
+
+
+==== room=48 npc=2 str=0 textAddr=0x1cacfe ptrFieldAddr=0x1cacf8 ====
+{E0}0á
+SABIO: Usa los medios
+y Dios te dará la
+bendición. ¿Comprendes
+lo que quiero decir?
+<YESNO>
+
+
+==== room=48 npc=2 str=1 textAddr=0x1cad5a ptrFieldAddr=0x1cacfa ====
+SABIO: Eres un niño tan
+sabio. No olvides
+este pensamiento.
+
+
+==== room=48 npc=2 str=2 textAddr=0x1cad98 ptrFieldAddr=0x1cacfc ====
+SABIO: Haz todo lo que
+puedas y deja los resultados
+a Dios .... Eso es lo que
+significa.
+
+
+==== room=48 npc=3 str=0 textAddr=0x1cadf4 ptrFieldAddr=0x1cadf2 ====
+ANCIANA: Gracias por
+hacer posible que viva
+feliz hoy.
+
+
+==== room=49 npc=0 str=0 textAddr=0x1cae36 ptrFieldAddr=0x1cae32 ====
+{F3}
+
+
+
+
+==== room=49 npc=0 str=1 textAddr=0x1cae3c ptrFieldAddr=0x1cae34 ====
+APRENDIZ: Si me das una vez
+más estaré en peligro. Por
+eso estoy desesperado.
+
+
+==== room=49 npc=1 str=0 textAddr=0x1cae90 ptrFieldAddr=0x1cae8c ====
+{F3}
+
+
+
+
+==== room=49 npc=1 str=1 textAddr=0x1cae96 ptrFieldAddr=0x1cae8e ====
+GUERRERO: Ayyyy ... Sufrí
+la enfermedad de los viajes
+cuando me arrojaron hacia
+atrás.
+
+
+==== room=49 npc=2 str=0 textAddr=0x1caef0 ptrFieldAddr=0x1caeee ====
+{E0} {8B}
+NARRACION: <NAME>
+ganó la medalla de plata.
+
+
+==== room=50 npc=0 str=0 textAddr=0x1cae36 ptrFieldAddr=0x1cae32 ====
+{F3}
+
+
+
+
+==== room=50 npc=0 str=1 textAddr=0x1cae3c ptrFieldAddr=0x1cae34 ====
+APRENDIZ: Si me das una vez
+más estaré en peligro. Por
+eso estoy desesperado.
+
+
+==== room=50 npc=1 str=0 textAddr=0x1cae90 ptrFieldAddr=0x1cae8c ====
+{F3}
+
+
+
+
+==== room=50 npc=1 str=1 textAddr=0x1cae96 ptrFieldAddr=0x1cae8e ====
+GUERRERO: Ayyyy ... Sufrí
+la enfermedad de los viajes
+cuando me arrojaron hacia
+atrás.
+
+
+==== room=50 npc=2 str=0 textAddr=0x1caef0 ptrFieldAddr=0x1caeee ====
+{E0} {8B}
+NARRACION: <NAME>
+ganó la medalla de plata.
+
+
+==== room=51 npc=0 str=0 textAddr=0x1cae36 ptrFieldAddr=0x1cae32 ====
+{F3}
+
+
+
+
+==== room=51 npc=0 str=1 textAddr=0x1cae3c ptrFieldAddr=0x1cae34 ====
+APRENDIZ: Si me das una vez
+más estaré en peligro. Por
+eso estoy desesperado.
+
+
+==== room=51 npc=1 str=0 textAddr=0x1cae90 ptrFieldAddr=0x1cae8c ====
+{F3}
+
+
+
+
+==== room=51 npc=1 str=1 textAddr=0x1cae96 ptrFieldAddr=0x1cae8e ====
+GUERRERO: Ayyyy ... Sufrí
+la enfermedad de los viajes
+cuando me arrojaron hacia
+atrás.
+
+
+==== room=51 npc=2 str=0 textAddr=0x1caef0 ptrFieldAddr=0x1caeee ====
+{E0} {8B}
+NARRACION: <NAME>
+ganó la medalla de plata.
+
+
+==== room=52 npc=0 str=0 textAddr=0x1caf26 ptrFieldAddr=0x1caf22 ====
+{F3}
+
+
+
+
+==== room=52 npc=0 str=1 textAddr=0x1caf2c ptrFieldAddr=0x1caf24 ====
+GUERRERO: ¡Jolín! ...
+¡Fuego! ... Este método de
+entrenamiento es realmente
+cruel.
+
+
+==== room=52 npc=1 str=0 textAddr=0x1caf84 ptrFieldAddr=0x1caf80 ====
+{F3}
+
+
+
+
+==== room=52 npc=1 str=1 textAddr=0x1caf8a ptrFieldAddr=0x1caf82 ====
+APRENDIZ: ¡Eh! ¡Salta tú
+solo! No es justo que te
+ayude un guepardo.
+
+
+==== room=52 npc=2 str=0 textAddr=0x1cafd2 ptrFieldAddr=0x1cafd0 ====
+{E0} {8C}
+NARRACION: <NAME> ganó
+la medalla de oro.
+
+
+==== room=53 npc=0 str=0 textAddr=0x1caf26 ptrFieldAddr=0x1caf22 ====
+{F3}
+
+
+
+
+==== room=53 npc=0 str=1 textAddr=0x1caf2c ptrFieldAddr=0x1caf24 ====
+GUERRERO: ¡Jolín! ...
+¡Fuego! ... Este método de
+entrenamiento es realmente
+cruel.
+
+
+==== room=53 npc=1 str=0 textAddr=0x1caf84 ptrFieldAddr=0x1caf80 ====
+{F3}
+
+
+
+
+==== room=53 npc=1 str=1 textAddr=0x1caf8a ptrFieldAddr=0x1caf82 ====
+APRENDIZ: ¡Eh! ¡Salta tú
+solo! No es justo que te
+ayude un guepardo.
+
+
+==== room=53 npc=2 str=0 textAddr=0x1cafd2 ptrFieldAddr=0x1cafd0 ====
+{E0} {8C}
+NARRACION: <NAME> ganó
+la medalla de oro.
+
+
+==== room=54 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
+ANCIANA: Por aquí salen
+monstruos de los agujeros de
+la roca. Debe ser un truco
+pero me temo que no tengo
+ni idea de cómo se hace.
+
+
+==== room=54 npc=0 str=1 textAddr=0x1cb088 ptrFieldAddr=0x1cb000 ====
+ANCIANA: ¿Quieres decir que
+todo este valle es un gran
+monstruo? ¡Qué horrible!
+Espera, eso quiere decir que
+esta casa está levantada
+encima del monstruo.
+Señor, apiádate ...
+
+
+==== room=54 npc=0 str=2 textAddr=0x1cb138 ptrFieldAddr=0x1cb002 ====
+ANCIANA: Sigue habiendo
+muchas cosas que ni la edad
+puede enseñarte.
+
+
+==== room=55 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
+ANCIANA: Por aquí salen
+monstruos de los agujeros de
+la roca. Debe ser un truco
+pero me temo que no tengo
+ni idea de cómo se hace.
+
+
+==== room=55 npc=0 str=1 textAddr=0x1cb088 ptrFieldAddr=0x1cb000 ====
+ANCIANA: ¿Quieres decir que
+todo este valle es un gran
+monstruo? ¡Qué horrible!
+Espera, eso quiere decir que
+esta casa está levantada
+encima del monstruo.
+Señor, apiádate ...
+
+
+==== room=55 npc=0 str=2 textAddr=0x1cb138 ptrFieldAddr=0x1cb002 ====
+ANCIANA: Sigue habiendo
+muchas cosas que ni la edad
+puede enseñarte.
+
+
+==== room=56 npc=0 str=0 textAddr=0x1cb004 ptrFieldAddr=0x1caffe ====
+ANCIANA: Por aquí salen
+monstruos de los agujeros de
+la roca. Debe ser un truco
+pero me temo que no tengo
+ni idea de cómo se hace.
+
+
+==== room=56 npc=0 str=1 textAddr=0x1cb088 ptrFieldAddr=0x1cb000 ====
+ANCIANA: ¿Quieres decir que
+todo este valle es un gran
+monstruo? ¡Qué horrible!
+Espera, eso quiere decir que
+esta casa está levantada
+encima del monstruo.
+Señor, apiádate ...
+
+
+==== room=56 npc=0 str=2 textAddr=0x1cb138 ptrFieldAddr=0x1cb002 ====
+ANCIANA: Sigue habiendo
+muchas cosas que ni la edad
+puede enseñarte.
+
+
+==== room=57 npc=0 str=0 textAddr=0x1cb188 ptrFieldAddr=0x1cb184 ====
+LOLA: Hay mapaches que se
+burlan de ti por
+costumbre ... pero los niños
+no caen. Los adultos no son
+listos y por eso caen.
+
+
+==== room=57 npc=0 str=1 textAddr=0x1cb204 ptrFieldAddr=0x1cb186 ====
+LOLA: ¡Guau! Tienes un
+mapache contigo. Los
+mapaches pueden
+transformarse en humanos,
+¿verdad?
+
+
+==== room=57 npc=1 str=0 textAddr=0x1cb268 ptrFieldAddr=0x1cb264 ====
+CHICO: Desde que se fue la
+adivina este lugar ha estado
+muy solitario.
+
+
+==== room=57 npc=1 str=1 textAddr=0x1cb2b0 ptrFieldAddr=0x1cb266 ====
+CHICO: Paco me enseñó su
+medalla de plata. ¿A que es
+genial?
+
+
+==== room=57 npc=2 str=0 textAddr=0x1cb2f4 ptrFieldAddr=0x1cb2ee ====
+PEPE: ¡<NAME>! Vuelves a
+estar normal. Qué alivio
+me da.
+
+
+==== room=57 npc=2 str=1 textAddr=0x1cb32a ptrFieldAddr=0x1cb2f0 ====
+PEPE: <NAME>. He
+escondido mi manzana en
+algún lugar del parque.
+¿Sabes dónde?
+
+
+==== room=57 npc=2 str=2 textAddr=0x1cb376 ptrFieldAddr=0x1cb2f2 ====
+PEPE: ¡Has cogido mi
+manzana! La había escondido
+para mí. Eso es muy cruel.
+Era inevitable que crecieras
+y te convirtieras en un
+adulto e hicieras cosas
+crueles.
+
+
+==== room=58 npc=0 str=0 textAddr=0x1cb420 ptrFieldAddr=0x1cb41c ====
+SABIO: ¡Te, te, te vi
+transformarte en fango ..!
+¡Monstruo!
+No conseguirás engañarme.
+Vete de aquí inmediatamente.
+
+
+==== room=58 npc=0 str=1 textAddr=0x1cb494 ptrFieldAddr=0x1cb41e ====
+NARRACION: <NAME> abrió
+el cofre del tesoro. Pero
+estaba vacío.
+
+
+==== room=59 npc=0 str=0 textAddr=0x1cb4dc ptrFieldAddr=0x1cb4d6 ====
+CHICO: Al principio me
+divertía la nieve, pero
+ahora estoy harto. Hace
+tanto frío fuera.
+
+
+==== room=59 npc=0 str=1 textAddr=0x1cb536 ptrFieldAddr=0x1cb4d8 ====
+CHICO: ¡Qué aburrimiento!
+Estoy harto de nieve. Ojalá
+pudiera ir al campo de
+entrenamiento.
+
+
+==== room=59 npc=0 str=2 textAddr=0x1cb594 ptrFieldAddr=0x1cb4da ====
+CHICO: ¿La caverna de
+Amapola? ¿No sabes que
+no existe?
+
+
+==== room=59 npc=1 str=0 textAddr=0x1cb5d4 ptrFieldAddr=0x1cb5ce ====
+CIRO: La nieve hace que
+haga demasiado frío fuera.
+Hasta mi dueño está harto.
+
+
+==== room=59 npc=1 str=1 textAddr=0x1cb624 ptrFieldAddr=0x1cb5d0 ====
+CIRO: Dicen que también
+hay un ciclón. ¿Cuál es la
+causa de este tiempo tan
+extraño?
+
+
+==== room=59 npc=1 str=2 textAddr=0x1cb67a ptrFieldAddr=0x1cb5d2 ====
+CIRO: ¿Un monstruo tocón?
+¿Una oruga gigante?
+Esas cosas no existen.
+
+
+==== room=59 npc=2 str=0 textAddr=0x1cb6c6 ptrFieldAddr=0x1cb6c0 ====
+AMA DE CASA: Ese anciano
+que está fuera de mi casa
+nunca entra en la suya
+propia. Cree que te has
+convertido en fango.
+Me da pena ...
+
+
+==== room=59 npc=2 str=1 textAddr=0x1cb74e ptrFieldAddr=0x1cb6c2 ====
+AMA DE CASA: Hace cinco
+meses que nieva sin parar.
+Es horrible, ¿verdad?
+
+
+==== room=59 npc=2 str=2 textAddr=0x1cb798 ptrFieldAddr=0x1cb6c4 ====
+AMA DE CASA: Rábano no
+permitirá que la nieve frene
+su crecimiento.
+¡Qué tipo más duro!
+¿verdad?
+
+
+==== room=60 npc=0 str=0 textAddr=0x1cb806 ptrFieldAddr=0x1cb800 ====
+MUJER: ¿Te ha molestado mi
+abuelo? Lo siento mucho ...
+Se emocionó diciendo que te
+habías convertido en fango
+... ¿Es debido a su edad?
+
+
+==== room=60 npc=0 str=1 textAddr=0x1cb890 ptrFieldAddr=0x1cb802 ====
+MUJER: Oí una historia
+extraña de que un ciclón
+salido del cráter se dirigió
+al Desierto de Camelia.
+¡Qué miedo!
+
+
+==== room=60 npc=0 str=2 textAddr=0x1cb902 ptrFieldAddr=0x1cb804 ====
+MUJER: Parece como si el
+ciclón se moviera por algún
+motivo. ¡Tengo miedo!
+
+
+==== room=60 npc=1 str=0 textAddr=0x1cb95c ptrFieldAddr=0x1cb94e ====
+LOLA: Me visitas muy de
+tarde en tarde. Tendrás que
+venir más a menudo. Estaba
+escuchando las historias de
+mi abuela. Vamos a
+oirlas, <NAME>.
+
+
+==== room=60 npc=1 str=1 textAddr=0x1cb9e6 ptrFieldAddr=0x1cb950 ====
+LOLA: Vamos a oir las
+historias de mi abuela. No
+permitiré que te vayas tan
+pronto.
+
+
+==== room=60 npc=1 str=2 textAddr=0x1cba3c ptrFieldAddr=0x1cb952 ====
+LOLA: ¿A que la historia de
+la abuela parece un sueño?
+Escucharla es divertidísimo.
+
+
+==== room=60 npc=1 str=3 textAddr=0x1cba92 ptrFieldAddr=0x1cb954 ====
+LOLA: Sé dónde están
+escondidos los zapatos
+mágicos. ¿Quieres saberlo?
+<YESNO>
+
+
+==== room=60 npc=1 str=4 textAddr=0x1cbadc ptrFieldAddr=0x1cb956 ====
+{E0} {A1}
+LOLA: Estaban en el
+interior de un cofre junto
+al estanque pero parece que
+alguien los ha robado. Me
+irrita saber que hay gente
+así.
+
+
+==== room=60 npc=1 str=5 textAddr=0x1cbb66 ptrFieldAddr=0x1cb958 ====
+LOLA: Ya veo. Bueno, a ti
+nunca te interesaron los
+zapatos mágicos, ¿no?
+
+
+==== room=60 npc=1 str=6 textAddr=0x1cbbb0 ptrFieldAddr=0x1cb95a ====
+LOLA: ¿Has venido
+expresamente a verme?
+¡Gracias! Para mostrar mi
+gratitud te libraré de tu
+cansancio.
+
+
+==== room=60 npc=2 str=0 textAddr=0x1cbc24 ptrFieldAddr=0x1cbc18 ====
+DOROTEA: A Lola le caes muy
+bien, ¿verdad? Acabo de
+acordarme de que tenía que
+contarte una historia.
+¿Te gustaría oirla?
+<YESNO>
+
+
+==== room=60 npc=2 str=1 textAddr=0x1cbca2 ptrFieldAddr=0x1cbc1a ====
+{E0} {9E}
+DOROTEA: Cuando yo era niña,
+el ciclón me arrastró y me
+llevó al pasado. ¡En serio!
+Fue muy raro porque me
+encontré en un mundo en el
+que mis padres eran aún
+niños. El ciclón tiene poder
+para conectar el pasado con
+el presente. ¿Cómo regresé?
+Me puse los zapatos mágicos
+que habían sido robados
+hacía mucho tiempo.
+
+
+==== room=60 npc=2 str=2 textAddr=0x1cbde2 ptrFieldAddr=0x1cbc1c ====
+DOROTEA: Ya, pero algunas
+de las viejas historias
+pueden ser muy útiles a
+veces.
+
+
+==== room=60 npc=2 str=3 textAddr=0x1cbe34 ptrFieldAddr=0x1cbc1e ====
+DOROTEA: Parece que a Lola
+le caes muy bien. ¿Por qué
+no vienes más a menudo?
+
+
+==== room=60 npc=2 str=4 textAddr=0x1cbe84 ptrFieldAddr=0x1cbc20 ====
+DOROTEA: El Desierto de
+Camelia fue una vez un país
+de avanzada tecnología pero
+lo destruyeron los
+monstruos. Me pregunto
+porqué pasó.
+
+
+==== room=60 npc=2 str=5 textAddr=0x1cbf0c ptrFieldAddr=0x1cbc22 ====
+DOROTEA: Mi marido es tan
+cabezota. Te entendió mal.
+
+
+==== room=61 npc=0 str=0 textAddr=0x1cbf52 ptrFieldAddr=0x1cbf44 ====
+FLOR: ................ ¿Ha
+pasado algo?Algo le ha
+sorprendido tanto que no
+puede ni hablar.
+
+
+==== room=61 npc=0 str=1 textAddr=0x1cbfb0 ptrFieldAddr=0x1cbf46 ====
+FLOR: ¡Oye, chico! Tengo
+algo de información
+estupenda. Sólo cobro 50
+malines o sea que vuelve
+cuando los hayas ganado.
+
+
+==== room=61 npc=0 str=2 textAddr=0x1cc02a ptrFieldAddr=0x1cbf48 ====
+FLOR: ¡Oye, chico! Tengo
+algo de información
+estupenda. Sólo cobro 50
+malines. ¿Quieres oirla?
+<YESNO>
+
+
+==== room=61 npc=0 str=3 textAddr=0x1cc08c ptrFieldAddr=0x1cbf4a ====
+{E0} {A4}
+FLOR: Trato hecho. Como te
+habrás imaginado, se trata
+de ese agujero. Justo antes
+de que vinieras le cayó un
+rayo encima. Desde entonces
+ha estado como el cielo
+por la noche. Colócate al
+borde y oirás ... ¿Que no
+puedes oírlo? Ve y escucha
+con atención.
+
+
+==== room=61 npc=0 str=4 textAddr=0x1cc190 ptrFieldAddr=0x1cbf4c ====
+FLOR: En fin, ya veo que el
+mundo se ha convertido en
+un sitio muy barato.
+
+
+==== room=61 npc=0 str=5 textAddr=0x1cc1dc ptrFieldAddr=0x1cbf4e ====
+FLOR: No me queda nada por
+vender, Señorito. Conseguiré
+más para la próxima vez.
+
+
+==== room=61 npc=0 str=6 textAddr=0x1cc22e ptrFieldAddr=0x1cbf50 ====
+FLOR: ¿Te has preguntado
+alguna vez porqué te cobra
+dinero una flor? Es un modo
+de vengarse de los seres que
+destrozan el césped sin
+motivo.
+
+
+==== room=62 npc=0 str=0 textAddr=0x1cc2c4 ptrFieldAddr=0x1cc2c2 ====
+PEDRO: Esta nevada es la
+causa de todos nuestros
+problemas. Hasta que no
+cese no saldrá el sol.
+
+
+==== room=62 npc=1 str=0 textAddr=0x1cc328 ptrFieldAddr=0x1cc326 ====
+SALVA: ¡Oh, no! La nieve ha
+destrozado mi linda casita.
+
+
+==== room=62 npc=2 str=0 textAddr=0x1cc364 ptrFieldAddr=0x1cc362 ====
+ROSITA: No te preocupes,
+cariño. Siempre podemos
+arreglarla.
+
+
+==== room=63 npc=0 str=0 textAddr=0x1cc3a6 ptrFieldAddr=0x1cc3a4 ====
+ALITA: ¡Mira qué de nieve!
+Hubo hasta truenos en el
+pueblo humano.
+
+
+==== room=64 npc=0 str=0 textAddr=0x1cc3f0 ptrFieldAddr=0x1cc3ec ====
+El ciclón arrastró a Dorotea
+y se perdió. Me alegro mucho
+de que esté a salvo. Dijo
+que viajó al pasado. ¿Estaba
+soñando?
+
+
+==== room=64 npc=0 str=1 textAddr=0x1cc46c ptrFieldAddr=0x1cc3ee ====
+NARRACION: ¡<NAME> ganó
+los zapatos mágicos!
+
+Con estos zapatos puedes
+viajar en el tiempo y volver
+del pasado.
+
+<NAME> decide
+ponérselos.
+
+
+==== room=65 npc=0 str=0 textAddr=0x1cc3f0 ptrFieldAddr=0x1cc3ec ====
+El ciclón arrastró a Dorotea
+y se perdió. Me alegro mucho
+de que esté a salvo. Dijo
+que viajó al pasado. ¿Estaba
+soñando?
+
+
+==== room=65 npc=0 str=1 textAddr=0x1cc46c ptrFieldAddr=0x1cc3ee ====
+NARRACION: ¡<NAME> ganó
+los zapatos mágicos!
+
+Con estos zapatos puedes
+viajar en el tiempo y volver
+del pasado.
+
+<NAME> decide
+ponérselos.
+
+
+==== room=66 npc=0 str=0 textAddr=0x1cc3f0 ptrFieldAddr=0x1cc3ec ====
+El ciclón arrastró a Dorotea
+y se perdió. Me alegro mucho
+de que esté a salvo. Dijo
+que viajó al pasado. ¿Estaba
+soñando?
+
+
+==== room=66 npc=0 str=1 textAddr=0x1cc46c ptrFieldAddr=0x1cc3ee ====
+NARRACION: ¡<NAME> ganó
+los zapatos mágicos!
+
+Con estos zapatos puedes
+viajar en el tiempo y volver
+del pasado.
+
+<NAME> decide
+ponérselos.
+
+
+==== room=67 npc=0 str=0 textAddr=0x1cc4f8 ptrFieldAddr=0x1cc4f4 ====
+Mi padre lleva yendo al
+campo de entrenamiento de
+Rafresa desde que lo
+construyeron. Voy a echarle
+mucho de menos. ¡No necesita
+entrenarse!
+
+
+==== room=67 npc=0 str=1 textAddr=0x1cc586 ptrFieldAddr=0x1cc4f6 ====
+Papá se ha ido. No voy a
+poder jugar con él por un
+tiempo.
+
+
+==== room=67 npc=1 str=0 textAddr=0x1cc5c4 ptrFieldAddr=0x1cc5c2 ====
+Debo dejar atrás a mi
+familia e ir a Rafresa a
+entrenar. Sólo voy por
+proteger a mi familia.
+
+
+==== room=67 npc=2 str=0 textAddr=0x1cc626 ptrFieldAddr=0x1cc622 ====
+Sé que es por el bien del
+pueblo, pero me siento tan
+sola sin mi marido. Volverá
+en cuanto gane las 3
+medallas. Mientras tanto
+debo ser paciente.
+
+
+==== room=67 npc=2 str=1 textAddr=0x1cc6ba ptrFieldAddr=0x1cc624 ====
+Mi marido acaba de irse al
+campo de entrenamiento de
+Rafresa. Mi hijo le echa
+mucho de menos, y yo
+tampoco puedo aguantarlo.
+
+
+==== room=68 npc=0 str=0 textAddr=0x1cc742 ptrFieldAddr=0x1cc73e ====
+Dorotea insiste en que ha
+estado en el pasado. Debe
+haber sido duro para ella.
+Pero yo sé mucho del pasado...
+no puede ser verdad.
+
+
+==== room=68 npc=0 str=1 textAddr=0x1cc7c4 ptrFieldAddr=0x1cc740 ====
+Dorotea ha vuelto pero mi
+marido se ha ido al campo de
+entrenamiento.
+
+
+==== room=68 npc=1 str=0 textAddr=0x1cc812 ptrFieldAddr=0x1cc80c ====
+{E0} {A9}
+Me monté en el ciclón para
+ir al pasado pero nadie me
+cree. Y también tengo
+zapatos mágicos ... Odio a
+los adultos, no quiero ser
+mayor nunca.
+
+
+==== room=68 npc=1 str=1 textAddr=0x1cc8a6 ptrFieldAddr=0x1cc80e ====
+¿Qué, quieres mis zapatos?
+De ninguna manera. Los
+cuido mucho. No te los daré
+nunca. Los guardaré donde
+no puedas cogerlos nunca.
+
+
+==== room=68 npc=1 str=2 textAddr=0x1cc92a ptrFieldAddr=0x1cc810 ====
+Mi papá se ha ido. No
+debería haber dicho nada del
+pasado porque he preocupado
+a mi papá. Qué mala soy.
+
+
+==== room=68 npc=2 str=0 textAddr=0x1cc996 ptrFieldAddr=0x1cc994 ====
+Mi hija estuvo perdida mucho
+tiempo. Por eso dice cosas
+raras.
+
+
+==== room=69 npc=0 str=0 textAddr=0x1cc9dc ptrFieldAddr=0x1cc9da ====
+Este bosque parece un lugar
+tranquilo para vivir, ¿no
+crees? Solía vivir en
+Nenúfar, pero voy a empezar
+una nueva vida aquí. Es un
+buen sitio. Seguro que puedo
+hacer muchos amigos aquí.
+
+
+==== room=69 npc=1 str=0 textAddr=0x1cca9c ptrFieldAddr=0x1cca98 ====
+ARMI: Soy un armadillo.
+Estaba disfrutando del agua.
+Gracias por nada ... Vaya,
+tienes muchos amigos aquí.
+¿Puedo unirme a vosotros?
+
+
+==== room=69 npc=1 str=1 textAddr=0x1ccb22 ptrFieldAddr=0x1cca9a ====
+¡Armi el armadillo se une
+al grupo!
+
+
+==== room=70 npc=0 str=0 textAddr=0x1cc9dc ptrFieldAddr=0x1cc9da ====
+Este bosque parece un lugar
+tranquilo para vivir, ¿no
+crees? Solía vivir en
+Nenúfar, pero voy a empezar
+una nueva vida aquí. Es un
+buen sitio. Seguro que puedo
+hacer muchos amigos aquí.
+
+
+==== room=70 npc=1 str=0 textAddr=0x1cca9c ptrFieldAddr=0x1cca98 ====
+ARMI: Soy un armadillo.
+Estaba disfrutando del agua.
+Gracias por nada ... Vaya,
+tienes muchos amigos aquí.
+¿Puedo unirme a vosotros?
+
+
+==== room=70 npc=1 str=1 textAddr=0x1ccb22 ptrFieldAddr=0x1cca9a ====
+¡Armi el armadillo se une
+al grupo!
+
+
+==== room=71 npc=0 str=0 textAddr=0x1ccb66 ptrFieldAddr=0x1ccb64 ====
+¡Por favor, créeme! No soy
+un monstruo. Soy una niña
+humana normal. La puerta se
+abrió simplemente a
+consecuencia del Polvo
+Despertador. ¡Por favor,
+créeme!
+
+
+==== room=71 npc=1 str=0 textAddr=0x1ccc06 ptrFieldAddr=0x1ccc04 ====
+¡Silencio monstruo! Sólo
+puedes llegar a la
+habitación con Polvo
+Despertador por el sexto
+piso. Ningún humano normal
+puede volver de ahí vivo,
+¡no me engañarás!
+
+
+==== room=71 npc=2 str=0 textAddr=0x1cccaa ptrFieldAddr=0x1ccca8 ====
+La habitación del fondo a la
+izquierda está sellada,
+luego no debería poder
+abrirse, pero ella la abrió.
+Lo más raro de todo es que
+cuando miramos hacia allá,
+la puerta se cerró
+rápidamente.
+
+
+==== room=71 npc=3 str=0 textAddr=0x1ccd6c ptrFieldAddr=0x1ccd6a ====
+La gente desaparece de esa
+habitación. Es por eso que
+está sellada. El abrirla
+sólo implica problemas.
+
+
+==== room=71 npc=4 str=0 textAddr=0x1ccdd6 ptrFieldAddr=0x1ccdd4 ====
+El Polvo Despertador es una
+medicina legendaria, pero
+no tengo ni idea de lo que
+es. Hoy en día si algo es
+misterioso, simplemente
+lo encerramos.
+
+
+==== room=71 npc=5 str=0 textAddr=0x1cce6c ptrFieldAddr=0x1cce6a ====
+¡Te vi abrir esa habitación!
+No puedes negarlo. Aquí eres
+un forastero, luego no hay
+necesidad de juicio. ¡Voy
+a llevarte a la cárcel!
+
+
+==== room=71 npc=6 str=0 textAddr=0x1ccef8 ptrFieldAddr=0x1ccef4 ====
+Aquí encerramos a las
+personas a las que juzgamos
+por monstruos. Tengo la
+sensación de que ya las han
+ejecutado ...
+
+
+==== room=71 npc=6 str=1 textAddr=0x1ccf6e ptrFieldAddr=0x1ccef6 ====
+¡Shhhh! Por favor, no
+empieces rumores peligrosos.
+
+
+==== room=71 npc=7 str=0 textAddr=0x1ccfa6 ptrFieldAddr=0x1ccfa2 ====
+¡Shhhh! Por favor, cariño,
+no digas cosas así. Puede
+que te oiga alguien.
+
+
+==== room=71 npc=7 str=1 textAddr=0x1ccff2 ptrFieldAddr=0x1ccfa4 ====
+He oído un rumor de que se
+oyen gemir voces procedentes
+de debajo de la tierra ...
+
+
+==== room=71 npc=8 str=0 textAddr=0x1cd04a ptrFieldAddr=0x1cd046 ====
+Las gentes del desierto
+tienen un código para vivir
+aquí. Pero ya estoy harto.
+Si haces algo sospechoso te
+juzgaremos y te declararemos
+culpable. Eso no es justo.
+
+
+==== room=71 npc=8 str=1 textAddr=0x1cd0ee ptrFieldAddr=0x1cd048 ====
+¿Cómo? ¿Que salió un
+monstruo del suelo? Ya, no
+me hagas reir.
+
+
+==== room=71 npc=9 str=0 textAddr=0x1cd132 ptrFieldAddr=0x1cd12e ====
+No puedo soportarlo. Si
+empiezas una pelea conmigo,
+¡te acusaré de eso!
+
+
+==== room=71 npc=9 str=1 textAddr=0x1cd17c ptrFieldAddr=0x1cd130 ====
+Oye, si dices algo así te la
+vas a buscar.
+
+
+==== room=71 npc=10 str=0 textAddr=0x1cd1ac ptrFieldAddr=0x1cd1a8 ====
+Están matando a gente ¿y no
+puedes ir más allá del
+tercer piso? Son sólo
+monstruos. La sellamos
+corriendo y puede que haya
+gente dentro. Pero creo que
+es demasiado tarde para
+ellos.
+
+
+==== room=71 npc=10 str=1 textAddr=0x1cd264 ptrFieldAddr=0x1cd1aa ====
+¿Cómo? ¿Que salieron
+monstruos del suelo ...? ¿Y
+qué tiene de malo? ¡Déjame
+en paz, por favor! ¡No
+quiero problemas!
+
+
+==== room=71 npc=11 str=0 textAddr=0x1cd2de ptrFieldAddr=0x1cd2da ====
+Han arrestado a algunos
+porque los otros les
+echaron  la culpa. Haz algo
+rápido antes de que te hagan
+lo mismo a ti. ¡Eso si
+valoras tu vida!
+
+
+==== room=71 npc=11 str=1 textAddr=0x1cd36e ptrFieldAddr=0x1cd2dc ====
+¿Y qué tiene de malo? Todo
+el mundo lo sabe. Lo único
+es que tenemos miedo, eso es
+todo. Yo tengo más miedo de
+las personas que de los
+monstruos.
+
+
+==== room=71 npc=12 str=0 textAddr=0x1cd406 ptrFieldAddr=0x1cd402 ====
+¡Tú eres el que me salvó en
+el sexto piso! Te lo
+agradezco de veras. Nadie me
+cree. Dicen que soy un
+monstruo porque regresé del
+sexto piso. Me temo que no
+me queda mucho tiempo. Y
+este palacio ... ¡Vete de
+aquí enseguida, por favor!
+
+
+==== room=71 npc=12 str=1 textAddr=0x1cd4f2 ptrFieldAddr=0x1cd404 ====
+NARRACION: La niña no se
+mueve. Parece que ya está
+muerta.
+
+
+==== room=71 npc=13 str=0 textAddr=0x1cd530 ptrFieldAddr=0x1cd52e ====
+{E0} {B9}
+NARRACION: ¡<NAME>
+abrió el cofre del tesoro!
+¡<NAME> encontró Polvo
+Despertador en su interior!
+
+
+==== room=72 npc=0 str=0 textAddr=0x1cd598 ptrFieldAddr=0x1cd58e ====
+CAMALEON: Eso es. Todo es
+obra mía. Ji, ji, ji. Ese
+polvo me despertó a mi
+también y ahora voy a
+comerte.
+
+
+==== room=72 npc=0 str=1 textAddr=0x1cd604 ptrFieldAddr=0x1cd590 ====
+CAMALEON: Ay ... ¿Voy a
+morirme? Pero humano, tú
+eres el loco. Los humanos
+han olvidado cómo confiar
+y sólo piensan en sí mismos
+... Aunque me venzas no
+podrás reparar los corazones
+de las gentes.
+
+
+==== room=72 npc=0 str=2 textAddr=0x1cd6ca ptrFieldAddr=0x1cd592 ====
+NARRACION: <NAME>
+encontró el Polvo
+Despertador.
+
+
+==== room=72 npc=0 str=3 textAddr=0x1cd6f8 ptrFieldAddr=0x1cd594 ====
+MOA: Soy Moa, un pájaro
+legendario. He pasado muchos
+años en el interior de este
+cuadro. No te vayas aún, por
+favor. Quiero que le cuentes
+a la gente la verdad sobre
+los monstruos. Si puedes
+arreglar el malentendido,
+puede que empiecen a creerse
+los unos a los otros. Ahora,
+vámonos.
+
+
+==== room=72 npc=0 str=4 textAddr=0x1cd816 ptrFieldAddr=0x1cd596 ====
+NARRACION: ¡Moa se unió al
+grupo!
+
+
+==== room=73 npc=0 str=0 textAddr=0x1cd842 ptrFieldAddr=0x1cd83e ====
+Busca con atención donde no
+hay sombra. Mi hija ...
+por favor ...
+
+
+==== room=73 npc=0 str=1 textAddr=0x1cd886 ptrFieldAddr=0x1cd840 ====
+El hombre no se mueve.
+Parece que ya está muerto.
+
+
+==== room=73 npc=1 str=0 textAddr=0x1cd8bc ptrFieldAddr=0x1cd8ba ====
+¡Has venido a salvarme!
+Entonces mi padre debe estar
+también por aquí cerca.
+Llevo tanto tiempo
+esperando. Comenzaba a
+preguntarme si se habían
+olvidado de mí. Me dijo que
+no me moviera, pero me
+voy a ir.
+
+
+==== room=74 npc=0 str=0 textAddr=0x1cd990 ptrFieldAddr=0x1cd98e ====
+Eres un forastero, ¿eh? Yo
+me escapé del Palacio de
+Camelia.
+
+
+==== room=74 npc=1 str=0 textAddr=0x1cd9d4 ptrFieldAddr=0x1cd9ce ====
+Ahora escucha. Si sabes lo
+que es bueno, no entres en
+el palacio.
+
+
+==== room=74 npc=1 str=1 textAddr=0x1cda18 ptrFieldAddr=0x1cd9d0 ====
+También te mandaron a la
+cárcel, ¿eh? Este sitio es
+tan horrible. Mi amigo se
+marchó para empezar una
+nueva vida. Comprendo cómo
+se siente, pero ... no sirve
+de nada. ¿Qué voy a hacer
+yo solo?
+
+
+==== room=74 npc=1 str=2 textAddr=0x1cdada ptrFieldAddr=0x1cd9d2 ====
+Si tienes tiempo, ve a
+verlo. Lo está intentando
+muy duramente.
+
+
+==== room=75 npc=0 str=0 textAddr=0x1cdb20 ptrFieldAddr=0x1cdb1e ====
+Estoy tratando de empezar
+una nueva vida. En el Este.
+Sólo fui allí a cosechar.
+Este sitio será un desierto,
+pero si buscas puedes
+encontrar agua. Eso espero.
+Algún día, este sitio estará
+lleno de árboles. Estoy
+seguro de que la vida
+empezará allí también. La
+sonrisa del chico. Es la
+cosa más reluciente que he
+visto jamás en este
+desierto.
+
+
+==== room=76 npc=0 str=0 textAddr=0x1cdc82 ptrFieldAddr=0x1cdc7e ====
+DODO: Oye, ¡hay alguien
+aquí! No puedo moverme
+porque este suelo es
+demasiado endeble. Me
+salvaste la vida. Aunque no
+me gustan los humanos, haré
+una excepción. Más adelante
+existe también un tipo malo
+llamado el Maestro
+Marioneta. Le echa hechizos
+a los tocones y a las orugas
+¡y los convierte en
+monstruos!
+
+
+==== room=76 npc=0 str=1 textAddr=0x1cddb8 ptrFieldAddr=0x1cdc80 ====
+NARRACION : Dodo se une
+al grupo.
+
+
+==== room=76 npc=1 str=0 textAddr=0x1cdde0 ptrFieldAddr=0x1cdddc ====
+MAESTRO MARIONETA: Soy el
+Maestro Marioneta. Le doy
+vida a objetos inanimados.
+Los tocones y las orugas
+son mis obras de arte.
+Ahora, ¡devuélveme mis
+marionetas!
+
+
+==== room=76 npc=1 str=1 textAddr=0x1cde84 ptrFieldAddr=0x1cddde ====
+MAESTRO MARIONETA: ¡No puede
+ser! Un gran brujo como yo
+derrotado por
+un simple niño.
+
+
+==== room=76 npc=2 str=0 textAddr=0x1cdede ptrFieldAddr=0x1cdedc ====
+NARRACION: El Maestro
+Marioneta que creó esta
+mazmorra ya no existe.
+Por eso esta mazmorra y
+todas sus creaciones están
+a punto de desaparecer.
+
+
+==== room=77 npc=0 str=0 textAddr=0x1cdf88 ptrFieldAddr=0x1cdf7a ====
+Un monstruo llamado Barón
+amenza al pueblo de Nenúfar.
+Es hora de que nos unamos
+todos para luchar contra
+él, pero primero debemos
+persuadirles.
+
+
+==== room=77 npc=0 str=1 textAddr=0x1ce01a ptrFieldAddr=0x1cdf7c ====
+Nadie escucha la llamada de
+unidad de este viejo mono.
+Vd. tiene una buene espada,
+señor. ¿Podría persuadirlos
+por mí?
+<YESNO>
+
+
+==== room=77 npc=0 str=2 textAddr=0x1ce094 ptrFieldAddr=0x1cdf7e ====
+{E0} {DE}
+¡Oh, lo hará! Gracias.
+Hágales saber que mediante
+la unión podremos derrotar
+al malvado monstruo Barón.
+
+
+==== room=77 npc=0 str=3 textAddr=0x1ce102 ptrFieldAddr=0x1cdf80 ====
+Tal y como pensaba ...
+Entonces váyase por favor.
+
+
+==== room=77 npc=0 str=4 textAddr=0x1ce136 ptrFieldAddr=0x1cdf82 ====
+Quiero que persuada a
+todos los del pueblo.
+
+
+==== room=77 npc=0 str=5 textAddr=0x1ce164 ptrFieldAddr=0x1cdf84 ====
+Comprendo. Si no quieren
+luchar, así sea. Si no lo
+hacen su pueblo será
+destrozado. Gracias por
+intentar persuadirles.
+
+
+==== room=77 npc=0 str=6 textAddr=0x1ce1dc ptrFieldAddr=0x1cdf86 ====
+Aquí es donde nací y crecí.
+Depende de mí el salvar
+este pueblo.
+
+
+==== room=77 npc=1 str=0 textAddr=0x1ce220 ptrFieldAddr=0x1ce21e ====
+¿Quieres que luche por este
+pueblo? De eso nada, no
+quiero morir aún. Pero tú
+tienes una buena espada, ¿por
+qué no luchas tú?
+
+
+==== room=77 npc=2 str=0 textAddr=0x1ce2a4 ptrFieldAddr=0x1ce2a0 ====
+Oye, soy sólo un niño ¿y
+quieres que luche? No es
+justo.
+
+
+==== room=77 npc=2 str=1 textAddr=0x1ce2de ptrFieldAddr=0x1ce2a2 ====
+Nadie sabe cómo ser duro. El
+ataque es la mejor
+defensa, ¿no? Todos deberían
+tener más valor, no sólo por
+el pueblo sino por ellos
+mismos.
+
+
+==== room=77 npc=3 str=0 textAddr=0x1ce36e ptrFieldAddr=0x1ce36a ====
+¿Conoces a Barón? Está en el
+desierto en alguna parte.
+Pero no es fácil
+encontrarle.
+
+
+==== room=77 npc=3 str=1 textAddr=0x1ce3c4 ptrFieldAddr=0x1ce36c ====
+¿Que el pequeño mono va a
+luchar contra Barón? Le
+respeto mucho.
+
+
+==== room=77 npc=4 str=0 textAddr=0x1ce408 ptrFieldAddr=0x1ce406 ====
+CASA TOMAS
+Prohibida la entrada a
+monstruos.
+
+
+==== room=78 npc=0 str=0 textAddr=0x1ce43a ptrFieldAddr=0x1ce438 ====
+ZORRITA: Tienes razón.
+Barón es peligroso. Nuestra
+única esperanza es huir. Yo
+soy una dama, o sea que no
+voy a luchar. Búscate a otro
+para que luche para ti.
+
+
+==== room=79 npc=0 str=0 textAddr=0x1ce4ec ptrFieldAddr=0x1ce4e4 ====
+Como los otros no ayudaron,
+mi marido intentó en vano
+salvar este pueblo. Estaba
+muy preocupada de que fuera
+a hacer algo precipitado.
+
+
+==== room=79 npc=0 str=1 textAddr=0x1ce574 ptrFieldAddr=0x1ce4e6 ====
+{E0} <YESNO>
+Todos estaban preocupados.
+Fueron a la playa a
+buscarlo. Estoy segura de
+que se alegrará de
+saberlo, si vuelve en sí.
+
+
+==== room=79 npc=0 str=2 textAddr=0x1ce5f0 ptrFieldAddr=0x1ce4e8 ====
+{E0} {FA}
+Todos los del pueblo fueron
+a buscarte y te trajeron de
+vuelta aquí.
+
+
+==== room=79 npc=0 str=3 textAddr=0x1ce63a ptrFieldAddr=0x1ce4ea ====
+{E0}0 
+Ahora, descansa un poco por
+favor. ¡No te muevas o te
+harás daño!
+
+
+==== room=79 npc=1 str=0 textAddr=0x1ce68c ptrFieldAddr=0x1ce682 ====
+..........................
+
+
+==== room=79 npc=1 str=1 textAddr=0x1ce6a8 ptrFieldAddr=0x1ce684 ====
+{E0} {F9}
+NARRACION: En ese momento
+el mono volvió en sí ...
+
+¿Mmmm? ¿Dónde? Estoy en
+casa. ¿Qué ha pasado? ¿Por
+qué están todos aquí? Me
+hirió ... Barón, y ...
+¿correcto? Estaba en la
+playa y ...
+
+
+==== room=79 npc=1 str=2 textAddr=0x1ce768 ptrFieldAddr=0x1ce686 ====
+{E0} {FB}
+¿Por qué ...? ¿Por qué
+salvaste a este viejo
+mono ...?
+{47}El mono miró a su
+alrededor sorprendido.{48}
+
+
+==== room=79 npc=1 str=3 textAddr=0x1ce7d0 ptrFieldAddr=0x1ce688 ====
+{E0} 
+
+==== room=79 npc=1 str=4 textAddr=0x1ce8a4 ptrFieldAddr=0x1ce68a ====
+{E0}03
+... Mmmm. Ahora debería
+descansar. Estoy seguro de
+que el sol brillará cuando
+me despierte mañana.
+
+Según el mono cerraba los
+ojos una niebla blanca
+envolvió la zona ...
+
+
+==== room=79 npc=2 str=0 textAddr=0x1ce958 ptrFieldAddr=0x1ce954 ====
+{E0} {F3}
+Qué valiente para ser un
+viejo mono. Supongo que
+deberíamos trabajar más
+duramente que él.
+
+
+==== room=79 npc=2 str=1 textAddr=0x1ce9b8 ptrFieldAddr=0x1ce956 ====
+{E0} {FC}
+Bien, ya sabes porqué.
+Porque somos camaradas.
+Pero gracias, viejo.
+{47}El oso parece
+avergonzado al hablar.{48}
+
+
+==== room=79 npc=3 str=0 textAddr=0x1cea2c ptrFieldAddr=0x1cea28 ====
+{E0} {F4}
+Soy una dama, pero él es un
+viejo mono. Debería haber
+ayudado más.
+
+
+==== room=79 npc=3 str=1 textAddr=0x1cea74 ptrFieldAddr=0x1cea2a ====
+{E0} {FD}
+
+La zorrita gritó.
+
+¡En serio! ¡Si te sucediera
+algo nos arrepentiríamos
+toda la vida!
+
+
+==== room=79 npc=4 str=0 textAddr=0x1cead4 ptrFieldAddr=0x1cead0 ====
+{E0} {F5}
+¿Qué son todos esos animales
+detrás de ti? ... Mmm, mmm,
+mmm. ... Mmm, mmm, mmm.
+... Mmm, mmm, mmm. ¡Ya veo!
+Estáis viajando y
+ayudándoos unos a otros.
+Eso es una buena idea.
+
+
+==== room=79 npc=4 str=1 textAddr=0x1ceb88 ptrFieldAddr=0x1cead2 ====
+{E0} 
+
+En serio, de ahora en
+adelante deberíamos hacer a
+este viejo mono jefe de
+nuestro pueblo.
+
+Todos estuvieron de acuerdo con el viejo Tom.
+
+
+==== room=80 npc=0 str=0 textAddr=0x1cec1c ptrFieldAddr=0x1cec18 ====
+Soy fuerte, pero mi poder es
+para mí solo. No lo
+malgastaré en otros.
+
+
+==== room=80 npc=0 str=1 textAddr=0x1cec64 ptrFieldAddr=0x1cec1a ====
+Soy un chico muy grande y no
+hice nada por ayudar. Estoy
+avergonzado. De ahora en
+adelante voy a tener mucho
+coraje y lo usaré para
+ayudar a otros.
+
+
+==== room=81 npc=0 str=0 textAddr=0x1cecfe ptrFieldAddr=0x1cecfc ====
+¿Animales de alquilar? Lo
+siento, pero ninguno de
+nosotros quiere luchar.
+
+
+==== room=82 npc=0 str=0 textAddr=0x1ced54 ptrFieldAddr=0x1ced50 ====
+{E0} {EA}
+Barón ... si fuera ...
+un poco ... más joven...
+
+
+==== room=82 npc=0 str=1 textAddr=0x1ced8a ptrFieldAddr=0x1ced52 ====
+NARRACION: Perdió el
+conocimiento debido a
+sus heridas.
+
+
+==== room=82 npc=1 str=0 textAddr=0x1cedcc ptrFieldAddr=0x1cedc4 ====
+Un inmenso monstruo llamado
+Barón está hecho una furia.
+
+
+==== room=82 npc=1 str=1 textAddr=0x1cee06 ptrFieldAddr=0x1cedc6 ====
+{E0} {EC}
+¡Lo he visto! De repente
+Barón surgió de la playa.
+Era un mono tan valiente.
+Atacó a Barón sin tener ni
+un arma.
+
+
+==== room=82 npc=1 str=2 textAddr=0x1cee7c ptrFieldAddr=0x1cedc8 ====
+¿Qué te parece Barón? No
+sé, pero ese mono estaba
+dando vueltas. Algo sobre
+lugares que no dejan huellas
+... Lo siento pero no lo
+recuerdo.
+
+
+==== room=82 npc=1 str=3 textAddr=0x1cef0a ptrFieldAddr=0x1cedca ====
+Los animales del pueblo se
+llevaron al mono. Espero que
+esté bien. Pero dado lo
+cobardes que son, ¿cómo se
+las arreglaron para venir
+aquí?
+
+
+==== room=82 npc=2 str=0 textAddr=0x1cef98 ptrFieldAddr=0x1cef96 ====
+NARRACION: ¡<NAME>
+saltó del lugar que no
+deja huellas!
+
+
+==== room=83 npc=0 str=0 textAddr=0x1cefd2 ptrFieldAddr=0x1cefce ====
+BARON: Eres un loco por
+venir. ¡Vas a morir!
+
+
+==== room=83 npc=0 str=1 textAddr=0x1cf000 ptrFieldAddr=0x1cefd0 ====
+BARON: ¿Por qué ...? Estamos
+destinados a vivir ... ¿Por
+qué nos perciben a los
+monstruos como ...
+
+
+==== room=84 npc=0 str=0 textAddr=0x1cf06c ptrFieldAddr=0x1cf068 ====
+MADRE MONSTRUO: Eres un
+humano. Este no es lugar
+para ti.
+
+
+==== room=84 npc=0 str=1 textAddr=0x1cf0a8 ptrFieldAddr=0x1cf06a ====
+MADRE MONSTRUO: ¿Por qué
+nos elimináis? ¿Es que esta
+tierra es sólo para humanos?
+Un mundo gobernado por
+humanos está bien, pero
+¿es que un mundo gobernado
+por monstruos es malvado?
+
+
+==== room=84 npc=1 str=0 textAddr=0x1cf162 ptrFieldAddr=0x1cf160 ====
+NARRACION: ¡Ganó un cuerno
+de Madre Monstruo! El Valle
+de las Dalias era el ser
+llamado Madre Monstruo.
+Pero gracias a que fue
+aniquilada ya no nacerán más
+monstruos en este valle ...
+
+
+==== room=85 npc=0 str=0 textAddr=0x1cf224 ptrFieldAddr=0x1cf222 ====
+Cuando sea mayor seré tu
+novia. Seremos una
+familia feliz.
+
+
+==== room=85 npc=1 str=0 textAddr=0x1cf262 ptrFieldAddr=0x1cf260 ====
+Te lo prometo. Quiero tener
+un hijo como tú. Quiero
+llamarlo <NAME>.
+
+
+==== room=85 npc=2 str=0 textAddr=0x1cf2a6 ptrFieldAddr=0x1cf2a4 ====
+Qué precoz ... niños
+prometiéndose en matrimonio
+a esa edad.
+
+
+==== room=86 npc=0 str=0 textAddr=0x1cf2fa ptrFieldAddr=0x1cf2f6 ====
+Aún no han decidido qué
+estatua poner en la fuente.
+
+
+==== room=86 npc=0 str=1 textAddr=0x1cf330 ptrFieldAddr=0x1cf2f8 ====
+He oído que van a esculpir
+la estatua de la fuente como
+tú. ¡Caramba!
+
+
+==== room=86 npc=1 str=0 textAddr=0x1cf37c ptrFieldAddr=0x1cf378 ====
+El Rey encerró a los
+monstruos en la mazmorra del
+castillo. Espero que se
+libre de ellos.
+
+
+==== room=86 npc=1 str=1 textAddr=0x1cf3d8 ptrFieldAddr=0x1cf37a ====
+He oído que el monstruo que
+estaba encerrado en la
+mazmorra del castillo se ha
+escapado ... ¡Qué miedo!
+
+
+==== room=86 npc=2 str=0 textAddr=0x1cf444 ptrFieldAddr=0x1cf442 ====
+¡Apártete! ¡He oído que hay
+un monstruo dentro de esta
+iglesia!
+
+
+==== room=86 npc=3 str=0 textAddr=0x1cf488 ptrFieldAddr=0x1cf486 ====
+Me he entusiasmado un poco
+pero ya estoy tranquilo ...
+¡Vamos a cazar al monstruo!
+
+
+==== room=86 npc=4 str=0 textAddr=0x1cf4e0 ptrFieldAddr=0x1cf4dc ====
+Casi todos están en la
+iglesia. Hoy es domingo.
+
+
+==== room=86 npc=4 str=1 textAddr=0x1cf512 ptrFieldAddr=0x1cf4de ====
+Eres el chico que salvó al
+Rey, ¿verdad? Qué valiente.
+La señal enfrente de la
+fuente será una lección para
+este pueblo.
+
+
+==== room=86 npc=5 str=0 textAddr=0x1cf590 ptrFieldAddr=0x1cf58c ====
+Fuente en construcción. Se
+terminará tan pronto como
+esté hecha la estatua.
+
+
+==== room=86 npc=5 str=1 textAddr=0x1cf5de ptrFieldAddr=0x1cf58e ====
+{E0}0a
+Fuente del Héroe.
+¡Jovencito, coge tu espada!
+Ahora es el momento de
+luchar. <NAME>
+comprendió la importancia
+de estas palabras.
+
+
+==== room=86 npc=6 str=0 textAddr=0x1cf662 ptrFieldAddr=0x1cf660 ====
+Hogar de Milú.
+Por favor, échenle de comer.
+
+
+==== room=86 npc=7 str=0 textAddr=0x1cf692 ptrFieldAddr=0x1cf690 ====
+Propietario, hazte ver o lo
+subastaremos: firmado el
+Rey.
+
+
+==== room=86 npc=8 str=0 textAddr=0x1cf6d0 ptrFieldAddr=0x1cf6ce ====
+Parque. ¡En construcción!
+¡Prohibido el paso!
+
+
+==== room=87 npc=0 str=0 textAddr=0x1cf708 ptrFieldAddr=0x1cf702 ====
+Los monstruos se han
+escapado de la prisión ...
+¡Date prisa! ¡Debemos salvar
+al Rey!
+
+
+==== room=87 npc=0 str=1 textAddr=0x1cf75e ptrFieldAddr=0x1cf704 ====
+Su Alteza, ¿está bien?
+Oh, perdóneme mi error.
+
+
+==== room=87 npc=0 str=2 textAddr=0x1cf78e ptrFieldAddr=0x1cf706 ====
+No pude moverme cuando hizo
+falta. Debo entrenar más
+todos los días.
+
+
+==== room=88 npc=0 str=0 textAddr=0x1cf7e6 ptrFieldAddr=0x1cf7e0 ====
+¡Oh, no! ¡El Rey está en
+peligro!
+
+
+==== room=88 npc=0 str=1 textAddr=0x1cf80a ptrFieldAddr=0x1cf7e2 ====
+¡Oh, no! ¡La gente está en
+peligro! ¡Estamos todos en
+peligro!
+
+
+==== room=88 npc=0 str=2 textAddr=0x1cf84a ptrFieldAddr=0x1cf7e4 ====
+¡Qué horrible! Sirvo al Rey
+y no pude salvarlo ... Hace
+un momento los soldados
+partieron a cazar al
+monstruo.
+
+
+==== room=88 npc=1 str=0 textAddr=0x1cf8c0 ptrFieldAddr=0x1cf8ba ====
+Los monstruos que estaban en
+la cárcel están ahora en la
+habitación del Rey ...
+¡Por favor, ayuda al Rey!
+
+
+==== room=88 npc=1 str=1 textAddr=0x1cf92c ptrFieldAddr=0x1cf8bc ====
+Los monstruos se dirigen al
+pueblo. ¡Ve a buscarlos por
+favor!
+
+
+==== room=88 npc=1 str=2 textAddr=0x1cf96c ptrFieldAddr=0x1cf8be ====
+Los hombres de este castillo
+no son de confianza, y se
+meten con nosotros.
+
+
+==== room=88 npc=2 str=0 textAddr=0x1cf9be ptrFieldAddr=0x1cf9b8 ====
+¡Los monstruos se han
+escapado de la cárcel!
+¡Tenemos que hacer algo!
+
+
+==== room=88 npc=2 str=1 textAddr=0x1cfa06 ptrFieldAddr=0x1cf9ba ====
+Los monstruos se dirigen al
+pueblo. ¡Tenemos que
+hacer algo!
+
+
+==== room=88 npc=2 str=2 textAddr=0x1cfa44 ptrFieldAddr=0x1cf9bc ====
+... Tu valentía es un acto
+muy noble ...
+
+
+==== room=88 npc=3 str=0 textAddr=0x1cfa74 ptrFieldAddr=0x1cfa6e ====
+No he cogido una espada en
+mi vida. ¡Haz algo, por
+favor!
+
+
+==== room=88 npc=3 str=1 textAddr=0x1cfab0 ptrFieldAddr=0x1cfa70 ====
+¡Los monstruos se dirigen al
+pueblo! ¡Haz algo, por
+favor!
+
+
+==== room=88 npc=3 str=2 textAddr=0x1cfaec ptrFieldAddr=0x1cfa72 ====
+El Rey está construyendo un
+campo de entrenamiento en
+Rafresa. Me entrenaré mucho.
+
+
+==== room=88 npc=4 str=0 textAddr=0x1cfb44 ptrFieldAddr=0x1cfb40 ====
+Oh, has venido. Recuerdo el
+trabajo que hiciste en el
+pasado. Haré una estatua en
+la fuente en honor a tu
+valentía. Ya se está
+construyendo. ¡Ya la
+verás, jovencito!
+
+
+==== room=88 npc=4 str=1 textAddr=0x1cfbec ptrFieldAddr=0x1cfb42 ====
+He reflexionado mucho y me
+faltaba experiencia.
+Construiré un campo de
+entrenamiento para ayudar
+a los guerreros a que sean
+como tú.
+
+
+==== room=88 npc=5 str=0 textAddr=0x1cfc74 ptrFieldAddr=0x1cfc72 ====
+Qué horror ... ¡Monstruos
+malvados en nuestra santa
+iglesia ...! Vine corriendo
+a informar, pero ya habían
+profanado la iglesia.
+
+
+==== room=89 npc=0 str=0 textAddr=0x1cfcfc ptrFieldAddr=0x1cfcf8 ====
+{E0}0H
+Gracias a ti los monstruos
+huyeron despavoridos. Me has
+salvado la vida. Tu acto de
+valentía es muy noble.
+
+
+==== room=89 npc=0 str=1 textAddr=0x1cfd6c ptrFieldAddr=0x1cfcfa ====
+Me pregunto adónde fueron
+todos esos monstruos. Espero
+que estén todos a salvo ...
+
+
+==== room=90 npc=0 str=0 textAddr=0x1cfdd8 ptrFieldAddr=0x1cfdd6 ====
+Dios Todopoderoso, vigíla
+nuestro hoy, nuestro mañana
+y nuestro futuro.
+
+
+==== room=90 npc=1 str=0 textAddr=0x1cfe24 ptrFieldAddr=0x1cfe22 ====
+¡Oh, Santo Padre! ¡Te ruego
+cures a mi hijo!
+
+
+==== room=90 npc=2 str=0 textAddr=0x1cfe54 ptrFieldAddr=0x1cfe52 ====
+Soy un niño, por eso quiero
+ser fuerte y sano. Sálvame
+por favor, Santo Padre.
+
+
+==== room=90 npc=3 str=0 textAddr=0x1cfea6 ptrFieldAddr=0x1cfea4 ====
+¡Oh, Santo Padre! Te
+agradezco que me permitas
+vivir tanto tiempo.
+
+
+==== room=90 npc=4 str=0 textAddr=0x1cfeec ptrFieldAddr=0x1cfeea ====
+¡Oh, Señor! Guíanos hacia
+una vida pacífica, sin baños
+de sangre.
+
+
+==== room=90 npc=5 str=0 textAddr=0x1cff34 ptrFieldAddr=0x1cff30 ====
+{E0}0I
+No hicimos nada. Nos
+capturaron simplemente
+porque somos monstruos.
+
+
+==== room=90 npc=5 str=1 textAddr=0x1cff7e ptrFieldAddr=0x1cff32 ====
+Intenté hablarle, pero no
+hubo respuesta.
+Probablemente ya esté
+muerto.
+
+
+==== room=90 npc=6 str=0 textAddr=0x1cffcc ptrFieldAddr=0x1cffc8 ====
+{E0}0J
+Huímos en busca de
+libertad, ¿es que eso es tan
+malo? Nuestra vida es
+larga ... ¡pero dices que
+debemos pasar unos cientos
+de años en la cárcel!
+
+
+==== room=90 npc=6 str=1 textAddr=0x1d0062 ptrFieldAddr=0x1cffca ====
+Intenté hablarle, pero no hubo
+respuesta. Probablemente
+ya esté muerto.
+
+
+==== room=90 npc=7 str=0 textAddr=0x1d00b2 ptrFieldAddr=0x1d00ac ====
+{E0}0K
+Sólo quería hablar con el
+Rey. No quería atacarle,
+pero ... Quería hacer que
+nos comprendiera, pero
+no sirvió de nada.
+
+
+==== room=90 npc=7 str=1 textAddr=0x1d012e ptrFieldAddr=0x1d00ae ====
+{E0}0U
+¿Es un crimen haber nacido
+monstruo? Los humanos
+son los monstruos ... No
+me arrepiento de mi vida,
+pero lo único que quería era
+saborear la vida.
+
+
+==== room=90 npc=7 str=2 textAddr=0x1d01c6 ptrFieldAddr=0x1d00b0 ====
+Intenté hablarle, pero no hubo
+respuesta. Probablemente
+ya esté muerto.
+
+
+==== room=90 npc=8 str=0 textAddr=0x1d0218 ptrFieldAddr=0x1d0210 ====
+{E0}0L
+Los humanos están llenos de
+prejuicios. TODOS los
+monstruos tienen reputación
+de ser malvados. Como los
+humanos, todos somos
+distintos. ¿Cuándo van a
+entenderlo?
+
+
+==== room=90 npc=8 str=1 textAddr=0x1d02c0 ptrFieldAddr=0x1d0212 ====
+¡Espera por favor! No quiero
+hacerte daño, sólo quiero
+que me escuches.
+
+
+==== room=90 npc=8 str=2 textAddr=0x1d030a ptrFieldAddr=0x1d0214 ====
+{E0}0V
+Si morimos ... ¿adónde
+iremos a parar ...?
+
+
+==== room=90 npc=8 str=3 textAddr=0x1d033a ptrFieldAddr=0x1d0216 ====
+Intenté hablarle, pero no hubo
+respuesta. Probablemente
+ya esté muerto.
+
+
+==== room=90 npc=9 str=0 textAddr=0x1d0386 ptrFieldAddr=0x1d0384 ====
+¿Era una lágrima en el ojo
+de ese monstruo? Debo estar
+muy cansado.
+
+
+==== room=90 npc=10 str=0 textAddr=0x1d03ce ptrFieldAddr=0x1d03cc ====
+Chico, ¡qué sorpresa! Estos
+monstruos ni siquiera
+intentaron resistirse.
+
+
+==== room=91 npc=0 str=0 textAddr=0x1d0438 ptrFieldAddr=0x1d0426 ====
+{E0}0h
+MADRE MONSTRUO: Ese
+cuerno ... ¡Ese cuerno que
+tienes es mío! ¿Por qué? No
+debería haber dos cuernos
+míos en este mundo.
+¿Quién eres?
+
+
+==== room=91 npc=0 str=1 textAddr=0x1d04c4 ptrFieldAddr=0x1d0428 ====
+{E0}0i
+NARRACION: <NAME>
+comenzó a contar la historia
+del mundo de la luz, las
+formas vivientes y la
+historia pasada ... Madre
+Monstruo escuchó a
+<NAME> sin inmutarse.
+
+
+==== room=91 npc=0 str=2 textAddr=0x1d0560 ptrFieldAddr=0x1d042a ====
+{E0}0j
+MADRE MONSTRUO: Parece
+mentira que si no fuera por
+ese cuerno no tendríamos
+mundo futuro ni otras formas
+vivientes. Y, ¿qué es "la
+luz"? ¿Lo contrario de la
+oscuridad? Igual que las
+estrellas del cielo, tan
+llenas de misterios ...
+
+
+==== room=91 npc=0 str=3 textAddr=0x1d064c ptrFieldAddr=0x1d042c ====
+Cuando nació este planeta
+hubo una explosión que
+afectó a nuestro mundo.
+Cuando recuperamos el
+sentido nos encontrábamos
+en este planeta. Intentamos
+muchas veces volver a
+nuestro planeta pero la
+puerta parece estar sellada
+con algún tipo de energía.
+Si destruimos esta energía
+se abrirán las puertas, pero
+la energía es tan poderosa.
+
+
+==== room=91 npc=0 str=4 textAddr=0x1d079c ptrFieldAddr=0x1d042e ====
+{E0}0k
+NARRACION: Fue el destino
+quien envió aquí a estos
+monstruos. No podían
+regresar a su planeta, pero
+aún así no estaban
+destinados a vivir solos en
+este mundo. ¿Quién puede
+culparles? Que los
+monstruos son malvados es
+sólo cómo los perciben los
+humanos. Por primera vez en
+su vida <NAME>
+comprendió la situación en
+que se encontraban los
+monstruos. Los sacrificios
+y los baños de sangre
+... ¿crees que podemos
+alcanzar la paz así?
+
+
+==== room=91 npc=0 str=5 textAddr=0x1d094a ptrFieldAddr=0x1d0430 ====
+{E0}0l
+Humano, quizá puedas abrir
+la puerta al Mundo
+Subterráneo. ¡Pero es
+peligroso! Muchos de
+nuestros amigos perdieron
+así la vida.
+
+
+==== room=91 npc=0 str=6 textAddr=0x1d09d0 ptrFieldAddr=0x1d0432 ====
+Esa mirada en tus ojos ...
+¿vas a ir de verdad? No
+tienes que perder la vida
+ahora. ... Te lo preguntaré
+otra vez, ¿vas a ir de
+verdad?
+<YESNO>
+
+
+==== room=91 npc=0 str=7 textAddr=0x1d0a5c ptrFieldAddr=0x1d0434 ====
+{E0}0n
+Entonces no diré más. Rezaré
+por tu seguridad.
+
+
+==== room=91 npc=0 str=8 textAddr=0x1d0a90 ptrFieldAddr=0x1d0436 ====
+Has tomado una decisión
+difícil. Debemos respetar
+que quieras salvar tu
+propia vida ...
+
+
+==== room=91 npc=1 str=0 textAddr=0x1d0af0 ptrFieldAddr=0x1d0aea ====
+¿Conoces los cinco sentidos?
+<YESNO>
+
+
+==== room=91 npc=1 str=1 textAddr=0x1d0b10 ptrFieldAddr=0x1d0aec ====
+Ya veo que los conoces.
+Eso está bien.
+
+
+==== room=91 npc=1 str=2 textAddr=0x1d0b38 ptrFieldAddr=0x1d0aee ====
+Estos son los cinco sentidos
+que experimenta el mundo
+exterior: la vista, el oído,
+el tacto, el olfato y el
+gusto. Recuérdalos.
+
+
+==== room=91 npc=2 str=0 textAddr=0x1d0bbc ptrFieldAddr=0x1d0bba ====
+Tienes un aspecto extraño,
+¿no? Pero seré tu amigo.
+
+
+==== room=91 npc=3 str=0 textAddr=0x1d0bf4 ptrFieldAddr=0x1d0bf2 ====
+Es peligroso ahí delante.
+No te acerques.
+
+
+==== room=91 npc=4 str=0 textAddr=0x1d0c22 ptrFieldAddr=0x1d0c20 ====
+Los cinco sentidos protegen
+la Energía Espíritu. Es muy
+difícil vencerla.
+
+
+==== room=91 npc=5 str=0 textAddr=0x1d0c70 ptrFieldAddr=0x1d0c6e ====
+Muchos han ido antes a
+destruir a la Energía
+Espíritu, pero ninguno
+ha regresado.
+
+
+==== room=91 npc=6 str=0 textAddr=0x1d0cc6 ptrFieldAddr=0x1d0cc4 ====
+NARRACION: Cuando se
+purifique la puerta de los
+sentidos, aparecerá la
+verdadera forma.
+
+
+==== room=92 npc=0 str=0 textAddr=0x1d0438 ptrFieldAddr=0x1d0426 ====
+{E0}0h
+MADRE MONSTRUO: Ese
+cuerno ... ¡Ese cuerno que
+tienes es mío! ¿Por qué? No
+debería haber dos cuernos
+míos en este mundo.
+¿Quién eres?
+
+
+==== room=92 npc=0 str=1 textAddr=0x1d04c4 ptrFieldAddr=0x1d0428 ====
+{E0}0i
+NARRACION: <NAME>
+comenzó a contar la historia
+del mundo de la luz, las
+formas vivientes y la
+historia pasada ... Madre
+Monstruo escuchó a
+<NAME> sin inmutarse.
+
+
+==== room=92 npc=0 str=2 textAddr=0x1d0560 ptrFieldAddr=0x1d042a ====
+{E0}0j
+MADRE MONSTRUO: Parece
+mentira que si no fuera por
+ese cuerno no tendríamos
+mundo futuro ni otras formas
+vivientes. Y, ¿qué es "la
+luz"? ¿Lo contrario de la
+oscuridad? Igual que las
+estrellas del cielo, tan
+llenas de misterios ...
+
+
+==== room=92 npc=0 str=3 textAddr=0x1d064c ptrFieldAddr=0x1d042c ====
+Cuando nació este planeta
+hubo una explosión que
+afectó a nuestro mundo.
+Cuando recuperamos el
+sentido nos encontrábamos
+en este planeta. Intentamos
+muchas veces volver a
+nuestro planeta pero la
+puerta parece estar sellada
+con algún tipo de energía.
+Si destruimos esta energía
+se abrirán las puertas, pero
+la energía es tan poderosa.
+
+
+==== room=92 npc=0 str=4 textAddr=0x1d079c ptrFieldAddr=0x1d042e ====
+{E0}0k
+NARRACION: Fue el destino
+quien envió aquí a estos
+monstruos. No podían
+regresar a su planeta, pero
+aún así no estaban
+destinados a vivir solos en
+este mundo. ¿Quién puede
+culparles? Que los
+monstruos son malvados es
+sólo cómo los perciben los
+humanos. Por primera vez en
+su vida <NAME>
+comprendió la situación en
+que se encontraban los
+monstruos. Los sacrificios
+y los baños de sangre
+... ¿crees que podemos
+alcanzar la paz así?
+
+
+==== room=92 npc=0 str=5 textAddr=0x1d094a ptrFieldAddr=0x1d0430 ====
+{E0}0l
+Humano, quizá puedas abrir
+la puerta al Mundo
+Subterráneo. ¡Pero es
+peligroso! Muchos de
+nuestros amigos perdieron
+así la vida.
+
+
+==== room=92 npc=0 str=6 textAddr=0x1d09d0 ptrFieldAddr=0x1d0432 ====
+Esa mirada en tus ojos ...
+¿vas a ir de verdad? No
+tienes que perder la vida
+ahora. ... Te lo preguntaré
+otra vez, ¿vas a ir de
+verdad?
+<YESNO>
+
+
+==== room=92 npc=0 str=7 textAddr=0x1d0a5c ptrFieldAddr=0x1d0434 ====
+{E0}0n
+Entonces no diré más. Rezaré
+por tu seguridad.
+
+
+==== room=92 npc=0 str=8 textAddr=0x1d0a90 ptrFieldAddr=0x1d0436 ====
+Has tomado una decisión
+difícil. Debemos respetar
+que quieras salvar tu
+propia vida ...
+
+
+==== room=92 npc=1 str=0 textAddr=0x1d0af0 ptrFieldAddr=0x1d0aea ====
+¿Conoces los cinco sentidos?
+<YESNO>
+
+
+==== room=92 npc=1 str=1 textAddr=0x1d0b10 ptrFieldAddr=0x1d0aec ====
+Ya veo que los conoces.
+Eso está bien.
+
+
+==== room=92 npc=1 str=2 textAddr=0x1d0b38 ptrFieldAddr=0x1d0aee ====
+Estos son los cinco sentidos
+que experimenta el mundo
+exterior: la vista, el oído,
+el tacto, el olfato y el
+gusto. Recuérdalos.
+
+
+==== room=92 npc=2 str=0 textAddr=0x1d0bbc ptrFieldAddr=0x1d0bba ====
+Tienes un aspecto extraño,
+¿no? Pero seré tu amigo.
+
+
+==== room=92 npc=3 str=0 textAddr=0x1d0bf4 ptrFieldAddr=0x1d0bf2 ====
+Es peligroso ahí delante.
+No te acerques.
+
+
+==== room=92 npc=4 str=0 textAddr=0x1d0c22 ptrFieldAddr=0x1d0c20 ====
+Los cinco sentidos protegen
+la Energía Espíritu. Es muy
+difícil vencerla.
+
+
+==== room=92 npc=5 str=0 textAddr=0x1d0c70 ptrFieldAddr=0x1d0c6e ====
+Muchos han ido antes a
+destruir a la Energía
+Espíritu, pero ninguno
+ha regresado.
+
+
+==== room=92 npc=6 str=0 textAddr=0x1d0cc6 ptrFieldAddr=0x1d0cc4 ====
+NARRACION: Cuando se
+purifique la puerta de los
+sentidos, aparecerá la
+verdadera forma.
+
+
+==== room=93 npc=0 str=0 textAddr=0x1d0d30 ptrFieldAddr=0x1d0d22 ====
+KLIN... ¡Lárgate! Estoy muy
+ocupado.
+
+
+==== room=93 npc=0 str=1 textAddr=0x1d0d54 ptrFieldAddr=0x1d0d24 ====
+KLIN: ¿Mamá Fangosa se ha
+enterado? Al fin y al cabo
+es una madre. ¿Estaba
+triste?
+<YESNO>
+
+
+==== room=93 npc=0 str=2 textAddr=0x1d0daa ptrFieldAddr=0x1d0d26 ====
+{E0} ñ
+KLIN: Ya veo. ¿Qué pasa?
+Pero Fangoso iba muy en
+serio. Se enamoró de una
+humana ... Yo obviamente
+intenté evitarlo pero iba
+tan en serio que le eché una
+mano. Usé mi magia para
+intercambiaros a Fangoso
+y a ti.
+
+
+==== room=93 npc=0 str=3 textAddr=0x1d0e82 ptrFieldAddr=0x1d0d28 ====
+KLIN: No te preocupes tanto
+por ser un fangoso. Acéptalo
+y continúa tu vida lo mejor
+que puedas ...
+
+
+==== room=93 npc=0 str=4 textAddr=0x1d0ee8 ptrFieldAddr=0x1d0d2a ====
+KLIN: Se lo prometí a
+Fangoso. Debo deshacer mi
+magia a toda costa ... Lo
+siento mucho por Mamá
+Fangosa ... y por ti, claro.
+¡Tuviste mala suerte, eso
+es todo!
+
+
+==== room=93 npc=0 str=5 textAddr=0x1d0f8a ptrFieldAddr=0x1d0d2c ====
+KLIN: ¿Eres Fangoso? No. Tú
+eres humano. Debes ser mi
+maestra la bruja, ¿verdad?
+¿Tenías que hacer esto?
+Pero ... no sé porqué pero
+me siento aliviado.
+
+
+==== room=93 npc=0 str=6 textAddr=0x1d1024 ptrFieldAddr=0x1d0d2e ====
+KLIN: Odio a cualquiera que
+use una espada en estos
+bosques, ahora ¡piérdete!
+
+
+==== room=94 npc=0 str=0 textAddr=0x1d0d30 ptrFieldAddr=0x1d0d22 ====
+KLIN... ¡Lárgate! Estoy muy
+ocupado.
+
+
+==== room=94 npc=0 str=1 textAddr=0x1d0d54 ptrFieldAddr=0x1d0d24 ====
+KLIN: ¿Mamá Fangosa se ha
+enterado? Al fin y al cabo
+es una madre. ¿Estaba
+triste?
+<YESNO>
+
+
+==== room=94 npc=0 str=2 textAddr=0x1d0daa ptrFieldAddr=0x1d0d26 ====
+{E0} ñ
+KLIN: Ya veo. ¿Qué pasa?
+Pero Fangoso iba muy en
+serio. Se enamoró de una
+humana ... Yo obviamente
+intenté evitarlo pero iba
+tan en serio que le eché una
+mano. Usé mi magia para
+intercambiaros a Fangoso
+y a ti.
+
+
+==== room=94 npc=0 str=3 textAddr=0x1d0e82 ptrFieldAddr=0x1d0d28 ====
+KLIN: No te preocupes tanto
+por ser un fangoso. Acéptalo
+y continúa tu vida lo mejor
+que puedas ...
+
+
+==== room=94 npc=0 str=4 textAddr=0x1d0ee8 ptrFieldAddr=0x1d0d2a ====
+KLIN: Se lo prometí a
+Fangoso. Debo deshacer mi
+magia a toda costa ... Lo
+siento mucho por Mamá
+Fangosa ... y por ti, claro.
+¡Tuviste mala suerte, eso
+es todo!
+
+
+==== room=94 npc=0 str=5 textAddr=0x1d0f8a ptrFieldAddr=0x1d0d2c ====
+KLIN: ¿Eres Fangoso? No. Tú
+eres humano. Debes ser mi
+maestra la bruja, ¿verdad?
+¿Tenías que hacer esto?
+Pero ... no sé porqué pero
+me siento aliviado.
+
+
+==== room=94 npc=0 str=6 textAddr=0x1d1024 ptrFieldAddr=0x1d0d2e ====
+KLIN: Odio a cualquiera que
+use una espada en estos
+bosques, ahora ¡piérdete!
+
+
+==== room=95 npc=0 str=0 textAddr=0x1d107a ptrFieldAddr=0x1d1078 ====
+{F3}
+
+
+
+
+==== room=95 npc=1 str=0 textAddr=0x1d1082 ptrFieldAddr=0x1d1080 ====
+{F3}
+
+
+
+
+==== room=96 npc=0 str=0 textAddr=0x1d1092 ptrFieldAddr=0x1d108a ====
+Estúpidos humanos, os puse
+esta prueba para haceros
+recordar lo que es
+importante. Os quité la
+habilidad de hablar con los
+humanos y os dí el don de
+comunicaros con animales y
+monstruos. Creí que la
+historia, plagada de
+batallas, cambiaría, pero
+demostró ser un esfuerzo
+inútil. Además, habéis
+manchado también este
+lugar sagrado.
+
+
+==== room=96 npc=0 str=1 textAddr=0x1d11de ptrFieldAddr=0x1d108c ====
+Os devolveré el don del
+habla, pero recordad que las
+palabras no son importantes.
+Es más importante comprender
+el "corazón". Intentad ver
+las cosas desde otro punto
+de vista ... A los que no
+puedan aprender esto los
+veré en el juicio final.
+
+
+==== room=96 npc=0 str=2 textAddr=0x1d12d0 ptrFieldAddr=0x1d108e ====
+NARRACION: Ahora es el
+momento de poner fin a esta
+larga historia. Ya no
+existirán las leyes de la
+naturaleza y el mundo de
+Soleil desaparecerá.
+Aprended a conocer la
+magnitud de vuestro pecado.
+
+
+==== room=96 npc=0 str=3 textAddr=0x1d1394 ptrFieldAddr=0x1d1090 ====
+La puerta se ha cerrado y
+no se abrirá nunca más.
+
+
+==== room=97 npc=0 str=0 textAddr=0x1d13d6 ptrFieldAddr=0x1d13d0 ====
+ORUGA: <NAME>, es hora
+de que me convierta en
+crisálida. Hacía frío en
+Fresa. Lo aguanté, pero
+estoy agotada. Fue
+divertido estar contigo.
+
+
+==== room=97 npc=0 str=1 textAddr=0x1d145e ptrFieldAddr=0x1d13d2 ====
+MARIPOSA: ¡Buenos días!
+Había tanta luz que me
+desperté. Soy una mariposa
+de verdad. Esta vez estaré
+realmente a tu servicio.
+
+
+==== room=97 npc=0 str=2 textAddr=0x1d14de ptrFieldAddr=0x1d13d4 ====
+¡La mariposoa se une al
+grupo!
+
+
+==== room=97 npc=1 str=0 textAddr=0x1d1504 ptrFieldAddr=0x1d14fe ====
+TRABAJADOR: Salté de la
+torre queriendo huir. ¿Tú
+también? Supongo que no
+tenemos mucha suerte. Ahora
+sí que no podemos
+escaparnos.
+
+
+==== room=97 npc=1 str=1 textAddr=0x1d158a ptrFieldAddr=0x1d1500 ====
+{E0} {79}
+TRABAJADOR: La única
+diversión que me queda es
+ver transformarse a esa
+crisálida. Ojalá fuera una
+mariposa. Así podría volar
+a cualquier parte.
+
+
+==== room=97 npc=1 str=2 textAddr=0x1d1620 ptrFieldAddr=0x1d1502 ====
+TRABAJADOR: Vaya, una
+mariposa. Ahora no tengo
+ningún motivo para mirar
+atrás con arrepentimientos.
+
+
+==== room=97 npc=2 str=0 textAddr=0x1d1688 ptrFieldAddr=0x1d1686 ====
+OBRERO: He oído que está
+nevando mucho en Iris. Es
+muy raro. Creo que el mundo
+está yendo en la dirección
+equivocada ...
+
+
+
+==== room=97 npc=3 str=0 textAddr=0x1d1706 ptrFieldAddr=0x1d1704 ====
+ARTESANO: Levantaron esta
+torre para estar lo más
+cerca posible de Dios. Creo
+que hemos pagado por ello.
+Fue estúpido intentar una
+cosa así.
+
+
+==== room=98 npc=0 str=0 textAddr=0x1d17b2 ptrFieldAddr=0x1d1796 ====
+La era de la oscuridad,
+sin luz.
+
+
+==== room=98 npc=0 str=1 textAddr=0x1d17d4 ptrFieldAddr=0x1d1798 ====
+Los humanos llamaron a las
+criaturas que reptaban por
+este mundo "monstruos". Los
+humanos los temían ya que
+eran seres extraños.
+
+
+==== room=98 npc=0 str=2 textAddr=0x1d1856 ptrFieldAddr=0x1d179a ====
+Nadie sabe dónde, cuándo o
+cómo llegaron a existir.
+
+
+
+
+Porque las plantas y los
+animales, como los humanos,
+no existían todavía en
+este mundo.
+
+
+==== room=98 npc=0 str=3 textAddr=0x1d18e8 ptrFieldAddr=0x1d179c ====
+
+Pasó el tiempo ...
+
+
+
+==== room=98 npc=0 str=4 textAddr=0x1d18fe ptrFieldAddr=0x1d179e ====
+Un día, el mundo experimentó
+un cambio.
+
+
+==== room=98 npc=0 str=5 textAddr=0x1d1928 ptrFieldAddr=0x1d17a0 ====
+
+"¡Hágase la luz!"
+
+
+
+==== room=98 npc=0 str=6 textAddr=0x1d193e ptrFieldAddr=0x1d17a2 ====
+Con esa voz como señal, la
+luz empezó a llenar el
+mundo.
+
+
+==== room=98 npc=0 str=7 textAddr=0x1d1978 ptrFieldAddr=0x1d17a4 ====
+Innumerables monstruos, que
+no tenían resistencia a la
+luz, murieron.
+
+
+==== room=98 npc=0 str=8 textAddr=0x1d19c0 ptrFieldAddr=0x1d17a6 ====
+Entonces transcurrió un
+tiempo, que pareció
+interminable ...
+
+
+==== room=98 npc=0 str=9 textAddr=0x1d19fe ptrFieldAddr=0x1d17a8 ====
+Poco a poco aparecieron
+formas vivientes, como las
+plantas y los animales.
+
+
+==== room=98 npc=0 str=10 textAddr=0x1d1a4a ptrFieldAddr=0x1d17aa ====
+Pero ...
+
+
+==== room=98 npc=0 str=11 textAddr=0x1d1a54 ptrFieldAddr=0x1d17ac ====
+Los monstruos no se
+extinguieron.
+
+
+==== room=98 npc=0 str=12 textAddr=0x1d1a78 ptrFieldAddr=0x1d17ae ====
+Se refugiaron bajo tierra y
+aumentaron en número. Fue
+
+casi como si estuvieran
+esperando para volver ...
+
+
+==== room=98 npc=0 str=13 textAddr=0x1d1ae2 ptrFieldAddr=0x1d17b0 ====
+Nuestra historia comienza
+cuando reaparecen los
+
+monstruos y su influencia
+empieza a aumentar.
+
+
+==== room=99 npc=0 str=0 textAddr=0x1d1b50 ptrFieldAddr=0x1d1b46 ====
+CARCELERO: Esta es la cárcel
+para los monstruos que
+entran en el pueblo. Los
+usamos para investigación,
+pero yo preferiría
+eliminarlos.
+
+
+==== room=99 npc=0 str=1 textAddr=0x1d1bda ptrFieldAddr=0x1d1b48 ====
+{F3}
+
+
+
+
+==== room=99 npc=0 str=2 textAddr=0x1d1be0 ptrFieldAddr=0x1d1b4a ====
+CARCELERO: Mi abuelo era
+carcelero. Hace mucho
+tiempo. Una vez se escapó un
+monstruo y por eso ahora
+tengo que tener mucho
+cuidado.
+
+
+==== room=99 npc=0 str=3 textAddr=0x1d1c66 ptrFieldAddr=0x1d1b4c ====
+CARCELERO: Yo solía pensar
+sólo en el trabajo, pero
+ahora tengo una vida mejor.
+
+
+==== room=99 npc=0 str=4 textAddr=0x1d1cb8 ptrFieldAddr=0x1d1b4e ====
+CARCELERO: Esto es una
+cárcel. Aquí está encerrado
+un tipo especialmente duro.
+Está a la que salta. Creo
+que se equivocó al nacer
+en esta época.
+
+
+==== room=99 npc=1 str=0 textAddr=0x1d1d4c ptrFieldAddr=0x1d1d4a ====
+CRIADA: ¡Qué valiente! ¡Te
+respeto por vigilar a ese
+monstruo tú solo!
+
+
+==== room=100 npc=0 str=0 textAddr=0x1d1dba ptrFieldAddr=0x1d1d9c ====
+{E0}0,
+¡Has vuelto, <NAME>!
+¿No te acuerdas de tu propia
+madre? Compré esta casa
+porque pensaba en tu futuro.
+Me costó  50.000 malines,
+pero era una ganga.
+
+
+==== room=100 npc=0 str=1 textAddr=0x1d1e50 ptrFieldAddr=0x1d1d9e ====
+El único problema es que
+ahora no tengo dinero.
+¿Puedes dejarme 10 malines?
+Pero parece que tú tampoco
+tienes dinero. Por favor,
+¿puedes ir a ganar algo de
+dinero para mí?
+
+
+==== room=100 npc=0 str=2 textAddr=0x1d1efe ptrFieldAddr=0x1d1da0 ====
+El único problema es que
+ahora no tengo dinero.
+¿Puedes dejarme 10 malines?
+<YESNO>
+
+
+==== room=100 npc=0 str=3 textAddr=0x1d1f4e ptrFieldAddr=0x1d1da2 ====
+{E0}0'
+Gracias, <NAME>. Me
+alegro tanto de tener un
+hijo tan atento como tú.
+
+
+==== room=100 npc=0 str=4 textAddr=0x1d1f94 ptrFieldAddr=0x1d1da4 ====
+Qué vergüenza, no recuerdo
+haberte enseñado a ser
+egoísta.
+
+
+==== room=100 npc=0 str=5 textAddr=0x1d1fd0 ptrFieldAddr=0x1d1da6 ====
+¡Oh, <NAME>! ¿Por qué
+me miras así ...? No
+sospecharás de tu propia
+madre, ¿no?
+
+
+==== room=100 npc=0 str=6 textAddr=0x1d201c ptrFieldAddr=0x1d1da8 ====
+{E0}0.
+¡<NAME>! ¿Estás
+azuzando al perro contra tu
+propia madre?
+
+
+==== room=100 npc=0 str=7 textAddr=0x1d2056 ptrFieldAddr=0x1d1daa ====
+¡No, lo siento! ¡Perdóname,
+por favor! ¡No lo volveré
+a hacer!
+
+
+==== room=100 npc=0 str=8 textAddr=0x1d2096 ptrFieldAddr=0x1d1dac ====
+{E0}0{43}
+PERRO MAPACHE: Soy un perro
+mapache del oriente. Puedo
+cambiar de forma para
+engañar a la gente ... Así
+es como me gano la vida,
+pero prometo no volverlo a
+hacer. ¿Me perdonas, por
+favor?
+<YESNO>
+
+
+==== room=100 npc=0 str=9 textAddr=0x1d215a ptrFieldAddr=0x1d1dae ====
+{E0}0...
+PERRO MAPACHE: ¡Gracias!
+Eres un buen humano. Ya
+entiendo. Me uniré a tu
+grupo, no te arrepentirás.
+
+
+==== room=100 npc=0 str=10 textAddr=0x1d21c4 ptrFieldAddr=0x1d1db0 ====
+{E0}0{45}
+PERRO MAPACHE: No, ¿no lo
+dices en serio? Entonces,
+¿qué debo hacer?
+
+
+==== room=100 npc=0 str=11 textAddr=0x1d220e ptrFieldAddr=0x1d1db2 ====
+{E0}0{47}
+PERRO MAPACHE: Entonces,
+¿has cambiado de opinión?
+<YESNO>
+
+
+==== room=100 npc=0 str=12 textAddr=0x1d2248 ptrFieldAddr=0x1d1db4 ====
+PERRO MAPACHE: Mira que eres
+indeciso, chico. Vale, me
+uniré a vosotros.
+
+
+==== room=100 npc=0 str=13 textAddr=0x1d2292 ptrFieldAddr=0x1d1db6 ====
+PERRO MAPACHE: Venga hombre,
+quieres que sea tu amigo,
+¿no?
+
+
+==== room=100 npc=0 str=14 textAddr=0x1d22d0 ptrFieldAddr=0x1d1db8 ====
+El perro mapache se une
+al grupo.
+
+
+==== room=100 npc=1 str=0 textAddr=0x1d22f6 ptrFieldAddr=0x1d22f4 ====
+TINTIN: ¡Es una impostora!
+Mi madre verdadera no diría
+algo así de mí.
+
+
+==== room=100 npc=2 str=0 textAddr=0x1d2340 ptrFieldAddr=0x1d233e ====
+ANCIANA: Mi marido está en
+el bosque de Rafresa.
+Nuestros hijos y él comen
+tanto que siempre estoy
+liada preparando la cena.
+
+
+==== room=100 npc=3 str=0 textAddr=0x1d23c0 ptrFieldAddr=0x1d23be ====
+LUCAS: Voy a construir un
+colegio en el pueblo y
+enseñaré a los niños, ¡ese
+es mi sueño!
+
+
+==== room=101 npc=0 str=0 textAddr=0x1d2430 ptrFieldAddr=0x1d2426 ====
+CRIADA: ¡Ayyyyy! ¿Qué? ¡No
+me des esos sustos! ¡Este
+es el aposento del Rey! No
+es lugar para un niño como
+tú. Ahora, ¡lárgate!
+
+
+==== room=101 npc=0 str=1 textAddr=0x1d24b2 ptrFieldAddr=0x1d2428 ====
+{F3}
+
+
+
+
+==== room=101 npc=0 str=2 textAddr=0x1d24b8 ptrFieldAddr=0x1d242a ====
+{E0}0*
+CRIADA: Qué tarde va hoy Su
+Alteza. ¿Cómo?, ¿quién eres
+tú? ¡Largo de aquí! Tengo
+que limpiar aquí. Ahora,
+¡largo!
+
+
+==== room=101 npc=0 str=3 textAddr=0x1d2530 ptrFieldAddr=0x1d242c ====
+CRIADA: ¿Sigues
+molestándome? Ye te he dicho
+que sólo vine aquí a
+limpiar.
+
+
+==== room=101 npc=0 str=4 textAddr=0x1d257c ptrFieldAddr=0x1d242e ====
+CRIADA: Al perro de Su
+Alteza no le caigo bien. Me
+pregunto qué piensa.
+
+
+==== room=101 npc=1 str=0 textAddr=0x1d25ce ptrFieldAddr=0x1d25c6 ====
+CACHORRO: ¡Guau, guau!
+
+
+==== room=101 npc=1 str=1 textAddr=0x1d25e6 ptrFieldAddr=0x1d25c8 ====
+CACHORRO: Soy un perro real.
+No vivo en una perrera.
+¡Esta es mi habitación!
+
+
+==== room=101 npc=1 str=2 textAddr=0x1d2634 ptrFieldAddr=0x1d25ca ====
+CACHORRO: ¡Odio a esa
+criada! Cada vez que se va
+el Rey se pone muy
+antipática.
+
+
+==== room=101 npc=1 str=3 textAddr=0x1d2686 ptrFieldAddr=0x1d25cc ====
+CACHORRO: Me alegro tanto
+de que la criada se haya ido
+para siempre. ¿Por qué no se
+dió cuenta el Rey antes?
+
+
+==== room=101 npc=2 str=0 textAddr=0x1d26fc ptrFieldAddr=0x1d26f4 ====
+SOLDADO: ¿Qué estás
+haciendo? ¡Lo estoy usando
+yo!
+
+
+==== room=101 npc=2 str=1 textAddr=0x1d2730 ptrFieldAddr=0x1d26f6 ====
+{F3}
+
+
+
+
+==== room=101 npc=2 str=2 textAddr=0x1d2736 ptrFieldAddr=0x1d26f8 ====
+SOLDADO: Ay, como pica ...
+Au, ¿qué quieres? ¡No me
+molestes ahora!
+
+
+==== room=101 npc=2 str=3 textAddr=0x1d277c ptrFieldAddr=0x1d26fa ====
+SOLDADO: Ah, ese sitio ..
+No, no puede ser. ¡Piérdete!
+
+
+==== room=101 npc=3 str=0 textAddr=0x1d27b6 ptrFieldAddr=0x1d27b4 ====
+{E0}0<
+CARLOS: Esta alfombra es
+única. ¡Qué cruel!
+
+
+==== room=101 npc=4 str=0 textAddr=0x1d27ea ptrFieldAddr=0x1d27e8 ====
+{E0}0{4D}
+NARRACION: La lágrima de
+Carlos aterrizó en la
+alfombra. De repente la
+alfombra empezó a hablar.
+Perdí la batalla por el Rey.
+Si hubiera ganado, el Rey
+estaría muerto ahora. Mi
+espíritu sigue deambulando
+por este mundo ... Me
+entregaré a ti. Por aquí hay
+agua, encuéntrala. Hazme
+un favor y sé valiente ...
+
+
+==== room=101 npc=5 str=0 textAddr=0x1d2926 ptrFieldAddr=0x1d2922 ====
+{E0}0{64}
+TINTIN: ¡Guau, guau, guau!
+
+
+==== room=101 npc=5 str=1 textAddr=0x1d2946 ptrFieldAddr=0x1d2924 ====
+NARRACION: El perro Tintín
+te sigue.
+
+
+==== room=102 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=102 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=103 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=103 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=104 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=104 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=105 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=105 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=106 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=106 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=107 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=107 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=108 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=108 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=109 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=109 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=110 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=110 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=111 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=111 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=112 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=112 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=113 npc=0 str=0 textAddr=0x1d2972 ptrFieldAddr=0x1d2970 ====
+PEPE: ¡Hola, <NAME>!
+Mañana es tu cumpleaños,
+¿verdad? Estoy deseando ir
+a la fiesta.
+
+
+==== room=113 npc=1 str=0 textAddr=0x1d29c6 ptrFieldAddr=0x1d29c4 ====
+PACO: ¿Qué tal, amigo? Me
+invitarás a tu fiesta, ¿no?
+Yo no me emocionaría mucho
+por los regalos de tus
+padres. Los míos me
+regalaron un libro para mi
+cumpleaños, ¡fue horrible!
+
+
+==== room=114 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
+CARLOS: ¡Tú ganas! Vale, me
+uniré al grupo como te
+prometí.
+
+
+==== room=114 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
+{E0} z
+¡Carlos el guepardo se
+une al grupo!
+
+
+==== room=114 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
+¡Oh, no! ¡Carlos el guepardo
+llegó a la meta antes!
+CARLOS: Venga, hazlo lo
+mejor que puedas. ¡Parece
+mentira!
+
+
+==== room=114 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. Por 50
+malines iré más despacio,
+pero es inútil si no tienes
+el dinero.
+
+
+==== room=114 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. 50 malines e
+iré más despacio, ¿qué
+dices?
+<YESNO>
+
+
+==== room=114 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
+{E0}0ü
+CARLOS: ¡Trato hecho! Eres
+un tipo razonable.
+
+
+==== room=114 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
+CARLOS: Bien, ¿crees que
+puedes ganarme, eh?
+Adelante, inténtalo.
+
+
+==== room=114 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
+CARLOS: Lo siento. No puede
+ir más despacio. La liebre
+se dará cuenta.
+
+
+==== room=114 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
+HEIDI: Esto es una pista
+de carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Pero no
+puedes pasar si no tienes el
+dinero. ¿Otra vez quizá?
+
+
+==== room=114 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
+{E0}0é
+HEIDI: Esto es una pista de
+carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Gana la
+carrera y el guepardo se te
+unirá. Entonces, ¿te
+gustaría intentarlo?
+<YESNO>
+
+
+==== room=114 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
+{E0}0ú
+HEIDI: ¡Vale! El guepardo es
+muy rápido, o sea que hazlo
+lo mejor que puedas.
+
+
+==== room=114 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
+HEIDI: ¡Oh, estás dejando
+pasar tu oportunidad!
+Mala suerte ...
+
+
+==== room=114 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
+{E0}0¿
+HEIDI: A todo esto, ¿conoces
+las reglas de la carrera?
+<YESNO>
+
+
+==== room=114 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
+HEIDI: Entonces vale.
+¡Buena suerte!
+
+
+==== room=114 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
+HEIDI: El primero en
+completar tres vueltas gana
+la carrera. Botón A para
+acelerar, botón B para
+frenar y Panel{62}D para girar.
+Puedes hablar con el
+guepardo antes de la
+carrera. ¡Buena suerte!
+
+
+==== room=114 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Pero no puedes inscribirte
+si no tienes dinero. ¡Quizá
+la próxima vez!
+
+
+==== room=114 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
+{E0}0{58}
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Esto es para ver qué rápido
+puedes correr. ¿Te gustaría
+intentarlo?
+<YESNO>
+
+
+==== room=114 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
+{E0}0{59}
+HEIDI: Vale, trato hecho.
+¡Ve a por tu mejor récord!
+¡Buena suerte!
+
+
+==== room=114 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
+HEIDI: Oh, mala suerte. La
+próxima vez será mejor.
+
+
+==== room=114 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
+{E0}0{5A}
+HEIDI: Ah, a todo esto,
+¿conoces ya las reglas de
+la carrera contra reloj?
+<YESNO>
+
+
+==== room=114 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
+HEIDI: Vale, ¡Buena suerte!
+
+
+==== room=114 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
+HEIDI: Compites contra reloj
+para completar tres vueltas
+alrededor de la pista. Botón
+A para acelerar, botón B
+para los frenos y la marcha
+atrás y Panel{62}D para girar.
+El tiempo aparece en la
+esquina superior derecha de
+la pantalla. ¡Ve a por el
+récord, y buena suerte!
+
+
+==== room=115 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
+CARLOS: ¡Tú ganas! Vale, me
+uniré al grupo como te
+prometí.
+
+
+==== room=115 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
+{E0} z
+¡Carlos el guepardo se
+une al grupo!
+
+
+==== room=115 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
+¡Oh, no! ¡Carlos el guepardo
+llegó a la meta antes!
+CARLOS: Venga, hazlo lo
+mejor que puedas. ¡Parece
+mentira!
+
+
+==== room=115 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. Por 50
+malines iré más despacio,
+pero es inútil si no tienes
+el dinero.
+
+
+==== room=115 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. 50 malines e
+iré más despacio, ¿qué
+dices?
+<YESNO>
+
+
+==== room=115 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
+{E0}0ü
+CARLOS: ¡Trato hecho! Eres
+un tipo razonable.
+
+
+==== room=115 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
+CARLOS: Bien, ¿crees que
+puedes ganarme, eh?
+Adelante, inténtalo.
+
+
+==== room=115 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
+CARLOS: Lo siento. No puede
+ir más despacio. La liebre
+se dará cuenta.
+
+
+==== room=115 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
+HEIDI: Esto es una pista
+de carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Pero no
+puedes pasar si no tienes el
+dinero. ¿Otra vez quizá?
+
+
+==== room=115 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
+{E0}0é
+HEIDI: Esto es una pista de
+carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Gana la
+carrera y el guepardo se te
+unirá. Entonces, ¿te
+gustaría intentarlo?
+<YESNO>
+
+
+==== room=115 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
+{E0}0ú
+HEIDI: ¡Vale! El guepardo es
+muy rápido, o sea que hazlo
+lo mejor que puedas.
+
+
+==== room=115 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
+HEIDI: ¡Oh, estás dejando
+pasar tu oportunidad!
+Mala suerte ...
+
+
+==== room=115 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
+{E0}0¿
+HEIDI: A todo esto, ¿conoces
+las reglas de la carrera?
+<YESNO>
+
+
+==== room=115 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
+HEIDI: Entonces vale.
+¡Buena suerte!
+
+
+==== room=115 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
+HEIDI: El primero en
+completar tres vueltas gana
+la carrera. Botón A para
+acelerar, botón B para
+frenar y Panel{62}D para girar.
+Puedes hablar con el
+guepardo antes de la
+carrera. ¡Buena suerte!
+
+
+==== room=115 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Pero no puedes inscribirte
+si no tienes dinero. ¡Quizá
+la próxima vez!
+
+
+==== room=115 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
+{E0}0{58}
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Esto es para ver qué rápido
+puedes correr. ¿Te gustaría
+intentarlo?
+<YESNO>
+
+
+==== room=115 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
+{E0}0{59}
+HEIDI: Vale, trato hecho.
+¡Ve a por tu mejor récord!
+¡Buena suerte!
+
+
+==== room=115 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
+HEIDI: Oh, mala suerte. La
+próxima vez será mejor.
+
+
+==== room=115 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
+{E0}0{5A}
+HEIDI: Ah, a todo esto,
+¿conoces ya las reglas de
+la carrera contra reloj?
+<YESNO>
+
+
+==== room=115 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
+HEIDI: Vale, ¡Buena suerte!
+
+
+==== room=115 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
+HEIDI: Compites contra reloj
+para completar tres vueltas
+alrededor de la pista. Botón
+A para acelerar, botón B
+para los frenos y la marcha
+atrás y Panel{62}D para girar.
+El tiempo aparece en la
+esquina superior derecha de
+la pantalla. ¡Ve a por el
+récord, y buena suerte!
+
+
+==== room=116 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
+CARLOS: ¡Tú ganas! Vale, me
+uniré al grupo como te
+prometí.
+
+
+==== room=116 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
+{E0} z
+¡Carlos el guepardo se
+une al grupo!
+
+
+==== room=116 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
+¡Oh, no! ¡Carlos el guepardo
+llegó a la meta antes!
+CARLOS: Venga, hazlo lo
+mejor que puedas. ¡Parece
+mentira!
+
+
+==== room=116 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. Por 50
+malines iré más despacio,
+pero es inútil si no tienes
+el dinero.
+
+
+==== room=116 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. 50 malines e
+iré más despacio, ¿qué
+dices?
+<YESNO>
+
+
+==== room=116 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
+{E0}0ü
+CARLOS: ¡Trato hecho! Eres
+un tipo razonable.
+
+
+==== room=116 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
+CARLOS: Bien, ¿crees que
+puedes ganarme, eh?
+Adelante, inténtalo.
+
+
+==== room=116 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
+CARLOS: Lo siento. No puede
+ir más despacio. La liebre
+se dará cuenta.
+
+
+==== room=116 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
+HEIDI: Esto es una pista
+de carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Pero no
+puedes pasar si no tienes el
+dinero. ¿Otra vez quizá?
+
+
+==== room=116 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
+{E0}0é
+HEIDI: Esto es una pista de
+carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Gana la
+carrera y el guepardo se te
+unirá. Entonces, ¿te
+gustaría intentarlo?
+<YESNO>
+
+
+==== room=116 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
+{E0}0ú
+HEIDI: ¡Vale! El guepardo es
+muy rápido, o sea que hazlo
+lo mejor que puedas.
+
+
+==== room=116 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
+HEIDI: ¡Oh, estás dejando
+pasar tu oportunidad!
+Mala suerte ...
+
+
+==== room=116 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
+{E0}0¿
+HEIDI: A todo esto, ¿conoces
+las reglas de la carrera?
+<YESNO>
+
+
+==== room=116 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
+HEIDI: Entonces vale.
+¡Buena suerte!
+
+
+==== room=116 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
+HEIDI: El primero en
+completar tres vueltas gana
+la carrera. Botón A para
+acelerar, botón B para
+frenar y Panel{62}D para girar.
+Puedes hablar con el
+guepardo antes de la
+carrera. ¡Buena suerte!
+
+
+==== room=116 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Pero no puedes inscribirte
+si no tienes dinero. ¡Quizá
+la próxima vez!
+
+
+==== room=116 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
+{E0}0{58}
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Esto es para ver qué rápido
+puedes correr. ¿Te gustaría
+intentarlo?
+<YESNO>
+
+
+==== room=116 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
+{E0}0{59}
+HEIDI: Vale, trato hecho.
+¡Ve a por tu mejor récord!
+¡Buena suerte!
+
+
+==== room=116 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
+HEIDI: Oh, mala suerte. La
+próxima vez será mejor.
+
+
+==== room=116 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
+{E0}0{5A}
+HEIDI: Ah, a todo esto,
+¿conoces ya las reglas de
+la carrera contra reloj?
+<YESNO>
+
+
+==== room=116 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
+HEIDI: Vale, ¡Buena suerte!
+
+
+==== room=116 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
+HEIDI: Compites contra reloj
+para completar tres vueltas
+alrededor de la pista. Botón
+A para acelerar, botón B
+para los frenos y la marcha
+atrás y Panel{62}D para girar.
+El tiempo aparece en la
+esquina superior derecha de
+la pantalla. ¡Ve a por el
+récord, y buena suerte!
+
+
+==== room=117 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
+CARLOS: ¡Tú ganas! Vale, me
+uniré al grupo como te
+prometí.
+
+
+==== room=117 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
+{E0} z
+¡Carlos el guepardo se
+une al grupo!
+
+
+==== room=117 npc=0 str=2 textAddr=0x1d2af6 ptrFieldAddr=0x1d2a82 ====
+¡Oh, no! ¡Carlos el guepardo
+llegó a la meta antes!
+CARLOS: Venga, hazlo lo
+mejor que puedas. ¡Parece
+mentira!
+
+
+==== room=117 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. Por 50
+malines iré más despacio,
+pero es inútil si no tienes
+el dinero.
+
+
+==== room=117 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
+CARLOS: ¡Liebre tacaña! Sólo
+me paga el 10 por ciento de
+las ganancias. 50 malines e
+iré más despacio, ¿qué
+dices?
+<YESNO>
+
+
+==== room=117 npc=0 str=5 textAddr=0x1d2c6e ptrFieldAddr=0x1d2a88 ====
+{E0}0ü
+CARLOS: ¡Trato hecho! Eres
+un tipo razonable.
+
+
+==== room=117 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
+CARLOS: Bien, ¿crees que
+puedes ganarme, eh?
+Adelante, inténtalo.
+
+
+==== room=117 npc=0 str=7 textAddr=0x1d2ce6 ptrFieldAddr=0x1d2a8c ====
+CARLOS: Lo siento. No puede
+ir más despacio. La liebre
+se dará cuenta.
+
+
+==== room=117 npc=1 str=0 textAddr=0x1d2d4a ptrFieldAddr=0x1d2d2e ====
+HEIDI: Esto es una pista
+de carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Pero no
+puedes pasar si no tienes el
+dinero. ¿Otra vez quizá?
+
+
+==== room=117 npc=1 str=1 textAddr=0x1d2dea ptrFieldAddr=0x1d2d30 ====
+{E0}0é
+HEIDI: Esto es una pista de
+carreras. Por 20 malines
+puedes competir contra
+Carlos el guepardo. Gana la
+carrera y el guepardo se te
+unirá. Entonces, ¿te
+gustaría intentarlo?
+<YESNO>
+
+
+==== room=117 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
+{E0}0ú
+HEIDI: ¡Vale! El guepardo es
+muy rápido, o sea que hazlo
+lo mejor que puedas.
+
+
+==== room=117 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
+HEIDI: ¡Oh, estás dejando
+pasar tu oportunidad!
+Mala suerte ...
+
+
+==== room=117 npc=1 str=4 textAddr=0x1d2f36 ptrFieldAddr=0x1d2d36 ====
+{E0}0¿
+HEIDI: A todo esto, ¿conoces
+las reglas de la carrera?
+<YESNO>
+
+
+==== room=117 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
+HEIDI: Entonces vale.
+¡Buena suerte!
+
+
+==== room=117 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
+HEIDI: El primero en
+completar tres vueltas gana
+la carrera. Botón A para
+acelerar, botón B para
+frenar y Panel{62}D para girar.
+Puedes hablar con el
+guepardo antes de la
+carrera. ¡Buena suerte!
+
+
+==== room=117 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Pero no puedes inscribirte
+si no tienes dinero. ¡Quizá
+la próxima vez!
+
+
+==== room=117 npc=1 str=8 textAddr=0x1d30f6 ptrFieldAddr=0x1d2d3e ====
+{E0}0{58}
+HEIDI: Esto es una pista de
+carreras. Por 10 malines
+puedes correr contra reloj.
+Esto es para ver qué rápido
+puedes correr. ¿Te gustaría
+intentarlo?
+<YESNO>
+
+
+==== room=117 npc=1 str=9 textAddr=0x1d3192 ptrFieldAddr=0x1d2d40 ====
+{E0}0{59}
+HEIDI: Vale, trato hecho.
+¡Ve a por tu mejor récord!
+¡Buena suerte!
+
+
+==== room=117 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
+HEIDI: Oh, mala suerte. La
+próxima vez será mejor.
+
+
+==== room=117 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
+{E0}0{5A}
+HEIDI: Ah, a todo esto,
+¿conoces ya las reglas de
+la carrera contra reloj?
+<YESNO>
+
+
+==== room=117 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
+HEIDI: Vale, ¡Buena suerte!
+
+
+==== room=117 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
+HEIDI: Compites contra reloj
+para completar tres vueltas
+alrededor de la pista. Botón
+A para acelerar, botón B
+para los frenos y la marcha
+atrás y Panel{62}D para girar.
+El tiempo aparece en la
+esquina superior derecha de
+la pantalla. ¡Ve a por el
+récord, y buena suerte!
+
+
+==== room=118 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
+¿Quieres salvar tu
+información ahora?
+
+<YESNO>
+
+
+==== room=118 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
+Información salvada.
+
+
+==== room=118 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
+No se ha salvado la
+información.
+
+
+==== room=119 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
+¿Quieres salvar tu
+información ahora?
+
+<YESNO>
+
+
+==== room=119 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
+Información salvada.
+
+
+==== room=119 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
+No se ha salvado la
+información.
+
+
+==== room=120 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
+¿Quieres salvar tu
+información ahora?
+
+<YESNO>
+
+
+==== room=120 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
+Información salvada.
+
+
+==== room=120 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
+No se ha salvado la
+información.
+
+
+==== room=121 npc=0 str=0 textAddr=0x1d3396 ptrFieldAddr=0x1d3390 ====
+¿Quieres salvar tu
+información ahora?
+
+<YESNO>
+
+
+==== room=121 npc=0 str=1 textAddr=0x1d33c0 ptrFieldAddr=0x1d3392 ====
+Información salvada.
+
+
+==== room=121 npc=0 str=2 textAddr=0x1d33d6 ptrFieldAddr=0x1d3394 ====
+No se ha salvado la
+información.
+
+
+==== room=122 npc=0 str=0 textAddr=0x1d33fe ptrFieldAddr=0x1d33fc ====
+NARRACION: ¡El máximo de
+puntos de salud de
+<NAME> ha aumentado!
+
+
+==== room=122 npc=1 str=0 textAddr=0x1d343e ptrFieldAddr=0x1d343c ====
+¡<NAME> encontró la
+manzana de la vida! Ahora el
+máximo de puntos de salud
+ha aumentado.
+
+
+==== room=123 npc=0 str=0 textAddr=0x1d34a2 ptrFieldAddr=0x1d3498 ====
+SIRENA: ¿Te gustaría
+aumentar tu máximo de puntos
+de salud? Te lo vendo, pero
+te costará 800 malines.
+¿Puedes permitírtelo?
+
+
+==== room=123 npc=0 str=1 textAddr=0x1d3520 ptrFieldAddr=0x1d349a ====
+SIRENA: ¿Te gustaría
+aumentar tu máximo de puntos
+de salud? Te lo vendo, pero
+te costará 800 malines. El
+precio de la vida no es
+barato. ¿Lo compras?
+<YESNO>
+
+
+==== room=123 npc=0 str=2 textAddr=0x1d35ba ptrFieldAddr=0x1d349c ====
+{E0}0{65}
+¡<NAME> ganó una
+manzana de la vida! Tu
+máximo de puntos de salud
+ha aumentado.
+
+
+==== room=123 npc=0 str=3 textAddr=0x1d360a ptrFieldAddr=0x1d349e ====
+SIRENA: ... Ya me lo
+parecía: demasiado caro. No
+tienes que comprarlo si no
+puedes permitírtelo.
+
+
+==== room=123 npc=0 str=4 textAddr=0x1d366c ptrFieldAddr=0x1d34a0 ====
+SIRENA: No me quedan más
+manzanas restauradoras de
+salud. Los humanos quieren
+tener vidas muy largas.
+
+
+==== room=123 npc=1 str=0 textAddr=0x1d36d6 ptrFieldAddr=0x1d36d4 ====
+.........................
+
+
+==== room=124 npc=0 str=0 textAddr=0x1d36f6 ptrFieldAddr=0x1d36f4 ====
+Ahora, echa un vistazo. La
+historia del mundo ha
+cambiado en tus manos. Yo
+habré creado este mundo,
+pero habéis sido vosotros
+los que habéis hecho la
+historia. No olvidéis que
+los humanos no sóis los
+únicos habitantes del
+mundo ...
+
+
+==== room=125 npc=0 str=0 textAddr=0x1d37e4 ptrFieldAddr=0x1d37e2 ====
+La Energía Espíritu que
+protegían los cinco sentidos
+ha desaparecido por
+completo. La puerta que
+lleva al Mundo Subterráneo
+se ha abierto y se ha
+tragado a innumerables
+monstruos. Los monstruos,
+que habían vivido en este
+mundo durante siglos, han
+desaparecido y con ellos la
+oportunidad de ver la luz y
+las vidas que estaban a
+punto de nacer. Han vuelto
+a su suelo patrio sin hacer
+historia en este mundo.
+
+

@@ -1,0 +1,162 @@
+/*
+ * soleil.tbl - Character encoding table for Soleil (Megadrive/Genesis)
+ *
+ * Source: romhacking.net forum topic 34617 "Crusader of Centy text hacking"
+ * (EvilJagaGenius, 2022-04-03), cross-checked against Soleil (Spain).md.
+ *
+ * Crusader of Centy (US) and Soleil (EU) share the same base table for the
+ * main script encoding. The main script for Soleil runs 0x1C0310-0x1D44C0
+ * (larger than Centy's 0x1C0210-0x1D3A90, since the EU release carries extra
+ * language content). Some punctuation/extended codes differ between the two
+ * (Soleil's script uses extra byte values for accented characters needed by
+ * the European localization - these are NOT in the source thread and are
+ * left unmapped below; the extractor will render them as {XX} placeholders
+ * so they can be identified and added here later).
+ *
+ * Format: HH=text  (one mapping per line, "=" separates hex byte from glyph)
+ * Lines starting with "/*", "*" or "//" or blank lines are ignored by the
+ * extractor. Do not add trailing comments on mapping lines.
+ *
+ * Control codes are handled directly by the extractor (not through this
+ * table) because they are structural rather than displayable glyphs:
+ *   F1 = insert player's name
+ *   F2 = Yes/No choice prompt
+ *   FE = line break within a text box
+ *   FF = end of string
+ */
+
+00=<SPACE>
+01=0
+02=1
+03=2
+04=3
+05=4
+06=5
+07=6
+08=7
+09=8
+0a=9
+
+0b=A
+0c=B
+0d=C
+0e=D
+0f=E
+10=F
+11=G
+12=H
+13=I
+14=J
+15=K
+16=L
+17=M
+18=N
+19=O
+1a=P
+1b=Q
+1c=R
+1d=S
+1e=T
+1f=U
+20=V
+21=W
+22=X
+23=Y
+24=Z
+
+25=a
+26=b
+27=c
+28=d
+29=e
+2a=f
+2b=g
+2c=h
+2d=i
+2e=j
+2f=k
+30=l
+31=m
+32=n
+33=o
+34=p
+35=q
+36=r
+37=s
+38=t
+39=u
+3a=v
+3b=w
+3c=x
+3d=y
+3e=z
+
+3f=,
+40=.
+41="
+42=!
+
+46='
+
+4a=*
+
+4c=<
+
+5e=:
+5f=-
+60=-
+61=^
+
+/*
+ * Below: codes NOT present in the Crusader of Centy (US/English) table
+ * from the source thread. These are Soleil-specific (Spanish) extensions,
+ * identified by cross-referencing recognizable Spanish words/names in the
+ * decoded output (e.g. "cumplea{4F}os" -> "cumpleaños" implies 4F=n-tilde).
+ * High confidence (each confirmed via multiple independent words):
+ */
+44=...
+4f=ñ
+50=í
+51=á
+52=ó
+53=é
+54=ú
+55=¿
+56=¡
+57=ü
+5d=?
+
+/*
+ * Punctuation that differs from the Crusader of Centy (US) table in the
+ * source thread, confirmed by observed output (e.g. "Leon?" in speaker/name
+ * headers was actually "Leon:"; the source thread's 5e=? does not hold for
+ * Soleil):
+ *   5e = : (not ?) - used as the separator after a speaker name, e.g. "MAMA:"
+ *   5d = ? (real closing question mark, pairs with the 55=¿ opener)
+ *   5f = - (not :) - source thread's 5f=: does not hold for Soleil; used as
+ *        a hyphen/dash, e.g. "huevo-bomba", "Ki-ki-ri-ki" (confirmed by
+ *        observed output showing "huevo:bomba" where "huevo-bomba" was
+ *        expected). 0x60 remains mapped to "-" from the source thread but
+ *        is effectively unused in Soleil's main script.
+ */
+
+/*
+ * Lower confidence / unresolved - left OUT of the table on purpose so the
+ * extractor flags them as {XX} instead of guessing wrong:
+ *   47, 48    - only ever appear at the start/end of narration-style lines;
+ *               possibly a narration quote glyph or a "wait for input" cue.
+ *   62        - most occurrences fit masculine ordinal indicator "º" (as in
+ *               "tu 14º cumpleanos"), but one occurrence ("PIG{62}I") looks
+ *               like it could instead be uppercase U-diaeresis (Ü), which
+ *               conflicts. Needs disassembly/font-table confirmation.
+ *   E0        - always followed by one more code byte (space, '0', a letter,
+ *               or a byte in the 0x84-0xFD range); the pattern strongly
+ *               suggests E0 is a control code (e.g. "insert icon/portrait")
+ *               rather than a text glyph, with the following byte an icon
+ *               index rather than a character. Left for the font/graphics
+ *               table to resolve.
+ *   F3        - always appears alone as the entire string; likely another
+ *               non-text control/icon code.
+ *   58,59,5A,84,8B,8C,94,95,F4,F5,F9,FA,FB,FC,FD - only seen as the byte
+ *               following E0; same reasoning as E0 above.
+ */
