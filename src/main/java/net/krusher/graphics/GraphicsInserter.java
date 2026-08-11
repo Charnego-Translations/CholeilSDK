@@ -38,7 +38,7 @@ public final class GraphicsInserter {
 
     static final int[] DEFAULT_PALETTE = TileRenderer.defaultGrayscalePalette();
     static final int COLUMNS = 16;
-    static final int SCALE = 2;
+    static final int SCALE = TileRenderer.SCALE;
 
     static final class Block {
         int offset, encSize, decSize;

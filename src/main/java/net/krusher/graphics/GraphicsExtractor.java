@@ -64,7 +64,7 @@ public class GraphicsExtractor {
         int[] palette = paletteOffset != null
                 ? TileRenderer.readGenesisPalette(rom, paletteOffset)
                 : TileRenderer.defaultGrayscalePalette();
-        BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, columns, 2);
+        BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, columns, TileRenderer.SCALE);
         TileRenderer.writePng(img, outFile);
         System.out.println("Wrote " + outFile + " (" + (r.decSize / TileRenderer.TILE_BYTES) + " tiles, "
                 + (paletteOffset != null ? "palette @0x" + Integer.toHexString(paletteOffset) : "default grayscale palette") + ")");
@@ -101,7 +101,7 @@ public class GraphicsExtractor {
                 palette = TileRenderer.readGenesisPalette(rom, paletteAddr);
                 realPalette++;
             }
-            BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, 16, 2);
+            BufferedImage img = TileRenderer.renderTileSheet(r.data, palette, 16, TileRenderer.SCALE);
             String fileName = String.format("gfx_%06x.png", offset);
             TileRenderer.writePng(img, outPath.resolve(fileName).toString());
             ok++;

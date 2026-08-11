@@ -18,6 +18,9 @@ public final class TileRenderer {
     public static final int TILE_SIZE = 8;
     public static final int TILE_BYTES = 32;
 
+    /** Pixel scale used by every extractor/inserter -- 1 = native resolution. */
+    public static final int SCALE = 1;
+
     private TileRenderer() {}
 
     public static int[] defaultGrayscalePalette() {

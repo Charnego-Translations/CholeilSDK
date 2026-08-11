@@ -51,16 +51,16 @@ public final class RawGraphicsInserter {
             if (paletteAddr != null) palette = TileRenderer.readGenesisPalette(rom, paletteAddr);
 
             BufferedImage img = TileRenderer.readPng(pngPath);
-            int expectedWidth = blk.columns * TileRenderer.TILE_SIZE * 2;
+            int expectedWidth = blk.columns * TileRenderer.TILE_SIZE * TileRenderer.SCALE;
             int expectedRows = (blk.length / TileRenderer.TILE_BYTES + blk.columns - 1) / blk.columns;
-            int expectedHeight = expectedRows * TileRenderer.TILE_SIZE * 2;
+            int expectedHeight = expectedRows * TileRenderer.TILE_SIZE * TileRenderer.SCALE;
             if (img.getWidth() != expectedWidth || img.getHeight() != expectedHeight) {
                 System.out.println("WARNING: " + pngPath + " has been resized -- raw blocks have a fixed size, skipping.");
                 continue;
             }
 
             int tileCount = blk.length / TileRenderer.TILE_BYTES;
-            byte[] newData = TileRenderer.decodeTileSheet(img, palette, blk.columns, 2, tileCount);
+            byte[] newData = TileRenderer.decodeTileSheet(img, palette, blk.columns, TileRenderer.SCALE, tileCount);
 
             byte[] original = Arrays.copyOfRange(rom, blk.addr, blk.addr + blk.length);
             if (Arrays.equals(newData, original)) {

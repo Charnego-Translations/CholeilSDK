@@ -47,14 +47,14 @@ public final class SpriteGraphicsInserter {
             int tilesPerSprite = blk.spriteTilesW * blk.spriteTilesH;
             int spriteCount = tileCount / tilesPerSprite;
             int macroRows = (spriteCount + blk.spritesPerRow - 1) / blk.spritesPerRow;
-            int expectedWidth = blk.spritesPerRow * blk.spriteTilesW * TileRenderer.TILE_SIZE * 2;
-            int expectedHeight = macroRows * blk.spriteTilesH * TileRenderer.TILE_SIZE * 2;
+            int expectedWidth = blk.spritesPerRow * blk.spriteTilesW * TileRenderer.TILE_SIZE * TileRenderer.SCALE;
+            int expectedHeight = macroRows * blk.spriteTilesH * TileRenderer.TILE_SIZE * TileRenderer.SCALE;
             if (img.getWidth() != expectedWidth || img.getHeight() != expectedHeight) {
                 System.out.println("WARNING: " + pngPath + " has been resized -- sprite blocks have a fixed size, skipping.");
                 continue;
             }
 
-            byte[] newData = TileRenderer.decodeSpriteSheet(img, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, 2, tileCount);
+            byte[] newData = TileRenderer.decodeSpriteSheet(img, palette, blk.spriteTilesW, blk.spriteTilesH, blk.spritesPerRow, TileRenderer.SCALE, tileCount);
 
             byte[] original = Arrays.copyOfRange(rom, blk.addr, blk.addr + blk.length);
             if (Arrays.equals(newData, original)) {
