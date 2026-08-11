@@ -1,12 +1,8 @@
 package net.krusher;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Dumps the main script text (and its pointer structure) out of the
@@ -42,7 +38,7 @@ public class TextExtractor {
 
     public static void run(String romPath, String tblPath, String outPath, String ptrPath) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
-        Map<Integer, String> table = loadTable(tblPath);
+        TblTable table = TblTable.load(tblPath);
 
         StringBuilder script = new StringBuilder();
         StringBuilder pointers = new StringBuilder();
@@ -113,7 +109,7 @@ public class TextExtractor {
         System.out.println("Pointer map written to: " + ptrPath);
     }
 
-    static String decodeString(byte[] rom, int addr, Map<Integer, String> table, int[] unknownCounter) {
+    static String decodeString(byte[] rom, int addr, TblTable table, int[] unknownCounter) {
         StringBuilder sb = new StringBuilder();
         int pos = addr;
         while (true) {
@@ -126,8 +122,8 @@ public class TextExtractor {
                 sb.append("<NAME>");
             } else if (b == 0xF2) {
                 sb.append("<YESNO>");
-            } else if (table.containsKey(b)) {
-                sb.append(table.get(b));
+            } else if (table.hasByte(b)) {
+                sb.append(table.glyphFor(b));
             } else {
                 sb.append('{').append(String.format("%02X", b)).append('}');
                 unknownCounter[0]++;
@@ -138,32 +134,6 @@ public class TextExtractor {
             }
         }
         return sb.toString();
-    }
-
-    static Map<Integer, String> loadTable(String path) throws IOException {
-        Map<Integer, String> table = new LinkedHashMap<Integer, String>();
-        List<String> lines = Files.readAllLines(Paths.get(path), Charset.forName("UTF-8"));
-        for (String line : lines) {
-            String trimmed = line.trim();
-            if (trimmed.isEmpty() || trimmed.startsWith("/*") || trimmed.startsWith("*") || trimmed.startsWith("//")) {
-                continue;
-            }
-            int eq = line.indexOf('=');
-            if (eq < 0) continue;
-            String hexPart = line.substring(0, eq).trim();
-            String valPart = line.substring(eq + 1); // keep as-is (preserve intentional spaces)
-            if (valPart.endsWith("\r")) valPart = valPart.substring(0, valPart.length() - 1);
-            if (hexPart.length() != 2) continue;
-            int code;
-            try {
-                code = Integer.parseInt(hexPart, 16);
-            } catch (NumberFormatException e) {
-                continue;
-            }
-            if (valPart.equals("<SPACE>")) valPart = " ";
-            table.put(code, valPart);
-        }
-        return table;
     }
 
     static int readU16(byte[] rom, int addr) {

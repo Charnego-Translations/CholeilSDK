@@ -1,6 +1,8 @@
 ### Copyrighted game data - never commit ###
 # The commercial ROM itself must not be distributed via this repo.
 Soleil (Spain).md
+# Patched output of TextInserter: still >99% original copyrighted ROM bytes.
+Choleil.md
 
 ### Maven / Java build output ###
 target/
