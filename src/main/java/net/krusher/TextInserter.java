@@ -41,6 +41,7 @@ public final class TextInserter {
         String text;
         byte[] encoded;
         int strTableAddr;
+        int newAddr = -1; // used only for str=0 entries, placed at a mandatory fixed address
         Group group;
     }
 
@@ -110,6 +111,59 @@ public final class TextInserter {
         // never be touched -- only the text itself is free to repack.
         List<int[]> tableRanges = computeTableRanges(rom);
 
+        // CRITICAL: string counts aren't stored anywhere explicitly -- the game
+        // derives strCount for an NPC as (offset stored at that NPC's str=0 slot)/2.
+        // That only works if str=0's text sits at EXACTLY strTableAddr+strCount*2
+        // (immediately after its own index table); the offset value doubles as a
+        // self-describing table-size encoding. Unlike str>=1, str=0 can never be
+        // freely relocated -- doing so silently corrupts the derived string count
+        // for that NPC, which is exactly what broke the game on the first attempt.
+        // So str=0 gets a mandatory fixed placement, reserved before anything else
+        // is packed; only str>=1 goes through the general flexible allocator.
+        Map<Integer, Integer> strCountByTable = new LinkedHashMap<Integer, Integer>();
+        for (Entry e : entries) {
+            Integer cur = strCountByTable.get(e.strTableAddr);
+            strCountByTable.put(e.strTableAddr, cur == null ? e.str + 1 : Math.max(cur, e.str + 1));
+        }
+        Map<Integer, Entry> str0ByTable = new LinkedHashMap<Integer, Entry>();
+        for (Entry e : entries) {
+            if (e.str == 0) str0ByTable.put(e.strTableAddr, e);
+        }
+
+        List<int[]> reservations = new ArrayList<int[]>();
+        List<Entry> str0Failures = new ArrayList<Entry>();
+        for (Map.Entry<Integer, Entry> me : str0ByTable.entrySet()) {
+            int strTableAddr = me.getKey();
+            Entry str0 = me.getValue();
+            int strCount = strCountByTable.get(strTableAddr);
+            int requiredAddr = strTableAddr + strCount * 2;
+            int requiredEnd = requiredAddr + str0.encoded.length;
+
+            boolean collision = false;
+            for (int[] r : tableRanges) {
+                if (r[0] == strTableAddr) continue; // this table's own (already-included) range
+                if (requiredAddr < r[1] && requiredEnd > r[0]) { collision = true; break; }
+            }
+            if (collision) {
+                str0Failures.add(str0);
+                continue;
+            }
+            str0.newAddr = requiredAddr;
+            reservations.add(new int[]{strTableAddr, requiredEnd});
+        }
+
+        if (!str0Failures.isEmpty()) {
+            System.out.println();
+            System.out.println(str0Failures.size() + " str=0 string(s) don't fit immediately after their own "
+                    + "string table (mandatory position -- these can't be relocated). " + outPath + " was NOT written.");
+            for (Entry e : str0Failures) {
+                System.out.println("  room=" + e.room + " npc=" + e.npc + " str=0: needs " + e.encoded.length
+                        + " bytes right after its table (0x" + Integer.toHexString(e.strTableAddr)
+                        + ") but collides with the next fixed table. Shorten this string.");
+            }
+            return;
+        }
+
         List<int[]> pool = new ArrayList<int[]>();
         pool.add(new int[]{minTextAddr, trueScriptEnd});
         pool.add(new int[]{trueScriptEnd, DEFAULT_GAP_END});
@@ -118,8 +172,10 @@ public final class TextInserter {
                 pool.add(new int[]{r.start, r.end()});
             }
         }
-        List<int[]> ranges = subtractRanges(mergeRanges(pool), mergeRanges(tableRanges));
-        System.out.println("Writable pool ranges:");
+        List<int[]> excluded = new ArrayList<int[]>(tableRanges);
+        excluded.addAll(reservations);
+        List<int[]> ranges = subtractRanges(mergeRanges(pool), mergeRanges(excluded));
+        System.out.println("Writable pool ranges (after reserving " + reservations.size() + " str=0 slots):");
         long totalCapacity = 0;
         for (int[] r : ranges) {
             System.out.println("  0x" + Integer.toHexString(r[0]) + " - 0x" + Integer.toHexString(r[1])
@@ -136,6 +192,8 @@ public final class TextInserter {
         // be structurally impossible to satisfy (a single address reachable from
         // every referencing table). Within an original sharing set, if translation
         // made some members diverge, they're split into their own sub-group.
+        // str=0 entries never participate: their position is mandatory and already
+        // fixed above, never shared.
         // representativeAddr is a PLACEMENT FLOOR, not a sort convenience: since
         // offsets are unsigned/forward-only, a shared string can only go at or
         // after the LATEST (highest-address) of all the string-index tables
@@ -143,6 +201,7 @@ public final class TextInserter {
         // would need to be negative.
         Map<Integer, List<Entry>> byOriginalTextAddr = new LinkedHashMap<Integer, List<Entry>>();
         for (Entry e : entries) {
+            if (e.str == 0) continue;
             byOriginalTextAddr.computeIfAbsent(e.textAddr, k -> new ArrayList<Entry>()).add(e);
         }
         List<Group> groups = new ArrayList<Group>();
@@ -164,13 +223,15 @@ public final class TextInserter {
             groups.addAll(subGroups.values());
         }
         Collections.sort(groups, (a, b) -> Integer.compare(a.representativeAddr, b.representativeAddr));
-        System.out.println(entries.size() + " strings, " + groups.size() + " unique after deduplication ("
-                + (entries.size() - groups.size()) + " shared copies avoided).");
+        System.out.println(entries.size() + " strings, " + str0ByTable.size() + " placed at mandatory str=0 slots, "
+                + groups.size() + " unique flexible locations for the rest ("
+                + ((entries.size() - str0ByTable.size()) - groups.size()) + " shared copies avoided).");
 
         int rangeIndex = 0;
         int cursor = ranges.get(0)[0];
         List<Entry> failures = new ArrayList<Entry>();
         long totalBytesUsed = 0;
+        for (int[] r : reservations) totalBytesUsed += str0ByTable.get(r[0]).encoded.length;
 
         for (Group g : groups) {
             cursor = Math.max(cursor, g.representativeAddr);
@@ -221,10 +282,20 @@ public final class TextInserter {
         }
 
         System.out.println();
-        System.out.println("All " + entries.size() + " strings placed successfully in "
-                + groups.size() + " unique locations (" + totalBytesUsed + " / " + totalCapacity + " bytes used).");
+        System.out.println("All " + entries.size() + " strings placed successfully ("
+                + totalBytesUsed + " / " + (totalCapacity + reservations.stream().mapToLong(r -> r[1] - r[0]).sum())
+                + " bytes used).");
 
         int moved = 0;
+        for (Entry str0 : str0ByTable.values()) {
+            for (int i = 0; i < str0.encoded.length; i++) {
+                rom[str0.newAddr + i] = str0.encoded[i];
+            }
+            int newOffset = str0.newAddr - str0.strTableAddr;
+            rom[str0.ptrFieldAddr] = (byte) ((newOffset >> 8) & 0xFF);
+            rom[str0.ptrFieldAddr + 1] = (byte) (newOffset & 0xFF);
+            if (str0.newAddr != str0.textAddr) moved++;
+        }
         for (Group g : groups) {
             for (int i = 0; i < g.encoded.length; i++) {
                 rom[g.newAddr + i] = g.encoded[i];
@@ -238,8 +309,28 @@ public final class TextInserter {
         }
         System.out.println(moved + " string(s) relocated, " + (entries.size() - moved) + " stayed at their original address.");
 
+        fixChecksum(rom);
+
         Files.write(Paths.get(outPath), rom);
         System.out.println("Wrote " + outPath);
+    }
+
+    /**
+     * Recomputes the Genesis header checksum (big-endian sum of all 16-bit
+     * words from 0x200 to the end of the ROM, mod 0x10000) and writes it to
+     * 0x18E-0x18F. Real Genesis hardware doesn't verify this at boot, but
+     * some emulators/flashcarts do, and every legitimate ROM patcher fixes
+     * it as a matter of course.
+     */
+    static void fixChecksum(byte[] rom) {
+        int sum = 0;
+        for (int i = 0x200; i + 1 < rom.length; i += 2) {
+            int word = ((rom[i] & 0xFF) << 8) | (rom[i + 1] & 0xFF);
+            sum = (sum + word) & 0xFFFF;
+        }
+        rom[0x18e] = (byte) ((sum >> 8) & 0xFF);
+        rom[0x18f] = (byte) (sum & 0xFF);
+        System.out.println("Checksum fixed: 0x" + Integer.toHexString(sum));
     }
 
     static String bytesToHex(byte[] bytes) {

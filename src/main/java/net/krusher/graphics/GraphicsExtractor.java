@@ -69,7 +69,7 @@ public class GraphicsExtractor {
                 + (paletteOffset != null ? "palette @0x" + Integer.toHexString(paletteOffset) : "default grayscale palette") + ")");
     }
 
-    static void scan(String romPath, String offsetsPath) throws IOException {
+    public static void scan(String romPath, String offsetsPath) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<RomScanner.Candidate> candidates = RomScanner.scan(rom, DEFAULT_SCAN_STEP, DEFAULT_MAX_ENC_SIZE, DEFAULT_MAX_DEC_SIZE);
         RomScanner.writeOffsetsFile(candidates, offsetsPath);
@@ -77,7 +77,7 @@ public class GraphicsExtractor {
         System.out.println("Offsets written to: " + offsetsPath);
     }
 
-    static void extract(String romPath, String offsetsPath, String outDir) throws IOException {
+    public static void extract(String romPath, String offsetsPath, String outDir) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<Integer> offsets = RomScanner.readOffsetsFile(offsetsPath);
         Path outPath = Paths.get(outDir);

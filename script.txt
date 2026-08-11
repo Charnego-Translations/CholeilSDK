@@ -218,11 +218,10 @@ veré en algún sitio.
 
 
 ==== room=2 npc=0 str=0 textAddr=0x1c09d4 ptrFieldAddr=0x1c09b4 ====
-MAMA: Y ahora, el momento
-que habéis estado esperando:
-una fiesta de cumpleaños
-para <NAME>. ¡Gracias
-a todos por venir!
+MAMA: Güeno, bienveníos al
+cumpleaño del desgraciao del
+<NAME>. ¡Tiene ya los
+cojones negros!
 
 
 ==== room=2 npc=0 str=1 textAddr=0x1c0a4a ptrFieldAddr=0x1c09b6 ====
