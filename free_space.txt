@@ -2,7 +2,7 @@
 ; single repeated byte value. This is a heuristic, not a guarantee -- review
 ; before trusting, and delete any line you're not sure is safe to overwrite.
 ; Format: 0xSTART,length,0xFILLBYTE
-0x1dfce0,800,0x00
+0x1dfcfe,770,0x00
 0x1e6785,6267,0x00
 0x1ebacc,1332,0xff
 0x1ed0fb,3845,0xff
