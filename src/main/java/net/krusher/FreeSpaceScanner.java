@@ -23,7 +23,7 @@ public final class FreeSpaceScanner {
 
     private FreeSpaceScanner() {}
 
-    static final int DEFAULT_MIN_RUN = 32;
+    static final int DEFAULT_MIN_RUN = 500;
 
     /**
      * usage: FreeSpaceScanner [romPath] [fromHexAddr] [outPath] [graphicsOffsetsPath] [minRunLength]
