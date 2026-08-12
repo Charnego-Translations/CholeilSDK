@@ -7,10 +7,10 @@
 ; table, so replacement text must fit in the same space or be shorter.
 ;
 ; The two blocks below (ROM header domestic/overseas name fields) were added
-; by hand, not by the scan -- they're "SOLEIL" padded with 42 spaces each,
-; and the scanner's diversity filter (rejects text with too few distinct
-; letters relative to length, tuned to reject padding-heavy coincidental
-; matches in code/graphics data) throws out space-padded fields like these.
+; by hand, not by the scan -- they sit right next to the SEGA copyright
+; string with no non-printable byte between them, so the scanner sees one
+; big ~140-char run (copyright text + both name fields + padding) that still
+; fails the diversity filter as a whole, even loosened.
 
 ==== ascii addr=0x120 len=48 ====
 CHOLEIL                                         
@@ -24,17 +24,35 @@ CHOLEIL
 ==== ascii addr=0x592 len=40 ====
     PAL AND FRENCH SECAM MEGA DRIVE     
 
+==== ascii addr=0x5bc len=40 ====
+                SYSTEMS.                
+
+==== ascii addr=0x58ac len=13 ====
+STATUS WINDOW
+
+==== ascii addr=0x6e40 len=11 ====
+OBJECT OVER
+
+==== ascii addr=0x32250 len=6 ====
+PERRO 
+
 ==== ascii addr=0x32260 len=11 ====
 PARALIZA   
 
 ==== ascii addr=0x3226c len=11 ====
 AL TACTO   
 
+==== ascii addr=0x32284 len=6 ====
+ MOA  
+
 ==== ascii addr=0x32294 len=11 ====
 REFUERZA   
 
 ==== ascii addr=0x322a0 len=11 ====
 HABILIDADES
+
+==== ascii addr=0x322b8 len=6 ====
+ LEON 
 
 ==== ascii addr=0x322c8 len=11 ====
 QUEMA      
@@ -45,11 +63,23 @@ ENEMIGO
 ==== ascii addr=0x322e0 len=11 ====
 CON LLAMA  
 
+==== ascii addr=0x322ec len=6 ====
+ PIN- 
+
+==== ascii addr=0x322f4 len=6 ====
+ GUINO
+
 ==== ascii addr=0x322fc len=11 ====
 CONGELA    
 
 ==== ascii addr=0x32308 len=11 ====
 ENEMIGO    
+
+==== ascii addr=0x32320 len=6 ====
+ GUE- 
+
+==== ascii addr=0x32328 len=6 ====
+ PARDO
 
 ==== ascii addr=0x32330 len=11 ====
 DOBLA LA   
@@ -57,11 +87,20 @@ DOBLA LA
 ==== ascii addr=0x3233c len=11 ====
 VELOCIDAD  
 
+==== ascii addr=0x32354 len=6 ====
+ DINO-
+
+==== ascii addr=0x3235c len=6 ====
+SAURIO
+
 ==== ascii addr=0x32364 len=11 ====
 CRUZA ZONA 
 
 ==== ascii addr=0x32370 len=11 ====
 PELIGROSA  
+
+==== ascii addr=0x32388 len=6 ====
+ DODO 
 
 ==== ascii addr=0x32398 len=11 ====
 PEGA       
@@ -72,6 +111,12 @@ ENEMIGO
 ==== ascii addr=0x323b0 len=11 ====
 A TU ESPADA
 
+==== ascii addr=0x323bc len=6 ====
+LEVIA-
+
+==== ascii addr=0x323c4 len=6 ====
+TAN   
+
 ==== ascii addr=0x323cc len=11 ====
 DOBLA VELO-
 
@@ -81,11 +126,20 @@ CIDAD DE
 ==== ascii addr=0x323e4 len=11 ====
 ESPADA     
 
+==== ascii addr=0x323f0 len=6 ====
+PERO  
+
 ==== ascii addr=0x32400 len=11 ====
 MAPACHE SE 
 
 ==== ascii addr=0x3240c len=11 ====
 DISFRAZA   
+
+==== ascii addr=0x32424 len=6 ====
+ARDI- 
+
+==== ascii addr=0x3242c len=6 ====
+LLA HA
 
 ==== ascii addr=0x32434 len=11 ====
 CE REBOTAR 
@@ -96,8 +150,20 @@ ESPADA EN
 ==== ascii addr=0x3244c len=11 ====
 LA PARED   
 
+==== ascii addr=0x32458 len=6 ====
+ORUGA 
+
+==== ascii addr=0x32468 len=11 ====
+SIN        
+
 ==== ascii addr=0x32474 len=11 ====
 HABILIDAD  
+
+==== ascii addr=0x3248c len=6 ====
+ ARMA-
+
+==== ascii addr=0x32494 len=6 ====
+ DILLO
 
 ==== ascii addr=0x3249c len=11 ====
 ACTIVA O   
@@ -108,17 +174,29 @@ HACE DE
 ==== ascii addr=0x324b4 len=11 ====
 TABLA      
 
+==== ascii addr=0x324c0 len=6 ====
+MURCIE
+
 ==== ascii addr=0x324d0 len=11 ====
 LAGO       
 
 ==== ascii addr=0x324dc len=11 ====
 TE PROTEGE 
 
+==== ascii addr=0x324f4 len=6 ====
+HUEVO 
+
 ==== ascii addr=0x32504 len=11 ====
 BOMBARDEA  
 
 ==== ascii addr=0x32510 len=11 ====
 AL ENEMIGO 
+
+==== ascii addr=0x32528 len=6 ====
+MARI- 
+
+==== ascii addr=0x32530 len=6 ====
+POSA  
 
 ==== ascii addr=0x32538 len=11 ====
 USA LA     
@@ -228,8 +306,38 @@ SECRETO
 ==== ascii addr=0x33af6 len=20 ====
 SELECT BB_RAM NUMBER
 
+==== ascii addr=0x33b0c len=20 ====
+      DATA - 1      
+
+==== ascii addr=0x33b22 len=20 ====
+      DATA - 2      
+
+==== ascii addr=0x33b38 len=20 ====
+      DATA - 3      
+
+==== ascii addr=0x33b4e len=20 ====
+      DATA - 4      
+
+==== ascii addr=0x33b64 len=20 ====
+      ERASE DATA    
+
 ==== ascii addr=0x33d02 len=20 ====
 ERASE  BB_RAM NUMBER
+
+==== ascii addr=0x33d18 len=20 ====
+      DATA - 1      
+
+==== ascii addr=0x33d2e len=20 ====
+      DATA - 2      
+
+==== ascii addr=0x33d44 len=20 ====
+      DATA - 3      
+
+==== ascii addr=0x33d5a len=20 ====
+      DATA - 4      
+
+==== ascii addr=0x33d70 len=20 ====
+      QUIT          
 
 ==== ascii addr=0x3a1d0 len=16 ====
 SOUND EFFECT NO 
@@ -240,8 +348,14 @@ PRODUCE
 ==== ascii addr=0x3b2e7 len=20 ====
 SCENARIO/GAME DESIGN
 
+==== ascii addr=0x3b2fc len=7 ====
+Y:ONDA@
+
 ==== ascii addr=0x3b304 len=12 ====
 MAIN PROGRAM
+
+==== ascii addr=0x3b311 len=6 ====
+Y:TANI
 
 ==== ascii addr=0x3b318 len=12 ====
 SUB PROGRAM 
@@ -288,6 +402,9 @@ K:TAJIMA
 ==== ascii addr=0x3b3cd len=24 ====
 BOSS CHARACTER DESIGN   
 
+==== ascii addr=0x3b3e6 len=6 ====
+Y:MAKI
+
 ==== ascii addr=0x3b3ed len=12 ====
 GAME DESIGN 
 
@@ -309,6 +426,9 @@ N:IWADARE
 ==== ascii addr=0x3b43a len=16 ====
 SPECIAL THANKS  
 
+==== ascii addr=0x3b44b len=5 ====
+MUCKY
+
 ==== ascii addr=0x3b451 len=11 ====
 I:MIZOGUCHI
 
@@ -317,3 +437,4 @@ EXECTIVE PRODUCER
 
 ==== ascii addr=0x3b472 len=8 ====
 K:AOYAMA
+

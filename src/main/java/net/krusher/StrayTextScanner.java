@@ -41,7 +41,7 @@ public final class StrayTextScanner {
         List<int[]> excluded = buildExclusions(rom, scriptPath, graphicsOffsetsPath);
         System.out.println("Excluded " + excluded.size() + " known regions (script + graphics).");
 
-        List<Hit> asciiHits = scanAscii(rom, excluded, 8);
+        List<Hit> asciiHits = scanAscii(rom, excluded, 5);
 
         StringBuilder report = new StringBuilder();
         report.append("; Stray text scan results -- unreviewed, may contain false positives from\n")
@@ -122,7 +122,9 @@ public final class StrayTextScanner {
     /**
      * Rejects low-diversity noise (long runs of the same char or two, which
      * dominate coincidental matches inside graphics/sound data): requires at
-     * least one distinct letter per 3 characters of length.
+     * least one distinct letter per 2 LETTERS (not total run length) -- a
+     * short real word padded with lots of spaces (e.g. "SYSTEMS." centered
+     * in a 40-byte fixed field) must not get penalized for the padding.
      */
     static boolean hasEnoughDiversity(String s) {
         Set<Character> distinct = new HashSet<Character>();
@@ -135,7 +137,21 @@ public final class StrayTextScanner {
             }
         }
         if (letters == 0) return false;
-        return distinct.size() * 3 >= s.length();
+        return distinct.size() * 2 >= letters;
+    }
+
+    /**
+     * All observed genuine game text (menus, credits, debug/select screens)
+     * is uppercase-only -- there is no lowercase text anywhere in the ROM.
+     * Rejecting any hit containing a lowercase letter cuts a large amount of
+     * code/disassembly noise (which mixes case or uses lowercase mnemonics)
+     * without risking real text, since real text never has lowercase to lose.
+     */
+    static boolean isUppercaseOnly(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isLowerCase(s.charAt(i))) return false;
+        }
+        return true;
     }
 
     // Common 68k opcodes that happen to render as printable ASCII and often
@@ -143,6 +159,56 @@ public final class StrayTextScanner {
     // RTS (0x4E75 = "Nu"). Left untrimmed, these get swallowed as a false
     // prefix of the "text" -- reinserting over them would corrupt real code.
     static final String[] CODE_ASCII_PREFIXES = { "Nq", "Nu" };
+
+    /**
+     * Every genuine hit found so far (menu text, credits, enemy-name
+     * fragments) contains at least one vowel -- no real word or abbreviation
+     * is all-consonant. Coincidental noise from code/graphics/sound data
+     * frequently is (e.g. "PWQF", "HBHCPBPCN"), so this alone rejects most
+     * of it cheaply.
+     */
+    static boolean hasVowel(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if ("AEIOUaeiou".indexOf(s.charAt(i)) >= 0) return true;
+        }
+        return false;
+    }
+
+    /**
+     * Genuine text only ever uses digits as an isolated single-digit token
+     * (menu items like "DATA - 1" .. "DATA - 4"); it never contains a
+     * multi-digit run. Noise from data/addresses frequently does
+     * (e.g. "PB68", "E33A"), so reject any hit with 2+ consecutive digits.
+     */
+    static boolean hasNoDigitRun(String s) {
+        int run = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isDigit(s.charAt(i))) {
+                run++;
+                if (run >= 2) return false;
+            } else {
+                run = 0;
+            }
+        }
+        return true;
+    }
+
+    // Punctuation actually observed in confirmed real text (colon before a
+    // credited name, dash for hyphenation/menu items, period, slash, "@" and
+    // "_" as separators in credits/menu text, "&" joining two credited
+    // roles e.g. "& GAME DESIGN"). Anything else printable (e.g. "#", "|",
+    // "<", ">", "^") only ever showed up in coincidental noise, like
+    // "#|SEGA/" next to the SEGA copyright string.
+    static final String ALLOWED_PUNCTUATION = ":-./@_&";
+
+    static boolean hasOnlyAllowedChars(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (Character.isLetterOrDigit(c) || c == ' ' || ALLOWED_PUNCTUATION.indexOf(c) >= 0) continue;
+            return false;
+        }
+        return true;
+    }
 
     static List<Hit> scanAscii(byte[] rom, List<int[]> excluded, int minLen) {
         List<Hit> hits = new ArrayList<Hit>();
@@ -173,7 +239,8 @@ public final class StrayTextScanner {
             }
             String text = sb.substring(trimStart);
             int textStart = start + trimStart;
-            if (text.length() >= minLen && hasEnoughDiversity(text)) {
+            if (text.length() >= minLen && isUppercaseOnly(text) && hasEnoughDiversity(text)
+                    && hasVowel(text) && hasNoDigitRun(text) && hasOnlyAllowedChars(text)) {
                 hits.add(new Hit(textStart, text.length(), text));
             }
         }
