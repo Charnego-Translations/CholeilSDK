@@ -25,7 +25,7 @@
     </dependency>
   </dependencies>
 
-  <build>
+<build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -33,6 +33,14 @@
         <version>3.13.0</version>
         <configuration>
           <release>${java.version}</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.6.3</version>
+        <configuration>
+          <mainClass>net.krusher.CholeilSDK</mainClass>
         </configuration>
       </plugin>
     </plugins>
