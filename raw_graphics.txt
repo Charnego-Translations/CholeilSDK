@@ -18,6 +18,15 @@
 ; found).
 0xe56,1536,12
 ;
+; 0x001456: the SEGA logo's trademark mark -- a corner/shadow tile plus the
+; "TM" glyph (2x1 tiles, 16x8px), immediately following the main 12x4 logo
+; block above. Registered separately (not as extra columns/rows on the main
+; block) since these are composited near the top-right corner of the "A",
+; not a rectangular continuation of the logo art -- this tooling only
+; extracts/reinserts simple rectangular tile grids, so the two pieces are
+; kept as distinct assets rather than misrepresenting their real position.
+0x1456,64,2
+;
 ; 0x00abbf2: the "PULSA START" (Spanish "PRESS START") text itself (11x1
 ; tiles). Palette confirmed via known_palettes.txt (0x548) -- text renders
 ; perfectly legible.
