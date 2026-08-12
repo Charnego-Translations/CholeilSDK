@@ -32,6 +32,7 @@ public class CholeilSDK
     static final String SPRITE_GFX_OUT = "sprite_gfx_out";
     static final String FREE_SPACE = "free_space.txt";
     static final String STRAY_TEXT = "stray_text.txt";
+    static final String CREDITS_POINTERS = "credits_pointers.txt";
     static final String OUT_ROM = "Choleil.md";
 
     public static void main( String[] args ) throws IOException
@@ -75,12 +76,16 @@ public class CholeilSDK
             FreeSpaceScanner.main( new String[] { ROM, "1d8000", FREE_SPACE, GRAPHICS_OFFSETS } );
 
             System.out.println();
+            System.out.println("=== inserting credits (pointer-relocatable) ===");
+            CreditsInserter.run( ROM, STRAY_TEXT, TBL, FREE_SPACE, CREDITS_POINTERS, OUT_ROM );
+
+            System.out.println();
             System.out.println("=== inserting text ===");
-            TextInserter.run( ROM, SCRIPT, TBL, FREE_SPACE, OUT_ROM );
+            TextInserter.run( OUT_ROM, SCRIPT, TBL, FREE_SPACE, OUT_ROM );
 
             System.out.println();
             System.out.println("=== inserting stray text ===");
-            StrayTextInserter.main( new String[] { OUT_ROM, STRAY_TEXT, TBL, OUT_ROM } );
+            StrayTextInserter.main( new String[] { OUT_ROM, STRAY_TEXT, TBL, OUT_ROM, CREDITS_POINTERS } );
 
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");

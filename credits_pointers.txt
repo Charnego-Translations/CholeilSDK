@@ -1,0 +1,16 @@
+; Staff credits pointer table (see CreditsInserter). 13 entries, 4-byte
+; big-endian ABSOLUTE addresses (unlike the main script's 16-bit forward-only
+; offsets -- so a card can be placed anywhere in the ROM, no proximity
+; constraint), each pointing at the start of one credits "card": a run of
+; 2-4 fields (role label / subtitle / co-credited names) separated by a
+; single byte -- 0x0d joins a continuation line onto the same block, 0x00
+; starts a new field. The last field of the last card is followed by 0x00 0x00
+; before 68k code resumes.
+;
+; Confirmed via exhaustive byte-level dump of the whole region (0x3b2de -
+; 0x3b47c) cross-referenced against the table values at 0x3b1f4 -- every
+; card boundary lines up exactly with a table entry, and every gap between
+; printable runs is exactly one of those two single-byte separators.
+;
+; format: 0xTABLE_ADDR,ENTRY_COUNT,0xDATA_END
+0x3b1f4,13,0x3b47a

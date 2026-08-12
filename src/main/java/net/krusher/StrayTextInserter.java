@@ -11,16 +11,20 @@ import java.util.regex.Pattern;
 
 /**
  * Reinserts whatever blocks remain in a (presumably pruned-down) stray_text.txt
- * -- see StrayTextScanner. Unlike TextInserter, these strings are referenced by
- * fixed absolute address directly in 68k code, not through a relocatable
- * pointer table, so there is nowhere to relocate an oversized replacement to:
- * every block must fit in its original byte length or shorter.
- *   - "ascii" blocks are written as literal bytes, left-padded... no,
- *     right-padded with spaces to fill the original length exactly (fixed-
- *     width display field, not terminator-based).
+ * -- see StrayTextScanner. Unlike TextInserter (and unlike CreditsInserter,
+ * which handles the one region that turned out to be pointer-based), these
+ * strings are referenced by fixed absolute address directly in 68k code, not
+ * through a relocatable pointer table, so there is nowhere to relocate an
+ * oversized replacement to. A block that's too long is warned about and
+ * trimmed to fit rather than aborting the whole build.
+ *   - "ascii" blocks are written as literal bytes, right-padded with spaces
+ *     to fill the original length exactly (fixed-width display field, not
+ *     terminator-based); oversized text is truncated to the original length.
  *   - "encoded" blocks go through TblTable, get a 0xFF terminator, and any
  *     leftover bytes before the original length are left untouched (harmless,
- *     since nothing reads past the terminator).
+ *     since nothing reads past the terminator); oversized text has trailing
+ *     characters dropped (one at a time, re-encoding each time to respect
+ *     multi-byte glyph boundaries) until it fits.
  */
 public final class StrayTextInserter {
 
@@ -32,61 +36,91 @@ public final class StrayTextInserter {
         String text;
     }
 
+    /** usage: StrayTextInserter [romPath] [strayTextPath] [tblPath] [outPath] [creditsRegistryPath] */
     public static void main(String[] args) throws IOException {
         String romPath = args.length > 0 ? args[0] : "Choleil.md";
         String strayTextPath = args.length > 1 ? args[1] : "stray_text.txt";
         String tblPath = args.length > 2 ? args[2] : "soleil.tbl";
         String outPath = args.length > 3 ? args[3] : "Choleil.md";
+        String creditsRegistryPath = args.length > 4 ? args[4] : "credits_pointers.txt";
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         TblTable table = TblTable.load(tblPath);
         List<Block> blocks = parse(strayTextPath);
         System.out.println("Parsed " + blocks.size() + " block(s) from " + strayTextPath);
 
-        List<Block> failures = new ArrayList<Block>();
-        List<byte[]> encodedBytes = new ArrayList<byte[]>();
+        if (creditsRegistryPath != null && Files.exists(Paths.get(creditsRegistryPath))) {
+            List<int[]> cardRanges = CreditsInserter.cardRanges(rom, creditsRegistryPath);
+            List<Block> remaining = new ArrayList<Block>();
+            int skipped = 0;
+            for (Block b : blocks) {
+                if (inAnyRange(b.addr, cardRanges)) { skipped++; continue; }
+                remaining.add(b);
+            }
+            if (skipped > 0) {
+                System.out.println(skipped + " block(s) fall inside the credits pointer table region "
+                        + "-- handled by CreditsInserter instead, skipped here.");
+                blocks = remaining;
+            }
+        }
 
+        int trimmed = 0;
+        for (Block b : blocks) {
+            if (b.type.equals("ascii")) {
+                if (b.text.length() > b.len) {
+                    System.out.println("WARN: addr=0x" + Integer.toHexString(b.addr) + " text is " + b.text.length()
+                            + " chars, budget is " + b.len + "; trimmed to fit: \"" + b.text.substring(0, b.len) + "\"");
+                    b.text = b.text.substring(0, b.len);
+                    trimmed++;
+                }
+            } else {
+                byte[] body;
+                try {
+                    body = table.encode(b.text);
+                } catch (IllegalArgumentException ex) {
+                    System.out.println("ENCODE FAILURE addr=0x" + Integer.toHexString(b.addr) + ": " + ex.getMessage());
+                    throw ex;
+                }
+                if (body.length + 1 > b.len) {
+                    String original = b.text;
+                    String candidate = b.text;
+                    while (!candidate.isEmpty()) {
+                        candidate = candidate.substring(0, candidate.length() - 1);
+                        byte[] retry;
+                        try {
+                            retry = table.encode(candidate);
+                        } catch (IllegalArgumentException ex) {
+                            continue; // trimming mid-glyph can desync tokenization; keep shortening
+                        }
+                        if (retry.length + 1 <= b.len) break;
+                    }
+                    System.out.println("WARN: addr=0x" + Integer.toHexString(b.addr) + " encodes to "
+                            + (body.length + 1) + " bytes, budget is " + b.len + "; trimmed \"" + original
+                            + "\" to \"" + candidate + "\"");
+                    b.text = candidate;
+                    trimmed++;
+                }
+            }
+        }
+        if (trimmed > 0) {
+            System.out.println(trimmed + " block(s) trimmed to fit their fixed original budget.");
+        }
+
+        List<byte[]> encodedBytes = new ArrayList<byte[]>();
         for (Block b : blocks) {
             byte[] bytes;
             if (b.type.equals("ascii")) {
-                if (b.text.length() > b.len) {
-                    failures.add(b);
-                    encodedBytes.add(null);
-                    continue;
-                }
                 bytes = new byte[b.len];
                 for (int i = 0; i < b.len; i++) {
                     bytes[i] = (byte) (i < b.text.length() ? b.text.charAt(i) : ' ');
                 }
             } else {
-                try {
-                    byte[] body = table.encode(b.text);
-                    if (body.length + 1 > b.len) {
-                        failures.add(b);
-                        encodedBytes.add(null);
-                        continue;
-                    }
-                    bytes = new byte[body.length + 1];
-                    System.arraycopy(body, 0, bytes, 0, body.length);
-                    bytes[body.length] = (byte) 0xFF;
-                } catch (IllegalArgumentException ex) {
-                    System.out.println("ENCODE FAILURE addr=0x" + Integer.toHexString(b.addr) + ": " + ex.getMessage());
-                    failures.add(b);
-                    encodedBytes.add(null);
-                    continue;
-                }
+                byte[] body = table.encode(b.text);
+                bytes = new byte[body.length + 1];
+                System.arraycopy(body, 0, bytes, 0, body.length);
+                bytes[body.length] = (byte) 0xFF;
             }
             encodedBytes.add(bytes);
-        }
-
-        if (!failures.isEmpty()) {
-            System.out.println();
-            System.out.println(failures.size() + " block(s) don't fit their original space. " + outPath + " was NOT written.");
-            for (Block b : failures) {
-                System.out.println("  addr=0x" + Integer.toHexString(b.addr) + " type=" + b.type
-                        + ": original budget " + b.len + " bytes, new content needs more. Shorten it.");
-            }
-            return;
         }
 
         for (int i = 0; i < blocks.size(); i++) {
@@ -98,6 +132,13 @@ public final class StrayTextInserter {
         TextInserter.fixChecksum(rom);
         Files.write(Paths.get(outPath), rom);
         System.out.println("Patched " + blocks.size() + " block(s) into " + outPath);
+    }
+
+    static boolean inAnyRange(int addr, List<int[]> ranges) {
+        for (int[] r : ranges) {
+            if (addr >= r[0] && addr < r[1]) return true;
+        }
+        return false;
     }
 
     static List<Block> parse(String path) throws IOException {
