@@ -114,7 +114,7 @@
  * decoded output (e.g. "cumplea{4F}os" -> "cumpleaños" implies 4F=n-tilde).
  * High confidence (each confirmed via multiple independent words):
  */
-44=...
+44=;
 4f=ñ
 50=í
 51=á

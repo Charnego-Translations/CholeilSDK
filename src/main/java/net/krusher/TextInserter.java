@@ -38,6 +38,11 @@ public final class TextInserter {
     static final Pattern SAME_REF = Pattern.compile(
             "^<SAME room=(\\d+) npc=(\\d+) str=(\\d+)>$");
 
+    // Dialogue box width, in characters, for a single displayed line (one
+    // segment between 0xFE line breaks). Confirmed against the game's text
+    // box rendering; a line over this length would overflow the box.
+    static final int MAX_LINE_LENGTH = 28;
+
     static final class Entry {
         int room, npc, str;
         int textAddr;
@@ -79,9 +84,30 @@ public final class TextInserter {
         System.out.println("Parsed " + entries.size() + " entries from " + scriptPath);
         resolveSameRefs(entries, scriptPath);
 
-        int encodeFailures = 0;
         for (Entry e : entries) {
             e.strTableAddr = e.ptrFieldAddr - e.str * 2;
+        }
+
+        // Lines longer than the dialogue box can hold are logged, but the
+        // string is still encoded and inserted normally -- see MAX_LINE_LENGTH.
+        int overLength = 0;
+        for (Entry e : entries) {
+            String[] displayLines = e.text.split("\n", -1);
+            for (String line : displayLines) {
+                if (line.length() > MAX_LINE_LENGTH) {
+                    overLength++;
+                    System.out.println("WARN: room=" + e.room + " npc=" + e.npc + " str=" + e.str
+                            + " (textAddr=0x" + Integer.toHexString(e.textAddr) + ") has a line over "
+                            + MAX_LINE_LENGTH + " characters [" + line.length() + " chars]: " + line);
+                }
+            }
+        }
+        if (overLength > 0) {
+            System.out.println(overLength + " line(s) exceed " + MAX_LINE_LENGTH + " characters.");
+        }
+
+        int encodeFailures = 0;
+        for (Entry e : entries) {
             try {
                 byte[] body = table.encode(e.text);
                 e.encoded = new byte[body.length + 1];

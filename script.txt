@@ -4214,7 +4214,7 @@ tampoco puedo aguantarlo.
 Dorotea insiste en que ha
 estado en el pasado. Debe
 haber sido duro para ella.
-Pero yo sé mucho del pasado...
+Pero yo sé mucho del pasado;
 no puede ser verdad.
 
 
@@ -5516,7 +5516,7 @@ verdadera forma.
 <SAME room=91 npc=6 str=0>
 
 ==== room=93 npc=0 str=0 textAddr=0x1d0d30 ptrFieldAddr=0x1d0d22 ====
-KLIN... ¡Lárgate! Estoy muy
+KLIN; ¡Lárgate! Estoy muy
 ocupado.
 
 
@@ -5928,7 +5928,7 @@ favor?
 
 
 ==== room=100 npc=0 str=9 textAddr=0x1d215a ptrFieldAddr=0x1d1dae ====
-{E0}0...
+{E0}0;
 PERRO MAPACHE: ¡Gracias!
 Eres un buen humano. Ya
 entiendo. Me uniré a tu
