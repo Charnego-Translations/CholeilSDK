@@ -510,8 +510,8 @@ aunque sea!
 ==== room=3 npc=2 str=0 textAddr=0x1c19a6 ptrFieldAddr=0x1c19a2 ====
 PEPE: Estoy esperando para
 ver al Luis, lo mismo le
-pido un autógrafo. <o un par
-de gramillos>
+pido un autógrafo... O un
+par de gramillos.
 
 
 ==== room=3 npc=2 str=1 textAddr=0x1c19f8 ptrFieldAddr=0x1c19a4 ====
@@ -603,7 +603,7 @@ ti te mola?
 
 ==== room=3 npc=3 str=9 textAddr=0x1c1e98 ptrFieldAddr=0x1c1a62 ====
 SABIO: ¡Vaya, salió el niño
-un zurdo guarro?
+un zurdo guarro!
 
 
 ==== room=3 npc=3 str=10 textAddr=0x1c1ee8 ptrFieldAddr=0x1c1a64 ====
@@ -613,16 +613,14 @@ Pedro Sánchez!
 
 
 ==== room=3 npc=4 str=0 textAddr=0x1c1f9c ptrFieldAddr=0x1c1f94 ====
-GUERRERO: Solía practicar
-mis técnicas de lucha cerca
-del lago, al norte del Valle
-de las Dalias. Creo que no
-puedo hacerlo más porque
-un horrible conejo
-aterroriza la zona. Es
-imposible negociar con
-él a menos que tú
-consigas hablar con él.
+GUERRERO: Yo era un maromazo
+del cagalse, iba con las
+pibas al Valle de las Bailas
+a meterles mano... ¡Pero un
+día aparesió un conejo
+sesino! Uh, no sé si es de
+meterme tantas pirulas o
+qué. Gñee.
 
 
 ==== room=3 npc=4 str=1 textAddr=0x1c2090 ptrFieldAddr=0x1c1f96 ====
@@ -632,30 +630,26 @@ consigas hablar con él.
 
 
 ==== room=3 npc=4 str=2 textAddr=0x1c2096 ptrFieldAddr=0x1c1f98 ====
-GUERRERO: Estoy preocupado
-por mi familia en Iris.
-Quiero ir a verlos
-enseguida pero no puedo
-hasta que no me
-convierta en héroe. Es
-mi modo de vida.
+GUERRERO: Estoy tope rayao,
+mis viejos están en Ibi.
+Quiero ir a verlos pero en
+verdad soy una maricona, no
+un maromazo.
 
 
 ==== room=3 npc=4 str=3 textAddr=0x1c212e ptrFieldAddr=0x1c1f9a ====
-GUERRERO: ¿Crees que
-siempre merodeo por aquí?
-Pues no es verdad porque
-normalmente estoy en el
-campo de entrenemiento.
-Es pura coincidencia que
-nos encontremos siempre
-aquí.
+GUERRERO: ¿Que qué hago
+aquí? Euh... en verdad
+estaba en Rabesa entrenando,
+pero me he venido a... uh...
+tomarme un cafelito.
+¡Niño, venga a tomar por
+culo ya!
 
 
 ==== room=3 npc=5 str=0 textAddr=0x1c21e0 ptrFieldAddr=0x1c21de ====
-CASA DE TINTIN
-¡No le eches de comer
-que va a engordar!
+CASA DE COSMO
+¡No le des na!
 ¡Firmado <NAME>!
 
 
@@ -5682,35 +5676,36 @@ sobaco de un grillo.
 
 
 ==== room=98 npc=0 str=1 textAddr=0x1d17d4 ptrFieldAddr=0x1d1798 ====
-Los humanos llamaron a las
-criaturas que reptaban por
-este mundo "monstruos". Los
-humanos los temían ya que
-eran seres extraños.
+Existían ya entonces unos
+seres llamados "cholos",
+navajeros y quincalleros
+de expresiones extrañas y
+aspecto sospechoso.
 
 
 ==== room=98 npc=0 str=2 textAddr=0x1d1856 ptrFieldAddr=0x1d179a ====
-Nadie sabe dónde, cuándo o
-cómo llegaron a existir.
+Naide sabe dande salieron,
+o por qué van en bata al
+supermercado.
 
 
 
 
-Porque las plantas y los
-animales, como los humanos,
-no existían todavía en
-este mundo.
+Porque los nimalicos y los
+yerbajos del campo, así como
+los payos, no existían aún
+en este mundo de majaras.
 
 
 ==== room=98 npc=0 str=3 textAddr=0x1d18e8 ptrFieldAddr=0x1d179c ====
 
-Pasó el tiempo ...
+Tres doritos después...
 
 
 
 ==== room=98 npc=0 str=4 textAddr=0x1d18fe ptrFieldAddr=0x1d179e ====
-Un día, el mundo experimentó
-un cambio.
+Pero un día el mundo cambió.
+Dios dijo:
 
 
 ==== room=98 npc=0 str=5 textAddr=0x1d1928 ptrFieldAddr=0x1d17a0 ====
@@ -5720,52 +5715,51 @@ un cambio.
 
 
 ==== room=98 npc=0 str=6 textAddr=0x1d193e ptrFieldAddr=0x1d17a2 ====
-Con esa voz como señal, la
-luz empezó a llenar el
-mundo.
+Entonces Chuck Norris dijo:
+"Pídelo por favor."
 
 
 ==== room=98 npc=0 str=7 textAddr=0x1d1978 ptrFieldAddr=0x1d17a4 ====
-Innumerables monstruos, que
-no tenían resistencia a la
-luz, murieron.
+El caso que los cholos, que
+no les molaba el Lorenzo,
+la diñaron en su mayoría.
 
 
 ==== room=98 npc=0 str=8 textAddr=0x1d19c0 ptrFieldAddr=0x1d17a6 ====
-Entonces transcurrió un
-tiempo, que pareció
-interminable ...
+La cosa es que esto es más
+viejo que la humedad, pasó
+más tiempo que el copón.
 
 
 ==== room=98 npc=0 str=9 textAddr=0x1d19fe ptrFieldAddr=0x1d17a8 ====
-Poco a poco aparecieron
-formas vivientes, como las
-plantas y los animales.
+Poquet a poquet aparecieron
+seres vivos y seres muertos,
+como nimalicos y hierbajos.
 
 
 ==== room=98 npc=0 str=10 textAddr=0x1d1a4a ptrFieldAddr=0x1d17aa ====
-Pero ...
+Eso sí...
 
 
 ==== room=98 npc=0 str=11 textAddr=0x1d1a54 ptrFieldAddr=0x1d17ac ====
-Los monstruos no se
-extinguieron.
+Algunos cholos no la
+terminaron de diñar.
 
 
 ==== room=98 npc=0 str=12 textAddr=0x1d1a78 ptrFieldAddr=0x1d17ae ====
-Se refugiaron bajo tierra y
-aumentaron en número. Fue
+Algunos se refugiaron en el
+barrio de la Mina.
 
-casi como si estuvieran
-esperando para volver ...
+Asín se reprodujeron como
+chinches.
 
 
 ==== room=98 npc=0 str=13 textAddr=0x1d1ae2 ptrFieldAddr=0x1d17b0 ====
-Nuestra historia comienza
-cuando reaparecen los
+El juego empiesa cuando los
+cholos reaparesen,
 
-monstruos y su influencia
-empieza a aumentar.
+y empiesan a robar, violar,
+¡¡APOKALISTIKO!!
 
 
 ==== room=99 npc=0 str=0 textAddr=0x1d1b50 ptrFieldAddr=0x1d1b46 ====
