@@ -37,10 +37,10 @@ OBJECT OVER
 PERRO 
 
 ==== ascii addr=0x32260 len=11 ====
-PARALIZA   
+MUERDE EN  
 
 ==== ascii addr=0x3226c len=11 ====
-AL TACTO   
+LAS PELOTAS
 
 ==== ascii addr=0x32284 len=6 ====
  MOA  

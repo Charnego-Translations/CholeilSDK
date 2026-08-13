@@ -517,7 +517,7 @@ par de gramillos.
 ==== room=3 npc=2 str=1 textAddr=0x1c19f8 ptrFieldAddr=0x1c19a4 ====
 PEPE: ¡Vi al Luis irse! ¡Le
 bailaba la mandíbula más que
-un pelo en un Jabón! Estará
+un pelo en un jabón! Estará
 nervioso.
 
 
@@ -649,90 +649,86 @@ culo ya!
 
 ==== room=3 npc=5 str=0 textAddr=0x1c21e0 ptrFieldAddr=0x1c21de ====
 CASA DE COSMO
-¡No le des na!
-¡Firmado <NAME>!
+¡No le des na que se
+escagarrucia!
+Firmado: <NAME>
 
 
 ==== room=3 npc=6 str=0 textAddr=0x1c222a ptrFieldAddr=0x1c2226 ====
-FUENTE DE LOS HEROES
+FUENTE DE LOS MAROMOS
 
-Coje tu espada, chico,
-porque es hora de luchar.
+De la ciudad a los maromos
+machotes.
 
 
 ==== room=3 npc=6 str=1 textAddr=0x1c2272 ptrFieldAddr=0x1c2228 ====
-FUENTE DE LA DIOSA
+FUENTE LGTBIQABBQWTF
 
-Ama a tu enemigo y se
-abrirá el camino.
-
+¡Habajo el patriarcado!
 
 
 ==== room=3 npc=7 str=0 textAddr=0x1c22b4 ptrFieldAddr=0x1c22b0 ====
-CASA EN VENTA
+SE VENDE
 
-¿Te gustaría cambiarte
-de casa?
+Sólo un trillón de rupias
 
 
 ==== room=3 npc=7 str=1 textAddr=0x1c22e4 ptrFieldAddr=0x1c22b2 ====
-ANUNCIO
+ANUNSIO
 
-¡Próxima apertura del
-campo de entrenamiento!
-firmado Lucas
+¡Prósima apertura del campo
+dentrenamiento del fistro
+del cuerpo humano!
+Firmado: Lucas
 
 
 ==== room=3 npc=8 str=0 textAddr=0x1c232e ptrFieldAddr=0x1c232a ====
-PARQUE
+PARKE
 
-Este parque es de todos.
-Sed amables los unos
-con los otros.
+Proivido jugar a la pelota
+
+¡Pues nos drogamos!
 
 
 ==== room=3 npc=8 str=1 textAddr=0x1c2374 ptrFieldAddr=0x1c232c ====
-ANUNCIO
+ANUNSIO
 
-Plano del futuro parque.
-En construcción.
-Prohibido el paso.
+Parke en construsión.
+Dejar de dar porculo, irse
+a otro lao.
 
 
 ==== room=4 npc=0 str=0 textAddr=0x1c23da ptrFieldAddr=0x1c23c6 ====
-REY: Bien hecho, Luis.
-Has superado la prueba.
-Aquí tienes tu recompensa.
+REY: Muy bien Luisito, toma
+bonito, te lo has ganado.
+¡Una navaja de Albacete!
 
 
 ==== room=4 npc=0 str=1 textAddr=0x1c2426 ptrFieldAddr=0x1c23c8 ====
-REY: Tu viaje será largo
-pero sé que lo conseguirás.
-Buena suerte.
+REY: Venga, y recuerda decir
+a tu madre que te prepare un
+bollo pa la merienda. Hale.
 
 
 ==== room=4 npc=0 str=2 textAddr=0x1c246a ptrFieldAddr=0x1c23ca ====
-REY: Esa espada ... tú debes
-ser <NAME> ...
-Hacía tiempo. Tu padre era
-extraordinariamente
-valiente. Salvó esta
-ciudad muchas veces con
-esa espada. Basta
-de recuerdos, vienes a
-informarme de tu 14º
-cumpleaños, ¿verdad? Te
-concederé acceso al Campo
-de Entrenamiento Rafresa.
-Entrénate mucho,
-jovencito.
+REY: Esa navaja... tú tienes
+que ser el <NAME>...
+Tu viejo era tela de cabesón
+y le decían el Chupa-Chups.
+¿Ya has cumplido los 14 y te
+han dado una navaja, no?
+Pues tira pa el campo de
+entrenamiento de Rabesa a
+ver si aprendes algo, que
+eres más torpe que un
+cerrojo.
 
 
 ==== room=4 npc=0 str=3 textAddr=0x1c2594 ptrFieldAddr=0x1c23cc ====
-REY: Puedes irte. Ve y
-practica mucho con tu
-espada y te convertirás
-en un héroe.
+REY: Ala tira, a ver si no
+te pierdes por el camino,
+que luego hay que ir a
+buscarte.
 
 
 ==== room=4 npc=0 str=4 textAddr=0x1c25e8 ptrFieldAddr=0x1c23ce ====
@@ -743,64 +739,68 @@ en un héroe.
 
 ==== room=4 npc=0 str=5 textAddr=0x1c25ee ptrFieldAddr=0x1c23d0 ====
 REY: ¡Ah, <NAME>!
-Debes entrenar mucho.
-No puedes desanimarte.
+¿Otra vez aquí dando la
+brasa? Qué puto crío más
+hartible, a ver si al final
+te pierdes.
 
 
 ==== room=4 npc=0 str=6 textAddr=0x1c262a ptrFieldAddr=0x1c23d2 ====
-REY: ¡Bien hecho! Has
-conseguido tres medallas.
-Es todo un logro para un
-jovencito. Aquí tienes la
-Espada Sacra como
-recompensa. Se dice que
-es el auténtico símbolo
-de un héroe. Eres el primer
-joven de 14 años que la
-recibe. Cuídala mucho.
+REY: ¡Hostia puta, el crío
+los huevos! ¡Ha afanao las
+tres medallas! ¿Se las habrá
+mangado a alguien? Bueh, da
+iguás, te has ganao el
+verdadero símbolo de un gran
+maromo: ¡LA NAVAJA DE
+ALBACETE! Ten cuidao y no la
+pierdas.
 
 
 ==== room=4 npc=0 str=7 textAddr=0x1c271c ptrFieldAddr=0x1c23d4 ====
-<NAME> recibió
-la Espada Sacra.
+<NAME> resibió
+la Navaja de Albacete.
 
 
 ==== room=4 npc=0 str=8 textAddr=0x1c2738 ptrFieldAddr=0x1c23d6 ====
-REY: Ahora se te considera
-un héroe. Espero que
-realices hazañas dignas de
-tu título.
+REY: ¡Ahora eres un
+auténtico maromo! Aunque
+seas un poco espesito y
+sigas en sexto de EGB con 14
+tacos ya.
 
 
 ==== room=4 npc=0 str=9 textAddr=0x1c2790 ptrFieldAddr=0x1c23d8 ====
 REY: ¡Ah, <NAME>!
-¡Has crecido!
-¿Cómo está tu padre?
-Cuídate, muchacho.
+¡Vaya cabesón que gastas!
+¡Se nota que eres hijo  de
+tu viejo!
 
 
 ==== room=4 npc=1 str=0 textAddr=0x1c27d8 ptrFieldAddr=0x1c27d4 ====
-LUIS: Gracias, su Alteza.
-Esta espada me será
-de gran ayuda.
+LUIS: Gñee, grasias su
+Majestá, con esta navaja
+arrajaré a muchos cholos.
 
 
 ==== room=4 npc=1 str=1 textAddr=0x1c2816 ptrFieldAddr=0x1c27d6 ====
-LUIS: Sí, su Alteza.
+LUIS: ¡Gñsí, majestá!
 
 
 ==== room=4 npc=2 str=0 textAddr=0x1c283c ptrFieldAddr=0x1c282c ====
-CONSEJERO: Rafresa es
-un campo de entrenamiento
-en el que puedes convertirte
-en héroe. Hazlo bien.
+CONSEJERO: En Rabesa te
+puedes entrenar para
+convertirte en un maromo.
+Pero ten cuidao que con
+lo torpe que eres lo mismo
+acabas quemao.
 
 
 ==== room=4 npc=2 str=1 textAddr=0x1c28a0 ptrFieldAddr=0x1c282e ====
-CONSEJERO: Una sola
-medalla de bronce no basta.
-Vuelve cuando tengas
-las otras dos.
+CONSEJERO: ¿Has robao algo
+de cobre? Sostá muy bien,
+pero no basta para ser un
+maromo.
 
 
 ==== room=4 npc=2 str=2 textAddr=0x1c28f6 ptrFieldAddr=0x1c2830 ====
@@ -810,48 +810,47 @@ las otras dos.
 
 
 ==== room=4 npc=2 str=3 textAddr=0x1c28fc ptrFieldAddr=0x1c2832 ====
-CONSEJERO: Tengo el
-presentimiento de que nos
-hemos visto antes en alguna
-parte ... pero no consigo
-recordar.
+CONSEJERO: Hostia, menuda
+cabeza que gasta el niño,
+se compra un casco y le
+regalan la moto.
 
 
 ==== room=4 npc=2 str=4 textAddr=0x1c296c ptrFieldAddr=0x1c2834 ====
-CONSEJERO: ¡Ahora lo
-recuerdo! Te pareces al héroe
-de la estatua de la fuente.
-Pero supongo que todos los
-que han ido a la batalla se
-parecen un poco.
+CONSEJERO: ¡Toma claro, te
+pareces al de la Estatua del
+Maromo de la plaza del
+pueblo! ¡Gastáis tela de
+cabeza!
 
 
 ==== room=4 npc=2 str=5 textAddr=0x1c2a04 ptrFieldAddr=0x1c2836 ====
 {E0}0?
-CONSEJERO: Permite que te
-pregunte, ¿sabes cuál es el
-símbolo de la ciudad
-de Soleil?
+CONSEJERO: Niño, tú que
+estás estudiando, ¿sabes
+cuál es el símbolo de
+la ciudad de Choleil?
 <YESNO>
 
 
 ==== room=4 npc=2 str=6 textAddr=0x1c2a62 ptrFieldAddr=0x1c2838 ====
-CONSEJERO: Bien hecho. Veo
-que los niños de hoy en día
-son muy listos.
+CONSEJERO: Mu bien, niño, mu
+bien. Que se note que en el
+PSOE invertimos en
+educasión.
 
 
 ==== room=4 npc=2 str=7 textAddr=0x1c2aaa ptrFieldAddr=0x1c283a ====
-CONSEJERO: ¿Cómo?, ¿no lo
-sabes? Es la estatua de
-la Diosa que hay en la
-fuente. Ve a verla.
+CONSEJERO: ¿Cómo?, ¿No
+conoces nuestra estatua del
+colestivo LGTBIQABBQWTF?
+¡Fasista! ¡Turboderecha!
 
 
 ==== room=4 npc=3 str=0 textAddr=0x1c2b12 ptrFieldAddr=0x1c2b08 ====
-CRIADA: ¡Cuanto trabajo!
-Oye, chico, no te acerques a
-la chimenea. Es peligroso.
+CRIADA: ¡Niñomierda, fuera
+de asquí, que me pisas lo
+fregao!
 
 
 ==== room=4 npc=3 str=1 textAddr=0x1c2b64 ptrFieldAddr=0x1c2b0a ====
@@ -861,34 +860,31 @@ la chimenea. Es peligroso.
 
 
 ==== room=4 npc=3 str=2 textAddr=0x1c2b6a ptrFieldAddr=0x1c2b0c ====
-CRIADA: Mi hermana ha
-desaparecido otra vez. Sólo
-se molesta en limpiar la
-habitación del Rey.
+CRIADA: Otra vez mi hermana
+se escaquea. Namás que está
+en la habitación del Rey,
+haciendo a saber qué.
 
 
 ==== room=4 npc=3 str=3 textAddr=0x1c2bca ptrFieldAddr=0x1c2b0e ====
-CRIADA: Creo que se trae
-algo entre manos. Actúa de
-modo extraño.
+CRIADA: Será guarra la
+hijaputa.
 
 
 ==== room=4 npc=3 str=4 textAddr=0x1c2c0e ptrFieldAddr=0x1c2b10 ====
-CRIADA: ¡Qué de trabajo!
-¡Aléjate de los barriles!
-Ese agua es para beber.
+CRIADA: ¡Pintor, si pintas
+con amoooor! ¡Por qué
+desprecias tu coloooor...!
 
 
 ==== room=4 npc=4 str=0 textAddr=0x1c2c64 ptrFieldAddr=0x1c2c5a ====
 SOLDADO: El Valle de las
-Dalias es un lugar extraño
-en el que aparecen
-monstruos constantemente.
-Antes de ir debes aprender
-en el campo de
-entrenamiento cómo lanzar
-tu espada.
-
+Bailas parece el Vietnam,
+macho. Está todo lleno de
+cholos que matan, roban...
+¡APOKALISTIKO! Más vale que
+vayas a Rabesa a aprender
+a lanzar la navaja.
 
 
 ==== room=4 npc=4 str=1 textAddr=0x1c2d16 ptrFieldAddr=0x1c2c5c ====
@@ -898,30 +894,28 @@ tu espada.
 
 
 ==== room=4 npc=4 str=2 textAddr=0x1c2d1c ptrFieldAddr=0x1c2c5e ====
-SOLDADO: Me encontré con mi
-madre en la "casa en
-venta". Parece tener
-grandes problemas
-económicos y se esconde
-de sus acreedores.
-Debería habérmelo contado.
-Somos familia.
+SOLDADO: Mi vieja se ha
+comprao la casa que estaba
+en venta, y se ve que ahora
+tiene menos dinero que el
+que se está balando. Se lo
+habrá gastado todo en el
+bingo.
 
 
 ==== room=4 npc=4 str=3 textAddr=0x1c2dca ptrFieldAddr=0x1c2c60 ====
-SOLDADO: Hace mucho tiempo
-hubo un incidente en que un
-monstruo se escapó de la
-mazmorra del castillo.
-Imagino que ni a los
-monstruos les gusta estar
-encerrados.
+SOLDADO: Hace un pilote de
+tiempo se escampó un cholo
+del cuartelillo del
+castillo. ¡Fue como el Lute,
+tronco! ¡Menudo pifostio
+se montó!
 
 
 ==== room=4 npc=4 str=4 textAddr=0x1c2e6e ptrFieldAddr=0x1c2c62 ====
-SOLDADO: Oh, <NAME>.
-¿Te gusta visitar castillos,
-verdad?
+SOLDADO: Anda, <NAME>.
+¿Ya te has perdido otra vez,
+eh mongolito?
 
 
 ==== room=5 npc=0 str=0 textAddr=0x1c2ee6 ptrFieldAddr=0x1c2ea6 ====
@@ -938,31 +932,30 @@ verdad?
 
 ==== room=5 npc=0 str=4 textAddr=0x1c2eee ptrFieldAddr=0x1c2eae ====
 
-Pueblo de Soleil {4D}{4D}{4D}
+Pueblo de Choleil >>>
 
 
 
 ==== room=5 npc=0 str=5 textAddr=0x1c2f06 ptrFieldAddr=0x1c2eb0 ====
-Valle de las Dalias.
-<<<Dirección al campo de
-entrenamiento de Rafresa
+Valle de las Bailas.
+<<<Pallá pal campo de
+entrenamiento de Rabesa
 
 
 ==== room=5 npc=0 str=6 textAddr=0x1c2f4e ptrFieldAddr=0x1c2eb2 ====
-Dale al interruptor rojo
-para encender el fusible.
+Dale an interrustor rojo
+para ensender el aparatico.
 
 
 ==== room=5 npc=0 str=7 textAddr=0x1c2f82 ptrFieldAddr=0x1c2eb4 ====
 CASA DE LA SIRENA
-¡Por un tiempo limitado,
-puedes ver a una sirena
-gratis!
+¡Se puede ver a una sirena
+muy cachonda de gratis!
 
 
 ==== room=5 npc=0 str=8 textAddr=0x1c2fce ptrFieldAddr=0x1c2eb6 ====
-Activa los botones rojos
-saltando sobre ellos.
+Dale a los botonsicos rojos
+sartando, so daltónico.
 
 
 ==== room=5 npc=0 str=9 textAddr=0x1c2ffe ptrFieldAddr=0x1c2eb8 ====
@@ -970,66 +963,69 @@ saltando sobre ellos.
 
 ==== room=5 npc=0 str=10 textAddr=0x1c3000 ptrFieldAddr=0x1c2eba ====
 CASA DE LA FORTUNA
-¿Quieres saber tu futuro?
+Ay, payo, ven que lea la
+mano, salao.
 
 
 ==== room=5 npc=0 str=11 textAddr=0x1c302e ptrFieldAddr=0x1c2ebc ====
 
 
 ==== room=5 npc=0 str=12 textAddr=0x1c3030 ptrFieldAddr=0x1c2ebe ====
-Pista para principiantes
-Muy fácil
-Cualquiera puede hacerlo
+Pista pa mancos. Tope de
+fásil, hasta los monos lo
+puedn haser.
 
 
 ==== room=5 npc=0 str=13 textAddr=0x1c306e ptrFieldAddr=0x1c2ec0 ====
-Pista nivel intermedio
-Inténtalo si tienes la
-habilidad para saltar
+Pista nivel pro, dale un
+tiento si puedes sartar.
 
 
 ==== room=5 npc=0 str=14 textAddr=0x1c30b4 ptrFieldAddr=0x1c2ec2 ====
-Pista para expertos
-Inténtalo si puedes
-hacer el salto rápido
+Pista para viciaos, sólo
+la gente que pega saltos com
+el Sotomayor.
 
 
 ==== room=5 npc=0 str=15 textAddr=0x1c30f4 ptrFieldAddr=0x1c2ec4 ====
-Los bloques azules sirven
-de fusibles. Conéctalos
-antes de darle al
-interruptor rojo
+Los bloques asules llevan
+corriente, conéctalos antes
+de darle al interrustor
+rojo. ¡Tranqui, no dan
+calambre!
 
 
 ==== room=5 npc=0 str=16 textAddr=0x1c314a ptrFieldAddr=0x1c2ec6 ====
-Se pueden pulsar todos los
-bloques azules. Conéctalos
-todos antes de darle al
-interruptor rojo
+Puedes pulsar tos los bloque
+asules. Enchúflalos todos
+antes de darle al
+interrustor rojo.
 
 
 ==== room=5 npc=0 str=17 textAddr=0x1c31aa ptrFieldAddr=0x1c2ec8 ====
-Salta usando el salto
-rápido. El secreto está en
-saltar antes del precipicio
+Pega un sarto como el
+Carrero Blanco. Lo suyo es
+coger más que una gallina
+en Somalia.
 
 
 ==== room=5 npc=0 str=18 textAddr=0x1c31f8 ptrFieldAddr=0x1c2eca ====
-¡Ts ... ts ...! Soy un erizo
-galante. Si me tocas te
-quemarás.
+¡Qué pasa, tronco! Los de
+SEGA ponen al Sonic hasta en
+el colacao. A saber qué
+cojones hago aquí.
 
 
 ==== room=5 npc=0 str=19 textAddr=0x1c3238 ptrFieldAddr=0x1c2ecc ====
-Cruce de monstruos
-¡¡Ten mucho, mucho cuidado!!
+Cruce de cholos.
+¡¡Cuidao con la cartera!!
  
 
 ==== room=5 npc=0 str=20 textAddr=0x1c326a ptrFieldAddr=0x1c2ece ====
-Lo siento, ¡calle sin
-salida!
-¡Da media vuelta!
- 
+Calle cortada por obras
+¡Que te follen! ¡Tira
+patrás!
+
 
 ==== room=5 npc=0 str=21 textAddr=0x1c329c ptrFieldAddr=0x1c2ed0 ====
 
@@ -1041,10 +1037,9 @@ salida!
 
 
 ==== room=5 npc=0 str=24 textAddr=0x1c32a2 ptrFieldAddr=0x1c2ed6 ====
-Arriba está la roca de la
-reflexión. A la derecha está
-la roca de la postración.
-Tócala y arrepiéntete.
+Estos piedros pesan más que
+un remordimiento, si tienes
+cojones los meneas.
 
 
 ==== room=5 npc=0 str=25 textAddr=0x1c330c ptrFieldAddr=0x1c2ed8 ====
@@ -1063,108 +1058,106 @@ Tócala y arrepiéntete.
 
 
 ==== room=5 npc=0 str=30 textAddr=0x1c3316 ptrFieldAddr=0x1c2ee2 ====
-El cielo no puede crear un
-camino para el hombre. La
-respuesta está bajo tus
-pies.
+No seas maricona y tira, en
+los juegos a veces hay un
+camino bajo tus pieses.
 
 
 ==== room=5 npc=0 str=31 textAddr=0x1c336a ptrFieldAddr=0x1c2ee4 ====
-Colócate delante, con un
-perro que muestra el
-camino. Entonces sabrás el
-camino a seguir.
+¿Tú tiene perro ni na?
+Ve a buscarlo anda, que
+si no eres capaz de que
+te pierdas.
 
 
 ==== room=6 npc=0 str=0 textAddr=0x1c33d8 ptrFieldAddr=0x1c33d0 ====
-TINTIN: ¡Guau, guau!
+COSMO: ¡Guau, guau!
 
 
 ==== room=6 npc=0 str=1 textAddr=0x1c33ee ptrFieldAddr=0x1c33d2 ====
-TINTIN: Oh, <NAME>.
-La comida de ayer
-estaba buenísima.
+COSMO: ¡Amo <NAME>!
+¡La tengo como el
+cerrojo de un penal!
 
 
 ==== room=6 npc=0 str=2 textAddr=0x1c3422 ptrFieldAddr=0x1c33d4 ====
-TINTIN: ¿Huh? ¿Comprendes
-lo que digo? Hmm. Ya veo.
-Has visto la extraña
-adivina, ¿no? No te
-preocupes, volverás a tu
-forma natural. ¡Te ayudaré
-a encontrar a la adivina!
+COSMO: ¿Eins? ¿Desde cuándo
+hablas perro? ¿No te habrás
+tomado otra vez una pastilla
+que te has encontrado por la
+calle? ¡Ah, has visitado a
+la gitana! ¡Voy contigo, me
+molan los paseos!
 
 
 ==== room=6 npc=0 str=3 textAddr=0x1c34ce ptrFieldAddr=0x1c33d6 ====
-¡El perro Tintín se une al
-grupo! Pulsa Start y
-descubre su habilidad
-especial.
+¡Cosmo Kramer se une al
+grupo! Dale al Start y lo
+puedes poner para que
+arree bocaos al personal.
 
 
 ==== room=6 npc=1 str=0 textAddr=0x1c3526 ptrFieldAddr=0x1c3520 ====
 GALLO: ¡Ki-ki-ri-ki!
+¡Atchuá!
 
 
 ==== room=6 npc=1 str=1 textAddr=0x1c353c ptrFieldAddr=0x1c3522 ====
-GALLO: Eres humano,
-¿verdad? ¿Cómo es que
-puedes entenderme?
+GALLO: Anda, un payo que me
+entiende. ¿Eso como es?
 
 
 ==== room=6 npc=1 str=2 textAddr=0x1c357a ptrFieldAddr=0x1c3524 ====
-GALLO: El otro día vi por
-primera vez lo que los
-humanos llaman el Rey.
-Tenía orejas de burro.
+GALLO: Niño, vaya cabeza que
+tienes, ¿no? Te hacen un
+gorro y tienen que cerrar
+la sombrerería.
 
 
 ==== room=6 npc=2 str=0 textAddr=0x1c35e0 ptrFieldAddr=0x1c35da ====
 GALLO: ¡Ki-ki-ri-ki!
+¡Atchuá!
 
 
 ==== room=6 npc=2 str=1 textAddr=0x1c35f6 ptrFieldAddr=0x1c35dc ====
-GALLO: Dicen que hay un
-pueblo de animales en la
-Costa Anémona.
-Me gustaría ir.
+GALLO: Dicen por ahí que hay
+un pueblo de animalicos en
+la Costa de Benalmádena.
+¡Mola!
 
 
 ==== room=6 npc=2 str=2 textAddr=0x1c3648 ptrFieldAddr=0x1c35de ====
-GALLO: Dicen que se ha
-fugado alguien del pueblo.
-¡Los humanos son tan
-atrevidos! ¿Qué significa
-fugarse?
-
+GALLO: He escuchao que hay
+uno en el pueblo que ha
+salido por patas. Los
+payos son muy raros.
 
 
 ==== room=6 npc=3 str=0 textAddr=0x1c36ba ptrFieldAddr=0x1c36b4 ====
 GALLO: Ki, Ki, Ki ....
-Ki-ki-ri-ki!
+¡Ki-ki-ri-ki!
+¡Atchuá!
 
 
 ==== room=6 npc=3 str=1 textAddr=0x1c36e0 ptrFieldAddr=0x1c36b6 ====
-GALLO: Las liebres son muy
-precavidas. No se fían de
-los humanos. Si tuvieras
-un animal que te
-comprendiera, puede que
-tuvieras alguna posibilidad.
+GALLO: Las liebres tienen
+una mala follá que flipas,
+no te fiarían ni dos
+pesetas. Tendrías que ir con
+otro animalico para que
+te fiara algo.
 
 
 ==== room=6 npc=3 str=2 textAddr=0x1c3776 ptrFieldAddr=0x1c36b8 ====
-GALLO: Parece ser que está
-nevando mucho en Iris ...
-Me pregunto si están bien.
-Las hojas de sus rábanos
-son tan sabrosas. Son mi
-comida favorita.
+GALLO: Dicen que en Ibi está
+nevando más que el copón.
+Debe ser del clima
+cambiático ese.
 
 
 ==== room=6 npc=4 str=0 textAddr=0x1c3810 ptrFieldAddr=0x1c380a ====
 VACA: Muu ... muu ...
+Muuuu bien. Digo, muuu.
 
 
 ==== room=6 npc=4 str=1 textAddr=0x1c3828 ptrFieldAddr=0x1c380c ====
@@ -5704,7 +5697,7 @@ Tres doritos después...
 
 
 ==== room=98 npc=0 str=4 textAddr=0x1d18fe ptrFieldAddr=0x1d179e ====
-Pero un día el mundo cambió.
+Un día el mundo cambió.
 Dios dijo:
 
 
@@ -5727,7 +5720,7 @@ la diñaron en su mayoría.
 
 ==== room=98 npc=0 str=8 textAddr=0x1d19c0 ptrFieldAddr=0x1d17a6 ====
 La cosa es que esto es más
-viejo que la humedad, pasó
+viejo que la humedad, y pasó
 más tiempo que el copón.
 
 
@@ -6030,7 +6023,7 @@ CARLOS: Esta alfombra es
 
 
 ==== room=101 npc=4 str=0 textAddr=0x1d27ea ptrFieldAddr=0x1d27e8 ====
-{E0}0{4D}
+{E0}0>
 NARRACION: La lágrima de
 Carlos aterrizó en la
 alfombra. De repente la
