@@ -1565,14 +1565,16 @@ la tengo! ¡En carne viva!
 
 
 ==== room=11 npc=0 str=0 textAddr=0x1c4c14 ptrFieldAddr=0x1c4c0c ====
-ANCIANO: Mi hermana está en
-el Valle de las Dalias y mi
-sobrino en el campo de
-entrenamiento. Todos están
-en peligro. No puedo ir a
-casa porque no sé lanzar
-mi espada.
-
+VIEJALES: La coñona de mi
+hermana se ha quedao en el
+Valle de las Bailas y mi
+sobrino el mascachapas en
+el campo de Rabesa. Están
+todos agelipollaos y
+cualquier día les da un
+apechusque. Yo no puedo
+ir porque me duele un
+bolsillo.
 
 
 ==== room=11 npc=0 str=1 textAddr=0x1c4cbe ptrFieldAddr=0x1c4c0e ====
