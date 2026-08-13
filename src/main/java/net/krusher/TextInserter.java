@@ -122,7 +122,7 @@ public final class TextInserter {
         if (encodeFailures > 0) {
             System.out.println(encodeFailures + " string(s) failed to encode. Fix soleil.tbl or the offending "
                     + "text in " + scriptPath + " and re-run. " + outPath + " was NOT written.");
-            return;
+            throw new IllegalStateException(encodeFailures + " string(s) failed to encode; " + outPath + " was NOT written.");
         }
 
         int minTextAddr = Integer.MAX_VALUE;
@@ -192,7 +192,7 @@ public final class TextInserter {
                         + " bytes right after its table (0x" + Integer.toHexString(e.strTableAddr)
                         + ") but collides with the next fixed table. Shorten this string.");
             }
-            return;
+            throw new IllegalStateException(str0Failures.size() + " str=0 string(s) don't fit; " + outPath + " was NOT written.");
         }
 
         List<int[]> pool = new ArrayList<int[]>();
@@ -309,7 +309,7 @@ public final class TextInserter {
                             + (g.members.size() - 1) + " other pointer(s).");
                 }
             }
-            return;
+            throw new IllegalStateException(failures.size() + " string(s) could not be placed; " + outPath + " was NOT written.");
         }
 
         System.out.println();

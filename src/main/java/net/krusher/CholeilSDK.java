@@ -45,7 +45,25 @@ public class CholeilSDK
             return;
         }
 
-        if ( args[0].equals("x") )
+        try
+        {
+            run( args[0] );
+        }
+        catch ( Exception ex )
+        {
+            // Every step in the pipeline below either completes or throws --
+            // none of them are allowed to silently skip writing their output
+            // and let the next step carry on as if nothing happened. Stop the
+            // whole run here instead of a raw stack trace.
+            System.out.println();
+            System.out.println("ABORTED: " + ex.getMessage());
+            System.exit(1);
+        }
+    }
+
+    private static void run( String mode ) throws IOException
+    {
+        if ( mode.equals("x") )
         {
             System.out.println("=== extracting text ===");
             TextExtractor.run( ROM, TBL, SCRIPT, POINTERS );
