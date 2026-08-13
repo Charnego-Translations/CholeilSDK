@@ -34,7 +34,7 @@ STATUS WINDOW
 OBJECT OVER
 
 ==== ascii addr=0x32250 len=6 ====
-PERRO 
+ PERRO
 
 ==== ascii addr=0x32260 len=11 ====
 MUERDE EN  

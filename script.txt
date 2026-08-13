@@ -29,11 +29,11 @@ Valle Baila
 
 
 ==== room=0 npc=3 str=4 textAddr=0x1c039a ptrFieldAddr=0x1c0350 ====
-Playa Anémona
+Playa Benalmádena
 
 
 ==== room=0 npc=3 str=5 textAddr=0x1c03aa ptrFieldAddr=0x1c0352 ====
-Cabo Anémona
+Cabo Benalmádena
 
 
 ==== room=0 npc=3 str=6 textAddr=0x1c03b8 ptrFieldAddr=0x1c0354 ====
@@ -45,11 +45,11 @@ Margarita
 
 
 ==== room=0 npc=3 str=8 textAddr=0x1c03ce ptrFieldAddr=0x1c0358 ====
-Iris
+Ibi
 
 
 ==== room=0 npc=3 str=9 textAddr=0x1c03d4 ptrFieldAddr=0x1c035a ====
-Pueblo de Iris
+Pueblo de Ibi
 
 
 ==== room=0 npc=3 str=10 textAddr=0x1c03e4 ptrFieldAddr=0x1c035c ====
@@ -61,11 +61,11 @@ Rosa Mágica
 
 
 ==== room=0 npc=3 str=12 textAddr=0x1c03f8 ptrFieldAddr=0x1c0360 ====
-Desierto Camelia
+Desierto Tabernas
 
 
 ==== room=0 npc=3 str=13 textAddr=0x1c040a ptrFieldAddr=0x1c0362 ====
-Palacio Camelia
+Palacio Tabernas
 
 
 ==== room=0 npc=3 str=14 textAddr=0x1c041c ptrFieldAddr=0x1c0364 ====
@@ -97,8 +97,8 @@ Noche Oscura
 
 
 ==== room=1 npc=0 str=0 textAddr=0x1c04a4 ptrFieldAddr=0x1c0478 ====
-Tu aventura quedará salvada
-hasta este punto.
+Tu visio quedará guardao en
+este punto.
 
 
 ==== room=1 npc=0 str=1 textAddr=0x1c04d4 ptrFieldAddr=0x1c047a ====
@@ -123,8 +123,8 @@ una vez, cuando mueras.
 
 
 ==== room=1 npc=0 str=6 textAddr=0x1c055c ptrFieldAddr=0x1c0484 ====
-Tintín: Morderé al enemigo
-para detenerlo.
+Cosmo: Muerdo al personal en
+las pelotas para detenerlo.
 
 
 ==== room=1 npc=0 str=7 textAddr=0x1c0588 ptrFieldAddr=0x1c0486 ====
@@ -711,9 +711,9 @@ bollo pa la merienda. Hale.
 
 
 ==== room=4 npc=0 str=2 textAddr=0x1c246a ptrFieldAddr=0x1c23ca ====
-REY: Esa navaja... tú tienes
+REY: Ese cabezón... tu ties
 que ser el <NAME>...
-Tu viejo era tela de cabesón
+Tu viejo también tenía tela
 y le decían el Chupa-Chups.
 ¿Ya has cumplido los 14 y te
 han dado una navaja, no?
@@ -1161,32 +1161,32 @@ Muuuu bien. Digo, muuu.
 
 
 ==== room=6 npc=4 str=1 textAddr=0x1c3828 ptrFieldAddr=0x1c380c ====
-VACA: Me gustan las flores.
-Aquí puedo relajarme.
+VACA: Voy en un carro porque
+soy más floja que un muelle
+de guita.
 
 
 ==== room=6 npc=4 str=2 textAddr=0x1c385c ptrFieldAddr=0x1c380e ====
-VACA: Hay una flor extraña
-en el jardín de delante de
-la iglesia. No es el
-color, ni la forma, es otra
-cosa lo que es diferente.
-Mira con atención.
+VACA: Físjate en una flor
+que da güeltas distinta a
+las demás pol la iglesia.
+¡Hay algo cantidad de guapo
+escondío!
 
 
 ==== room=7 npc=0 str=0 textAddr=0x1c3904 ptrFieldAddr=0x1c38fe ====
-LOLA: La adivina de la
-plaza es muy buena, pero
-hoy no está aquí.
+LOLA: La gitana del parque
+da yuyu, tiene poderes
+gitanos o algo, pero no está
+hoy.
 
 
 ==== room=7 npc=0 str=1 textAddr=0x1c3948 ptrFieldAddr=0x1c3900 ====
-LOLA: La casa de la adivina
-está abierta hoy. ¿Por qué
-no la visitas? 
-No sólo predice el
-futuro ..., también puede
-darte buenos consejos.
+LOLA: Hoy tiene abierto la
+gitana que adivina cosas. Ve
+a visitarla, es tope de
+enrollada, aunque se le va
+la fresa cantidad.
 
 
 ==== room=7 npc=0 str=2 textAddr=0x1c39d4 ptrFieldAddr=0x1c3902 ====
@@ -1196,16 +1196,16 @@ darte buenos consejos.
 
 
 ==== room=7 npc=1 str=0 textAddr=0x1c39e0 ptrFieldAddr=0x1c39da ====
-CHICO: Esta plaza es para
-niños. ¿Por qué no vienes
-a jugar con nosotros?
+CHICO: Me he encontrao como
+un globito por aquí, pero lo
+intento hinchar y no puedo.
 
 
 ==== room=7 npc=1 str=1 textAddr=0x1c3a2c ptrFieldAddr=0x1c39dc ====
-CHICO: Vi a la adivina
+CHICO: ¡Vi a la gitana
 hablando con una flor
-blanca. ¡En serio!
-¡Es verdad!
+blanca! ¡Debe haberse vuelto
+como las cabras!
 
 
 ==== room=7 npc=1 str=2 textAddr=0x1c3a7a ptrFieldAddr=0x1c39de ====
@@ -1215,10 +1215,9 @@ blanca. ¡En serio!
 
 
 ==== room=7 npc=2 str=0 textAddr=0x1c3a84 ptrFieldAddr=0x1c3a80 ====
-PEPE: ¡Guau! Esa adivina
-es excelente. ¡Es verdad
-que puede predecirte
-el futuro!
+PEPE: ¡La virgen puta! ¡La
+gitana da mucho yuyu,
+adivina cosas super chungas!
 
 
 ==== room=7 npc=2 str=1 textAddr=0x1c3ad8 ptrFieldAddr=0x1c3a82 ====
@@ -1234,66 +1233,64 @@ el futuro!
 
 
 ==== room=7 npc=4 str=0 textAddr=0x1c3b06 ptrFieldAddr=0x1c3b00 ====
-ADIVINA: Déjame
-ver tu futuro.  No.  Es
-gratis.
+GITANA: Ay salao, dame la
+mano que te leo el futuro.
+No te preocupe, pa tí es de
+grati, por niño bonico.
 
 
 ==== room=7 npc=4 str=1 textAddr=0x1c3b38 ptrFieldAddr=0x1c3b02 ====
-ADIVINA: Tú eres el
-que va a cambiar
-el mundo para bien o
-para mal.
-Pronto experimentarás un
-cambio.  Algo que te
-permitirá ver cosas que
-antes no podías
-ver.
+GITANA: Veo que eres un niño
+mu bueno, pero anque tienes
+cabeza pa siete pescuezos no
+la usas mucho. ¡Ay, várgame,
+te va a pasal algo que va
+a cambiar cómo entiendes
+a los payos!
 
 
 ==== room=7 npc=4 str=2 textAddr=0x1c3bd8 ptrFieldAddr=0x1c3b04 ====
-ADIVINA: Debes
-controlar tu futuro.
-A pesar de la dificultad,
-no debes abandonar.
+GITANA: Ties que tener
+cuidaico y tirar pol la
+sombra, que lo vas a tener
+más difísi que tirar un
+penalti con un globo.
 
 
 ==== room=7 npc=5 str=0 textAddr=0x1c3c32 ptrFieldAddr=0x1c3c2c ====
-Flor:"..................."
+FLOR: "..................."
 
 
 
 
 ==== room=7 npc=5 str=1 textAddr=0x1c3c50 ptrFieldAddr=0x1c3c2e ====
 FLOR: .................
-..Oh, tú sí que me
-entiendes, como la adivina.
-Los humanos han llegado
-muy lejos. Si puedes
-hablar conmigo, puedes
-hablar con los
-otros animales.
-Acabo de recordar que
-la adivina dijo que
-se iba a Iris.
+...Anda, pero si tú me
+entiendes, como la gitana.
+La gente se cree que se ha
+fumao un petardo, pero en
+verdad yo creo que tiene
+podere paranormale de esos.
+Creo que se ha ido a Ibi a
+pillar costo o algo, por
+sierto.
 
 
 ==== room=7 npc=5 str=2 textAddr=0x1c3d34 ptrFieldAddr=0x1c3c30 ====
-FLOR: Ya veo que
-habéis organizado una buena
-fiesta. Esto está bien.
+FLOR: ¿Ande vás con esa
+cabeza, Doraemon?
 
 
 ==== room=8 npc=0 str=0 textAddr=0x1c3d8c ptrFieldAddr=0x1c3d84 ====
-GUARDA: ¿Qué quieres?
-No puedes entrar sin el
-permiso del Rey.
+GUARDA: ¿Dónde vas tú, niño
+cabezudo? ¡Tira pa casa!
 
 
 ==== room=8 npc=0 str=1 textAddr=0x1c3dcc ptrFieldAddr=0x1c3d86 ====
-GUARDA: Tú debes ser
-<NAME>. El Rey me ha
-dicho que te deje pasar.
+GUARDA: Menuda chola, tú
+ties que ser <NAME>.
+El Rey me ha dicho que te
+deje pasal.
 
 
 ==== room=8 npc=0 str=2 textAddr=0x1c3e0c ptrFieldAddr=0x1c3d88 ====
@@ -1303,73 +1300,69 @@ dicho que te deje pasar.
 
 
 ==== room=8 npc=0 str=3 textAddr=0x1c3e12 ptrFieldAddr=0x1c3d8a ====
-GUARDA: Entonces, tú eres
-<NAME>, ¿eh? Entrénate
-mucho.
+GUARDA: Asín que tú eres el
+<NAME>, ¿eh?
+Ten cuidaíto no te pierdas.
 
 
 ==== room=8 npc=1 str=0 textAddr=0x1c3e4c ptrFieldAddr=0x1c3e46 ====
 PACO: Oye, <NAME>. ¿Has
-estado en la plaza al
-oeste de Soleil?
+estado en el parque que hay
+al oeste de Choleil?
 <YESNO>
 
 
 ==== room=8 npc=1 str=1 textAddr=0x1c3e8a ptrFieldAddr=0x1c3e48 ====
-PACO: ¡Vaya gallina! Si
-sigues perdiendo el tiempo
-por aquí ¡nunca te harás
-un héroe!
+PACO: Claro, te pasas el día
+bebiendo litritos y fumando
+petardos de los que no
+explotan, así te has quedao.
 
 
 ==== room=8 npc=1 str=2 textAddr=0x1c3ee2 ptrFieldAddr=0x1c3e4a ====
-PACO: ¡Eso es! Ahora somos
-guerreros. No hay tiempo
-de jugar, ¿entendido?
+PACO: ¡Anda, a ver si te vas
+a convertir en un gran
+maromazo y todo!
 
 
 ==== room=8 npc=2 str=0 textAddr=0x1c3f40 ptrFieldAddr=0x1c3f2e ====
-LUCAS: Soy el instructor.
-Conoces el propósito de este
-campo de entrenamiento,
-¿no?
+LUCAS: Soy el hefe del campo
+de Rabesa. ¿Sabes pa qué
+sirve este sitio, ¿no?
 <YESNO>
 
 
 ==== room=8 npc=2 str=1 textAddr=0x1c3f98 ptrFieldAddr=0x1c3f30 ====
-LUCAS: Entonces hazlo
-lo mejor que puedas.
+LUCAS: ¡Claro que sí, eres
+un tío machote!
 
 
 ==== room=8 npc=2 str=2 textAddr=0x1c3fc4 ptrFieldAddr=0x1c3f32 ====
-LUCAS: Entonces te lo
-explicaré. Tu meta es acabar
-los tres circuitos. Al final
-de cada uno hay un cofre
-del tesoro que contiene
-bronce, plata u oro.
-Debes conseguir los tres.
-Lee las señales y escoge
-el circuito adecuado.
+LUCAS: A vel, te lo
+explicaré porque eres un
+poco tontito: Hay tres
+pruebas, que dan medallas de
+cobre, aluminio y latón,
+cada una en un cofre. Sigue
+los letreros y no te
+pierdas, que te veo venir.
 
 
 ==== room=8 npc=2 str=3 textAddr=0x1c40a4 ptrFieldAddr=0x1c3f34 ====
 {E0} H
-LUCAS: Sé que salvaste
-a mi madre, que vive en
-el Valle de las Dalias.
-Muchísimas gracias.
-Pensé que eras sólo un
-muchacho, pero no cabe
-duda de que tienes
-mucho coraje.
+LUCAS: Snif, salvaste la
+vida a mi vieja en el
+Valle de las Bailas, ¡Te
+como esa cara! ¡Eres todo
+un machote, le echaste
+cojones al lobo!
 
 
 ==== room=8 npc=2 str=4 textAddr=0x1c4154 ptrFieldAddr=0x1c3f36 ====
-LUCAS: Has aprendido lo
-bastante como para terminar
-el circuito intermedio.
-Ten paciencia.
+LUCAS: Ya tienes el culo
+pelao, deberías intentar
+mangar la medalla de
+aluminio. ¡Espabila!
 
 
 ==== room=8 npc=2 str=5 textAddr=0x1c41b0 ptrFieldAddr=0x1c3f38 ====
@@ -1379,46 +1372,45 @@ Ten paciencia.
 
 
 ==== room=8 npc=2 str=6 textAddr=0x1c41b6 ptrFieldAddr=0x1c3f3a ====
-LUCAS: Has aprendido lo
-bastante como para ganarte
-cualquier medalla. Hazlo
-lo mejor que puedas.
+LUCAS: Ya eres un tío macho.
+¡Venga, ve a por todas las
+medallas! ¿A qué esperas, a
+que tu mamá las coja por ti?
 
 
 ==== room=8 npc=2 str=7 textAddr=0x1c4218 ptrFieldAddr=0x1c3f3c ====
-LUCAS: Creo que no te
-queda nada por aprender
-aquí. Ahora puedes ir al
-castillo. Dale las
-medallas al Rey y te
-recompensará con la Espada
-Sacra, el símbolo del
-auténtico héroe.
+LUCAS: Has arramplao con
+todos los tesoros que había.
+¡Te has llevao hasta el
+cobre del alumbrao! Tira por
+ahí y dile al orejúo del Rey
+que te regale la navaja de
+Albacete, símbolo del
+auténtico maromo.
 
 
 ==== room=8 npc=2 str=8 textAddr=0x1c42ca ptrFieldAddr=0x1c3f3e ====
-LUCAS: ¡Veo que tienes la
-Espada Sacra! Debes ser uno
-de los héroes.
+LUCAS: ¡Tienes nada menos
+que una najvaja de Albacete!
+Tienes que ser un maromazo
+del copón.
 
 
 ==== room=8 npc=3 str=0 textAddr=0x1c4318 ptrFieldAddr=0x1c4310 ====
-APRENDIZ: Debes ser nuevo
-aquí. Deja que te dé algunos
-consejos sobre este lugar.
-Debes aprender a hacer el
-salto de longitud pero aquí
-no puedes hacerlo. Parece
-que sólo podemos hacer el
-circuito de principiantes
-aquí. ¡Tomémonoslo con
-calma, amigo!
+APRENDIZ: Hostia, menuda
+cabeza. Ten cuidao no te
+quedes atascao ni te caigas
+intentando pegar un sarto.
+Si eres medio tontito como
+yo, confórmate con la pista
+de pringaos como yo. Gñe.
 
 
 ==== room=8 npc=3 str=1 textAddr=0x1c4414 ptrFieldAddr=0x1c4312 ====
-APRENDIZ: ¿Ya tienes la
-medalla de bronce? Llevo 3
-años intentando conseguirla.
+APRENDIZ: ¿Has trincao la
+medalla de cobre? Yo echo
+más horas que el reloj pero
+soy tope lelo para pillarla.
 
 
 ==== room=8 npc=3 str=2 textAddr=0x1c4466 ptrFieldAddr=0x1c4314 ====
@@ -1428,68 +1420,66 @@ años intentando conseguirla.
 
 
 ==== room=8 npc=3 str=3 textAddr=0x1c446c ptrFieldAddr=0x1c4316 ====
-APRENDIZ: Ahora que tienes
-la medalla de bronce no te
-queda nada por hacer aquí.
+APRENDIZ: Si ya has saqueado
+la medalla de cobre, ¿qué
+estás haciendo con fistro
+del cuerpo humano?
 
 
 ==== room=8 npc=4 str=0 textAddr=0x1c44c0 ptrFieldAddr=0x1c44be ====
-¡<NAME> recoge la
-medalla de bronce!
+¡<NAME> trinca la
+medalla de cobre!
 
 
 ==== room=9 npc=0 str=0 textAddr=0x1c44f8 ptrFieldAddr=0x1c44e4 ====
-LANZADOR DE ESPADAS: Soy un
-experto en lanzar espadas.
-¡Tienes mucha suerte,
-muchacho! Por sólo 20
-malines te enseñaré
-el arte de lanzar espadas.
-¿Qué dices?
+LANZANAVAJAS: Sí, soy un
+viejales pervertío que habla
+con los chavalines. ¡Por 20
+chapas te enseño a lanzar
+la navaja pa arrajar a
+distancia! ¿Qué me dices?
 <YESNO>
 
 
 ==== room=9 npc=0 str=1 textAddr=0x1c459a ptrFieldAddr=0x1c44e6 ====
 {E0} I
-LANZADOR DE ESPADAS:
-¡Abra-cadabra!
+LANZANAVAJAS: Mira chavá,
+se hace asín y...
 
 
 ==== room=9 npc=0 str=2 textAddr=0x1c45c4 ptrFieldAddr=0x1c44e8 ====
-LANZADOR DE ESPADAS:
-Tú debes ser de los que se
-mueren sin saber lo que
-es la diversión.
+LANZANAVAJAS: Valiente crío
+mojigato, seguro que te meas
+y tu mamá te tiene que
+cambiar.
 
 
 ==== room=9 npc=0 str=3 textAddr=0x1c461e ptrFieldAddr=0x1c44ea ====
-LANZADOR DE ESPADAS:
-Soy un experto en lanzar
-espadas. ¡Tienes mucha
-suerte, muchacho!
-Por sólo 20 malines te
-enseñaré el arte de lanzar
-espadas ...
-Pero parece que no tienes
-bastante dinero. Vuelve
-cuando tengas más.
+LANZANAVAJAS: Sí, soy un
+viejales pervertío que habla
+con los chavalines. ¡Por 20
+chapas te enseño a lanzar
+la navaja pa arrajar a
+distancia! Pero parece que
+estás más tieso que el
+codo de un click, así que
+vuelve otro día con pelas.
 
 
 ==== room=9 npc=0 str=4 textAddr=0x1c46fa ptrFieldAddr=0x1c44ec ====
-LANZADOR DE ESPADAS: Para
-lanzar tu espada debes
-concentrarte con todas tus
-fuerzas.
+LANZANAVAJAS: Mira chavalín,
+tienes que dejar pulsao el
+botonsico de atacar, y haces
+asín... mira...
 
 
 ==== room=9 npc=0 str=5 textAddr=0x1c4750 ptrFieldAddr=0x1c44ee ====
-NARRACION: <NAME>
-aprendió a lanzar su espada.
-Mantén pulsado el botón
-A para concentrarte con
-todas tus fuerzas,
-y luego suéltalo. Ahora
-puedes lanzar tu espada.
+<NAME> aprendió a
+lanzar la navaja por ahín.
+Mantén pulsao el botón A
+para hacer fuerza y luego
+lo sueltas. ¡Venga, que es
+pa hoy, pataliebre!
 
 
 ==== room=9 npc=0 str=6 textAddr=0x1c47f0 ptrFieldAddr=0x1c44f0 ====
@@ -1499,42 +1489,42 @@ puedes lanzar tu espada.
 
 
 ==== room=9 npc=0 str=7 textAddr=0x1c47f6 ptrFieldAddr=0x1c44f2 ====
-LANZADOR DE ESPADAS: ¡Hacía
-mucho que no te veía, chico!
-¿Estás usando la habilidad
-que te enseñé?
+LANZANAVAJAS: ¡Epa, si es el
+niño cabezón al que enseñé!
+¿Estás lanzando la navaja
+por ahí pa clavársela a los
+cholos?
 <YESNO>
 
 
 ==== room=9 npc=0 str=8 textAddr=0x1c485c ptrFieldAddr=0x1c44f4 ====
-LANZADOR DE ESPADAS: Eso
-es bueno. Eres la clase de
-personas que me animan
-a continuar.
+LANZANAVAJAS: ¡Claro que sí,
+ole tus cojones! ¡Asín no se
+te acercarán los cholos!
 
 
 ==== room=9 npc=0 str=9 textAddr=0x1c48b6 ptrFieldAddr=0x1c44f6 ====
-LANZADOR DE ESPADAS: ¿¡COMO!?
-¡No vuelvas a usar esa
-habilidad! ¿Comprendido?
+LANZANAVAJAS: ¡Vaya tela con
+el cabesón! ¿Pa qué pierdes
+el tiempo entonces?
 
 
 ==== room=10 npc=0 str=0 textAddr=0x1c4916 ptrFieldAddr=0x1c490a ====
-AMA DE CASA: ¡Ten cuidado!
-Es fácil también perder la
-vida en el campo de
-entrenamiento.
-Pero además de cofres del
-tesoro hay monedas
-escondidas bajo el césped.
+AMA DE CASA: ¡Ten cuidaíto
+en el campo de entrenamiento
+de Rabesa! ¡Como haya un
+satieta o algo te puede
+romper el ojal! Eso sí, hay
+cosas pa mangar y moneditas
+escondías en la jierba.
 
 
 ==== room=10 npc=0 str=1 textAddr=0x1c49b8 ptrFieldAddr=0x1c490c ====
-AMA DE CASA: ¡He oído que
-ganaste la medalla de
-bronce! Para ser tan
-joven, ¡eres
-muy bueno!
+AMA DE CASA: ¡Me ha dicho la
+Puri que has trincao una
+medalla de cobre! ¡Y eso que
+tu vieja dice que eres
+medio mongolo!
 
 
 ==== room=10 npc=0 str=2 textAddr=0x1c4a16 ptrFieldAddr=0x1c490e ====
@@ -1544,35 +1534,34 @@ muy bueno!
 
 
 ==== room=10 npc=0 str=3 textAddr=0x1c4a1c ptrFieldAddr=0x1c4910 ====
-AMA DE CASA: Fui a ver
-la casa que está en venta y
-me sorprendió ver allí a mi
-marido. El entrenamiento
-era tan duro que huyó, así
-que le dejé algo de dinero.
+AMA DE CASA: Fui a ver el
+keli que venden al lao y
+estaba allí el anormal de
+mi marío. Salió por patas,
+le tuve que dejar pasta
+porque siempre está tieso.
 
 
 ==== room=10 npc=0 str=4 textAddr=0x1c4abc ptrFieldAddr=0x1c4912 ====
-AMA DE CASA: Mientras estaba
-en la casa oí a alguien del
-castillo contar que su madre
-estaba en la misma casa.
-Parece que a mucha gente
-le da por ir ahí.
+AMA DE CASA: Cuando estaba
+en la casa escuché alguien
+del castillo chemecar de que
+su vieja estaba en la misma
+casa. ¿Será un narcopiso o
+algo asín?
 
 
 ==== room=10 npc=0 str=5 textAddr=0x1c4b58 ptrFieldAddr=0x1c4914 ====
-AMA DE CASA: Somos
-prácticamente recién
-casados y estamos tan
-contentos porque voy a
-tener un bebé pronto.
+AMA DE CASA: Semos recién
+casaos, así que follamos más
+que los conejos, ¡a ver si
+el tonto este me hace un
+bomobo ya!
 
 
 ==== room=10 npc=1 str=0 textAddr=0x1c4bc6 ptrFieldAddr=0x1c4bc4 ====
-MARIDO: El bebé nacerá
-pronto. Me pregunto si
-será niño o niña.
+MARIDO: ¡Como un litro vino
+la tengo! ¡En carne viva!
 
 
 ==== room=11 npc=0 str=0 textAddr=0x1c4c14 ptrFieldAddr=0x1c4c0c ====
