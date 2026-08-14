@@ -254,7 +254,7 @@ su viejo.
 
 
 ==== room=2 npc=0 str=5 textAddr=0x1c0c18 ptrFieldAddr=0x1c09be ====
-MAMA: Dile Orejúo del Rey
+MAMA: Dile al orejúo del Rey
 que ya has cumplido los 14.
 
 
@@ -541,7 +541,7 @@ Pues en Rabesa tienes un
 campo de entramiento para
 mancos, pros y viciaos. En
 cada una hay medallas de
-cobre, plomo y latón.
+cobre, aluminio y latón.
 Si trincas las tres y se
 las rulas al orejúo del
 Rey, te las cambiará por
@@ -972,8 +972,8 @@ mano, salao.
 
 ==== room=5 npc=0 str=12 textAddr=0x1c3030 ptrFieldAddr=0x1c2ebe ====
 Pista pa mancos. Tope de
-fásil, hasta los monos lo
-puedn haser.
+fásil, hasta los monos la
+pueden haser.
 
 
 ==== room=5 npc=0 str=13 textAddr=0x1c306e ptrFieldAddr=0x1c2ec0 ====
@@ -1578,14 +1578,14 @@ bolsillo.
 
 
 ==== room=11 npc=0 str=1 textAddr=0x1c4cbe ptrFieldAddr=0x1c4c0e ====
-ANCIANO: Has rescatado a mi
-hermana del Valle de las
-Dalias. Muchas gracias.
-Prometió esperar a
-su marido. Se ha ido a la
-batalla y ella se negaba a
-volver hasta que él
-regresara.
+VIEJALES: Eres un chaval to
+enrollao, has salvado a la
+coñona de mirmana del Valle
+de las Bailas. ¡Menudo
+coñazo de vieja! ¡No se
+quiere ir de esa casa
+cochambrosa porque dice que
+su marido iba a volver!
 
 
 ==== room=11 npc=0 str=2 textAddr=0x1c4d74 ptrFieldAddr=0x1c4c10 ====
@@ -1606,28 +1606,25 @@ me di cuenta tarde....
 
 
 ==== room=11 npc=1 str=0 textAddr=0x1c4e44 ptrFieldAddr=0x1c4e42 ====
-CHICO: Mi familia está en
-misa. Yo me he
-quedado porque
-tengo un resfriado.
+CHAVEA: Los pringaos de mis
+viejos están en la iglesia.
+¡Mola!
 
 
 ==== room=12 npc=0 str=0 textAddr=0x1c4eac ptrFieldAddr=0x1c4e96 ====
-MUJER: El diseño del Valle
-de las Dalias es muy
-complicado. También hay
-monstruos. No es lugar
-para niños como tú,
-ni aunque tengan una espada.
-Mantente alejado de allí.
+MUJER: El Valle de las
+Bailas es un sitio tope
+chungo, con cholos por todos
+lados. Aunque tengas una
+navaja, si vas te pueden
+robar o violear.
 
 
 ==== room=12 npc=0 str=1 textAddr=0x1c4f58 ptrFieldAddr=0x1c4e98 ====
-MUJER: Es importante que
-te entrenes, pero ¿por qué
-no te tomas un descanso
-en el parque al oeste del
-pueblo?
+MUJER: Niño, ¿por qué no te
+das una vueltecita por el
+parque y dejas de dar tanto
+porculo por aquí?
 
 
 ==== room=12 npc=0 str=2 textAddr=0x1c4fc8 ptrFieldAddr=0x1c4e9a ====
@@ -1637,66 +1634,66 @@ pueblo?
 
 
 ==== room=12 npc=0 str=3 textAddr=0x1c4fce ptrFieldAddr=0x1c4e9c ====
-MUJER: Hace muchos meses
-que nieva en Iris.
-Es muy extraño.
+MUJER: En Ibi está nevando
+más que en una película de
+esas de navidad de Netflix.
 
 
 ==== room=12 npc=0 str=4 textAddr=0x1c500c ptrFieldAddr=0x1c4e9e ====
 {E0} {95}
-MUJER: Dado que tienes la
-Espada Sacra, ¿querrías
-ser nuestro guardián?
+MUJER: ¡Tienes una navaja de
+Albacete! ¡Tú debes de ser
+un gran maromo! ¿no?
 <YESNO>
 
 
 ==== room=12 npc=0 str=5 textAddr=0x1c505c ptrFieldAddr=0x1c4ea0 ====
 {E0} {94}
-MUJER: Veamos si puedes
-estarte callado. Si hablas,
-fracasas, ¿de acuerdo?
+MUJER: Bueno, ahora cállate
+un poquito, que para ser tan
+cortito rajas más que la
+navaja de un melonero.
 
 
 ==== room=12 npc=0 str=6 textAddr=0x1c50ac ptrFieldAddr=0x1c4ea2 ====
-MUJER: Debes estar
-orgulloso de haberte
-convertido en uno de
-nuestros héroes.
+MUJER: Eres un niño muy
+machote, ¡conseguirás ser
+un gran maromazo!
 
 
 ==== room=12 npc=0 str=7 textAddr=0x1c50fc ptrFieldAddr=0x1c4ea4 ====
-MUJER: ¡Te pillé!, ¡hablaste!
-¿Qué clase de héroe eres
-si no tienes paciencia?
+MUJER: ¿Pero es que no vas a
+cerrar el buzón nunca? Este
+niño no se calla ni debajo
+de agua.
 
 
 ==== room=12 npc=0 str=8 textAddr=0x1c514c ptrFieldAddr=0x1c4ea6 ====
-MUJER: Soleil es un pueblo
-muy hermoso con mucho verde.
-¿Sabes por qué?
+MUJER: En Choleil güele a
+peste y a mierda por to los
+laos. ¿Sabes por qué?
 <YESNO>
 
 
 ==== room=12 npc=0 str=9 textAddr=0x1c5198 ptrFieldAddr=0x1c4ea8 ====
-MUJER: Supongo que es
-obvio si vives en
-este pueblo.
+MUJER: Tú que eres, ¿un
+enteraíllo u qué?
 
 
 ==== room=12 npc=0 str=10 textAddr=0x1c51ce ptrFieldAddr=0x1c4eaa ====
-MUJER: Sólo el castillo
-cuenta con un sistema de
-alcantarillado, ninguna de
-las casas normales lo
-tiene ... ¿Me sigues?
+MUJER: Solamente el castillo
+tiene alcantarillas, en el
+resto de las casas los
+mojones y la mierda van tos
+pal suelo.
 
 
 ==== room=12 npc=1 str=0 textAddr=0x1c524a ptrFieldAddr=0x1c5248 ====
-LOLA: Creo que va a haber
-un parque en el Bosque
-Rafresa. No hay nada en el
-bosque, por eso esperaba
-poder hacer algo allí.
+LOLA: Están de obras en
+Rabesa para hacer un parque
+o algo. Seguro que se traen
+a todos los gitanos de las
+3000 viviendas.
 
 
 ==== room=13 npc=0 str=0 textAddr=0x1c52de ptrFieldAddr=0x1c52cc ====
@@ -1706,114 +1703,107 @@ LIEBRE: ...............
 
 
 ==== room=13 npc=0 str=1 textAddr=0x1c52fa ptrFieldAddr=0x1c52ce ====
-LIEBRE: ¿Comprendes lo
-que digo? Qué raro.
+LIEBRE: ¿Qué miras,
+soplapollas? ¿Cómo es que me
+entiendes?
 
 
 ==== room=13 npc=0 str=2 textAddr=0x1c5326 ptrFieldAddr=0x1c52d0 ====
-LIEBRE: Si quieres avanzar
-más necesitarás mi ayuda.
-Pero no te ayudaré porque
-los humanos no son seres
-dignos de confianza.
+LIEBRE: ¡Estoy más
+calentorra que un soldao en
+Ibiza! ¡Así que por aquí no
+pasa nadie!
 
 
 ==== room=13 npc=0 str=3 textAddr=0x1c53a4 ptrFieldAddr=0x1c52d2 ====
-LIEBRE: ¿Ah, sí? Lo dices
-sólo porque él es tu
-Maestro.
+LIEBRE: ¿Seguro? Mira que
+soy insaciable...
 
 
 ==== room=13 npc=0 str=4 textAddr=0x1c53de ptrFieldAddr=0x1c52d4 ====
-LIEBRE: Vale, vale.
-Te ayudaré.
+LIEBRE: ¡Bueno, vale! ¡Dame
+todo lo que tengas, machote!
 
 
 ==== room=13 npc=0 str=5 textAddr=0x1c5400 ptrFieldAddr=0x1c52d6 ====
-LIEBRE: ¡Ahora, salta!
-No lo conseguirás a menos
-que lo intentes tú solo.
+LIEBRE: ¡Fuera de aquí,
+niño! ¡Déjanos solos!
+¡Ooorghs! ¡Así! ¡Dame!
+¡Aaaaooaaaghrs!
 
 
 ==== room=13 npc=0 str=6 textAddr=0x1c544c ptrFieldAddr=0x1c52d8 ====
-¡<NAME> reunió coraje
-para saltar!
+¡<NAME> aprendió a
+saltar viendo el
+espectáculo!
 
 
 ==== room=13 npc=0 str=7 textAddr=0x1c546c ptrFieldAddr=0x1c52da ====
-LIEBRE: El que quiere,
-puede ...
-¿No es eso lo que decís
-los humanos?
+LIEBRE: Bueno, ¿cuándo me va
+a echar otro polvete?
 
 
 ==== room=13 npc=0 str=8 textAddr=0x1c54b4 ptrFieldAddr=0x1c52dc ====
-LIEBRE: Tenemos el
-presentimiento de que esta
-tierra está
-viva.
+LIEBRE: ¿No notas como que
+el suelo está vivo como en
+el Starcraft con los Zerg?
 
 
 ==== room=13 npc=1 str=0 textAddr=0x1c54fa ptrFieldAddr=0x1c54f6 ====
-TINTIN: No, él no. Es muy
-amable y me fío de él.
-Ayúdale por favor.
+COSMO: ¡No te preocupes, yo
+te puedo dar un repaso
+rapidito!
 
 
 ==== room=13 npc=1 str=1 textAddr=0x1c5540 ptrFieldAddr=0x1c54f8 ====
-TINTIN: Los humanos son
-también animales. Sólo nos
-separa el idioma. Es justo
-decir que un humano que
-habla nuestra lengua es
-nuestro amigo, ¿no?
+TINTIN: ¡Que sí, que ya la
+tengo como un tanque
+apuntando a un campanario!
+¡Te voy a dejar seca! ¡Arfs!
 
 
 ==== room=14 npc=0 str=0 textAddr=0x1c55e2 ptrFieldAddr=0x1c55dc ====
-OSO: ¡Abran paso, abran
-paso! ¡Abran paso a Don Oso!
+OSO: ¡Aahhh! ¡Baish, baish!
+¡Fuera bicho!
 
 
 ==== room=14 npc=0 str=1 textAddr=0x1c5618 ptrFieldAddr=0x1c55de ====
-OSO: Dicen que venciste al
-pulpo. Teniendo en cuenta
-que sólo eres un  muchacho,
-eres bastante bueno.
-Si quieres correr tan rápido
-como yo, deberías ir al
-pueblo de Iris.
+OSO: Me han soplao que le
+diste al pulpo la del...
+en fin, eso. ¡Para ser un
+puto crío tienes los cojones
+cuadraos! Tendrías que ir a
+Ibi para correr como yo.
 
 
 ==== room=14 npc=0 str=2 textAddr=0x1c56c4 ptrFieldAddr=0x1c55e0 ====
-OSO: ¡Oye! He oído que
-ganaste la carrera contra
-el guepardo también. Puede
-que seas el mejor ...
-...después de mí por
-supuesto.
+OSO: ¡Le has ganado en una
+carrera al guepardo! ¡Eres
+el Usain Bolt de los payos!
+¿Seguro que no te pones
+hasta el culo de
+clembuterol?
 
 
 ==== room=14 npc=1 str=0 textAddr=0x1c574c ptrFieldAddr=0x1c5746 ====
-PANTERA: Fue idea de Don
-Mono el usar esa roca
-inmensa para bloquear a los
-monstruos. Pero fue mi padre
-el que la puso ahí.
-Sólo mi padre es lo bastante
-fuerte como para moverla.
+ELEFANTITO: Al mono se le
+ocurrió lo de poner un
+piedro para que no vinieran
+los cholos. Pero mi viejo la
+puso ahí, está to fibra.
 
 
 ==== room=14 npc=1 str=1 textAddr=0x1c5800 ptrFieldAddr=0x1c5748 ====
-PANTERA: Mi padre te enseñó
-a levantar cosas, ¿a que sí?
-Me preguntaba porqué,
-pero ahora lo sé.
-Después de todo eres el que
-venció al pulpo.
+ELEFANTITO: Mi viejo es más
+bruto que un arao, pero está
+cachas de cortar troncos.
+Seguro que te enseñó a
+levantar persas, ¿eh? Claro,
+con eso venciste al Pulpo.
 
 
 ==== room=14 npc=1 str=2 textAddr=0x1c5890 ptrFieldAddr=0x1c574a ====
-PANTERA: Ese elefante ... Si
+ELEFANTITO: Ese elefante ... Si
 entrenara más podría ser
 más como papá.
 
