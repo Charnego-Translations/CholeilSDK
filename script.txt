@@ -41,7 +41,7 @@ Nenúfar
 
 
 ==== room=0 npc=3 str=7 textAddr=0x1c03c2 ptrFieldAddr=0x1c0356 ====
-Margarita
+Córdoba
 
 
 ==== room=0 npc=3 str=8 textAddr=0x1c03ce ptrFieldAddr=0x1c0358 ====
@@ -53,7 +53,7 @@ Pueblo de Ibi
 
 
 ==== room=0 npc=3 str=10 textAddr=0x1c03e4 ptrFieldAddr=0x1c035c ====
-Lili
+Soria
 
 
 ==== room=0 npc=3 str=11 textAddr=0x1c03ea ptrFieldAddr=0x1c035e ====
@@ -69,11 +69,11 @@ Palacio Tabernas
 
 
 ==== room=0 npc=3 str=14 textAddr=0x1c041c ptrFieldAddr=0x1c0364 ====
-Lirio
+Soria
 
 
 ==== room=0 npc=3 str=15 textAddr=0x1c0424 ptrFieldAddr=0x1c0366 ====
-Torre de Babel
+Torre de Papel
 
 
 ==== room=0 npc=3 str=16 textAddr=0x1c0434 ptrFieldAddr=0x1c0368 ====
@@ -81,7 +81,7 @@ Castillo Fresa
 
 
 ==== room=0 npc=3 str=17 textAddr=0x1c0444 ptrFieldAddr=0x1c036a ====
-Templo Raíz
+Guadalpark
 
 
 ==== room=0 npc=3 str=18 textAddr=0x1c0452 ptrFieldAddr=0x1c036c ====
@@ -93,7 +93,7 @@ San Cielo
 
 
 ==== room=0 npc=3 str=20 textAddr=0x1c0468 ptrFieldAddr=0x1c0370 ====
-Noche Oscura
+Barrio La Mina
 
 
 ==== room=1 npc=0 str=0 textAddr=0x1c04a4 ptrFieldAddr=0x1c0478 ====
@@ -188,35 +188,36 @@ déjame en paz, payo.
 
 
 ==== room=1 npc=0 str=17 textAddr=0x1c083c ptrFieldAddr=0x1c049a ====
-Armadillo: Soy más pesao que
-un tanque en el párpado, me
-puedes tirar pa hacer de
-tablón o darle a los
+Armadillo: Soy un tocho, me
+puedes pegar patás pa usarme
+de tablón y darle a los
 interrustores.
 
 
 ==== room=1 npc=0 str=18 textAddr=0x1c0890 ptrFieldAddr=0x1c049c ====
-Murciélago: Te protegeré muy
-de cerca durante cierto
-tiempo.
+Murciélago: Estoy nesesitao
+de cariño asín que te
+protejeré cariñosamente.
+un ratito.
 
 
 ==== room=1 npc=0 str=19 textAddr=0x1c08ce ptrFieldAddr=0x1c049e ====
-Huevo: Soy un huevo-bomba.
-Exploto para causar daños a
-los enemigos cercanos.
+Huevo: ¡Estoy trikinóssico!
+Exploto como un trikitrake
+y me llevo por delante al
+más pintao
 
 
 ==== room=1 npc=0 str=20 textAddr=0x1c091e ptrFieldAddr=0x1c04a0 ====
-Mariposa: Si estoy contigo
-puedes controlar la espada
-que lances.
+Mariposa: Llevo la navaja
+por ti pa arrajar gente
+en sitios insospechados.
 
 
 ==== room=1 npc=0 str=21 textAddr=0x1c0962 ptrFieldAddr=0x1c04a2 ====
-Dinosaurio: Lo siento, no
-puedo aparecer aquí. Te
-veré en algún sitio.
+Dinosaurio: ¡Yo no soy de
+secano! Paso de salir aquí.
+¡Que te den!
 
 
 ==== room=2 npc=0 str=0 textAddr=0x1c09d4 ptrFieldAddr=0x1c09b4 ====
@@ -1879,74 +1880,74 @@ eso soy el baranda.
 
 
 ==== room=16 npc=1 str=0 textAddr=0x1c5d36 ptrFieldAddr=0x1c5d30 ====
-PAULA: En Margarita hace más
+PAULA: En Córdoba hace más
 calor que enfoscando una
 pirámide. ¡Antié voy a ir!
 
 
 ==== room=16 npc=1 str=1 textAddr=0x1c5d84 ptrFieldAddr=0x1c5d32 ====
-PAULA: No hagas caso a
-mi marido. Lo dice por
-decir, pero en verdad
-te está muy agradecido.
+PAULA: Ni caso a mi marío,
+le pican las almorranas o
+algo. En verdad está
+agradesido.
 
 
 ==== room=16 npc=1 str=2 textAddr=0x1c5de2 ptrFieldAddr=0x1c5d34 ====
-PAULA: Ah, eres el humano
-del otro día. Muchas gracias
-por vencer al pulpo.
+PAULA: ¡Arsa, eres el payo
+que dejó al pulpo en un
+pijama de madera! ¡Idolo!
 
 
 ==== room=17 npc=0 str=0 textAddr=0x1c5e46 ptrFieldAddr=0x1c5e32 ====
-PAPA ELEFANTE: Puedo
-levantar objetos con mi
-trompa. ¿Quieres saber cómo
-se hace?
+PAPA ELEFANTE: ¡Pasa chaval!
+Soy un Criptobro de esos,
+¿Te enseño a levantar pesas?
 <YESNO>
 
 
 ==== room=17 npc=0 str=1 textAddr=0x1c5e9c ptrFieldAddr=0x1c5e34 ====
 {E0} c
-PAPA ELEFANTE: Está bien.
+PAPA ELEFANTE: Guay, tienes
+mentalidad de tiburón.
 Levanta esa tabla.
 
 
 ==== room=17 npc=0 str=2 textAddr=0x1c5ece ptrFieldAddr=0x1c5e36 ====
-PAPA ELEFANTE: No puedes
-ser un gran hombre si
-dudas sobre algo como esto.
+PAPA ELEFANTE: Menuda
+maricona, seguro que eres
+de los pajeros que se
+levanta a las 10 de la
+mañana.
 
 
 ==== room=17 npc=0 str=3 textAddr=0x1c5f1a ptrFieldAddr=0x1c5e38 ====
 {E0} e
-PAPA ELEFANTE: Sé positivo.
-Simplemente piensa que
-puedes hacerlo.
+PAPA ELEFANTE: ¡Venga, tú
+puedes! ¡Mentalidad de
+tiburón! ¡¡Dale ahí!!
 
 
 ==== room=17 npc=0 str=4 textAddr=0x1c5f62 ptrFieldAddr=0x1c5e3a ====
-NARRACION: ¡<NAME>
-ha aprendido a levantar
-cosas! Pulsa el botón A
-delante del objeto que
-quieres levantar y
-púlsalo de nuevo para
-lanzarlo. Pulsa A mientras
-saltas para lanzarlo más
-lejos.
+¡<NAME> está
+to petaíto y puede levantar
+cosas tochas! Pica el botón
+A delante del tocho a
+levantar y dale otra ves pa
+revolearlo por ahí. Si
+estás sartando lo mandarás
+al quinto coño.
 
 
 ==== room=17 npc=0 str=5 textAddr=0x1c601c ptrFieldAddr=0x1c5e3c ====
-PAPA ELEFANTE: Es fácil
-si piensas que puedes
-hacerlo. Es como todo en
-la vida.
+PAPA ELEFANTE: ¡Dale ahí!
+¡Mentalidad de tiburón!
+¡Agarra esa tabla y nos
+ponemos a hacer Burpees!
 
 
 ==== room=17 npc=0 str=6 textAddr=0x1c606e ptrFieldAddr=0x1c5e3e ====
-PAPA ELEFANTE: No te dejaré
-irte hasta que sepas
-hacerlo.
+PAPA ELEFANTE: ¿Dónde vas,
+so pajero? ¡A levantar!
 
 
 ==== room=17 npc=0 str=7 textAddr=0x1c60aa ptrFieldAddr=0x1c5e40 ====
