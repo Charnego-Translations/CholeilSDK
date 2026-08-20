@@ -118,8 +118,9 @@ Retirar al animalico B.
 
 
 ==== room=1 npc=0 str=5 textAddr=0x1c0528 ptrFieldAddr=0x1c0482 ====
-Misi: Te devolveré la vida
-una vez, cuando mueras.
+Misi: Tengo más salida que
+el Lute, te devuelvo a la
+vida.
 
 
 ==== room=1 npc=0 str=6 textAddr=0x1c055c ptrFieldAddr=0x1c0484 ====
@@ -128,69 +129,70 @@ las pelotas para detenerlo.
 
 
 ==== room=1 npc=0 str=7 textAddr=0x1c0588 ptrFieldAddr=0x1c0486 ====
-Moa: Mejoraré la habilidad
-de los otros animales.
+Moa: Soy un paquete pero al
+lao mía los otros son mejore.
 
 
 ==== room=1 npc=0 str=8 textAddr=0x1c05bc ptrFieldAddr=0x1c0488 ====
-León: Mi misión es quemar
-a los enemigos con mi melena
-en llamas.
+León: ¡Estoy que echo fuego
+y puedes darle candela al
+personal!
 
 
 ==== room=1 npc=0 str=9 textAddr=0x1c0600 ptrFieldAddr=0x1c048a ====
-Pigüi: Utilízame en lúgares
-cálidos. Mi magia puede
+Pigüi: Tengo los cojones
+como dos carámbanos, podemos
 congelar cosas.
 
 
 ==== room=1 npc=0 str=10 textAddr=0x1c0646 ptrFieldAddr=0x1c048c ====
-Carlos: Puedes correr
-al doble de velocidad
-cuando esté contigo.
+Carlos: Soy el puto Usaín
+Bolt de los bichos, corro
+más que una gallina en
+Somalia.
 
 
 ==== room=1 npc=0 str=11 textAddr=0x1c0688 ptrFieldAddr=0x1c048e ====
-Dinosaurio: Déjame la
-natación a mí. También
-puedo cruzar zonas
-peligrosas.
+Dinosaurio: Soy un ilegal
+y voy nadando a los lao sin
+papeles ni na.
 
 
 ==== room=1 npc=0 str=12 textAddr=0x1c06d6 ptrFieldAddr=0x1c0490 ====
-Dodo: Lanza tu espada y los
-enemigos y los objetos se
-quedarán pegados a ella.
+Dodo: Soy catalán y las
+cosas se quedan pegás a tu
+navaja, como moneas.
 
 
 ==== room=1 npc=0 str=13 textAddr=0x1c0726 ptrFieldAddr=0x1c0492 ====
-Leviatán: Te haré más rápido
-con tu espada. Te será muy
-útil, humano.
+Leviatán: ¡Estoy espitoso!
+¡Conmigo darás tajos con la
+navaja a cascoporro!
 
 
 ==== room=1 npc=0 str=14 textAddr=0x1c076e ptrFieldAddr=0x1c0494 ====
-Perro mapache: Puedo
-transformarme en ti para
-despistar al enemigo.
+Tanuki: Me puedes dejar en
+los sitios pa que los cholos
+se vayan pa mí.
 
 
 ==== room=1 npc=0 str=15 textAddr=0x1c07b4 ptrFieldAddr=0x1c0496 ====
-Feli: Lanza tu espada contra
-un muro y rebotará.
+Feli: Soy de goma y tu
+navaja rebotará por ahín.
 
 
 ==== room=1 npc=0 str=16 textAddr=0x1c07e6 ptrFieldAddr=0x1c0498 ====
-Oruga: Lo siento, pero no
-tengo habilidades
-especiales. Simplemente
-ignórame, ¿vale?
+Oruga: Soy más inútil que la
+picha del papa, asín que
+déjame en paz, payo.
 
 
 ==== room=1 npc=0 str=17 textAddr=0x1c083c ptrFieldAddr=0x1c049a ====
-Armadillo: Utilízame como
-tablón. También puedo darle
-a los interruptores por ti.
+Armadillo: Soy más pesao que
+un tanque en el párpado, me
+puedes tirar pa hacer de
+tablón o darle a los
+interrustores.
 
 
 ==== room=1 npc=0 str=18 textAddr=0x1c0890 ptrFieldAddr=0x1c049c ====
@@ -1803,91 +1805,83 @@ con eso venciste al Pulpo.
 
 
 ==== room=14 npc=1 str=2 textAddr=0x1c5890 ptrFieldAddr=0x1c574a ====
-ELEFANTITO: Ese elefante ... Si
-entrenara más podría ser
-más como papá.
+ELEFANTITO: Payo, ¿dónde vas
+con esa cabeza? Hue hue hue.
 
 
 ==== room=14 npc=2 str=0 textAddr=0x1c58dc ptrFieldAddr=0x1c58d6 ====
-ELEFANTE: Tenemos una puerta
-automática.  Algunos tienen
-que pisarla muchas veces
-para que funcione.
+ELEFANTE: La puerta se
+atasca más que el Ozores
+hablando, ties que pisar 3
+veces o así.
 
 
 ==== room=14 npc=2 str=1 textAddr=0x1c5942 ptrFieldAddr=0x1c58d8 ====
-ELEFANTE: Lili está en
-Iris, un pueblo más allá de
-Margarita. En circunstancias
-normales es difícil
-llegar ahí.
+ELEFANTE: Fuas, hasta Lili
+hay un pateo que te cagas,
+yo no iría ni harto de
+mandanga.
 
 
 ==== room=14 npc=2 str=2 textAddr=0x1c59b4 ptrFieldAddr=0x1c58da ====
-ELEFANTE: Esa pantera ...
-¿por qué no hace nada
-aparte de relajarse?
+ELEFANTE: Al elefantito le
+cabe el Mani empanao. Tiene
+mucha calle pero es un
+pasota.
 
 
 ==== room=14 npc=3 str=0 textAddr=0x1c59fc ptrFieldAddr=0x1c59fa ====
-Casa Tomás, animales de
-alquilar. Si estás buscando
-un compañero, ¡entra!
+Animales de frenopático.
+Más locos que una cabra
+harta de speed.
 
 
 ==== room=15 npc=0 str=0 textAddr=0x1c5a50 ptrFieldAddr=0x1c5a4a ====
-ZORRITA: Oí a alguien
-pidiendo ayuda al
-otro lado de esa
-inmensa roca.
+ZORRITA: Había alguien como
+chemecando detrás del piedro
+ese...
 
 
 ==== room=15 npc=0 str=1 textAddr=0x1c5a98 ptrFieldAddr=0x1c5a4c ====
-ZORRITA: ¡He oído que has
-derrotado al gran malo!
-Sabía que lo harías.
+ZORRITA: ¡Eres un tío bravo!
+Te has cargao al bicharraco.
 
 
 ==== room=15 npc=0 str=2 textAddr=0x1c5ae0 ptrFieldAddr=0x1c5a4e ====
-ZORRITA: ¡Vi a una
-apasionada pareja de humanos
-fuera del pueblo! Creo que
-tienen motivos para estar
-allí, ¡quizá estén planeando
-fugarse juntos!
+ZORRITA: ¡Había dos payos
+morreándose fuera del
+Pueblo! ¡Sí, sí!
+¡Fijo que andan más quemaos
+que las pistolas del Coyote!
 
 
 ==== room=16 npc=0 str=0 textAddr=0x1c5b7e ptrFieldAddr=0x1c5b78 ====
-MONO: He oído que hay un
-animal al otro lado de esa
-inmensa roca, pero no
-podemos hacer nada.
-Puede que lo hiramos
-si la movemos.
-¡No puedo permitir eso!
+MONO: Me paice que hay un
+nimalico al otro lao del
+piedro ese, pero paso de ir
+porque me pegan un bocao en
+las pelotas fijo.
 
 
 ==== room=16 npc=0 str=1 textAddr=0x1c5c1a ptrFieldAddr=0x1c5b7a ====
-MONO: ¡Eso fue muy valiente
-por tu parte! Si no hubieras
-derrotado al pulpo, este
-pueblo habría pasado
-a la historia.
+MONO: ¡Tas comío el pulpo a
+la brasa! ¿Qué pasa, tenías
+más hambre que el Tamagochi
+de un sordo, ein?
 
 
 ==== room=16 npc=0 str=2 textAddr=0x1c5c92 ptrFieldAddr=0x1c5b7c ====
-MONO: Mi antepasado era un
-mono muy valiente. Lo
-respeto mucho. Si no fuera
-por él, hoy no sería el jefe
-del pueblo. Por eso es por
-lo que debo conseguirlo.
+MONO: Los monos tenemos los
+cojones como sandías, semos
+uns valientes. Bueno, o al
+menos mis antepasados, por
+eso soy el baranda.
 
 
 ==== room=16 npc=1 str=0 textAddr=0x1c5d36 ptrFieldAddr=0x1c5d30 ====
-PAULA: Está saliendo lava
-ardiendo de Margarita. Quema
-demasiado para pasar.
+PAULA: En Margarita hace más
+calor que enfoscando una
+pirámide. ¡Antié voy a ir!
 
 
 ==== room=16 npc=1 str=1 textAddr=0x1c5d84 ptrFieldAddr=0x1c5d32 ====
