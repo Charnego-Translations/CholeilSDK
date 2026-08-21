@@ -1,0 +1,23 @@
+; Fixed-width UI "container" graphics whose background is a hardcoded loop
+; count that doesn't scale with the text drawn over it -- so a translation
+; longer than the original overflows past the box. Unlike script.txt's
+; strings (data), these are literal 68k immediate operands inside code, so
+; they're patched in place rather than relocated. Format:
+;   0xIMMEDIATE_ADDR,room,npc,marginTiles
+;
+; 0x48c8: the world map screen's town-name popup background. A small
+; routine at 0x48c4-0x4906 draws a solid-fill nameplate (single repeated
+; tile 0x2314, 2 tile-rows tall) sized (imm+1)*2 tile-columns wide (the
+; word at 0x48c8-0x48c9 is the "#imm,d7" operand driving that DBRA loop),
+; then immediately draws the town name (room=0 npc=3 str=<map cursor
+; index> -- confirmed to be exactly the town-name list in script.txt) with
+; NO width clipping at all. Originally imm=7 -> 16 columns, which the
+; original text fit; translated names up to "Playa Benalmádena" (18 chars)
+; don't. MapBoxInserter repatches this word at insert time to cover
+; whatever the longest current room=0 npc=3 string is, plus marginTiles.
+;
+; Caveat: the box's on-screen origin is a fixed per-town coordinate looked
+; up elsewhere (not recomputed here), so it only grows to the right/down --
+; widening it can't be verified not to run a nameplate off-screen for a
+; town marker near the map's edge without an in-game check.
+0x48c8,0,3,4
