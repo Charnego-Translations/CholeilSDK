@@ -77,7 +77,7 @@ Torre de Papel
 
 
 ==== room=0 npc=3 str=16 textAddr=0x1c0434 ptrFieldAddr=0x1c0368 ====
-Castillo Fresa
+Castillo Calipo
 
 
 ==== room=0 npc=3 str=17 textAddr=0x1c0444 ptrFieldAddr=0x1c036a ====
@@ -1913,18 +1913,18 @@ Levanta esa tabla.
 
 
 ==== room=17 npc=0 str=2 textAddr=0x1c5ece ptrFieldAddr=0x1c5e36 ====
-PAPA ELEFANTE: Menuda
-maricona, seguro que eres
-de los pajeros que se
-levanta a las 10 de la
-mañana.
+PAPA ELEFANTE: Menudo
+mileurista, seguro que eres
+de los pajeros duermen 8
+horas. ¡Sube el nivel,
+fucker!
 
 
 ==== room=17 npc=0 str=3 textAddr=0x1c5f1a ptrFieldAddr=0x1c5e38 ====
 {E0} e
-PAPA ELEFANTE: ¡Venga, tú
-puedes! ¡Mentalidad de
-tiburón! ¡¡Dale ahí!!
+PAPA ELEFANTE: ¿Ves ese
+Ferrari de la puerta? ¡Nunca
+será tuyo si eres un débil!
 
 
 ==== room=17 npc=0 str=4 textAddr=0x1c5f62 ptrFieldAddr=0x1c5e3a ====
@@ -1951,208 +1951,203 @@ so pajero? ¡A levantar!
 
 
 ==== room=17 npc=0 str=7 textAddr=0x1c60aa ptrFieldAddr=0x1c5e40 ====
-PAPA ELEFANTE: ¡Hacía mucho
-que no te veía! ¿Estás bien?
+PARA ELEFANTE: ¿Qué pasa,
+chaval? ¿Nos hacemos unos
+burpees para calentar?
 <YESNO>
 
 
 ==== room=17 npc=0 str=8 textAddr=0x1c60e6 ptrFieldAddr=0x1c5e42 ====
-PAPA ELEFANTE: Eso son
-buenas noticias. Sé que eres
-un gran chico. Sigue así.
+PAPA ELEFANTE: ¡Así se hace,
+mentalidad de tiburón!
+¡Vamos!
 
 
 ==== room=17 npc=0 str=9 textAddr=0x1c6136 ptrFieldAddr=0x1c5e44 ====
-PAPA ELEFANTE: Eso no está
-bien. Deberías descansar de
-10 a 20 minutos cada hora.
+PAPA ELEFANTE: ¡Si no eres
+millonario a los 22 es
+porque eres un vago que no
+sabe lo que es el interés
+compuesto!
 
 
 ==== room=18 npc=0 str=0 textAddr=0x1c6196 ptrFieldAddr=0x1c6192 ====
 {E0} i
-TOMAS: Puedes alquilar a
-tus compañeros aquí.
-Te presentaré a
-algunos.
+TOMAS: Los animalitos aquí
+están arrecogíos porque están
+hechos polvo, les puedes dar
+limonsna pa que hagan cosas.
 
 
 ==== room=18 npc=0 str=1 textAddr=0x1c61e2 ptrFieldAddr=0x1c6194 ====
-TOMAS: No puedes tener
-dos animales iguales.
-Vuelve si pierdes
-alguno.
+TOMAS: Más no te puedo
+alquilar, ya si eso si
+alguno la espicha vuelves
+y te doy otro.
 
 
 ==== room=18 npc=1 str=0 textAddr=0x1c6232 ptrFieldAddr=0x1c622a ====
-MISI: Puedo salvarte
-cuando estés en peligro...
-pero sólo puedo hacerlo una
-vez. ¿Quieres alquilarme
-por 50 malines?
+MISI: Soy un gato suicida,
+cuando te vayan a apuñalar
+me pongo enmedio para
+salvarte. Todo por 50 chapas
+si te hace.
 <YESNO>
 
 
 ==== room=18 npc=1 str=1 textAddr=0x1c62aa ptrFieldAddr=0x1c622c ====
 {E0}0{FA}
-MISI: Me alegro mucho.
-Volveré a casa de Tomás
-cuando cumpla con mi labor,
-pero no te preocupes.
+MISI: Vale, de todas formas
+ya no me quieren ni los
+gatos... snif...
 
 
 ==== room=18 npc=1 str=2 textAddr=0x1c6310 ptrFieldAddr=0x1c622e ====
-MISI: Miau. Qué pena.
-Te arrepentirás cuando
-tengas problemas.
+MISI: Menudo tieso, verás
+si un cholo te da una mojá
+trapera.
 
 
 ==== room=18 npc=1 str=3 textAddr=0x1c6350 ptrFieldAddr=0x1c6230 ====
-MISI: Puedo salvarte
-cuando estés en peligro...
-pero sólo puedo hacerlo una
-vez. Sólo cuesta 50 malines
-pero parece que no tienes
-suficiente dinero.
+MISI: Soy un gato suicida,
+cuando te vayan a apuñalar
+me pongo enmedio para
+salvarte, pero no tienes ni
+50 chapas birriosas. ¡Eres
+un tieso!
 
 
 ==== room=18 npc=2 str=0 textAddr=0x1c63ee ptrFieldAddr=0x1c63e6 ====
-HUEVO: Soy un huevo-bomba.
-Puedo explotar para causar
-daños a enemigos cercanos.
-Sólo funciono una vez.
-¿Quieres alquilarme
-por 50 malines?
+HUEVO: ¡AHH! ¡Estoy to loco!
+¡Exploto por ahí y hago
+mierda a to el que esté
+cerca! Me voy contigo pero
+me tienes que largar 50
+boniatos.
 <YESNO>
 
 
 ==== room=18 npc=2 str=1 textAddr=0x1c647e ptrFieldAddr=0x1c63e8 ====
 {E0}0{FB}
-HUEVO: Vale, trato hecho.
-Sabes aprovechar
-las gangas.
+HUEVO: ¡UEeeeehhh! ¡Vamos a
+liarla por ahí!
 
 
 ==== room=18 npc=2 str=2 textAddr=0x1c64ba ptrFieldAddr=0x1c63ea ====
-HUEVO: Vale, lo comprendo.
-¿La próxima vez, quizá?
+HUEVO: ¿QUEEEE? Te vas a
+enterar, chaval. ¡¡AAARGHH!!
 
 
 ==== room=18 npc=2 str=3 textAddr=0x1c64ee ptrFieldAddr=0x1c63ec ====
-HUEVO: Soy un huevo-bomba.
-Puedo explotar para causar
-daños a enemigos cercanos.
-Sólo funciono una vez,
-pero veo que no tienes
-suficiente dinero. Vuelve
-más tarde cuando
-tengas 50 malines.
+HUEVO: ¡AAH! ¡Estoy to loco!
+¡Exploto por ahí y hago
+mierda a to el que esté
+cerca! ¡AAGH! ¡Pero tienes
+menos dinero que el que se
+está bañando! ¡Si no tienes
+50 chapas te dan por culo!
 
 
 ==== room=18 npc=3 str=0 textAddr=0x1c65b4 ptrFieldAddr=0x1c65ac ====
-MURCIELAGO: Soy un
-murciélago. Puedo protegerte
-de fuertes ataques enemigos
-por un cierto tiempo. Soy
-tuyo por 100 malines.
-¿Qué dices?
+MURCIELAGO: Veo menos que
+un cipote vendao, pero te
+puedo proteger de los cholos
+por un tiempo. Dame 100
+pavías y estamos. ¿Qué?
 <YESNO>
 
 
 ==== room=18 npc=3 str=1 textAddr=0x1c6640 ptrFieldAddr=0x1c65ae ====
 {E0}0{FC}
-MURCIELAGO: ¡Es un placer
-hacer negocios contigo!
+MURCIELAGO: ¡Espera! ¿A
+dónde vamos? ¿Quién eres?
+¡¡AAAGG!! ¡QUE ME DA!
 
 
 ==== room=18 npc=3 str=2 textAddr=0x1c6678 ptrFieldAddr=0x1c65b0 ====
-MURCIELAGO: Como quieras.
-Avísame cuando cambies
-de opinión.
+MURCIELAGO: ¿Adónde vas?
+¡No me dejes aquí! ¡Que nos
+dan palizas todos los días!
 
 
 ==== room=18 npc=3 str=3 textAddr=0x1c66b6 ptrFieldAddr=0x1c65b2 ====
-MURCIELAGO: Soy un
-murciélago. Puedo protegerte
-de fuertes ataques enemigos
-por cierto tiempo. Soy tuyo
-por 100 malines pero veo
-que no tienes suficiente
-dinero. Lo siento, no puedo
-hacer negocios contigo.
+MURCIELAGO: Veo menos que
+un cipote vendao, pero te
+puedo proteger de los cholos
+por un tiempo. Pero quiero
+100 chapas y tú estás más
+tieso que un obispo en una
+guardería.
 
 
 ==== room=19 npc=0 str=0 textAddr=0x1c6790 ptrFieldAddr=0x1c6788 ====
-FLOR: Oí una voz triste
-procedente del otro lado
-de esa inmensa roca. Debe
-haber un animal ahí.
-Pareces fuerte, ¿por qué
-no mueves la roca y
-echas un vistazo?
+FLOR: Por ahí sescucha como
+chemecar a alguien detrás
+del piedro como tu cabeza.
+Oye, tú que estás empetaíto,
+¿por qué no la alaventas y
+vas a ver qué pasa?
 
 
 ==== room=19 npc=0 str=1 textAddr=0x1c6830 ptrFieldAddr=0x1c678a ====
-FLOR: ¡Venga! ¡Puedes
-hacerlo! Hace mucho
-viento aquí, procura
-que no te lleve.
+FLOR: ¡Venga, a liarla
+parda! Ten cuidaíto que aquí
+hace más viento que en
+Tarifa y puedes salir volao.
 
 
 ==== room=19 npc=0 str=2 textAddr=0x1c6882 ptrFieldAddr=0x1c678c ====
-FLOR: ¿Qué? ¡Venciste al
-pulpo! Eres muy valiente
-para ser tan joven.
+FLOR: ¡Hostias, te
+cepillaste al pulpo! ¡Y todo
+con esa cabeza que tienes!
 
 
 ==== room=19 npc=0 str=3 textAddr=0x1c68ca ptrFieldAddr=0x1c678e ====
-FLOR: Gracias a ti
-estamos un poco más
-seguros que antes.
-Estamos en deuda contigo.
+FLOR: Mola mucho, ahora ya
+podemos ir en libertad a...
+Bueno, yo a ningún sitio,
+soy una puta flor...
 
 
 ==== room=20 npc=0 str=0 textAddr=0x1c6928 ptrFieldAddr=0x1c6924 ====
 PULPO: ¿Quién eres tú,
-chico? Si has venido a por
-el pingüino, ¡no puedes
-llevártelo! Toma, ¡mira
-como ataca!
+mangarrián? ¡El pingüino es
+mío y me lo follo cuando
+quiero! ¡Ale, ataca, bicho!
 
 
 ==== room=20 npc=0 str=1 textAddr=0x1c6998 ptrFieldAddr=0x1c6926 ====
 {E0} g
-PULPO: ¡Serás, serás inútil,
-pingüino ...!
+PULPO: ¡Puto pingüino, te
+voy a eviscerar, cabrón!
 
 
 ==== room=20 npc=1 str=0 textAddr=0x1c69cc ptrFieldAddr=0x1c69c8 ====
-PIGºI: Gracias a ti soy
-libre. Como ves soy un
-pingüino. Solía vivir en
-la helada isla de Fresa,
-pero un terrible monstruo
-la atacó. Me capturaron
-para trabajar como
-esclavo pero ahora he
-decidido ...
-Déjame ir contigo a
-desafiar al monstruo,
-¿vale? Voy a ir aunque
-digas que no.
+PIGUI: ¡Uaah! ¡Me ha dejado
+el culo como la bandera de
+japón! Gracias por
+rescatarme, payo. Si no es
+por ti marranca las tripas.
+Solía pulular por el
+castillo Calipo, pero los
+cholos nos atacaron y me
+querían de exclavo sesuar.
+¡Me voy contigo, quiero
+darle manteca de lomo al
+mariconazo que hizo esto!
 
 
 ==== room=20 npc=1 str=1 textAddr=0x1c6ae6 ptrFieldAddr=0x1c69ca ====
-NARRACION: ¡Pigüi el
-pingüino se une al grupo!
-Según los animales que
-tengas, pulsa el botón C
-para obtener protección.
+¡Pigüi el pingüino se une al
+grupo de animalicos! Elígelo
+para hacer cosas chulas con
+tu navaja en el menú START.
+Con el botón C te protegen.
 
 
 ==== room=21 npc=0 str=0 textAddr=0x1c6b68 ptrFieldAddr=0x1c6b66 ====
-NARRACION: Parece un pájaro,
-pero está muy quemado.
-Sólo se ven cenizas.
+Paece un pajarraco, pero
+está más bien churruscaíto.
 
 
 ==== room=21 npc=1 str=0 textAddr=0x1c6bb6 ptrFieldAddr=0x1c6bb2 ====
