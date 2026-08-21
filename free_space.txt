@@ -1,11 +1,17 @@
-; Candidate free-space regions auto-detected by scanning for long runs of a
-; single repeated byte value. This is a heuristic, not a guarantee -- review
-; before trusting, and delete any line you're not sure is safe to overwrite.
+; Candidate free-space regions. Most are auto-detected by scanning for long
+; runs of a single repeated byte value -- a heuristic, not a guarantee, so
+; review before trusting and delete any line you're not sure is safe to
+; overwrite. A few (currently just 0xf6000-0xfd000, fill byte 0x00 as a
+; placeholder) are FreeSpaceScanner.VERIFIED_GAPS entries instead: manually
+; confirmed unreferenced by cross-checking every LEA-absolute instruction and
+; known table base in the ROM, not by the byte-run heuristic -- see that
+; constant's comment for what's actually there.
 ; Format: 0xSTART,length,0xFILLBYTE
-0x1dfcfe,770,0x00
+0x1dfce0,800,0x00
 0x1e6785,6267,0x00
 0x1ebacc,1332,0xff
 0x1ed0fb,3845,0xff
 0x1ef69b,2405,0xff
 0x1f63aa,3158,0xff
 0x1f7afd,1283,0xff
+0xf601e,28642,0x00

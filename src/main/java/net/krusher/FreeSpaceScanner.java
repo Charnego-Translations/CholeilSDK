@@ -26,6 +26,29 @@ public final class FreeSpaceScanner {
     static final int DEFAULT_MIN_RUN = 500;
 
     /**
+     * Regions manually confirmed safe by cross-referencing against every LEA-
+     * absolute instruction and every known relative-offset table base in the
+     * ROM (the same technique PointerLocator uses for graphics blocks) --
+     * unlike the heuristic scan below, these aren't uniform byte runs, so
+     * they'd never be found automatically.
+     *
+     * 0xf6000-0xfd000: sits between the font glyph table (0xf5000-0xf5fff,
+     * 256 reserved 16-byte slots, only up to index 0xaf ever populated --
+     * confirmed live via the `lea $f5000,a3` in the character-tile renderer)
+     * and the next real compressed graphics block (0xfd000, per
+     * graphics_offsets.txt). The first ~0xf90 bytes are leftover Windows
+     * developer-machine data that leaked into the ROM (readable strings:
+     * printer-driver error text, MSVCRT runtime error messages like "R6000 -
+     * stack overflow", and mmsystem.dll/audio-driver names like
+     * "wavemapper") -- clearly not game data. The rest, out to 0xfd000, is
+     * unreferenced padding/noise. No code or pointer table in the ROM
+     * targets any address in this range.
+     */
+    static final int[][] VERIFIED_GAPS = {
+            {0xf6000, 0xfd000},
+    };
+
+    /**
      * usage: FreeSpaceScanner [romPath] [fromHexAddr] [outPath] [graphicsOffsetsPath] [minRunLength]
      * fromHexAddr defaults to the byte right after TextInserter's known script/gap region (0x1D8000),
      * since anything before that is already covered by TextInserter's default writable pool.
@@ -42,6 +65,7 @@ public final class FreeSpaceScanner {
         List<int[]> excluded = loadExcludedRanges(graphicsOffsetsPath);
 
         List<Region> regions = scan(rom, fromAddr, rom.length, minRun, excluded);
+        addVerifiedGaps(regions, rom.length);
         writeRegionsFile(regions, outPath);
 
         long total = 0;
@@ -71,6 +95,10 @@ public final class FreeSpaceScanner {
      *                      blocks) to skip; a run overlapping any of these is dropped
      */
     public static List<Region> scan(byte[] rom, int fromAddr, int toAddr, int minRunLength, List<int[]> excluded) {
+        List<int[]> allExcluded = new ArrayList<int[]>();
+        if (excluded != null) allExcluded.addAll(excluded);
+        for (int[] gap : VERIFIED_GAPS) allExcluded.add(gap);
+
         List<Region> regions = new ArrayList<Region>();
         int i = fromAddr;
         while (i < toAddr) {
@@ -79,12 +107,32 @@ public final class FreeSpaceScanner {
             int j = i + 1;
             while (j < toAddr && (rom[j] & 0xFF) == b) j++;
             int runLen = j - runStart;
-            if (runLen >= minRunLength && !overlapsAny(runStart, j, excluded)) {
+            if (runLen >= minRunLength && !overlapsAny(runStart, j, allExcluded)) {
                 regions.add(new Region(runStart, runLen, b));
             }
             i = j;
         }
         return regions;
+    }
+
+    /**
+     * Adds every VERIFIED_GAPS entry, clipped only to the ROM's actual size --
+     * unlike the heuristic scan, these aren't bounded by fromAddr. fromAddr's
+     * forward-only rationale exists for the main script's 16-bit relative
+     * offsets specifically; verified gaps may sit before it and still be
+     * perfectly usable by absolute-pointer content (credits, etc.) that has
+     * no such reach limit, so excluding them here would just hide real space
+     * from every consumer that doesn't need the restriction.
+     */
+    static void addVerifiedGaps(List<Region> regions, int romLength) {
+        for (int[] gap : VERIFIED_GAPS) {
+            int start = Math.max(gap[0], 0);
+            int end = Math.min(gap[1], romLength);
+            if (start >= end) continue; // outside the ROM entirely
+            // Placeholder fill byte: this isn't a uniform run, so there's no
+            // single real fill value -- 0x00 just documents "not a real run".
+            regions.add(new Region(start, end - start, 0x00));
+        }
     }
 
     private static boolean overlapsAny(int start, int end, List<int[]> excluded) {
@@ -117,9 +165,14 @@ public final class FreeSpaceScanner {
 
     public static void writeRegionsFile(List<Region> regions, String path) throws IOException {
         StringBuilder sb = new StringBuilder();
-        sb.append("; Candidate free-space regions auto-detected by scanning for long runs of a\n");
-        sb.append("; single repeated byte value. This is a heuristic, not a guarantee -- review\n");
-        sb.append("; before trusting, and delete any line you're not sure is safe to overwrite.\n");
+        sb.append("; Candidate free-space regions. Most are auto-detected by scanning for long\n");
+        sb.append("; runs of a single repeated byte value -- a heuristic, not a guarantee, so\n");
+        sb.append("; review before trusting and delete any line you're not sure is safe to\n");
+        sb.append("; overwrite. A few (currently just 0xf6000-0xfd000, fill byte 0x00 as a\n");
+        sb.append("; placeholder) are FreeSpaceScanner.VERIFIED_GAPS entries instead: manually\n");
+        sb.append("; confirmed unreferenced by cross-checking every LEA-absolute instruction and\n");
+        sb.append("; known table base in the ROM, not by the byte-run heuristic -- see that\n");
+        sb.append("; constant's comment for what's actually there.\n");
         sb.append("; Format: 0xSTART,length,0xFILLBYTE\n");
         for (Region r : regions) {
             sb.append("0x").append(Integer.toHexString(r.start))
