@@ -85,7 +85,7 @@ Guadalpark
 
 
 ==== room=0 npc=3 str=18 textAddr=0x1c0452 ptrFieldAddr=0x1c036c ====
-Amapola
+Chipiona
 
 
 ==== room=0 npc=3 str=19 textAddr=0x1c045c ptrFieldAddr=0x1c036e ====
@@ -130,7 +130,8 @@ las pelotas para detenerlo.
 
 ==== room=1 npc=0 str=7 textAddr=0x1c0588 ptrFieldAddr=0x1c0486 ====
 Moa: Soy un paquete pero al
-lao mía los otros son mejore.
+lao mía los otros son
+mejore.
 
 
 ==== room=1 npc=0 str=8 textAddr=0x1c05bc ptrFieldAddr=0x1c0488 ====
@@ -776,7 +777,7 @@ tacos ya.
 ==== room=4 npc=0 str=9 textAddr=0x1c2790 ptrFieldAddr=0x1c23d8 ====
 REY: ¡Ah, <NAME>!
 ¡Vaya cabesón que gastas!
-¡Se nota que eres hijo  de
+¡Se nota que eres hijo de
 tu viejo!
 
 
@@ -952,7 +953,7 @@ para ensender el aparatico.
 
 ==== room=5 npc=0 str=7 textAddr=0x1c2f82 ptrFieldAddr=0x1c2eb4 ====
 CASA DE LA SIRENA
-¡Se puede ver a una sirena
+¡Se puede ver a una pilingui
 muy cachonda de gratis!
 
 
@@ -1974,7 +1975,7 @@ compuesto!
 ==== room=18 npc=0 str=0 textAddr=0x1c6196 ptrFieldAddr=0x1c6192 ====
 {E0} i
 TOMAS: Los animalitos aquí
-están arrecogíos porque están
+están arrecogíos porque tan
 hechos polvo, les puedes dar
 limonsna pa que hagan cosas.
 
@@ -1990,8 +1991,9 @@ y te doy otro.
 MISI: Soy un gato suicida,
 cuando te vayan a apuñalar
 me pongo enmedio para
-salvarte. Todo por 50 chapas
+salvarte. To por 50 chapas.
 si te hace.
+
 <YESNO>
 
 
@@ -2054,6 +2056,7 @@ un cipote vendao, pero te
 puedo proteger de los cholos
 por un tiempo. Dame 100
 pavías y estamos. ¿Qué?
+
 <YESNO>
 
 
@@ -2151,26 +2154,27 @@ está más bien churruscaíto.
 
 
 ==== room=21 npc=1 str=0 textAddr=0x1c6bb6 ptrFieldAddr=0x1c6bb2 ====
-PATOSO: No te dejaré
-pasar. Pasa si te
-atreves.
-
+PATOSO: ¿Dónde vas con esa
+cabeza, niño? ¡A que te
+meto!
 
 ==== room=21 npc=1 str=1 textAddr=0x1c6be8 ptrFieldAddr=0x1c6bb4 ====
-PATOSO: ¡Boing!
+PATOSO: ¡Groars!
 
 
 ==== room=21 npc=2 str=0 textAddr=0x1c6bfe ptrFieldAddr=0x1c6bfa ====
-FELI: ¡Por fin estoy libre!
-Pensé que estaba acabada
-cuando me tragó ese
-pomposo. Muchas gracias.
-Da gusto estar viva.
+FELI: ¡Su puta madre! ¡Este
+tío se me había zampao!
+¡Me tiemblan hasta los
+dientes! ¡Yo me voy contigo,
+que los cholos están todos
+como una regadera!
 
 
 ==== room=21 npc=2 str=1 textAddr=0x1c6c76 ptrFieldAddr=0x1c6bfc ====
-NARRACION: Feli, la ardilla
-voladora se une al grupo.
+Feli, la ardilla voladora
+se une al grupo de los
+animalicos.
 
 
 ==== room=22 npc=0 str=0 textAddr=0x1c6b68 ptrFieldAddr=0x1c6b66 ====
@@ -2195,18 +2199,21 @@ voladora se une al grupo.
 
 
 ==== room=23 npc=1 str=0 textAddr=0x1c6cc2 ptrFieldAddr=0x1c6cbe ====
-CIRO: No me gustan los
-héroes porque normalmente
-son unos engreídos. Me dan
-ganas de ladrarles, pero
-estoy siendo paciente por mi
-dueño, lo está pasando bien.
+CIRO: Los maromos no me
+molan, siempre están en plan
+"gñe, tubarro, amooh" y
+con su navajita como si
+fueran los putos amos.
+¡Es arrancaba las pelotas de
+un bocao, pero mi amo luego
+me canearía!
 
 
 ==== room=23 npc=1 str=1 textAddr=0x1c6d62 ptrFieldAddr=0x1c6cc0 ====
-CIRO: Si quieres saber del
-héroe, Luis, se fué a la
-isla de Fresa.
+CIRO: El Luis se fue a la
+Isla Calipo con su flipe, se
+le movían los dientes como
+un saco de ratones.
 
 
 ==== room=23 npc=2 str=0 textAddr=0x1c6da8 ptrFieldAddr=0x1c6da6 ====
@@ -2237,25 +2244,24 @@ isla de Fresa.
 <SAME room=23 npc=3 str=0>
 
 ==== room=25 npc=0 str=0 textAddr=0x1c6dc0 ptrFieldAddr=0x1c6dba ====
-ANCIANA: ¡Oh, gracias!
-La adivina estaba aquí hace
-un momento. Me dijo que
-me escondiera dentro de
-la chimenea porque venía
-el gran monstruo. También
-dijo que vendrías. Lo sabe
-todo, ¿verdad? La conocerás
-cuando vayas al parque.
-Se diría que es más que un
-ser humano normal.
+ANCIANA: ¡Los muertos de los
+cholos! Menos mal que la
+gitana me leyó la mano y me
+dijo que me escondiera aquí.
+También me dio recuerdos pa
+ti, sabe más que los ratones
+coloraos. Sa ido al parque a
+su tienda a ver si se sacaba
+algunas pelillas.
 
 
 ==== room=25 npc=0 str=1 textAddr=0x1c6ed4 ptrFieldAddr=0x1c6dbc ====
-ANCIANA: Muchísimas gracias.
-Dale recuerdos a la adivina
-del parque. Si alguna vez
-estás herido, ven por aquí.
-Siempre serás bienvenido.
+ANCIANA: Muchas gracias por
+todo, salao. ¿Tienes hambre?
+¿Quieres que te haga un
+huevo frito o algo? Vente
+por aquí siempre que quieras
+niño guapo.
 
 
 ==== room=25 npc=0 str=2 textAddr=0x1c6f5e ptrFieldAddr=0x1c6dbe ====
@@ -2265,180 +2271,170 @@ Siempre serás bienvenido.
 
 
 ==== room=25 npc=1 str=0 textAddr=0x1c6f68 ptrFieldAddr=0x1c6f64 ====
-LOBO: La anciana no va a
-salir de la chimenea. ¡Tú
-ocuparás su lugar!
-¡Ja, ja, ja!
+LOBO: Hostia con Caperucita,
+tiene más cabeza que una
+tienda de moñecos. ¡Ya que
+la vieja no sale, te voy
+a violear a tí! ¡Juas!
 
 
 ==== room=25 npc=1 str=1 textAddr=0x1c6fbc ptrFieldAddr=0x1c6f66 ====
-LOBO: ¡No, no puede ser ...!
-Me ha vencido un humano - ¡y
-era un simple niño!
+LOBO: ¡La puta que la parió!
+¡La puta cabezona me ha dado
+pal pelo! ¡Grrr, me voy a
+morir sin follar!
 
 
 ==== room=26 npc=0 str=0 textAddr=0x1c7020 ptrFieldAddr=0x1c700e ====
-FLOR: ¡Oiga, señor! Tengo
-información que le será
-útil. Le costará, pero es
-barato, sólo 10 malines.
-¿Qué dice?
+FLOR: Jai, pai, tengo una
+infolmasión muy útil, te
+la rulo por 10 chapitas de
+na. ¿Qué me dises?
+
+
 <YESNO>
 
 
 ==== room=26 npc=0 str=1 textAddr=0x1c7094 ptrFieldAddr=0x1c7010 ====
 {E0} n
-FLOR: ¡Para que veas!
-Había un adivina, la que
-comprende nuestro idioma,
-igual que tú. ¿Es que nos
-entienden todos los
-humanos hoy en día?
+FLOR: Pos mira tú que
+había una gitana, que
+hablaba con nusotra sin
+colocarse ni na. ¿Los
+payos también tienen podere?
 
 
 ==== room=26 npc=0 str=2 textAddr=0x1c7124 ptrFieldAddr=0x1c7012 ====
-FLOR: Ah, ya veo. Un
-tacaño, ¿eh? El mundo
-se está convirtiendo en un
-lugar cada día más difícil.
+FLOR: Ay el payo esaborío.
+¡Malaje! ¡Trabajo te sarga,
+agarrao!
 
 
 ==== room=26 npc=0 str=3 textAddr=0x1c7188 ptrFieldAddr=0x1c7014 ====
-FLOR: ¡Oiga, señor! Tengo
-información que le será
-útil. Le costará, pero es
-barato, sólo 10 malines.
-¿Cómo?, ¿que no tiene
-bastante? Yo sólo hablo
-con humanos que tienen
-bastante dinero para
-hacer negocios.
+FLOR: Jai, pai, tengo una
+infolmasión muy útil, te
+la rulo por 10 chapitas de
+na. Ay, pero estás más tieso
+que la pata de un perro
+envenenao. ¡Vuelve cuando
+tengas molla, salao!
 
 
 ==== room=26 npc=0 str=4 textAddr=0x1c7258 ptrFieldAddr=0x1c7016 ====
-FLOR: ¿Hum? ¿Que qué le pasó
-a la adivina? Claro que
-lo sé ... pero no puedo
-recordarlo. Si me da otros
-10 malines para refrescar mi
-memoria ...
+FLOR: ¿Que qué le pasó a la
+gitana? Ay payo pus no me
+acuerdo, várgame el señó.
+Si me rulas otras 10 chapas
+lo mismo empieso a cantar...
+
 <YESNO>
 
 
 ==== room=26 npc=0 str=5 textAddr=0x1c72ec ptrFieldAddr=0x1c7018 ====
 {E0} o
-FLOR: Gracias, señor.
-Dijo que iba a largarse.
-Después desapareció.
-Fue entonces cuando
-noté este agujero tan
-grande. Ni siquiera sé
-lo que pasó. ¿Se trata
-de un truco humano ...?
-Probablemente no, pero ...
+FLOR: Grasias, salao. Me
+paice que dijo que se iba
+a najar, y cuando se piró
+salió este bujero to ganso.
+No sé que ha pasau, deverdá
+que te lo juro por mis niño.
+¿Será cosa de los payos?
 
 
 ==== room=26 npc=0 str=6 textAddr=0x1c73c0 ptrFieldAddr=0x1c701a ====
-FLOR: Ah, ya veo. Un
-tacaño, ¿eh? El mundo
-se está convirtiendo en un
-lugar cada día más difícil.
+FLOR: Ay el payo esaborío.
+¡Malaje! ¡Trabajo te sarga,
+agarrao!
 
 
 ==== room=26 npc=0 str=7 textAddr=0x1c7424 ptrFieldAddr=0x1c701c ====
-FLOR: ¿Hum? ¿Que qué le pasó
-a la adivina? Claro que
-lo sé ...pero no puedo
-recordarlo. Vuelve cuando
-tengas otros 10 malines.
+FLOR: ¿Que qué le pasó a la
+gitana? Ay payo pus no me
+acuerdo, várgame el señó.
+Si me rulas otras 10 chapas
+te lo canto, pero estás más
+tieso que el codo de un clí.
 
 
 ==== room=26 npc=0 str=8 textAddr=0x1c74a4 ptrFieldAddr=0x1c701e ====
-FLOR: Lo siento, señor,
-pero no tengo más
-información. Vuelva
-en otro momento.
+FLOR: Ay por mis niño que ya
+no se más na, señor payo.
+Vuerve otro día, ¿eins?
 
 
 ==== room=27 npc=0 str=0 textAddr=0x1c7502 ptrFieldAddr=0x1c74fa ====
-PEDRO: ¿Sabías que hay
-monstruos en forma de
-tocones y oruga en
-el bosque?
+PEDRO: ¿Has visto los cholos
+que andan por el campo?
+¡Son tope bejtias!
 <YESNO>
 
 
 ==== room=27 npc=0 str=1 textAddr=0x1c7550 ptrFieldAddr=0x1c74fc ====
-PEDRO: Dicen que el
-monstruo de Amapola
-los está creando con
-magia. Pero es demasiado
-fuerte para que ninguno
-de nosotros pueda
-detenerle.
+PEDRO: Disen que en Chipiona
+hay un cholo que los crea
+con magia potagia. Pero es
+tope tocho, me pega una
+hostia que me viste de
+torero, y a cualquiera.
 
 
 ==== room=27 npc=0 str=2 textAddr=0x1c75dc ptrFieldAddr=0x1c74fe ====
-PEDRO: Los tocones y las
-orugas están rondando el
-bosque. Dicen que ésta
-no es su forma original.
-Creo que los han
-creado adrede.
+PEDRO: Son bichos gordos y
+como tocones de árbol, y
+disen que no son cholos sino
+que los crearon asín. ¡Tío!
 
 
 ==== room=27 npc=0 str=3 textAddr=0x1c7660 ptrFieldAddr=0x1c7500 ====
-PEDRO: He oído que
-venciste a Carlos. Ya veo
-que tendrás un
-brillante futuro.
+PEDRO: ¡La Vigen, le ganaste
+al Carlos en una carrera!
+¡No sé cómo corres tanto con
+esa cabeza, niño!
 
 
 ==== room=27 npc=1 str=0 textAddr=0x1c76b2 ptrFieldAddr=0x1c76b0 ====
-SALVA: ¡Oye! Mi linda casita
-está casi terminada.
+SALVA: ¡Con este briconsejo
+hacemos la casa!
 
 
 ==== room=27 npc=2 str=0 textAddr=0x1c76e8 ptrFieldAddr=0x1c76e6 ====
-ROSITA: ¡Oh, cariño! Me está
-haciendo una linda casita.
+ROSITA: ¡Mi marido es el de
+bricomanía! ¡Tope apañao!
 
 
 ==== room=28 npc=0 str=0 textAddr=0x1c7728 ptrFieldAddr=0x1c7726 ====
-ALITA: ¿Sabías que pasó algo
-extraño en la Torre de
-Babel? Los humanos ya no
-pueden comunicarse entre sí.
-¿Fue un castigo por algo que
-han hecho?
+ALITA: Algo ha pasao en la
+Torre de Papel, los payos no
+se entienden y se vuelven
+más geliposchas. Seguro que
+es por contratar indios.
 
 
 ==== room=28 npc=1 str=0 textAddr=0x1c77be ptrFieldAddr=0x1c77bc ====
-TINTIN: ¿Cómo? ¿Qué no
-pueden comunicarse?
-Igual que tú, <NAME>.
-Vamos a la Torre de
-Babel. Puede que
-averigüemos algo.
+COSMO: ¿Que no pueden qué?
+¡Cómo al cabesón del amo!
+<NAME>, vamos a
+la Torre de Papel a ver
+qué se cuece.
 
 
 ==== room=29 npc=0 str=0 textAddr=0x1c784a ptrFieldAddr=0x1c7838 ====
-PAPA ARDILLA: ¿No eres uno
-de esos animales llamados
-humanos?
+PAPA ARDILLA: ¿ú no serás
+un payo de esos que van por
+ahí masacrando, ¿no?
 <YESNO>
 
 
 ==== room=29 npc=0 str=1 textAddr=0x1c788c ptrFieldAddr=0x1c783a ====
-PAPA ARDILLA: ¡Lárgate! No
-vamos a fiarnos de un
-humano, ¡de ninguna manera!
+PAPA ARDILLA: ¡Fuera de aquí
+con esa cabeza, payo! ¡Que
+te endiño!
 
 
 ==== room=29 npc=0 str=2 textAddr=0x1c78da ptrFieldAddr=0x1c783c ====
-PAPA ARDILLA: ¡Eso es!
-Ningún humano entiende
-nuestro idioma.
+PAPA ARDILLA: ¡Claro que no!
+Los payos no saben hablar
+como nosotros.
 
 
 ==== room=29 npc=0 str=3 textAddr=0x1c791a ptrFieldAddr=0x1c783e ====
