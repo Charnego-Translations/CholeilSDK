@@ -33,7 +33,6 @@ public class CholeilSDK
     static final String FREE_SPACE = "free_space.txt";
     static final String STRAY_TEXT = "stray_text.txt";
     static final String CREDITS_POINTERS = "credits_pointers.txt";
-    static final String MAP_BOX_WIDTHS = "map_box_widths.txt";
     static final String OUT_ROM = "Choleil.md";
 
     public static void main( String[] args ) throws IOException
@@ -101,10 +100,6 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting text ===");
             TextInserter.run( OUT_ROM, SCRIPT, TBL, FREE_SPACE, OUT_ROM );
-
-            System.out.println();
-            System.out.println("=== patching fixed-width UI containers ===");
-            MapBoxInserter.run( OUT_ROM, SCRIPT, MAP_BOX_WIDTHS, OUT_ROM );
 
             System.out.println();
             System.out.println("=== inserting stray text ===");
