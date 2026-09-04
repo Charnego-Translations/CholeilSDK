@@ -65,6 +65,13 @@ public class CholeilSDK
             net.krusher.graphics.GraphicsExtractor.extract( DefaultPaths.ROM, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.GFX_OUT );
 
             System.out.println();
+            System.out.println("=== extracting ending Fin. graphic ===");
+            net.krusher.graphics.FinGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.FinGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.FinGraphics.DEFAULT_VIEW );
+
+            System.out.println();
             System.out.println("=== extracting Sonic + hammock animation ===");
             net.krusher.graphics.SonicHammockGraphics.extract(
                     DefaultPaths.ROM,
@@ -111,6 +118,13 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== arranging Sonic + hammock edit for compression ===");
             net.krusher.graphics.SonicHammockGraphics.syncScene( DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== arranging ending Fin. edit for compression ===");
+            net.krusher.graphics.FinGraphics.sync(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.FinGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.FinGraphics.DEFAULT_GFX );
 
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");

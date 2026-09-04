@@ -62,7 +62,7 @@ names in `DefaultPaths` when run without any.
 | `gfx_out/` | LZ-Toshio-compressed graphics, as editable PNGs. |
 | `raw_gfx_out/` | Uncompressed graphics (SEGA logo, "PULSA START", …). |
 | `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
-| `special_gfx_out/` | Friendly arranged assets that need a custom tile map, currently Sonic + hammock and its two static 24x48 side panels (see `SONIC_HAMACA.md`). |
+| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock and its side panels (`SONIC_HAMACA.md`), plus the ending “Fin.” (`FIN.md`). |
 | `sonic_scene_positions.txt` | Independent X/Y offsets for Jesus Gil and both static side panels. |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
