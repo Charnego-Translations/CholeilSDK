@@ -110,13 +110,15 @@ public class CholeilSDK
 
             System.out.println();
             System.out.println("=== arranging Sonic + hammock edit for compression ===");
-            net.krusher.graphics.SonicHammockGraphics.sync(
-                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_EDIT,
-                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_GFX );
+            net.krusher.graphics.SonicHammockGraphics.syncScene( DefaultPaths.ROM );
 
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
             net.krusher.graphics.GraphicsInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.OUT_ROM } );
+
+            System.out.println();
+            System.out.println("=== placing Jesus Gil from sonic_scene_positions.txt ===");
+            net.krusher.graphics.SonicHammockGraphics.patchPosition( DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== inserting raw (uncompressed) graphics ===");
