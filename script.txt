@@ -168,23 +168,20 @@ déjame en paz, payo.
 
 ==== room=1 npc=0 str=17 textAddr=0x1c083c ptrFieldAddr=0x1c049a ====
 Armadillo: Soy un tocho, me
-puedes pegar patás pa usarme
-de tablón y darle a los
-interrustores.
+puedes usarme de tablón y 
+darle a los interrustores.
 
 
 ==== room=1 npc=0 str=18 textAddr=0x1c0890 ptrFieldAddr=0x1c049c ====
 Murciélago: Estoy nesesitao
 de cariño asín que te
 protejeré cariñosamente.
-un ratito.
 
 
 ==== room=1 npc=0 str=19 textAddr=0x1c08ce ptrFieldAddr=0x1c049e ====
 Huevo: ¡Estoy trikinóssico!
 Exploto como un trikitrake
-y me llevo por delante al
-más pintao
+y me llevo po delante a tos.
 
 
 ==== room=1 npc=0 str=20 textAddr=0x1c091e ptrFieldAddr=0x1c04a0 ====
@@ -4572,8 +4569,8 @@ cara.
 DODO: ¡Anda, hay un payo por
 aquí! No me puedo mover
 porque el suelo este es más
-flojo que un muelle de guita
-y me voy a quemar el culo.
+endeble quel puchero de una
+gitana y me quemo el culo.
 No me gustan los payos, pero
 tú pareces un tío guay,
 aunque macho, vaya cabezón
@@ -5518,7 +5515,7 @@ jingloy y el pesquiben.
 Ostras con esa cabeza no
 te puedes meter en algunos
 callejones porque no cabes,
-¿ein? Peor seré tu colega.
+¿ein? Pero seré tu colega.
 
 
 ==== room=91 npc=3 str=0 textAddr=0x1d0bf4 ptrFieldAddr=0x1d0bf2 ====
