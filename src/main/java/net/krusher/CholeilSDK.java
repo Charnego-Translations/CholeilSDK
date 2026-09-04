@@ -72,6 +72,13 @@ public class CholeilSDK
                     net.krusher.graphics.FinGraphics.DEFAULT_VIEW );
 
             System.out.println();
+            System.out.println("=== extracting Corona sword swing ===");
+            net.krusher.graphics.CoronaSwordGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_VIEW );
+
+            System.out.println();
             System.out.println("=== extracting Sonic + hammock animation ===");
             net.krusher.graphics.SonicHammockGraphics.extract(
                     DefaultPaths.ROM,
@@ -141,6 +148,13 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting sprite-mosaic graphics ===");
             net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.SPRITE_GFX_OUT, DefaultPaths.SPRITE_GRAPHICS, DefaultPaths.OUT_ROM } );
+
+            System.out.println();
+            System.out.println("=== inserting Corona sword swing ===");
+            net.krusher.graphics.CoronaSwordGraphics.insert(
+                    DefaultPaths.OUT_ROM,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_EDIT,
+                    DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== setting the default hero name ===");
