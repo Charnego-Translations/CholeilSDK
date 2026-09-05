@@ -1,14 +1,6 @@
 # Posiciones relativas al punto original de SonicGil, en pixeles.
 # X positivo = derecha. Y positivo = abajo.
 # Jesus Gil admite cualquier pixel.
-# Los dos bloques son tiles: X e Y deben ser multiplos de 8.
 
-sonic_x=-24
+sonic_x=0
 sonic_y=0
-
-# Colocados 8 px por detras de los bordes de Jesus Gil y 8 px mas arriba.
-izquierdo_x=-40
-izquierdo_y=-8
-
-derecho_x=16
-derecho_y=-8
