@@ -131,6 +131,10 @@ public class CholeilSDK
             net.krusher.graphics.GraphicsInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.OUT_ROM } );
 
             System.out.println();
+            System.out.println("=== centring expanded ending Fin. graphic ===");
+            net.krusher.graphics.FinGraphics.patchLayout( DefaultPaths.OUT_ROM );
+
+            System.out.println();
             System.out.println("=== placing Jesus Gil from sonic_scene_positions.txt ===");
             net.krusher.graphics.SonicHammockGraphics.patchPosition( DefaultPaths.OUT_ROM );
 
