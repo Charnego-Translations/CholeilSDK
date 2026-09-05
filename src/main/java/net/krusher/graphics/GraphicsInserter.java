@@ -177,7 +177,10 @@ public final class GraphicsInserter {
         byte[] decodedTiles = TileRenderer.decodeTileSheet(img, palette, columns, SCALE, tileCount);
 
         byte[] newTileData;
-        if (decodedTiles.length == original.data.length) {
+        if (decodedTiles.length >= original.data.length) {
+            // A deliberately expanded asset may append tiles to a block. The
+            // registry records the new editable size while the stock ROM still
+            // decompresses to the shorter original payload.
             newTileData = decodedTiles;
         } else {
             // decSize wasn't a whole number of tiles: the trailing remainder

@@ -73,6 +73,20 @@ public class CholeilSDK
                     net.krusher.graphics.PauseMenuGraphics.DEFAULT_VIEW );
 
             System.out.println();
+            System.out.println("=== extracting ending Fin. graphic ===");
+            net.krusher.graphics.FinGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.FinGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.FinGraphics.DEFAULT_VIEW );
+
+            System.out.println();
+            System.out.println("=== extracting Sonic + hammock animation ===");
+            net.krusher.graphics.SonicHammockGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_VIEW );
+
+            System.out.println();
             System.out.println("=== extracting raw (uncompressed) graphics ===");
             net.krusher.graphics.RawGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.RAW_GRAPHICS, DefaultPaths.RAW_GFX_OUT } );
 
@@ -117,8 +131,27 @@ public class CholeilSDK
                     net.krusher.graphics.PauseMenuGraphics.DEFAULT_GFX );
 
             System.out.println();
+            System.out.println("=== arranging Sonic + hammock edit for compression ===");
+            net.krusher.graphics.SonicHammockGraphics.syncScene( DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== arranging ending Fin. edit for compression ===");
+            net.krusher.graphics.FinGraphics.sync(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.FinGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.FinGraphics.DEFAULT_GFX );
+
+            System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
             net.krusher.graphics.GraphicsInserter.main( new String[] { DefaultPaths.OUT_ROM, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, DefaultPaths.OUT_ROM } );
+
+            System.out.println();
+            System.out.println("=== centring expanded ending Fin. graphic ===");
+            net.krusher.graphics.FinGraphics.patchLayout( DefaultPaths.OUT_ROM );
+
+            System.out.println();
+            System.out.println("=== placing Jesus Gil from sonic_scene_positions.txt ===");
+            net.krusher.graphics.SonicHammockGraphics.patchPosition( DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== inserting raw (uncompressed) graphics ===");
