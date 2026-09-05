@@ -994,8 +994,9 @@ en Somalia.
 
 ==== room=5 npc=0 str=18 textAddr=0x1c31f8 ptrFieldAddr=0x1c2eca ====
 ¡Fascinerosoooo! ¡Sociataaa!
-¡Que venga ese negro que me
-lo cargo!
+¡Al negro le corto el
+cuello! ¡Me cago en la puta
+madre que parió al negro!
 
 
 ==== room=5 npc=0 str=19 textAddr=0x1c3238 ptrFieldAddr=0x1c2ecc ====
@@ -6347,7 +6348,8 @@ vez, pringao.
 
 ==== room=114 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
 CARLOS: La puta que parió a
-la liebre, catalana agarrá.
+la liebre, es más agarrá que
+una pelea de monos.
 Sólo me da el 10 por ciento
 de las ganancias. Si me
 rulas 50 chapas iré más
@@ -6358,7 +6360,8 @@ desgraciao! Te dan por saco.
 
 ==== room=114 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
 CARLOS: La puta que parió a
-la liebre, catalana agarrá.
+la liebre, es más agarrá que
+una pelea de monos.
 Sólo me da el 10 por ciento
 de las ganancias. Si me
 rulas 50 chapas iré más
@@ -6371,8 +6374,8 @@ despacito para que ganes.
 {E0}0ü
 CARLOS: ¡De puta madre!
 ¡Pero date vidilla, que
-tampoco puedo ir a paso
-de tortuga!
+tampoco nos pueden dar las
+putas uvas!
 
 
 ==== room=114 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
@@ -6416,7 +6419,7 @@ bicho. ¿Qué te parece?
 HEIDI: ¡Así se habla,
 machote! ¡Dale duro, que
 el guepardo es un bicho
-que corre que te cagas.
+que corre que te cagas!
 
 
 ==== room=114 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
@@ -6496,8 +6499,8 @@ alturas sabrás conducir ya,
 
 ==== room=114 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
 HEIDI: Poj claro, eres un
-profesional. ¡Venga, pedal
-al metal, vamoooooo!
+profesional. ¡Venga, a
+tumbar aguja! ¡Vamoooo!
 
 
 ==== room=114 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
