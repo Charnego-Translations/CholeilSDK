@@ -3,6 +3,8 @@
 Soleil (Spain).md
 # Patched output of TextInserter: still >99% original copyrighted ROM bytes.
 Choleil.md
+# Build output: rebuilt by every `choleil i`, and churns on every run.
+Choleil.ips
 
 ### Maven / Java build output ###
 target/

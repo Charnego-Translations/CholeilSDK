@@ -132,7 +132,9 @@ public class CholeilSDK
 
             System.out.println();
             System.out.println("=== arranging Sonic + hammock edit for compression ===");
-            net.krusher.graphics.SonicHammockGraphics.syncScene( DefaultPaths.ROM );
+            net.krusher.graphics.SonicHammockGraphics.sync(
+                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_GFX );
 
             System.out.println();
             System.out.println("=== arranging ending Fin. edit for compression ===");
