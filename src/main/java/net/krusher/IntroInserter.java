@@ -122,6 +122,37 @@ public final class IntroInserter {
             {0x1F7AFD,   1283}, {0x0F5B00,  1280}, {0x0F2B24,  1244},
     };
 
+    /**
+     * The exact byte ranges the intro will occupy, as {start, end}.
+     *
+     * Every other allocator has to stay out of these. IntroInserter runs last
+     * and refuses to write over anything an earlier step changed, so a block
+     * relocated into them does not corrupt the intro -- it stops the build.
+     *
+     * This is the intro's real footprint, not the whole of {@link #HUECOS}:
+     * the filler is roughly 40 KB bigger than the intro needs, and reserving
+     * all of it leaves the graphics inserter with no hole big enough for a
+     * room map that grew. The layout is computed by running the injection on
+     * an untouched copy of the base ROM, which is safe to do at any point
+     * because the placement never depends on the ROM's contents.
+     */
+    public static List<int[]> reservedRanges(String introPath, String basePath,
+                                             String freeSpacePath) throws IOException {
+        byte[] intro = Files.readAllBytes(Paths.get(introPath));
+        byte[] base  = Files.readAllBytes(Paths.get(basePath));
+
+        List<Region> banned = new ArrayList<>();
+        if (freeSpacePath != null && Files.exists(Paths.get(freeSpacePath))) {
+            for (FreeSpaceScanner.Region r : FreeSpaceScanner.readRegionsFile(freeSpacePath)) {
+                banned.add(new Region(r.start, r.length));
+            }
+        }
+        List<int[]> ranges = new ArrayList<>();
+        // base == null skips the collision guard: this copy is untouched anyway.
+        inject(base.clone(), intro, null, banned, ranges);
+        return ranges;
+    }
+
     /** Scratch RAM: frame counter at +0, frame index at +4. */
     private static final int CONT_RAM = 0xFF0100;
 
@@ -164,6 +195,17 @@ public final class IntroInserter {
     // ---- the injection -----------------------------------------------------
 
     static byte[] inject(byte[] juego, byte[] intro, byte[] base, List<Region> banned) {
+        return inject(juego, intro, base, banned, null);
+    }
+
+    /**
+     * @param rangesOut if non-null, receives every {start, end} this writes.
+     *     The layout depends only on the intro file and the constants above --
+     *     never on what is already in the ROM -- so an earlier pipeline step
+     *     can ask for it and keep out of the way.
+     */
+    static byte[] inject(byte[] juego, byte[] intro, byte[] base, List<Region> banned,
+                         List<int[]> rangesOut) {
         checkIntro(intro);
         checkGame(juego);
 
@@ -288,6 +330,12 @@ public final class IntroInserter {
         writes.add(new Object[]{"Z80 driver", dirDl, drvlib});
         for (int i = 0; i < FR_N; i++) writes.add(new Object[]{"frame " + i, dirsFr[i], frames[i]});
 
+        if (rangesOut != null) {
+            for (Object[] w : writes) {
+                int at = (Integer) w[1];
+                rangesOut.add(new int[]{at, at + ((byte[]) w[2]).length});
+            }
+        }
         if (base != null) assertUntouched(writes, juego, base);
         for (Object[] w : writes) {
             byte[] d = (byte[]) w[2];

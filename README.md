@@ -63,8 +63,8 @@ names in `DefaultPaths` when run without any.
 | `raw_gfx_out/` | Uncompressed graphics (SEGA logo, "PULSA START", …). |
 | `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
 | `pause_gfx_out/` | Friendly SAVE/TAKE OFF pause-menu icons (see `MENU_PAUSA.md`). |
-| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`) and the ending “Fin.” (`FIN.md`). |
-| `sonic_scene_positions.txt` | X/Y pixel offset for Jesus Gil in the hammock scene. |
+| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock and its side panels (`SONIC_HAMACA.md`), and the ending “Fin.” (`FIN.md`). |
+| `sonic_scene_positions.txt` | X/Y pixel offsets for Jesus Gil and for the side panels flanking him. |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `charnego_introFinal.md` | The Charnego Translations intro, a standalone Mega Drive ROM. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
@@ -234,6 +234,51 @@ earlier font, which land on blank tiles here. `DefaultNameInserter` rewrites tha
 branch's six immediates with a name of your choosing — no instruction moves, and it
 is rejected at build time if it exceeds the 10 characters the entry screen allows.
 
+### Anemone Beach side panels
+
+> **Not working yet — parked.** In game the panels still overwrite VRAM tiles
+> the console is using, so something about which tiles actually reach VRAM is
+> still wrong. Everything below describes the intended design and what has been
+> ruled out; treat the slot list as unproven. The pipeline step is wired in and
+> the build is clean, so this is safe to leave in place while it is investigated.
+
+
+`SidePanelGraphics` draws one editable 24x48 image on **both** sides of Jesus Gil.
+Only the left copy is stored: the right one is the same tiles with the VDP's
+horizontal-flip bit set and the column order reversed, so it costs no extra VRAM
+and cannot drift out of symmetry.
+
+The eighteen tiles go into spare slots **inside** the room's existing tileset
+(the LZ-Toshio block at `0x135322`, entry 11 of the tileset archive at
+`0x120000`), which the game decompresses to VRAM tile `0x100`. The block never
+changes size.
+
+Picking those slots is the part that is easy to get wrong, and it was got wrong
+twice. The block holds 496 tiles but the game transfers only about 486; the tail
+is ROM padding that never ships, and the console reuses that VRAM. So a *blank*
+slot proves nothing — "blank in ROM, blank in VRAM" is true whether or not the
+transfer ever reached it. A slot is only known-good if it holds **real art** that
+appears byte-identical in a savestate's VRAM, which proves the transfer covered
+it. `SidePanelGraphics.SLOTS` are eighteen such tiles, all at or below
+`HIGHEST_TRANSFERRED_TILE` (`0x1E5`), referenced by no metatile in this room — so
+overwriting their art is invisible — and by no map that could share the tileset.
+`SidePanelGraphicsTest` enforces every one of those properties.
+
+Placement patches the room map at `0x178E7A`: each 8x8 cell is repainted by
+cloning the 2x2 metatile covering it into an id the room never places, keeping
+the cell's original palette bits and clearing priority so the panels stay behind
+Jesus Gil. A fully blank tile in the PNG is skipped and leaves the beach showing
+through. The map is rebuilt from the stock block every time, so moving the panels
+leaves no residue.
+
+One consequence worth knowing: the panels make that map compress ~60 bytes past
+its original slot, so it relocates. `GraphicsInserter` therefore asks
+`IntroInserter.reservedRanges` for the intro's **exact** footprint and excludes
+only that, rather than the whole of `HUECOS` — the filler is about 40 KB larger
+than the intro needs, and reserving all of it left no hole big enough. The
+intro's layout depends only on the intro file and its own constants, never on the
+ROM's contents, so it can be computed early and relied on.
+
 ### Boot intro
 
 `IntroInserter` puts the Charnego Translations intro in front of the game, so a cold
@@ -357,7 +402,7 @@ next step carry on.
 mvn test
 ```
 
-73 tests across ten suites, run against a ROM built by the real pipeline: the 68k
+78 tests across eleven suites, run against a ROM built by the real pipeline: the 68k
 code patches byte for byte, every balloon width against its placed name, every script
 slot resolving to a terminated string, room forking, the font round trip and its
 bounds, the IPS patch verified by an applier written from the format spec, sprite tile

@@ -73,6 +73,10 @@ public class CholeilSDK
                     net.krusher.graphics.PauseMenuGraphics.DEFAULT_VIEW );
 
             System.out.println();
+            System.out.println("=== extracting Sonic side panels ===");
+            net.krusher.graphics.SidePanelGraphics.extract();
+
+            System.out.println();
             System.out.println("=== extracting ending Fin. graphic ===");
             net.krusher.graphics.FinGraphics.extract(
                     DefaultPaths.ROM,
@@ -135,6 +139,10 @@ public class CholeilSDK
             net.krusher.graphics.SonicHammockGraphics.sync(
                     net.krusher.graphics.SonicHammockGraphics.DEFAULT_EDIT,
                     net.krusher.graphics.SonicHammockGraphics.DEFAULT_GFX );
+
+            System.out.println();
+            System.out.println("=== arranging Sonic side panels for compression ===");
+            net.krusher.graphics.SidePanelGraphics.sync( DefaultPaths.ROM );
 
             System.out.println();
             System.out.println("=== arranging ending Fin. edit for compression ===");

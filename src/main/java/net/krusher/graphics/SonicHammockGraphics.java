@@ -151,10 +151,17 @@ public final class SonicHammockGraphics {
 
     private record ScenePositions(int sonicX, int sonicY) {}
 
-    private static ScenePositions readPositions(String path) throws IOException {
+    /**
+     * Reads sonic_scene_positions.txt. The whole scene shares one file, so every
+     * key it may hold is accepted here and each caller picks the ones it needs:
+     * this class places Jesus Gil, SidePanelGraphics places the two side panels.
+     */
+    static Map<String, Integer> readScenePositions(String path) throws IOException {
         Map<String, Integer> values = new LinkedHashMap<String, Integer>();
         values.put("sonic_x", 0);
         values.put("sonic_y", 0);
+        values.put("lateral_x", -24);
+        values.put("lateral_y", -8);
 
         Path file = Paths.get(path);
         if (!Files.exists(file)) {
@@ -176,6 +183,11 @@ public final class SonicHammockGraphics {
                 throw new IllegalStateException("bad number in position line: " + raw);
             }
         }
+        return values;
+    }
+
+    private static ScenePositions readPositions(String path) throws IOException {
+        Map<String, Integer> values = readScenePositions(path);
         return new ScenePositions(values.get("sonic_x"), values.get("sonic_y"));
     }
 

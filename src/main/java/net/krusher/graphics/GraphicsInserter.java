@@ -215,6 +215,12 @@ public final class GraphicsInserter {
         if (ctx.freePool == null) {
             List<int[]> excluded = FreeSpaceScanner.loadExcludedRanges(ctx.graphicsOffsetsPath);
             excluded.add(new int[]{0x1C0000, 0x1E0000}); // dialogue script + gap, claimed by TextInserter
+            // The intro is injected last and refuses to overwrite anything, so
+            // a block relocated onto it would stop the build rather than
+            // corrupt anything. Reserve exactly what it will occupy.
+            excluded.addAll(net.krusher.IntroInserter.reservedRanges(
+                    net.krusher.DefaultPaths.INTRO, net.krusher.DefaultPaths.ROM,
+                    net.krusher.DefaultPaths.FREE_SPACE));
             ctx.freePool = FreeSpaceScanner.scan(rom, 0x30000, rom.length, 16, excluded);
         }
         int newAddr = allocate(ctx.freePool, ctx.usedThisRun, recompressed.length);

@@ -4,3 +4,12 @@
 
 sonic_x=0
 sonic_y=0
+
+# Los dos laterales. Se dibuja uno solo: el derecho es el mismo espejado.
+# Son tiles, asi que X e Y deben ser multiplos de 8.
+# lateral_x es la distancia del borde izquierdo del panel al de Jesus Gil.
+# Conviene que lateral_y sea multiplo de 16: asi el panel cae dentro de tres
+# metatiles en vez de cuatro y el mapa comprimido no crece.
+
+lateral_x=-24
+lateral_y=0
