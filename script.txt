@@ -993,10 +993,9 @@ en Somalia.
 
 
 ==== room=5 npc=0 str=18 textAddr=0x1c31f8 ptrFieldAddr=0x1c2eca ====
-¡Qué pasa, tronco! Los de
-SEGA ponen al Sonic hasta en
-el colacao. A saber qué
-cojones hago aquí.
+¡Fascinerosoooo! ¡Sociataaa!
+¡Que venga ese negro que me
+lo cargo!
 
 
 ==== room=5 npc=0 str=19 textAddr=0x1c3238 ptrFieldAddr=0x1c2ecc ====
