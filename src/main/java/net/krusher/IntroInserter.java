@@ -64,32 +64,56 @@ public final class IntroInserter {
     // ---- the intro: "Charnego Translations INTRO FINAL (XGM, con fundido)" --
     // Where each piece sits inside the intro ROM, and the absolute addresses
     // in its 68000 code that have to be rebased when the pieces move.
+    //
+    // These describe ONE build of the intro, byte for byte. Rebuilding the
+    // intro moves every one of them, so checkIntro() below refuses to work on
+    // anything else. To re-derive them after a rebuild, disassemble the intro
+    // from its RESET vector:
+    //
+    //   ENTRADA  the address that vector holds (move.w #0x2700,sr)
+    //   LEA_FR   the "lea (d16,pc),a3" the main loop runs before its first
+    //            blit; its target is FR_OFF, and COD_TAM = FR_OFF - COD_OFF,
+    //            since the code and its palette tables sit in front of the
+    //            frames
+    //   SUBIR    the routine that opens "move.l #0x40000000,0xC00004" and
+    //            pours (a3)+ into the data port; FR_TAM is the count it
+    //            writes, doubled
+    //   VSYNC    the routine that polls "btst #3" on 0xC00004
+    //   BUCLE    the do-nothing loop at the end, BRA its closing bra.w
+    //   PCM_OFF  the pointer pushed to XGM_setPCM, PCM_TAM the size pushed
+    //            with it; VAC_OFF and DL_OFF are the two addresses the XGM
+    //            library itself holds (empty sample, Z80 driver), and DL_TAM
+    //            runs to the end of the file
+    //   RELOCS   every longword in the code and in the library that lands
+    //            inside one of those pieces -- five jsr/pointer slots in the
+    //            code, three in the library
 
-    private static final int INTRO_SIZE = 622630;
-    private static final int ENTRADA = 0x00200;   // the intro's entry point
-    private static final int BUCLE   = 0x002EA;   // start of its final loop
-    private static final int BRA     = 0x002EE;   // the bra.w that closes it
-    private static final int VSYNC   = 0x003FA;   // its vblank wait
-    private static final int SUBIR   = 0x00358;   // its frame-blit routine
+    static final int INTRO_SIZE = 622886;
+    static final int ENTRADA = 0x00200;   // the intro's entry point
+    static final int BUCLE   = 0x0031C;   // start of its final loop
+    static final int BRA     = 0x00320;   // the bra.w that closes it
+    static final int VSYNC   = 0x00448;   // its vblank wait
+    static final int SUBIR   = 0x0038A;   // its frame-blit routine
+    static final int LEA_FR  = 0x002AA;   // the lea that points at frame 0
     private static final int ESPERA  = 60;        // frames to sit on the last
                                                   // screen (it fades out itself)
 
-    private static final int COD_OFF = 0x00200, COD_TAM = 0x003CE;  // code + palettes
-    private static final int FR_OFF  = 0x005CE, FR_TAM  = 0x08C00, FR_N = 16;
-    private static final int PCM_OFF = 0x8C600, PCM_TAM = 0x09E92;  // PCM sample
-    private static final int VAC_OFF = 0x96500, VAC_TAM = 0x00100;  // empty sample
-    private static final int DL_OFF  = 0x96600, DL_TAM  = 0x01A26;  // Z80 driver + XGM lib
+    static final int COD_OFF = 0x00200, COD_TAM = 0x0041C;  // code + palettes
+    static final int FR_OFF  = 0x0061C, FR_TAM  = 0x08C00, FR_N = 16;
+    static final int PCM_OFF = 0x8C700, PCM_TAM = 0x09F00;  // PCM sample
+    static final int VAC_OFF = 0x96600, VAC_TAM = 0x00100;  // empty sample
+    static final int DL_OFF  = 0x96700, DL_TAM  = 0x01A26;  // Z80 driver + XGM lib
 
     /** offset in the intro -&gt; the absolute address stored there. */
-    private static final int[][] RELOCS = {
-            {0x00226, 0x097DAE},   // jsr  XGM_init
-            {0x0023E, 0x097F20},   // jsr  XGM_setPCM
-            {0x00232, 0x08C600},   // pointer to the XGM data (music + samples)
-            {0x002CA, 0x097F6C},   // jsr  XGM_playPCM
-            {0x002DE, 0x097FB8},   // jsr  XGM_vblankProcess
-            {0x97DC8, 0x096600},   // lea  XGM Z80 driver
-            {0x97DE4, 0x096500},   // default empty sample
-            {0x97E86, 0x096500},   // default empty sample
+    static final int[][] RELOCS = {
+            {0x00254, 0x097EAE},   // jsr  XGM_init
+            {0x0026C, 0x098020},   // jsr  XGM_setPCM
+            {0x00260, 0x08C700},   // pointer to the XGM data (music + samples)
+            {0x002FC, 0x09806C},   // jsr  XGM_playPCM
+            {0x00310, 0x0980B8},   // jsr  XGM_vblankProcess
+            {0x97EC8, 0x096700},   // lea  XGM Z80 driver
+            {0x97EE4, 0x096600},   // default empty sample
+            {0x97F86, 0x096600},   // default empty sample
     };
 
     private static final int BRA_W = 0x6000;
@@ -338,6 +362,53 @@ public final class IntroInserter {
         }
         if (readU16(intro, BRA) != BRA_W || (short) readU16(intro, BRA + 2) != BUCLE - BRA - 2) {
             throw new IllegalStateException("unknown intro: its final loop is not where expected");
+        }
+
+        // Every other offset above is a place this step OVERWRITES, and a wrong
+        // one would be patched in silence and only show up as a black screen on
+        // hardware. So each hook is identified by the instruction that has to be
+        // sitting there, not by its address alone.
+        expect(intro, ENTRADA,     0x46FC, "its entry point is not move.w #imm,sr");
+        expect(intro, ENTRADA + 2, 0x2700, "its entry point is not move.w #0x2700,sr");
+        if (readU32(intro, 0x04) != ENTRADA) {
+            throw new IllegalStateException(String.format(
+                    "unknown intro: its RESET vector is 0x%06X, not the 0x%06X this step "
+                            + "jumps to", readU32(intro, 0x04), ENTRADA));
+        }
+        // the frame blit: move.l #0x40000000,0xC00004  (VRAM write, address 0)
+        expect(intro, SUBIR,     0x23FC, "its frame blit is not move.l #imm,(abs).l");
+        if (readU32(intro, SUBIR + 2) != 0x40000000 || readU32(intro, SUBIR + 6) != 0xC00004) {
+            throw new IllegalStateException(String.format(
+                    "unknown intro: the routine at 0x%05X does not open a VRAM write at "
+                            + "address 0 -- it is not the frame blit", SUBIR));
+        }
+        // the vblank wait: move.w 0xC00004,d0 / btst #3,d0
+        expect(intro, VSYNC, 0x3039, "its vblank wait is not move.w (abs).l,d0");
+        if (readU32(intro, VSYNC + 2) != 0xC00004 || readU16(intro, VSYNC + 6) != 0x0800
+                || readU16(intro, VSYNC + 8) != 0x0003) {
+            throw new IllegalStateException(String.format(
+                    "unknown intro: the routine at 0x%05X does not poll the VDP's vblank "
+                            + "flag -- it is not the vblank wait", VSYNC));
+        }
+        // lea FR_OFF(pc),a3 -- where the animation actually starts, straight
+        // from the intro's own code rather than measured by hand.
+        expect(intro, LEA_FR, 0x47FA, "the frame pointer is not loaded with lea (d16,pc),a3");
+        int destino = LEA_FR + 2 + (short) readU16(intro, LEA_FR + 2);
+        if (destino != FR_OFF) {
+            throw new IllegalStateException(String.format(
+                    "unknown intro: its code points the animation at 0x%05X, but the frames "
+                            + "are cut from 0x%05X", destino, FR_OFF));
+        }
+        if (FR_OFF + FR_N * FR_TAM > PCM_OFF || DL_OFF + DL_TAM != INTRO_SIZE) {
+            throw new IllegalStateException("the intro's piece map does not add up");
+        }
+    }
+
+    private static void expect(byte[] intro, int at, int opcode, String queja) {
+        if (readU16(intro, at) != opcode) {
+            throw new IllegalStateException(String.format(
+                    "unknown intro: expected 0x%04X at 0x%05X, found 0x%04X -- %s",
+                    opcode, at, readU16(intro, at), queja));
         }
     }
 
