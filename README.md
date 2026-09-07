@@ -63,7 +63,7 @@ names in `DefaultPaths` when run without any.
 | `raw_gfx_out/` | Uncompressed graphics (SEGA logo, "PULSA START", …). |
 | `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
 | `pause_gfx_out/` | Friendly SAVE/TAKE OFF pause-menu icons (see `MENU_PAUSA.md`). |
-| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`) and the ending “Fin.” (`FIN.md`). |
+| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`), the ending “Fin.” (`FIN.md`), and Corona’s sword swing (`ESPADA.md`). |
 | `sonic_scene_positions.txt` | X/Y pixel offset for Jesus Gil in the hammock scene. |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `charnego_introFinal.md` | The Charnego Translations intro, a standalone Mega Drive ROM. |
