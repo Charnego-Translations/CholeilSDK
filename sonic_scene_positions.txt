@@ -2,5 +2,12 @@
 # X positivo = derecha. Y positivo = abajo.
 # Jesus Gil admite cualquier pixel.
 
-sonic_x=0
+sonic_x=-24
 sonic_y=0
+
+# Laterales estaticos 24x48. Coordenadas independientes, multiplos de 8.
+# Conservan la paleta original de la playa; no modifican las huellas.
+izquierdo_x=-40
+izquierdo_y=-8
+derecho_x=16
+derecho_y=-8

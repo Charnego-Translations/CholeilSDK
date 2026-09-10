@@ -25,12 +25,17 @@ extremos del movimiento.
 
 ## Recolocar a Jesús Gil
 
-Edita `sonic_scene_positions.txt`. Las dos coordenadas son offsets en píxeles
+Edita `sonic_scene_positions.txt`. Las coordenadas son offsets en píxeles
 respecto a la posición original de SonicGil:
 
 ```text
-sonic_x=0
+sonic_x=-24
 sonic_y=0
+
+izquierdo_x=-40
+izquierdo_y=-8
+derecho_x=16
+derecho_y=-8
 ```
 
 X positivo mueve a la derecha e Y positivo mueve hacia abajo. Se admite
@@ -51,7 +56,7 @@ EDITAME al orden interno del juego y actualiza `gfx_out/gfx_05ebe8.png`.
 ## Localización técnica
 
 - Bloque LZ-Toshio: ROM `0x05EBE8`.
-- Tamaño descomprimido: 3456 bytes = 108 tiles.
+- Tamaño original: 3456 bytes = 108 tiles. Con laterales: 4672 bytes = 146 tiles.
 - Tres poses de 36 tiles cada una.
 - Cada pose usa cuatro sprites Mega Drive de 3x3 tiles para formar un mosaico
   de 48x48.
@@ -59,3 +64,75 @@ EDITAME al orden interno del juego y actualiza `gfx_out/gfx_05ebe8.png`.
   índices de tile para animar la mano y los pies.
 - Los offsets X/Y de los cuatro sprites se modifican desde
   `sonic_scene_positions.txt`; admiten precisión de un píxel.
+
+## Laterales estáticos y huellas (corrección)
+
+Los editables son `special_gfx_out/sonic_lateral_izquierdo_EDITAME.png` y
+`special_gfx_out/sonic_lateral_derecho_EDITAME.png`, **24x48 cada uno**.
+Son tiles del fondo, no sprites ni animaciones. Los archivos `x4_VISTA`
+son ampliaciones y no se insertan.
+
+Cada lateral tiene X/Y independientes en `sonic_scene_positions.txt`, siempre
+múltiplos de 8. Las seis coordenadas son relativas a la posición original
+del personaje; mover a Gil no arrastra automáticamente los laterales.
+Un tile completamente vacío deja intacto el fondo original. Los tiles
+dibujados se colocan detrás de Gil y conservan el comportamiento del terreno.
+
+**No se cambia ninguna paleta.** Los PNG conservan los 16 colores originales
+de la línea 1 de la playa. Mantén el PNG indexado y esa paleta, sin añadir
+colores ni suavizado. El SDK rechaza una paleta diferente o una colocación
+que invada tiles de otra línea de paleta. `sonic_laterales_PALETA.png` es la
+referencia. La paleta del personaje tampoco se modifica.
+
+La versión anterior reutilizaba metatiles `0x3E0–0x3EF` (y una primera
+versión, `0x3F1–0x3FC`). **No estaban libres**: la rutina de pisadas de la ROM
+en `0x00B204` calcula IDs `0x3E0–0x3FF` al caminar, aunque no aparezcan como
+referencias estáticas. En `0x00B22A` ejecuta `ADDI.W #$3E0,D0`.
+
+Ahora los paneles reservan **`0x3D0–0x3DF`**, comprobando que sus definiciones
+y atributos de terreno estén vacíos y que el mapa original no los referencie.
+Se restauran las 32 definiciones de huellas y sus atributos de terreno si se
+inserta desde un mapa generado por las versiones antiguas.
+
+No hay que confundir IDs de metatile (16x16) con índices de tile VRAM (8x8):
+
+- Personaje: tiles VRAM `0x376–0x3E1`, sin cambiar sus 108 tiles de animación.
+- Separación: dos tiles, `0x3E2–0x3E3`.
+- Lateral izquierdo: VRAM `0x3E4–0x3F5`.
+- Lateral derecho: VRAM `0x3F6–0x407`.
+- Mapa LZ: `0x178E7A`, tabla de terreno en `+0x2000`, celdas desde `+0x2C04`.
+- Posición original superior izquierda: tile de mundo `(98,78)`.
+
+El pipeline vuelve a generar los dos paneles y el mapa antes de insertar.
+El movimiento vertical usa los cuatro campos Y reales (`0x2F858`,
+`0x2F860`, `0x2F868`, `0x2F870`); no toca el puntero de animación en `0x2F850`.
+
+### Comprobar
+
+Después de compilar y ejecutar `CholeilSDK i`:
+
+```text
+java -cp target/classes net.krusher.graphics.SonicHammockGraphics verify-scene Choleil.md
+```
+
+Comprueba los PNG, posiciones, referencias de mapa, paletas y las 32
+definiciones/atributos de las huellas. `SonicHammockGraphicsTest` cubre la
+reserva, detección de corrupción, migración de ambas versiones anteriores
+y recolocación X/Y sin tocar otros campos del sprite.
+Suite completa ejecutada con Java 24: **84 pruebas correctas, ninguna omitida**.
+
+Prueba realizada en BizHawk 2.11.1 con una copia de la ROM: recarga real de
+la habitación, desplazamiento, pausa/salida y caminata en arena. Se registraron
+453 llamadas a la rutina de huellas. Sus 32 definiciones en RAM, sus píxeles
+en VRAM y la CRAM completa coinciden con la ROM original. Los tiles de los
+paneles permanecen idénticos al bloque insertado tras caminar y pausar;
+en la ejecución de control, esos slots VRAM estaban vacíos.
+
+Un savestate antiguo conserva RAM/VRAM antiguas: para validar hay que
+recargar la habitación, no limitarse a cargar ese estado sobre la ROM nueva.
+Desde una habitación, el cambio normal usa el indicador RAM `0xA4D6`;
+`0xA4DE` por sí solo no vuelve a cargar sus gráficos. No modificar las
+coordenadas de cámara sin actualizar su buffer circular; dejar que el juego
+la siga después de recolocar al jugador.
+
+La ROM y el IPS generado son salidas locales ignoradas por Git. **No subir IPS.**
