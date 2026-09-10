@@ -76,7 +76,8 @@ Cada lateral tiene X/Y independientes en `sonic_scene_positions.txt`, siempre
 múltiplos de 8. Las seis coordenadas son relativas a la posición original
 del personaje; mover a Gil no arrastra automáticamente los laterales.
 Un tile completamente vacío deja intacto el fondo original. Los tiles
-dibujados se colocan detrás de Gil y conservan el comportamiento del terreno.
+dibujados se colocan detrás de Gil. Las tres figuras son sólidas: sus zonas
+de colisión se generan a partir de sus respectivas coordenadas.
 
 **No se cambia ninguna paleta.** Los PNG conservan los 16 colores originales
 de la línea 1 de la playa. Mantén el PNG indexado y esa paleta, sin añadir
@@ -89,8 +90,10 @@ versión, `0x3F1–0x3FC`). **No estaban libres**: la rutina de pisadas de la RO
 en `0x00B204` calcula IDs `0x3E0–0x3FF` al caminar, aunque no aparezcan como
 referencias estáticas. En `0x00B22A` ejecuta `ADDI.W #$3E0,D0`.
 
-Ahora los paneles reservan **`0x3D0–0x3DF`**, comprobando que sus definiciones
+Ahora la escena reserva **`0x3C0–0x3DF`**, comprobando que sus definiciones
 y atributos de terreno estén vacíos y que el mapa original no los referencie.
+La reserva anterior `0x3D0–0x3DF` se ha ampliado para incluir las celdas
+de colisión de Gil, sin ocupar las huellas ni más espacio gráfico en VRAM.
 Se restauran las 32 definiciones de huellas y sus atributos de terreno si se
 inserta desde un mapa generado por las versiones antiguas.
 
@@ -107,6 +110,22 @@ El pipeline vuelve a generar los dos paneles y el mapa antes de insertar.
 El movimiento vertical usa los cuatro campos Y reales (`0x2F858`,
 `0x2F860`, `0x2F868`, `0x2F870`); no toca el puntero de animación en `0x2F850`.
 
+### Colisión de Gil y las muchachas
+
+Gil tiene una caja de 48x48 y cada muchacha una de 24x48, ancladas en las
+mismas X/Y que sus gráficos. El motor resuelve la colisión por metatiles
+de **16x16**: las cajas se redondean hacia fuera a esa cuadrícula. No es
+colisión por píxel; los huecos transparentes dentro de cada caja también
+quedan bloqueados. Al recolocar una figura y regenerar la ROM se elimina
+su colisión anterior y se crea en la posición nueva, sin dejar paredes invisibles
+en el lugar antiguo.
+
+Las celdas son copias locales con terreno `0x0003`, el mismo tipo de obstáculo
+no transitable que usan metatiles originales de la playa como `0x7B/0x7C`.
+No se modifica la definición compartida del suelo ni se añaden efectos de
+daño, rotura o pisadas. Fuera de las cajas se conserva el terreno original.
+Los gráficos, las paletas y las animaciones no cambian.
+
 ### Comprobar
 
 Después de compilar y ejecutar `CholeilSDK i`:
@@ -115,11 +134,14 @@ Después de compilar y ejecutar `CholeilSDK i`:
 java -cp target/classes net.krusher.graphics.SonicHammockGraphics verify-scene Choleil.md
 ```
 
-Comprueba los PNG, posiciones, referencias de mapa, paletas y las 32
+Comprueba los PNG, posiciones, referencias de mapa, paletas, las tres zonas
+sólidas y las 32
 definiciones/atributos de las huellas. `SonicHammockGraphicsTest` cubre la
 reserva, detección de corrupción, migración de ambas versiones anteriores
-y recolocación X/Y sin tocar otros campos del sprite.
-Suite completa ejecutada con Java 24: **84 pruebas correctas, ninguna omitida**.
+y recolocación X/Y sin tocar otros campos del sprite. También comprueba
+que las tres figuras bloqueen el paso, que el suelo exterior quede intacto
+y que moverlas elimine sus colisiones antiguas.
+Suite completa ejecutada con Java 24: **87 pruebas correctas, ninguna omitida**.
 
 Prueba realizada en BizHawk 2.11.1 con una copia de la ROM: recarga real de
 la habitación, desplazamiento, pausa/salida y caminata en arena. Se registraron
@@ -127,6 +149,14 @@ la habitación, desplazamiento, pausa/salida y caminata en arena. Se registraron
 en VRAM y la CRAM completa coinciden con la ROM original. Los tiles de los
 paneles permanecen idénticos al bloque insertado tras caminar y pausar;
 en la ejecución de control, esos slots VRAM estaban vacíos.
+
+Prueba adicional de solidez en BizHawk: tres aproximaciones desde abajo,
+las dos muchachas desde los extremos exteriores, Gil desde arriba y Gil
+después de pausar/salir. **Las siete quedan bloqueadas**; en la ROM anterior
+las siete atravesaban las figuras. La caminata posterior sigue generando
+huellas (129 llamadas). Las definiciones/atributos de las 32 huellas, sus
+píxeles, los gráficos de las figuras y toda la CRAM permanecen idénticos a
+la versión anterior, antes y después de pausar.
 
 Un savestate antiguo conserva RAM/VRAM antiguas: para validar hay que
 recargar la habitación, no limitarse a cargar ese estado sobre la ROM nueva.

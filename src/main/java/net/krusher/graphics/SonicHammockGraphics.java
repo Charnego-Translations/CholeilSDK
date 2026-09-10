@@ -58,8 +58,11 @@ public final class SonicHammockGraphics {
     // Do NOT use 0x3E0..0x3FF: the walking handler at ROM 0x00B204
     // constructs those IDs at runtime (ADDI.W #$3E0,D0 at 0x00B22A).
     // No static map reference does not mean a metatile is free!
-    static final int FIRST_CUSTOM_METATILE = 0x3D0;
-    private static final int CUSTOM_METATILE_COUNT = 16;
+    static final int FIRST_CUSTOM_METATILE = 0x3C0;
+    private static final int CUSTOM_METATILE_COUNT = 32;
+    // Ordinary impassable terrain, also used by stock beach metatiles such
+    // as 0x7B/0x7C. No damage, breakable-object or footprint behaviour bits.
+    static final int SOLID_TERRAIN = 0x0003;
     private static final int FOOTPRINT_FIRST_METATILE = 0x3E0;
     private static final int FOOTPRINT_METATILE_COUNT = 32;
     private static final int SIDE_PALETTE_LINE = 1;
@@ -85,7 +88,7 @@ public final class SonicHammockGraphics {
         0x04, (byte) 0x8A, 0x0A, 0x64, 0x0C, (byte) 0x86, 0x0E, (byte) 0xC8,
     };
 
-    private record ScenePositions(int sonicX, int sonicY,
+    record ScenePositions(int sonicX, int sonicY,
                                   int leftX, int leftY,
                                   int rightX, int rightY) {}
 
@@ -96,6 +99,7 @@ public final class SonicHammockGraphics {
         final int mapOffset;
         final int[] attributes = new int[4];
         final int terrain;
+        boolean solid;
 
         CellPatch(int mapOffset, byte[] map) {
             this.mapOffset = mapOffset;
@@ -258,12 +262,7 @@ public final class SonicHammockGraphics {
 
         byte[] left = readSideTiles(leftEditPath);
         byte[] right = readSideTiles(rightEditPath);
-        Map<Long, TilePlacement> placements = new LinkedHashMap<Long, TilePlacement>();
-        addPanelPlacements(placements, left, positions.leftX, positions.leftY,
-                VRAM_FIRST_TILE + LEFT_SIDE_STORAGE_TILE);
-        addPanelPlacements(placements, right, positions.rightX, positions.rightY,
-                VRAM_FIRST_TILE + RIGHT_SIDE_STORAGE_TILE);
-        patchPanelPlacements(map, placements);
+        patchSceneMap(map, left, right, positions);
 
         boolean sameEditableTiles = currentMap != null;
         for (int i = 0; sameEditableTiles && i < currentMap.length; i++) {
@@ -286,7 +285,7 @@ public final class SonicHammockGraphics {
     }
 
     static void restoreReservedPlacements(byte[] map, byte[] originalMap) {
-        for (int offset = 0x2000; offset + 1 < map.length; offset += 2) {
+        for (int offset = ROOM_MAP_BASE; offset + 1 < map.length; offset += 2) {
             int id = readU16(map, offset) & 0x3FF;
             boolean current = id >= FIRST_CUSTOM_METATILE
                     && id < FIRST_CUSTOM_METATILE + CUSTOM_METATILE_COUNT;
@@ -312,7 +311,8 @@ public final class SonicHammockGraphics {
                 }
             }
         }
-        for (int p = 0x2000; p + 1 < originalMap.length; p += 2) {
+        // The preceding bytes are terrain and entity tables, not map cells.
+        for (int p = ROOM_MAP_BASE; p + 1 < originalMap.length; p += 2) {
             int id = readU16(originalMap, p) & 0x3FF;
             if (id >= FIRST_CUSTOM_METATILE && id < FIRST_CUSTOM_METATILE + CUSTOM_METATILE_COUNT) {
                 throw new IllegalStateException("panel reservation is referenced by the original map");
@@ -359,7 +359,12 @@ public final class SonicHammockGraphics {
         }
     }
 
-    private static void patchPanelPlacements(byte[] map, Map<Long, TilePlacement> placements) {
+    static void patchSceneMap(byte[] map, byte[] left, byte[] right, ScenePositions positions) {
+        Map<Long, TilePlacement> placements = new LinkedHashMap<Long, TilePlacement>();
+        addPanelPlacements(placements, left, positions.leftX, positions.leftY,
+                VRAM_FIRST_TILE + LEFT_SIDE_STORAGE_TILE);
+        addPanelPlacements(placements, right, positions.rightX, positions.rightY,
+                VRAM_FIRST_TILE + RIGHT_SIDE_STORAGE_TILE);
         Map<Integer, CellPatch> cells = new LinkedHashMap<Integer, CellPatch>();
         for (TilePlacement placement : placements.values()) {
             int metaX = Math.floorDiv(placement.roomTileX, 2);
@@ -388,20 +393,56 @@ public final class SonicHammockGraphics {
             // so these static tiles always remain behind Jesus Gil.
             cell.attributes[local] = (originalAttribute & 0x6000) | storedTile;
         }
+        addSolidRectangle(map, cells, positions.sonicX, positions.sonicY, 48, 48);
+        addSolidRectangle(map, cells, positions.leftX, positions.leftY, 24, 48);
+        addSolidRectangle(map, cells, positions.rightX, positions.rightY, 24, 48);
         if (cells.size() > CUSTOM_METATILE_COUNT) {
-            throw new IllegalStateException("the configured panels need " + cells.size()
+            throw new IllegalStateException("the configured scene needs " + cells.size()
                     + " custom metatiles; maximum is " + CUSTOM_METATILE_COUNT);
         }
         int id = FIRST_CUSTOM_METATILE;
         for (CellPatch cell : cells.values()) {
-            // The background decoration must not change collision/terrain.
-            writeU16(map, 0x2000 + id * 2, cell.terrain);
+            writeU16(map, 0x2000 + id * 2, cell.solid ? SOLID_TERRAIN : cell.terrain);
             for (int i = 0; i < cell.attributes.length; i++) {
                 writeU16(map, id * 8 + i * 2, cell.attributes[i]);
             }
             int oldMapWord = readU16(map, cell.mapOffset);
             writeU16(map, cell.mapOffset, oldMapWord & 0xFC00 | id);
             id++;
+        }
+    }
+
+    private static void addSolidRectangle(byte[] map, Map<Integer, CellPatch> cells,
+                                           int offsetX, int offsetY, int width, int height) {
+        int x = Math.addExact(ORIGINAL_SONIC_TILE_X * 8, offsetX);
+        int y = Math.addExact(ORIGINAL_SONIC_TILE_Y * 8, offsetY);
+        int lastX = Math.addExact(x, width - 1);
+        int lastY = Math.addExact(y, height - 1);
+        int roomRows = (map.length - ROOM_MAP_BASE) / (ROOM_METATILES_PER_ROW * 2);
+        if (x < 0 || y < 0 || lastX >= ROOM_METATILES_PER_ROW * 16 || lastY >= roomRows * 16) {
+            throw new IllegalStateException("solid character position falls outside the room map");
+        }
+        // Terrain collision is per 16x16 metatile, not per sprite pixel.
+        for (int my = y / 16; my <= lastY / 16; my++) {
+            for (int mx = x / 16; mx <= lastX / 16; mx++) {
+                int at = ROOM_MAP_BASE + (my * ROOM_METATILES_PER_ROW + mx) * 2;
+                CellPatch cell = cells.computeIfAbsent(at, key -> new CellPatch(key, map));
+                cell.solid = true;
+            }
+        }
+    }
+
+    private static void verifySceneSolidity(byte[] map, ScenePositions positions) {
+        Map<Integer, CellPatch> cells = new LinkedHashMap<Integer, CellPatch>();
+        addSolidRectangle(map, cells, positions.sonicX, positions.sonicY, 48, 48);
+        addSolidRectangle(map, cells, positions.leftX, positions.leftY, 24, 48);
+        addSolidRectangle(map, cells, positions.rightX, positions.rightY, 24, 48);
+        for (int at : cells.keySet()) {
+            int id = readU16(map, at) & 0x3FF;
+            if (id < FIRST_CUSTOM_METATILE || id >= FIRST_CUSTOM_METATILE + CUSTOM_METATILE_COUNT
+                    || readU16(map, 0x2000 + id * 2) != SOLID_TERRAIN) {
+                throw new IllegalStateException("Jesus Gil or a side character is not solid");
+            }
         }
     }
 
@@ -622,8 +663,10 @@ public final class SonicHammockGraphics {
         addPanelPlacements(placements, right, positions.rightX, positions.rightY,
                 VRAM_FIRST_TILE + RIGHT_SIDE_STORAGE_TILE);
         verifyPanelPlacements(map, originalMap, placements);
+        verifySceneSolidity(map, positions);
         System.out.println("Sonic scene: all three configured positions, both 24x48 editors,"
-                + " palettes and tilemap references are byte-exact; all 32 footprint metatiles preserved.");
+                + " palettes and tilemap references are byte-exact; all three characters solid;"
+                + " all 32 footprint metatiles preserved.");
     }
 
     private static void verifySideBytes(byte[] expanded, byte[] panel, int destinationTile,
@@ -652,8 +695,8 @@ public final class SonicHammockGraphics {
                     + Math.floorMod(placement.roomTileX, 2);
             int actual = readU16(map, id * 8 + local * 2);
             int originalId = readU16(originalMap, mapOffset) & 0x3FF;
-            if (readU16(map, 0x2000 + id * 2) != readU16(originalMap, 0x2000 + originalId * 2)) {
-                throw new IllegalStateException("panel changed the original terrain/collision behaviour");
+            if (readU16(map, 0x2000 + id * 2) != SOLID_TERRAIN) {
+                throw new IllegalStateException("side character must use solid terrain");
             }
             int originalAttribute = readU16(originalMap, originalId * 8 + local * 2);
             int expected = (originalAttribute & 0x6000)
