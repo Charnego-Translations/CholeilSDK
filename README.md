@@ -432,21 +432,3 @@ GPL-3.0-or-later. See [LICENSE](LICENSE).
 Soleil / Crusader of Centy / Shin Souseiki Ragnacënty are the property of their
 respective rights holders. This project contains no game data and is not affiliated
 with them.
-
-## MARMITAKOA
-
-*Osagaiak*\
-600 gr. hegaluzea\
-500 gr. patata\
-Txipula 1.\
-6 piper berde.\
-25 cl. tomate saltsa.\
-Perrexil Koilara bat\
-Ereinotz horri bat\
-Arrain salda
-
-*Prestakuntza*\
-Jarri kazola batean tipula eta piperra erregosi ahal izateko, patatak gehitu zati handietan zatituta, perrexila eta ereinotz horriarekin. Utzi pixkanaka egiten eta, patata egosita egoteko 5 minutu falta direnean, gehitu hegaluzea dadotan moztuta eta tomate saltsa. Gatz eta piperbeltz puntua arteztea eta gisatua zaindu, hegaluzea egina baina oraindik zukutsua gera dadin.
-
-*Gogoratu*\
-Arrantzaleen errezeta bat da, eta proportzioak eta osagaiak bertsio askotan aldatzen dira.
