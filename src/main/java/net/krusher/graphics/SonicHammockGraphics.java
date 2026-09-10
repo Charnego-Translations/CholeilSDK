@@ -181,6 +181,7 @@ public final class SonicHammockGraphics {
     /** Builds the expanded Sonic block and patches the Playa Anemona map asset. */
     public static void syncScene(String romPath) throws IOException {
         ScenePositions positions = readPositions(DEFAULT_POSITIONS);
+        SonicSideAnimation.ensureEditors();
         syncExpanded(DEFAULT_EDIT, DEFAULT_LEFT_EDIT, DEFAULT_RIGHT_EDIT, DEFAULT_GFX);
         syncSideView(DEFAULT_LEFT_EDIT, DEFAULT_LEFT_VIEW);
         syncSideView(DEFAULT_RIGHT_EDIT, DEFAULT_RIGHT_VIEW);
@@ -224,7 +225,7 @@ public final class SonicHammockGraphics {
                 expanded, TileRenderer.defaultGrayscalePalette(), 16, 1);
         if (gfx.getParent() != null) Files.createDirectories(gfx.getParent());
         TileRenderer.writePng(sdkSheet, gfx.toString());
-        System.out.println("Synced Sonic + hammock and both static side panels into " + gfx);
+        System.out.println("Synced Sonic + hammock and both side panels (frame A) into " + gfx);
     }
 
     private static void copySideTiles(String editPath, byte[] expanded, int destinationTile) throws IOException {
@@ -262,7 +263,8 @@ public final class SonicHammockGraphics {
 
         byte[] left = readSideTiles(leftEditPath);
         byte[] right = readSideTiles(rightEditPath);
-        patchSceneMap(map, left, right, positions);
+        patchSceneMap(map, SonicSideAnimation.placementMask(leftEditPath, left),
+                SonicSideAnimation.placementMask(rightEditPath, right), positions);
 
         boolean sameEditableTiles = currentMap != null;
         for (int i = 0; sameEditableTiles && i < currentMap.length; i++) {
@@ -281,7 +283,7 @@ public final class SonicHammockGraphics {
         if (mapGfx.getParent() != null) Files.createDirectories(mapGfx.getParent());
         TileRenderer.writePng(TileRenderer.renderTileSheet(map,
                 TileRenderer.defaultGrayscalePalette(), 16, 1), mapGfx.toString());
-        System.out.println("Synced the two static 24x48 panels into the Anemone Beach tilemap.");
+        System.out.println("Synced the two 24x48 background panels into the Anemone Beach tilemap.");
     }
 
     static void restoreReservedPlacements(byte[] map, byte[] originalMap) {
@@ -390,7 +392,7 @@ public final class SonicHammockGraphics {
             }
             int storedTile = placement.firstVramTile + placement.panelTile - ROOM_TILE_VRAM_BIAS;
             // Keep the original palette bits. Priority is cleared deliberately
-            // so these static tiles always remain behind Jesus Gil.
+            // so these background tiles always remain behind Jesus Gil.
             cell.attributes[local] = (originalAttribute & 0x6000) | storedTile;
         }
         addSolidRectangle(map, cells, positions.sonicX, positions.sonicY, 48, 48);
@@ -453,6 +455,10 @@ public final class SonicHammockGraphics {
     }
 
     private static byte[] readSideTiles(String path) throws IOException {
+        return SonicSideAnimation.firstFramePanel(path, readBaseSideTiles(path));
+    }
+
+    static byte[] readBaseSideTiles(String path) throws IOException {
         Path edit = Paths.get(path);
         if (!Files.exists(edit)) return new byte[SIDE_TILE_COUNT * TILE_BYTES];
         verifySidePngPalette(path, "side panel");
@@ -658,9 +664,9 @@ public final class SonicHammockGraphics {
         validatePanelReservation(originalMap);
         verifyFootprints(map, originalMap);
         Map<Long, TilePlacement> placements = new LinkedHashMap<Long, TilePlacement>();
-        addPanelPlacements(placements, left, positions.leftX, positions.leftY,
+        addPanelPlacements(placements, SonicSideAnimation.placementMask(DEFAULT_LEFT_EDIT, left), positions.leftX, positions.leftY,
                 VRAM_FIRST_TILE + LEFT_SIDE_STORAGE_TILE);
-        addPanelPlacements(placements, right, positions.rightX, positions.rightY,
+        addPanelPlacements(placements, SonicSideAnimation.placementMask(DEFAULT_RIGHT_EDIT, right), positions.rightX, positions.rightY,
                 VRAM_FIRST_TILE + RIGHT_SIDE_STORAGE_TILE);
         verifyPanelPlacements(map, originalMap, placements);
         verifySceneSolidity(map, positions);
@@ -707,7 +713,7 @@ public final class SonicHammockGraphics {
         }
     }
 
-    private static void verifySidePngPalette(String path, String name) throws IOException {
+    static void verifySidePngPalette(String path, String name) throws IOException {
         if (!Arrays.equals(readIndexedPngPalette(Paths.get(path)), sidePalette())) {
             throw new IllegalStateException(name + " PNG does not contain the exact original background palette");
         }
@@ -794,7 +800,7 @@ public final class SonicHammockGraphics {
         return palette;
     }
 
-    private static int[] sidePalette() {
+    static int[] sidePalette() {
         return TileRenderer.readGenesisPalette(SIDE_CRAM, 0);
     }
 }

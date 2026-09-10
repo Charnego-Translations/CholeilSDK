@@ -65,17 +65,39 @@ EDITAME al orden interno del juego y actualiza `gfx_out/gfx_05ebe8.png`.
 - Los offsets X/Y de los cuatro sprites se modifican desde
   `sonic_scene_positions.txt`; admiten precisión de un píxel.
 
-## Laterales estáticos y huellas (corrección)
+## Laterales: mitad superior animada y mitad inferior fija
 
-Los editables son `special_gfx_out/sonic_lateral_izquierdo_EDITAME.png` y
-`special_gfx_out/sonic_lateral_derecho_EDITAME.png`, **24x48 cada uno**.
-Son tiles del fondo, no sprites ni animaciones. Los archivos `x4_VISTA`
-son ampliaciones y no se insertan.
+Cada lateral sigue ocupando **24x48 píxeles** y sigue siendo fondo, no sprites.
+Sus **24x24 píxeles superiores** (3x3 tiles de 8x8) tienen dos fotogramas.
+Los 24x24 inferiores permanecen fijos.
+
+Editables de la animación, en `special_gfx_out/`:
+
+- `sonic_lateral_izquierdo_arriba_ANIM_EDITAME.png`
+- `sonic_lateral_derecho_arriba_ANIM_EDITAME.png`
+
+Cada PNG mide **48x24**: fotograma A a la izquierda y B a la derecha, cada uno
+de 24x24. Se alternan A -> B -> A, con **8 fotogramas de juego por pose**.
+Las dos muchachas comparten el ritmo, pero sus dibujos se editan por separado.
+Inicialmente A y B son copias del dibujo existente: no se verá movimiento
+hasta que se dibuje una diferencia en B. No se han retocado los dibujos.
+
+La parte inferior se sigue editando en los PNG anteriores:
+`sonic_lateral_izquierdo_EDITAME.png` y `sonic_lateral_derecho_EDITAME.png`,
+de **24x48**. Edita ahí las filas **24 a 47**; la mitad superior que se inserta
+procede ahora del fotograma A del nuevo PNG de animación, no de esas filas
+antiguas. Los archivos `x4_VISTA` son ampliaciones de referencia y no se insertan.
+La vista completa del lateral se actualiza con A y la parte inferior fija.
+
+El modo de inserción normal `CholeilSDK i` integra todo. Si faltan los nuevos
+PNG, los crea duplicando la mitad superior anterior; si ya existen, nunca
+los sobrescribe. No cambies dimensiones ni paletas.
 
 Cada lateral tiene X/Y independientes en `sonic_scene_positions.txt`, siempre
 múltiplos de 8. Las seis coordenadas son relativas a la posición original
 del personaje; mover a Gil no arrastra automáticamente los laterales.
-Un tile completamente vacío deja intacto el fondo original. Los tiles
+Un tile completamente vacío en **ambos fotogramas** deja intacto el fondo original.
+Un tile dibujado solo en B también queda incluido en el mapa. Los tiles
 dibujados se colocan detrás de Gil. Las tres figuras son sólidas: sus zonas
 de colisión se generan a partir de sus respectivas coordenadas.
 
@@ -84,6 +106,8 @@ de la línea 1 de la playa. Mantén el PNG indexado y esa paleta, sin añadir
 colores ni suavizado. El SDK rechaza una paleta diferente o una colocación
 que invada tiles de otra línea de paleta. `sonic_laterales_PALETA.png` es la
 referencia. La paleta del personaje tampoco se modifica.
+
+### Huellas (corrección)
 
 La versión anterior reutilizaba metatiles `0x3E0–0x3EF` (y una primera
 versión, `0x3F1–0x3FC`). **No estaban libres**: la rutina de pisadas de la ROM
@@ -106,7 +130,7 @@ No hay que confundir IDs de metatile (16x16) con índices de tile VRAM (8x8):
 - Mapa LZ: `0x178E7A`, tabla de terreno en `+0x2000`, celdas desde `+0x2C04`.
 - Posición original superior izquierda: tile de mundo `(98,78)`.
 
-El pipeline vuelve a generar los dos paneles y el mapa antes de insertar.
+El pipeline vuelve a generar los dos paneles (con A) y el mapa antes de insertar.
 El movimiento vertical usa los cuatro campos Y reales (`0x2F858`,
 `0x2F860`, `0x2F868`, `0x2F870`); no toca el puntero de animación en `0x2F850`.
 
@@ -124,7 +148,27 @@ Las celdas son copias locales con terreno `0x0003`, el mismo tipo de obstáculo
 no transitable que usan metatiles originales de la playa como `0x7B/0x7C`.
 No se modifica la definición compartida del suelo ni se añaden efectos de
 daño, rotura o pisadas. Fuera de las cajas se conserva el terreno original.
-Los gráficos, las paletas y las animaciones no cambian.
+La colisión no depende del fotograma; las paletas y la animación de Gil no cambian.
+
+### Implementación de los dos fotogramas
+
+`SonicSideAnimation` actualiza únicamente los nueve tiles superiores ya
+reservados de cada lateral: VRAM `0x3E4–0x3EC` y `0x3F6–0x3FE`.
+No necesita tiles VRAM adicionales ni modifica sprites, paletas, posiciones,
+colisiones o metatiles de huellas. Los otros nueve tiles de cada lateral
+permanecen intactos.
+
+El enganche está en ROM `0x006828`, en la llamada de actualización del juego;
+conserva la llamada original a `0x006ABE`, los registros y el `TST` de transición.
+Solo se ejecuta en la playa (`0x1A`), sin transición pendiente, cada ocho
+fotogramas del contador de juego. La pausa usa otro bucle y no ejecuta la
+copia. Al salir de la playa no se escriben estos slots en otras habitaciones.
+
+Código y cuatro imágenes de 288 bytes ocupan 1408 bytes en el relleno original
+`0x15DA3C–0x15DFBB`; los datos comienzan en `0x15DB3C`. Se instala después de
+la intro. El inserter comprueba el enganche y todo el hueco antes de escribir;
+si otra modificación los ha ocupado, falla en vez de pisarla. La ROM
+permanece en 2 MiB. Cada actualización copia 576 bytes con la paleta existente.
 
 ### Comprobar
 
@@ -132,6 +176,7 @@ Después de compilar y ejecutar `CholeilSDK i`:
 
 ```text
 java -cp target/classes net.krusher.graphics.SonicHammockGraphics verify-scene Choleil.md
+java -cp target/classes net.krusher.graphics.SonicSideAnimation verify Choleil.md
 ```
 
 Comprueba los PNG, posiciones, referencias de mapa, paletas, las tres zonas
@@ -141,7 +186,10 @@ reserva, detección de corrupción, migración de ambas versiones anteriores
 y recolocación X/Y sin tocar otros campos del sprite. También comprueba
 que las tres figuras bloqueen el paso, que el suelo exterior quede intacto
 y que moverlas elimine sus colisiones antiguas.
-Suite completa ejecutada con Java 24: **87 pruebas correctas, ninguna omitida**.
+`SonicSideAnimationTest` cubre ambas composiciones, conservación de la mitad
+inferior, tiles visibles solo en B, orden de los cuatro gráficos, dimensiones,
+enganche, reserva ocupada e inserción repetible sin tocar datos ajenos.
+Suite completa ejecutada con Java 24: **97 pruebas correctas, ninguna omitida**.
 
 Prueba realizada en BizHawk 2.11.1 con una copia de la ROM: recarga real de
 la habitación, desplazamiento, pausa/salida y caminata en arena. Se registraron
@@ -157,6 +205,16 @@ las siete atravesaban las figuras. La caminata posterior sigue generando
 huellas (129 llamadas). Las definiciones/atributos de las 32 huellas, sus
 píxeles, los gráficos de las figuras y toda la CRAM permanecen idénticos a
 la versión anterior, antes y después de pausar.
+
+Prueba de animación en BizHawk 2.11.1: una copia de prueba con dibujos A/B
+distinguibles produjo 64 muestras de A y 64 de B en 128 fotogramas, con
+cambios cada ocho. Se comprobaron los 288 bytes de cada mitad superior en
+cada muestra, sin cambiar las mitades inferiores, los gráficos de Gil ni
+la CRAM. Cero cargas de esta animación durante la pausa y en otra habitación;
+reanuda al salir de la pausa y al volver a la playa. Los colores de esa
+prueba no están en los editables ni en la ROM final, cuyo B inicial es igual a A.
+La ROM final supera también las siete aproximaciones de colisión y sigue
+generando huellas (129 llamadas). Validación en emulador, no en consola real.
 
 Un savestate antiguo conserva RAM/VRAM antiguas: para validar hay que
 recargar la habitación, no limitarse a cargar ese estado sobre la ROM nueva.
