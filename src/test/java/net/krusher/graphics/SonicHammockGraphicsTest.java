@@ -11,7 +11,7 @@ class SonicHammockGraphicsTest {
     }
 
     @Test void reservationIsOutsideDynamicFootprints() {
-        assertEquals(0x3D0, SonicHammockGraphics.FIRST_CUSTOM_METATILE);
+        assertEquals(0x3C0, SonicHammockGraphics.FIRST_CUSTOM_METATILE);
         SonicHammockGraphics.validatePanelReservation(new byte[0x6C04]);
     }
 
@@ -88,6 +88,74 @@ class SonicHammockGraphicsTest {
         assertArrayEquals(expected, rom); // idempotent even with negative offsets
     }
 
+    private static byte[] sceneFixture() {
+        byte[] map = new byte[0x6C04];
+        for (int i = 0; i < 4; i++) word(map, 0x27 * 8 + i * 2, 0x2014 + i);
+        for (int at = 0x2C04; at < map.length; at += 2) word(map, at, 0x27);
+        return map;
+    }
+
+    private static int wordAt(byte[] data, int at) {
+        return (data[at] & 255) << 8 | data[at + 1] & 255;
+    }
+
+    private static int terrainAt(byte[] map, int x, int y) {
+        int id = wordAt(map, 0x2C04 + (y / 16 * 64 + x / 16) * 2) & 1023;
+        return wordAt(map, 0x2000 + id * 2);
+    }
+
+    @Test void allThreeRectanglesAreSolidButSurroundingGroundAndGraphicsStayIntact() {
+        byte[] original = sceneFixture();
+        byte[] map = original.clone();
+        byte[] blank = new byte[18 * 32];
+        var pos = new SonicHammockGraphics.ScenePositions(-24, 0, -40, -8, 16, -8);
+        SonicHammockGraphics.patchSceneMap(map, blank, blank, pos);
+        int[][] rectangles = {{760,624,48,48}, {744,616,24,48}, {800,616,24,48}};
+        for (int[] r : rectangles) {
+            for (int y = r[1]; y < r[1] + r[3]; y++) {
+                for (int x = r[0]; x < r[0] + r[2]; x++) {
+                    assertEquals(3, terrainAt(map, x, y));
+                }
+            }
+        }
+        for (int y = 36; y <= 44; y++) for (int x = 44; x <= 54; x++) {
+            boolean solid = false;
+            for (int[] r : rectangles) {
+                solid |= x * 16 < r[0] + r[2] && x * 16 + 16 > r[0]
+                        && y * 16 < r[1] + r[3] && y * 16 + 16 > r[1];
+            }
+            assertEquals(solid ? 3 : 0, terrainAt(map, x * 16, y * 16));
+            int id = wordAt(map, 0x2C04 + (y * 64 + x) * 2) & 1023;
+            for (int q = 0; q < 4; q++) assertEquals(0x2014 + q, wordAt(map, id * 8 + q * 2));
+        }
+        SonicHammockGraphics.verifyFootprints(map, original);
+    }
+
+    @Test void movingTheSceneRemovesOldCollisionAndRebuildsAtAllThreeNewPositions() {
+        byte[] original = sceneFixture();
+        byte[] map = original.clone();
+        byte[] blank = new byte[18 * 32];
+        SonicHammockGraphics.patchSceneMap(map, blank, blank,
+                new SonicHammockGraphics.ScenePositions(-24, 0, -40, -8, 16, -8));
+        SonicHammockGraphics.restoreReservedPlacements(map, original);
+        assertArrayEquals(original, map);
+        SonicHammockGraphics.patchSceneMap(map, blank, blank,
+                new SonicHammockGraphics.ScenePositions(-23, 129, -240, 120, 144, 120));
+        assertEquals(0, terrainAt(map, 784, 648));
+        assertEquals(3, terrainAt(map, 784, 768));
+        assertEquals(3, terrainAt(map, 552, 752));
+        assertEquals(3, terrainAt(map, 936, 752));
+        SonicHammockGraphics.restoreReservedPlacements(map, original);
+        assertArrayEquals(original, map);
+    }
+
+    @Test void outOfRoomSolidsAreRejected() {
+        byte[] blank = new byte[18 * 32];
+        assertThrows(IllegalStateException.class,
+                () -> SonicHammockGraphics.patchSceneMap(sceneFixture(), blank, blank,
+                        new SonicHammockGraphics.ScenePositions(-800,0,-40,-8,16,-8)));
+    }
+
     // Also runnable with javac/java and the cached JUnit jars, without Maven.
     public static void main(String[] args) {
         var test = new SonicHammockGraphicsTest();
@@ -96,6 +164,9 @@ class SonicHammockGraphicsTest {
         test.detectsEveryFootprintDefinitionBeingOverwritten();
         test.migratesBothBrokenLayoutsAndCleansPreviousSafePlacement();
         test.xyOffsetsOnlyChangeTheEightSpriteCoordinates();
-        System.out.println("SonicHammockGraphics: 5 regression tests passed.");
+        test.allThreeRectanglesAreSolidButSurroundingGroundAndGraphicsStayIntact();
+        test.movingTheSceneRemovesOldCollisionAndRebuildsAtAllThreeNewPositions();
+        test.outOfRoomSolidsAreRejected();
+        System.out.println("SonicHammockGraphics: 8 regression tests passed.");
     }
 }
