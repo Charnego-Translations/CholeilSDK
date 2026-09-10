@@ -188,6 +188,10 @@ public class CholeilSDK
             IntroInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.INTRO, DefaultPaths.ROM, DefaultPaths.FREE_SPACE, DefaultPaths.OUT_ROM );
 
             System.out.println();
+            System.out.println("=== inserting two-frame side-character animation ===");
+            net.krusher.graphics.SonicSideAnimation.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
+
+            System.out.println();
             System.out.println("=== writing the IPS patch ===");
             IpsWriter.run( DefaultPaths.ROM, DefaultPaths.OUT_ROM, DefaultPaths.PATCH );
         }
