@@ -200,6 +200,10 @@ public class CholeilSDK
             net.krusher.graphics.SonicScenePresence.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
 
             System.out.println();
+            System.out.println("=== matching SonicGil shadow to the configured position ===");
+            net.krusher.graphics.SonicShadowPosition.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
+
+            System.out.println();
             System.out.println("=== writing the IPS patch ===");
             IpsWriter.run( DefaultPaths.ROM, DefaultPaths.OUT_ROM, DefaultPaths.PATCH );
         }
