@@ -134,6 +134,27 @@ El pipeline vuelve a generar los dos paneles (con A) y el mapa antes de insertar
 El movimiento vertical usa los cuatro campos Y reales (`0x2F858`,
 `0x2F860`, `0x2F868`, `0x2F870`); no toca el puntero de animación en `0x2F850`.
 
+### Sombra de Gil
+
+La sombra sigue automáticamente `sonic_x` y `sonic_y`, con el mismo
+desplazamiento que Gil. No necesita coordenadas adicionales ni modifica las
+posiciones de los laterales. Regenerar la ROM completa después de recolocarlo.
+
+El gráfico y la sombra se dibujan por separado: desplazar los cuatro trozos
+del sprite no mueve la sombra. `SonicShadowPosition` engancha únicamente la
+llamada a la sombra de NPC en `0x2F01E`; comprueba la playa resuelta `0x1A`,
+el tipo `0x16` y la variante `1`. Para Gil suma la posición configurada a
+los offsets originales `(-8,+4)` y llama una vez a la rutina original
+`0x1D0E6`. Conserva sus comprobaciones de terreno/visibilidad, los registros
+y los flags. No cambia la rutina compartida, las sombras de otros NPC,
+el punto de conversación ni el ancla de la entidad.
+
+Ocupa 80 bytes en el relleno `0x1EBBEC–0x1EBC3B`, justo después del parche
+de desaparición. Se instala al final de `CholeilSDK i`, después de la intro,
+con comprobaciones del enganche y del hueco para no pisar datos ajenos.
+No reserva RAM/VRAM ni altera PNG, paletas, mapa, huellas o animaciones.
+Si la historia retira a Gil, tampoco se dibuja su sombra.
+
 ### Colisión de Gil y las muchachas
 
 Gil tiene una caja de 48x48 y cada muchacha una de 24x48, ancladas en las
@@ -168,6 +189,8 @@ rutina original de proximidad/orientación `0x2E5F2`. Después restaura las
 coordenadas reales, **antes de dibujar el personaje o su sombra**. El registro
 de Gil en el mapa (`+0x28E8`) sigue en `(808,644)`, y sus offsets de sprite no
 cambian. Los dos paneles, la paleta, los fotogramas y las huellas tampoco.
+Esta restauración afecta solo a la conversación: el desplazamiento de la
+sombra se aplica por separado en `SonicShadowPosition`, al dibujarla.
 
 El enganche en `0x02EF84` conserva la llamada original y el `BTST` posterior.
 Solo usa la posición nueva en la playa (`0x1A`), para el tipo de NPC `0x16`
@@ -243,6 +266,7 @@ java -cp target/classes net.krusher.graphics.SonicHammockGraphics verify-scene C
 java -cp target/classes net.krusher.graphics.SonicSideAnimation verify Choleil.md
 java -cp target/classes net.krusher.graphics.SonicTalkDetection verify Choleil.md
 java -cp target/classes net.krusher.graphics.SonicScenePresence Choleil.md
+java -cp target/classes net.krusher.graphics.SonicShadowPosition verify Choleil.md
 ```
 
 Comprueba los PNG, posiciones, referencias de mapa, paletas, las tres zonas
@@ -261,7 +285,10 @@ la reserva ocupada y que no se toquen mapa, gráficos ni código de animación.
 `SonicScenePresenceTest` comprueba la restauración de dibujo y colisión en
 las tres posiciones, recolocación, conservación de cambios ajenos y huellas,
 límites de la tabla, filtros de fase, ocupación del hueco e inserción repetible.
-Suite completa ejecutada con Java 24: **111 pruebas correctas, ninguna omitida**.
+`SonicShadowPositionTest` cubre ambos ejes, posiciones positivas/negativas,
+independencia de los laterales, filtros de NPC/playa, conservación de la
+llamada original, registros/flags y ocupación e inserción repetible del parche.
+Suite completa ejecutada con Java 24: **116 pruebas correctas, ninguna omitida**.
 Las pruebas de orden usan nueve tiles distintos, comparan ambos fotogramas
 con sus coordenadas en el PNG y en el mapa, y comprueban que un editor nuevo
 copie la mitad superior real sin transponerla ni reescribir dibujos existentes.
@@ -278,6 +305,17 @@ sin usar el decodificador de la animación. Se verifican también sus coordenada
 de mapa, los pies estáticos, el banco de Gil y la CRAM. Cero actualizaciones
 durante la pausa y fuera de la playa. Ambos fotogramas revisados en captura;
 no probado en consola física.
+
+Prueba de sombra en BizHawk 2.11.1: con `sonic_x=-24`, `sonic_y=0`, su
+ancla de dibujo queda en `(776,648)`, 24 píxeles a la izquierda de la posición
+sin corregir `(800,648)`. Sigue en su sitio después de pausar/salir; el
+jugador queda bloqueado en Y=672 y puede hablar con Gil. Al cargar la playa
+tardía no se dibuja ninguna sombra huérfana. Se comprueba la restauración de
+D0–D3 en cada llamada. Comparada con la ROM anterior, solo cambian 84 bytes
+dentro del checksum, enganche y reserva de sombra: mapa, PNG, bancos gráficos,
+paletas, animaciones y código de conversación quedan intactos. Comprobación
+con la posición actual en emulador; otros offsets cubiertos por pruebas
+unitarias, no por un recorrido completo del juego ni por consola física.
 
 Prueba de desaparición en BizHawk 2.11.1 con una copia de la ROM y recargas
 reales de la playa: fase inicial (`D7=0`, `104=0`), fase sin Sonic (`D7=1`,
