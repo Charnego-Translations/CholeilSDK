@@ -186,6 +186,13 @@ No necesita tiles VRAM adicionales ni modifica sprites, paletas, posiciones,
 colisiones o metatiles de huellas. Los otros nueve tiles de cada lateral
 permanecen intactos.
 
+Los fotogramas A/B se convierten **por filas**: primera fila de tres tiles,
+segunda y tercera. Aunque se usa la utilidad de hojas de sprites para
+separar las dos imágenes de 24×24, `rowMajor` debe ser `true`: estos gráficos
+son fondo de mapa. Leerlos por columnas transpone la cuadrícula 3×3 y mezcla
+cabeza, brazos y torso. La inicialización y las vistas usan el mismo orden.
+La corrección no cambia los PNG editables ni su paleta; basta regenerar la ROM.
+
 El enganche está en ROM `0x006828`, en la llamada de actualización del juego;
 conserva la llamada original a `0x006ABE`, los registros y el `TST` de transición.
 Solo se ejecuta en la playa (`0x1A`), sin transición pendiente, cada ocho
@@ -254,7 +261,23 @@ la reserva ocupada y que no se toquen mapa, gráficos ni código de animación.
 `SonicScenePresenceTest` comprueba la restauración de dibujo y colisión en
 las tres posiciones, recolocación, conservación de cambios ajenos y huellas,
 límites de la tabla, filtros de fase, ocupación del hueco e inserción repetible.
-Suite completa ejecutada con Java 24: **108 pruebas correctas, ninguna omitida**.
+Suite completa ejecutada con Java 24: **111 pruebas correctas, ninguna omitida**.
+Las pruebas de orden usan nueve tiles distintos, comparan ambos fotogramas
+con sus coordenadas en el PNG y en el mapa, y comprueban que un editor nuevo
+copie la mitad superior real sin transponerla ni reescribir dibujos existentes.
+Las dos pruebas PNG/mapa reproducían el fallo con el decodificador anterior;
+un simple roundtrip que aplica la misma transposición al leer y escribir no
+detecta este error.
+
+Comprobación de la corrección de orden en BizHawk 2.11.1 con los dibujos
+de Scorpion: 64 muestras al cargar, 64 después de pausar/salir y 64 después
+de salir de la playa y volver. En cada etapa hay 32 muestras de A y 32 de B,
+con cambios cada ocho fotogramas. Los bytes VRAM de las dos mitades superiores
+coinciden con referencias extraídas directamente de los píxeles de cada PNG,
+sin usar el decodificador de la animación. Se verifican también sus coordenadas
+de mapa, los pies estáticos, el banco de Gil y la CRAM. Cero actualizaciones
+durante la pausa y fuera de la playa. Ambos fotogramas revisados en captura;
+no probado en consola física.
 
 Prueba de desaparición en BizHawk 2.11.1 con una copia de la ROM y recargas
 reales de la playa: fase inicial (`D7=0`, `104=0`), fase sin Sonic (`D7=1`,

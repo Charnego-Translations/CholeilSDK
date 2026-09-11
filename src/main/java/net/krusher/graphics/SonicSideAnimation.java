@@ -46,7 +46,7 @@ public final class SonicSideAnimation {
         ensureEditor(SonicHammockGraphics.DEFAULT_RIGHT_EDIT, RIGHT_EDIT, RIGHT_VIEW);
     }
 
-    private static void ensureEditor(String base, String edit, String view) throws IOException {
+    static void ensureEditor(String base, String edit, String view) throws IOException {
         Path file = Path.of(edit);
         if (!Files.exists(file)) {
             byte[] panel = SonicHammockGraphics.readBaseSideTiles(base);
@@ -55,12 +55,12 @@ public final class SonicSideAnimation {
             System.arraycopy(panel, 0, frames, FRAME_BYTES, FRAME_BYTES);
             if (file.getParent() != null) Files.createDirectories(file.getParent());
             TileRenderer.writePng(TileRenderer.renderSpriteSheet(frames,
-                    SonicHammockGraphics.sidePalette(), 3, 3, 2, 1, false), edit);
+                    SonicHammockGraphics.sidePalette(), 3, 3, 2, 1, true), edit);
             System.out.println("Created " + edit + " (two identical 24x24 starting frames).");
         }
         byte[] frames = readFrames(edit);
         TileRenderer.writePng(TileRenderer.renderSpriteSheet(frames,
-                SonicHammockGraphics.sidePalette(), 3, 3, 2, 4, false), view);
+                SonicHammockGraphics.sidePalette(), 3, 3, 2, 4, true), view);
     }
 
     static byte[] readFrames(String path) throws IOException {
@@ -69,8 +69,11 @@ public final class SonicSideAnimation {
         if (image.getWidth() != 48 || image.getHeight() != 24) {
             throw new IllegalStateException(path + " must stay 48x24 (two 24x24 frames)");
         }
+        // These are background panels, not hardware sprites. The map addresses
+        // tiles as y * 3 + x, and their first nine contiguous tiles are the top
+        // three rows. Column-major decoding transposes each 3x3 animation frame.
         return TileRenderer.decodeSpriteSheet(image, SonicHammockGraphics.sidePalette(),
-                3, 3, 2, 1, 18, false);
+                3, 3, 2, 1, 18, true);
     }
 
     private static String editorFor(String basePath) {
