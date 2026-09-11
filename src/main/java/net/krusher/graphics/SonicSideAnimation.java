@@ -181,6 +181,10 @@ public final class SonicSideAnimation {
         c.word(0x46FC); c.word(0x2700);     // Exclude interrupts during the VDP transaction.
         c.word(0x0C78); c.word(0x001A); c.word(0xFE7A); // CMP.W #beach,current room
         c.branch(0x6600, "done");
+        // FE7A retains the entrance ID; FE76 is the resolved story variant.
+        // Late beach 0x6D shares the map but no longer loads Sonic's graphics.
+        c.word(0x0C78); c.word(0x001A); c.word(0xFE76);
+        c.branch(0x6600, "done");
         c.word(0x4A78); c.word(0xA4D6);    // Skip room transitions.
         c.branch(0x6600, "done");
         c.word(0x3038); c.word(0xB55E);    // Gameplay frame counter (pause never calls this hook).
@@ -221,7 +225,7 @@ public final class SonicSideAnimation {
     private static byte[] hex(String text) { return java.util.HexFormat.of().parseHex(text); }
 
     /** Tiny label/fixup writer, keeping the 68000 patch auditable and build-tool independent. */
-    private static final class Code {
+    static final class Code {
         final ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         final Map<String, Integer> labels = new LinkedHashMap<>();
         final ArrayList<Map.Entry<Integer, String>> branches = new ArrayList<>();
