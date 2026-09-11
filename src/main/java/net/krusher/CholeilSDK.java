@@ -192,6 +192,10 @@ public class CholeilSDK
             net.krusher.graphics.SonicSideAnimation.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
 
             System.out.println();
+            System.out.println("=== placing SonicGil conversation detection ===");
+            net.krusher.graphics.SonicTalkDetection.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
+
+            System.out.println();
             System.out.println("=== writing the IPS patch ===");
             IpsWriter.run( DefaultPaths.ROM, DefaultPaths.OUT_ROM, DefaultPaths.PATCH );
         }

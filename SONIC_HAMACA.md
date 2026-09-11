@@ -150,6 +150,34 @@ No se modifica la definición compartida del suelo ni se añaden efectos de
 daño, rotura o pisadas. Fuera de las cajas se conserva el terreno original.
 La colisión no depende del fotograma; las paletas y la animación de Gil no cambian.
 
+### Hablar con Gil desde delante de la zona sólida
+
+La detección original para hablar quedaba dentro del obstáculo. Ahora sigue
+la X de Gil y queda en la última fila de metatiles de su caja sólida, de modo
+que se puede hablar mirando hacia arriba desde el suelo accesible de delante.
+No hace falta atravesar la figura. Se conserva el diálogo original y el botón A.
+
+Esto se calcula automáticamente desde `sonic_x`/`sonic_y`; no hay otro par
+de coordenadas que mantener a mano. Con la configuración actual, el ancla
+de interacción es `(784,656)` y el jugador puede acercarse hasta Y=672.
+La detección conserva su tamaño original de 17x18; el motor también tiene
+en cuenta la caja del jugador y hacia dónde mira.
+
+`SonicTalkDetection` sustituye temporalmente las coordenadas que recibe la
+rutina original de proximidad/orientación `0x2E5F2`. Después restaura las
+coordenadas reales, **antes de dibujar el personaje o su sombra**. El registro
+de Gil en el mapa (`+0x28E8`) sigue en `(808,644)`, y sus offsets de sprite no
+cambian. Los dos paneles, la paleta, los fotogramas y las huellas tampoco.
+
+El enganche en `0x02EF84` conserva la llamada original y el `BTST` posterior.
+Solo usa la posición nueva en la playa (`0x1A`), para el tipo de NPC `0x16`
+y variante `1`; los demás siguen recibiendo sus coordenadas originales.
+Ocupa 64 bytes en `0x15DFBC–0x15DFFB`, justo después de la reserva de animación,
+sin solaparla. Comprueba tanto el enganche como el relleno antes de escribir.
+
+La inserción completa `CholeilSDK i` instala también esta detección, después
+de la intro y de la animación. Regenera la ROM si cambias las coordenadas de Gil.
+
 ### Implementación de los dos fotogramas
 
 `SonicSideAnimation` actualiza únicamente los nueve tiles superiores ya
@@ -177,6 +205,7 @@ Después de compilar y ejecutar `CholeilSDK i`:
 ```text
 java -cp target/classes net.krusher.graphics.SonicHammockGraphics verify-scene Choleil.md
 java -cp target/classes net.krusher.graphics.SonicSideAnimation verify Choleil.md
+java -cp target/classes net.krusher.graphics.SonicTalkDetection verify Choleil.md
 ```
 
 Comprueba los PNG, posiciones, referencias de mapa, paletas, las tres zonas
@@ -189,7 +218,18 @@ y que moverlas elimine sus colisiones antiguas.
 `SonicSideAnimationTest` cubre ambas composiciones, conservación de la mitad
 inferior, tiles visibles solo en B, orden de los cuatro gráficos, dimensiones,
 enganche, reserva ocupada e inserción repetible sin tocar datos ajenos.
-Suite completa ejecutada con Java 24: **97 pruebas correctas, ninguna omitida**.
+`SonicTalkDetectionTest` comprueba la posición accesible, la restauración de
+coordenadas, la conservación del código original, los filtros de NPC/playa,
+la reserva ocupada y que no se toquen mapa, gráficos ni código de animación.
+Suite completa ejecutada con Java 24: **101 pruebas correctas, ninguna omitida**.
+
+Prueba de conversación en BizHawk 2.11.1, recargando desde la ROM: A abre el
+diálogo de Gil desde X=768, 784 y 792, con el jugador detenido por la colisión
+en Y=672. También funciona después de pausar/salir. No se activa desde lejos
+ni mirando en sentido contrario. La captura en reposo coincide píxel a píxel
+con la anterior, incluida la sombra. Las siete pruebas de solidez siguen
+pasando; la caminata produce 129 llamadas de huellas y conserva sus
+definiciones, terreno, gráficos y la paleta. No probado en consola física.
 
 Prueba realizada en BizHawk 2.11.1 con una copia de la ROM: recarga real de
 la habitación, desplazamiento, pausa/salida y caminata en arena. Se registraron

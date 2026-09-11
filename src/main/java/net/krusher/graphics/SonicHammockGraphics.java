@@ -475,7 +475,7 @@ public final class SonicHammockGraphics {
         return true;
     }
 
-    private static ScenePositions readPositions(String path) throws IOException {
+    static ScenePositions readPositions(String path) throws IOException {
         Map<String, Integer> values = new LinkedHashMap<String, Integer>();
         values.put("sonic_x", -24);
         values.put("sonic_y", 0);
