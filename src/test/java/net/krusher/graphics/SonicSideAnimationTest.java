@@ -74,8 +74,84 @@ class SonicSideAnimationTest {
         byte[] frames = pair(0x12, 0x45);
         String file = dir.resolve("frames.png").toString();
         TileRenderer.writePng(TileRenderer.renderSpriteSheet(frames,
-                SonicHammockGraphics.sidePalette(), 3, 3, 2, 1, false), file);
+                SonicHammockGraphics.sidePalette(), 3, 3, 2, 1, true), file);
         assertArrayEquals(frames, SonicSideAnimation.readFrames(file));
+    }
+
+    private static Bitmap asymmetricFrames() {
+        Bitmap image = Bitmap.indexed(48, 24, SonicHammockGraphics.sidePalette());
+        // Different colours in all nine tiles; A and B differ. Avoid the duplicate
+        // palette entries 0/3. Uniform or diagonal-symmetric tiles hide transposes.
+        int[] colors = {1, 2, 4, 5, 6, 7, 8, 9, 10};
+        for (int y = 0; y < 24; y++) for (int x = 0; x < 48; x++) {
+            int tile = y / 8 * 3 + (x % 24) / 8;
+            image.setIndex(x, y, colors[(tile + (x / 24) * 4) % colors.length]);
+        }
+        return image;
+    }
+
+    @Test void pngFramesComposeIntoTheBackgroundWithoutTransposingTiles(@TempDir Path dir) throws Exception {
+        Bitmap source = asymmetricFrames();
+        String file = dir.resolve("frames.png").toString();
+        TileRenderer.writePng(source, file);
+        byte[] frames = SonicSideAnimation.readFrames(file);
+        for (int frame = 0; frame < 2; frame++) {
+            byte[] panel = SonicSideAnimation.composePanel(pair(0, 0x55), frames, frame);
+            // Background/map tiles are row-major, NOT the hardware sprite order.
+            Bitmap actual = TileRenderer.renderTileSheet(panel, SonicHammockGraphics.sidePalette(), 3, 1);
+            for (int y = 0; y < 24; y++) for (int x = 0; x < 24; x++) {
+                assertEquals(source.getRgb(frame * 24 + x, y), actual.getRgb(x, y),
+                        "frame=" + frame + " x=" + x + " y=" + y);
+            }
+            assertArrayEquals(pair(0, 0x55), SonicSideAnimation.composePanel(panel, pair(0, 0), 0));
+        }
+    }
+
+    @Test void mapReferencesKeepEveryPngTileAtItsOwnWorldCoordinateInBothFrames(@TempDir Path dir) throws Exception {
+        Bitmap source = asymmetricFrames();
+        String file = dir.resolve("frames.png").toString();
+        TileRenderer.writePng(source, file);
+        byte[] frames = SonicSideAnimation.readFrames(file);
+        byte[] map = new byte[0x6C04];
+        for (int q = 0; q < 4; q++) word(map, 0x27 * 8 + q * 2, 0x2014 + q);
+        for (int at = 0x2C04; at < map.length; at += 2) word(map, at, 0x27);
+        SonicHammockGraphics.patchSceneMap(map, SonicSideAnimation.unionMask(pair(0, 0), frames),
+                pair(0, 0), new SonicHammockGraphics.ScenePositions(-24, 0, -40, -8, 16, -8));
+        int[] palette = SonicHammockGraphics.sidePalette();
+        for (int frame = 0; frame < 2; frame++) for (int ty = 0; ty < 3; ty++) for (int tx = 0; tx < 3; tx++) {
+            int wx = 93 + tx, wy = 77 + ty; // Configured top-left of left panel.
+            int id = wordAt(map, 0x2C04 + (wy / 2 * 64 + wx / 2) * 2) & 1023;
+            int attribute = wordAt(map, id * 8 + (wy % 2 * 2 + wx % 2) * 2);
+            int tile = (attribute & 0x7FF) + 0x100 - 0x3E4;
+            int color = (frames[frame * FRAME + tile * 32] & 255) >>> 4;
+            assertEquals(source.getRgb(frame * 24 + tx * 8, ty * 8), palette[color],
+                    "world tile=" + wx + "," + wy + " frame=" + frame);
+        }
+    }
+
+    @Test void initializingEditorCopiesTheActualTopHalfAndNeverRewritesExistingArt(@TempDir Path dir) throws Exception {
+        Bitmap source = asymmetricFrames();
+        Bitmap panel = Bitmap.indexed(24, 48, SonicHammockGraphics.sidePalette());
+        for (int y = 0; y < 48; y++) for (int x = 0; x < 24; x++) {
+            int rgb = source.getRgb(x + (y >= 24 ? 24 : 0), y % 24);
+            int[] palette = SonicHammockGraphics.sidePalette();
+            for (int i = 0; i < palette.length; i++) if (palette[i] == rgb) panel.setIndex(x, y, i);
+        }
+        String base = dir.resolve("base.png").toString();
+        String edit = dir.resolve("edit.png").toString();
+        String view = dir.resolve("view.png").toString();
+        TileRenderer.writePng(panel, base);
+        SonicSideAnimation.ensureEditor(base, edit, view);
+        Bitmap created = TileRenderer.readPng(edit);
+        Bitmap preview = TileRenderer.readPng(view);
+        for (int y = 0; y < 24; y++) for (int x = 0; x < 48; x++) {
+            assertEquals(panel.getRgb(x % 24, y), created.getRgb(x, y));
+            assertEquals(created.getRgb(x, y), preview.getRgb(x * 4, y * 4));
+        }
+        TileRenderer.writePng(source, edit);
+        byte[] artistEdit = java.nio.file.Files.readAllBytes(Path.of(edit));
+        SonicSideAnimation.ensureEditor(base, edit, view);
+        assertArrayEquals(artistEdit, java.nio.file.Files.readAllBytes(Path.of(edit)));
     }
 
     @Test void editablePngRejectsChangedPaletteAndSize(@TempDir Path dir) throws Exception {
@@ -83,10 +159,10 @@ class SonicSideAnimationTest {
         int[] palette = SonicHammockGraphics.sidePalette();
         palette[5] ^= 1;
         TileRenderer.writePng(TileRenderer.renderSpriteSheet(pair(0x12, 0x45),
-                palette, 3, 3, 2, 1, false), file);
+                palette, 3, 3, 2, 1, true), file);
         assertThrows(IllegalStateException.class, () -> SonicSideAnimation.readFrames(file));
         TileRenderer.writePng(TileRenderer.renderSpriteSheet(new byte[FRAME],
-                SonicHammockGraphics.sidePalette(), 3, 3, 1, 1, false), file);
+                SonicHammockGraphics.sidePalette(), 3, 3, 1, 1, true), file);
         assertThrows(IllegalStateException.class, () -> SonicSideAnimation.readFrames(file));
     }
 
