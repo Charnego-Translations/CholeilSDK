@@ -196,6 +196,10 @@ public class CholeilSDK
             net.krusher.graphics.SonicTalkDetection.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
 
             System.out.println();
+            System.out.println("=== matching side panels to SonicGil story presence ===");
+            net.krusher.graphics.SonicScenePresence.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
+
+            System.out.println();
             System.out.println("=== writing the IPS patch ===");
             IpsWriter.run( DefaultPaths.ROM, DefaultPaths.OUT_ROM, DefaultPaths.PATCH );
         }

@@ -198,6 +198,35 @@ la intro. El inserter comprueba el enganche y todo el hueco antes de escribir;
 si otra modificación los ha ocupado, falla en vez de pisarla. La ROM
 permanece en 2 MiB. Cada actualización copia 576 bytes con la paleta existente.
 
+### Desaparición al avanzar la historia
+
+Las muchachas y las tres zonas sólidas siguen la misma fase del juego que
+SonicGil. Cuando él deja de aparecer, se restaura el suelo original bajo
+las tres figuras: no quedan dibujos ni obstáculos invisibles. No hay que
+editar otros PNG, cambiar la paleta ni configurar un segundo juego de posiciones.
+
+La rutina original `0x5F06`, con la tabla `0x18660`, resuelve la playa de
+entrada `0x1A` como habitación `0x6D` cuando el flag `0xD7` está activo y
+`0x104` no lo está. Ambas variantes comparten el mapa `0x22`, pero `0x6D`
+carga la lista de entidades `0x29`, sin Sonic. `0xFE7A` conserva `0x1A`;
+hay que consultar la variante resuelta en `0xFE76`. No se modifica esta
+condición ni se fuerza la aparición o desaparición del personaje.
+
+`SonicScenePresence` engancha la llamada `0x6750`, conserva la ejecución
+original de `0x186EC`, registros y flags, y actúa antes de dibujar el mapa.
+Solo en `0x6D` devuelve las celdas usadas por los metatiles propios
+`0x3C0–0x3DF` a sus palabras de mapa originales. Esto recupera el dibujo
+del suelo, sus atributos y su colisión, también debajo de Gil. La tabla se
+reconstruye al compilar según las posiciones actuales de las tres figuras.
+No toca las huellas `0x3E0–0x3FF` ni las celdas ajenas a la escena.
+
+El código y la tabla ocupan 288 bytes del relleno original `0xFF` en
+`0x1EBACC–0x1EBBEB`. Se comprueba que el hueco y el enganche estén libres;
+una ocupación ajena hace fallar el inserter sin pisarla. No se reserva RAM
+ni VRAM. La animación de los laterales comprueba también `0xFE76 == 0x1A`,
+para no escribir gráficos en los slots que reutiliza la playa tardía.
+Al recargar una fase donde sí está Gil se carga normalmente la escena completa.
+
 ### Comprobar
 
 Después de compilar y ejecutar `CholeilSDK i`:
@@ -206,6 +235,7 @@ Después de compilar y ejecutar `CholeilSDK i`:
 java -cp target/classes net.krusher.graphics.SonicHammockGraphics verify-scene Choleil.md
 java -cp target/classes net.krusher.graphics.SonicSideAnimation verify Choleil.md
 java -cp target/classes net.krusher.graphics.SonicTalkDetection verify Choleil.md
+java -cp target/classes net.krusher.graphics.SonicScenePresence Choleil.md
 ```
 
 Comprueba los PNG, posiciones, referencias de mapa, paletas, las tres zonas
@@ -221,7 +251,23 @@ enganche, reserva ocupada e inserción repetible sin tocar datos ajenos.
 `SonicTalkDetectionTest` comprueba la posición accesible, la restauración de
 coordenadas, la conservación del código original, los filtros de NPC/playa,
 la reserva ocupada y que no se toquen mapa, gráficos ni código de animación.
-Suite completa ejecutada con Java 24: **101 pruebas correctas, ninguna omitida**.
+`SonicScenePresenceTest` comprueba la restauración de dibujo y colisión en
+las tres posiciones, recolocación, conservación de cambios ajenos y huellas,
+límites de la tabla, filtros de fase, ocupación del hueco e inserción repetible.
+Suite completa ejecutada con Java 24: **108 pruebas correctas, ninguna omitida**.
+
+Prueba de desaparición en BizHawk 2.11.1 con una copia de la ROM y recargas
+reales de la playa: fase inicial (`D7=0`, `104=0`), fase sin Sonic (`D7=1`,
+`104=0`) y control de la condición (`D7=1`, `104=1`). El propio juego resuelve
+respectivamente `0x1A`, `0x6D` y `0x1A`; no se borra el NPC artificialmente.
+En `0x6D` se restauran las 22 celdas de la configuración actual, comparadas
+byte a byte con el mapa original; desaparecen ambos laterales y las tres
+aproximaciones desde abajo atraviesan sus antiguas zonas sólidas. Cero cargas
+de animación lateral, también después de pausar/salir. En las otras dos fases
+siguen presentes y sólidos los tres personajes, la animación se ejecuta y
+se puede hablar con Gil. Las 32 definiciones y atributos de huellas no cambian;
+la paleta y el banco gráfico completo de la escena inicial coinciden con la
+ROM anterior. No se ha recorrido una partida completa ni probado en consola.
 
 Prueba de conversación en BizHawk 2.11.1, recargando desde la ROM: A abre el
 diálogo de Gil desde X=768, 784 y 792, con el jugador detenido por la colisión
