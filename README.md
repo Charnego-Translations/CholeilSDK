@@ -64,6 +64,8 @@ names in `DefaultPaths` when run without any.
 | `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
 | `pause_gfx_out/` | Friendly SAVE/TAKE OFF pause-menu icons (see `MENU_PAUSA.md`). |
 | `apple_gfx_out/` | Friendly editors for the normal 16x16 apple and the two-frame 24x24 golden apple (see `MANZANAS.md`). |
+| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`), the ending “Fin.” (`FIN.md`), and Corona’s sword swing (`ESPADA.md`). |
+| `sonic_scene_positions.txt` | X/Y pixel offset for Jesus Gil in the hammock scene. |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `charnego_introFinal.md` | The Charnego Translations intro, a standalone Mega Drive ROM. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
@@ -71,7 +73,7 @@ names in `DefaultPaths` when run without any.
 | `free_space.txt` | Reclaimable regions, rescanned on every build. |
 | `pointers.txt`, `credits_pointers.txt` | Where things were found; regenerated, not hand-edited. |
 | `Choleil.md` | The patched ROM. Gitignored — it is >99% original game data. |
-| `Choleil.ips` | The patch. **This is what you distribute.** |
+| `Choleil.ips` | The patch. **This is what you distribute.** Gitignored — rebuild it with `choleil i`. |
 
 Deleting an extracted PNG leaves that graphics block untouched on the next build.
 The same applies to `font.png`.

@@ -168,23 +168,20 @@ déjame en paz, payo.
 
 ==== room=1 npc=0 str=17 textAddr=0x1c083c ptrFieldAddr=0x1c049a ====
 Armadillo: Soy un tocho, me
-puedes pegar patás pa usarme
-de tablón y darle a los
-interrustores.
+puedes usarme de tablón y 
+darle a los interrustores.
 
 
 ==== room=1 npc=0 str=18 textAddr=0x1c0890 ptrFieldAddr=0x1c049c ====
 Murciélago: Estoy nesesitao
 de cariño asín que te
 protejeré cariñosamente.
-un ratito.
 
 
 ==== room=1 npc=0 str=19 textAddr=0x1c08ce ptrFieldAddr=0x1c049e ====
 Huevo: ¡Estoy trikinóssico!
 Exploto como un trikitrake
-y me llevo por delante al
-más pintao
+y me llevo po delante a tos.
 
 
 ==== room=1 npc=0 str=20 textAddr=0x1c091e ptrFieldAddr=0x1c04a0 ====
@@ -996,10 +993,10 @@ en Somalia.
 
 
 ==== room=5 npc=0 str=18 textAddr=0x1c31f8 ptrFieldAddr=0x1c2eca ====
-¡Qué pasa, tronco! Los de
-SEGA ponen al Sonic hasta en
-el colacao. A saber qué
-cojones hago aquí.
+¡Fascinerosoooo! ¡Sociataaa!
+¡Al negro le corto el
+cuello! ¡Me cago en la puta
+madre que parió al negro!
 
 
 ==== room=5 npc=0 str=19 textAddr=0x1c3238 ptrFieldAddr=0x1c2ecc ====
@@ -4572,8 +4569,8 @@ cara.
 DODO: ¡Anda, hay un payo por
 aquí! No me puedo mover
 porque el suelo este es más
-flojo que un muelle de guita
-y me voy a quemar el culo.
+endeble quel puchero de una
+gitana y me quemo el culo.
 No me gustan los payos, pero
 tú pareces un tío guay,
 aunque macho, vaya cabezón
@@ -5518,7 +5515,7 @@ jingloy y el pesquiben.
 Ostras con esa cabeza no
 te puedes meter en algunos
 callejones porque no cabes,
-¿ein? Peor seré tu colega.
+¿ein? Pero seré tu colega.
 
 
 ==== room=91 npc=3 str=0 textAddr=0x1d0bf4 ptrFieldAddr=0x1d0bf2 ====
@@ -6351,7 +6348,8 @@ vez, pringao.
 
 ==== room=114 npc=0 str=3 textAddr=0x1d2b66 ptrFieldAddr=0x1d2a84 ====
 CARLOS: La puta que parió a
-la liebre, catalana agarrá.
+la liebre, es más agarrá que
+una pelea de monos.
 Sólo me da el 10 por ciento
 de las ganancias. Si me
 rulas 50 chapas iré más
@@ -6362,7 +6360,8 @@ desgraciao! Te dan por saco.
 
 ==== room=114 npc=0 str=4 textAddr=0x1d2bf8 ptrFieldAddr=0x1d2a86 ====
 CARLOS: La puta que parió a
-la liebre, catalana agarrá.
+la liebre, es más agarrá que
+una pelea de monos.
 Sólo me da el 10 por ciento
 de las ganancias. Si me
 rulas 50 chapas iré más
@@ -6375,8 +6374,8 @@ despacito para que ganes.
 {E0}0ü
 CARLOS: ¡De puta madre!
 ¡Pero date vidilla, que
-tampoco puedo ir a paso
-de tortuga!
+tampoco nos pueden dar las
+putas uvas!
 
 
 ==== room=114 npc=0 str=6 textAddr=0x1d2ca2 ptrFieldAddr=0x1d2a8a ====
@@ -6420,7 +6419,7 @@ bicho. ¿Qué te parece?
 HEIDI: ¡Así se habla,
 machote! ¡Dale duro, que
 el guepardo es un bicho
-que corre que te cagas.
+que corre que te cagas!
 
 
 ==== room=114 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
@@ -6500,8 +6499,8 @@ alturas sabrás conducir ya,
 
 ==== room=114 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
 HEIDI: Poj claro, eres un
-profesional. ¡Venga, pedal
-al metal, vamoooooo!
+profesional. ¡Venga, a
+tumbar aguja! ¡Vamoooo!
 
 
 ==== room=114 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
