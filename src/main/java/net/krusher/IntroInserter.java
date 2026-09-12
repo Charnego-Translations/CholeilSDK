@@ -144,6 +144,13 @@ public final class IntroInserter {
 
     public static void run(String romPath, String introPath, String basePath,
                            String freeSpacePath, String outPath) throws IOException {
+        run(romPath, introPath, basePath, freeSpacePath, outPath, List.of());
+    }
+
+    /** Protect complete prior allocations, including bytes that still look like filler. */
+    public static void run(String romPath, String introPath, String basePath,
+                           String freeSpacePath, String outPath,
+                           List<int[]> occupiedGraphics) throws IOException {
         byte[] juego = Files.readAllBytes(Paths.get(romPath));
         byte[] intro = Files.readAllBytes(Paths.get(introPath));
         byte[] base  = Files.exists(Paths.get(basePath))
@@ -156,6 +163,13 @@ public final class IntroInserter {
             }
         }
 
+        for (int[] range : occupiedGraphics) {
+            if (range.length != 2 || range[0] < 0 || range[1] <= range[0]
+                    || range[1] > juego.length) {
+                throw new IllegalArgumentException("invalid graphics reservation");
+            }
+            banned.add(new Region(range[0], range[1] - range[0]));
+        }
         byte[] salida = inject(juego, intro, base, banned);
         Files.write(Paths.get(outPath), salida);
         System.out.println("Written: " + outPath + " (" + salida.length + " bytes)");

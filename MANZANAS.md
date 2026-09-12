@@ -11,6 +11,40 @@ las dimensiones. Los archivos `*_x8_VISTA.png` son solo ampliaciones para verlos
 mejor y no se reinsertan. El antiguo `manzana_mapa_EDITAME.png` queda como copia
 de seguridad de la primera prueba, pero el pipeline ya no lo lee.
 
+### Apariciones que seguian rojas y estado del paquete
+
+La rama conservaba el dibujo rojo original en el editor del mapa, mientras
+que el editor de los sprites ya era verde. Se ha puesto el mismo dibujo verde
+aprobado en ambos: no se cambia ninguna paleta ni la vida que dan los objetos.
+Los dos PNG siguen siendo independientes y editables. Sus nombres historicos
+`roja` y `verde` identifican las rutas de insercion, no fuerzan el color final.
+Si se quiere el mismo dibujo en TODOS los objetos normales conocidos, hay que
+editar los dos PNG; si se dibujan distintos, el juego los mostrara distintos.
+
+El bloque `0x135322` se observo cargado al solicitar las salas `1A`, `6D` y
+`78`. El bloque `0x14D3AE` se cargo al solicitar `31` y `32` (en el estado de
+prueba, `31` se resuelve a `32`). No eran copias adicionales escondidas:
+esas apariciones reutilizan los dos bloques ya catalogados.
+
+### Construccion comprobada y espacio de los graficos
+
+Al crecer un PNG, la recompresion puede obligar a mover todo su bloque. El
+parcheador comunica ahora esas reservas a la intro para que no las pise, y
+excluye la tabla viva de `0x03CE78` de los supuestos huecos libres.
+
+El comando `i` verifica al final las dos copias del mapa, las dos raw y los
+dos fotogramas dorados, siguiendo los punteros que usa realmente el juego,
+incluso si los bloques se han movido. Si una edicion no se puede insertar,
+se aborta: no se acepta una mezcla silenciosa de dibujos nuevos y originales.
+Se trabaja en `Choleil.building.md` y solo se reemplaza `Choleil.md` cuando
+termina la verificacion. Una ROM anterior puede seguir existiendo tras un
+error: no confundirla con una construccion nueva. No usar el archivo building.
+
+La comprobacion automatica cubre los graficos conocidos, no certifica una
+partida completa ni todos los estados posibles del juego. Los savestates
+antiguos contienen VRAM antigua: para ver cambios hay que recargar la sala.
+Los IPS son resultados locales del pipeline y no se incluyen en Git.
+
 ## Copias confirmadas
 
 El dibujo capturado ocupa cuatro tiles consecutivos, en orden de lectura

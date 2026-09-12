@@ -12,11 +12,13 @@ public final class AppleGraphics {
         final int blockOffset;
         final int firstTile;
         final int blockTileCount;
+        final int pointerField;
 
-        Copy(int blockOffset, int firstTile, int blockTileCount) {
+        Copy(int blockOffset, int firstTile, int blockTileCount, int pointerField) {
             this.blockOffset = blockOffset;
             this.firstTile = firstTile;
             this.blockTileCount = blockTileCount;
+            this.pointerField = pointerField;
         }
 
         String gfxPath() {
@@ -26,8 +28,8 @@ public final class AppleGraphics {
 
     /** The same red map-apple art is duplicated in these two zone tilesets. */
     private static final Copy[] MAP_COPIES = {
-            new Copy(0x135322, 459, 496),
-            new Copy(0x14D3AE, 390, 480)
+            new Copy(0x135322, 459, 496, 0x12002C),
+            new Copy(0x14D3AE, 390, 480, 0x120058)
     };
 
     private static final int TILES_W = 2;
@@ -315,14 +317,33 @@ public final class AppleGraphics {
 
     public static void verify(String romPath, String redEditPath, String greenEditPath) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        verifyRed(rom, redEditPath);
+        verifyGreen(rom, greenEditPath);
+        System.out.println("Normal apples: red map copies and green raw copies are byte-identical to their editors");
+    }
+
+    /** The full build validates every enabled editor against what the game actually loads. */
+    public static void verifyAvailable(String romPath) throws IOException {
+        byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        if (Files.exists(Paths.get(DEFAULT_RED_EDIT))) verifyRed(rom, DEFAULT_RED_EDIT);
+        if (Files.exists(Paths.get(DEFAULT_GREEN_EDIT))) verifyGreen(rom, DEFAULT_GREEN_EDIT);
+        if (Files.exists(Paths.get(DEFAULT_GOLDEN_EDIT))) verifyGolden(romPath, DEFAULT_GOLDEN_EDIT);
+        System.out.println("Apple editors verified against live ROM pointers and raw sprite slots");
+    }
+
+    private static void verifyRed(byte[] rom, String redEditPath) throws IOException {
         byte[] expectedRed = decodeNormalEdit(redEditPath);
         for (Copy copy : MAP_COPIES) {
             byte[] actual = readApple(rom, copy);
             if (!Arrays.equals(expectedRed, actual)) {
                 throw new IllegalStateException(String.format(
-                        "red map apple differs at block 0x%X", copy.blockOffset));
+                        "red map apple differs at live block 0x%X (original 0x%X); ROM is incomplete",
+                        resolveBlock(rom, 0x120000, copy.pointerField), copy.blockOffset));
             }
         }
+    }
+
+    private static void verifyGreen(byte[] rom, String greenEditPath) throws IOException {
         byte[] expectedGreen = decodeNormalEdit(greenEditPath);
         for (int offset : RAW_APPLE_OFFSETS) {
             byte[] columnMajor = Arrays.copyOfRange(rom,
@@ -334,7 +355,6 @@ public final class AppleGraphics {
                         TOWN_PICKUP_BLOCK + offset));
             }
         }
-        System.out.println("Normal apples: red map copies and green raw copies are byte-identical to their editors");
     }
 
     private static byte[] decodeNormalEdit(String editPath) throws IOException {
@@ -357,7 +377,8 @@ public final class AppleGraphics {
         byte[] expected = TileRenderer.decodeSpriteSheet(image, goldenEditPalette(rom),
                 GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_FRAME_TILES.length, 1,
                 GOLDEN_FRAME_TILE_COUNT * GOLDEN_FRAME_TILES.length, false);
-        byte[] actual = readGoldenFrames(LzToshio.decompress(rom, GOLDEN_BLOCK));
+        byte[] actual = readGoldenFrames(LzToshio.decompress(rom,
+                resolveBlock(rom, 0x59000, 0x5938C)));
         if (!Arrays.equals(expected, actual)) {
             throw new IllegalStateException("built golden-apple frames differ from " + editPath);
         }
@@ -380,9 +401,26 @@ public final class AppleGraphics {
     }
 
     private static byte[] readApple(byte[] rom, Copy copy) {
-        byte[] block = LzToshio.decompress(rom, copy.blockOffset);
+        byte[] block = LzToshio.decompress(rom, resolveBlock(rom, 0x120000, copy.pointerField));
+        if (block.length != copy.blockTileCount * TileRenderer.TILE_BYTES) {
+            throw new IllegalStateException("unexpected apple tileset size at live pointer");
+        }
         return Arrays.copyOfRange(block, copy.firstTile * 32,
                 (copy.firstTile + TILE_COUNT) * 32);
+    }
+
+    /** Signed 32-bit offsets: relocated blocks can precede their pointer table. */
+    static int resolveBlock(byte[] rom, int tableBase, int pointerField) {
+        if (pointerField < 0 || pointerField > rom.length - 4) {
+            throw new IllegalStateException("apple pointer field outside ROM");
+        }
+        int relative = (rom[pointerField] & 255) << 24 | (rom[pointerField + 1] & 255) << 16
+                | (rom[pointerField + 2] & 255) << 8 | rom[pointerField + 3] & 255;
+        long target = (long) tableBase + relative;
+        if (target < 0 || target > rom.length - 8) {
+            throw new IllegalStateException("apple graphics pointer outside ROM");
+        }
+        return (int) target;
     }
 
     private static byte[] recolorGreen(byte[] source) {
