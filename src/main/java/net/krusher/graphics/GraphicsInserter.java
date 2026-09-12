@@ -31,8 +31,9 @@ import net.krusher.FreeSpaceScanner;
  *   - PNG changed and the recompressed block is BIGGER: PointerLocator finds
  *     what references the block's address; if found, the block is written
  *     to freshly-scanned free space and the reference is patched to point
- *     at it. If no reference can be found, the block is left untouched and
- *     a warning is printed -- per instruction, no partial/corrupt writes.
+ *     at it. If a requested block cannot be inserted, the build fails before
+ *     writing output; mixing edited graphics with silently retained originals
+ *     is not a successful build.
  */
 public final class GraphicsInserter {
 
@@ -83,6 +84,13 @@ public final class GraphicsInserter {
         String graphicsOffsetsPath = args.length > 2 ? args[2] : DefaultPaths.GRAPHICS_OFFSETS;
         String outPath = args.length > 3 ? args[3] : DefaultPaths.OUT_ROM;
 
+        insert(romPath, gfxOutDir, graphicsOffsetsPath, outPath);
+    }
+
+    /** Returns occupied relocation ranges so the later intro cannot reuse them. */
+    public static List<int[]> insert(String romPath, String gfxOutDir,
+                                     String graphicsOffsetsPath, String outPath) throws IOException {
+
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         List<Block> blocks = loadBlocks(graphicsOffsetsPath);
         Map<Integer, Integer> knownPalettes = KnownPalettes.load(DefaultPaths.KNOWN_PALETTES);
@@ -114,9 +122,15 @@ public final class GraphicsInserter {
         System.out.println("Relocated: " + relocated);
         System.out.println("Warned/left untouched: " + warned);
 
+        if (warned != 0) {
+            throw new IllegalStateException(warned + " graphics block(s) were not inserted; "
+                    + "refusing to write a ROM mixing edited and original graphics");
+        }
+
         net.krusher.TextInserter.fixChecksum(rom);
         Files.write(Paths.get(outPath), rom);
         System.out.println("Wrote " + outPath);
+        return new ArrayList<int[]>(ctx.usedThisRun);
     }
 
     /**
@@ -141,7 +155,10 @@ public final class GraphicsInserter {
         Outcome outcome = processBlock(ctx, blk, pngPath, palette, columns);
         System.out.println("Outcome: " + outcome);
 
-        if (outcome == Outcome.UNCHANGED || outcome == Outcome.WARNED) {
+        if (outcome == Outcome.WARNED) {
+            throw new IllegalStateException("graphics block was not inserted; output was not written");
+        }
+        if (outcome == Outcome.UNCHANGED) {
             System.out.println(outPath + " was not written (nothing changed on disk).");
             return;
         }
@@ -212,6 +229,8 @@ public final class GraphicsInserter {
         if (ctx.freePool == null) {
             List<int[]> excluded = FreeSpaceScanner.loadExcludedRanges(ctx.graphicsOffsetsPath);
             excluded.add(new int[]{0x1C0000, 0x1E0000}); // dialogue script + gap, claimed by TextInserter
+            // The first eight bytes of this apparent filler are a live table.
+            excluded.add(new int[]{0x03CE78, 0x03CE80});
             ctx.freePool = FreeSpaceScanner.scan(rom, 0x30000, rom.length, 16, excluded);
         }
         int newAddr = allocate(ctx.freePool, ctx.usedThisRun, recompressed.length);
