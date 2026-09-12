@@ -61,6 +61,12 @@ public class CholeilSDK
 
     private static void run( String mode ) throws IOException
     {
+        if (mode.equals("i")) {
+            System.out.println("=== arranging Iibis kart edits for compression ===");
+            net.krusher.graphics.KartGraphics.sync( DefaultPaths.ROM,
+                    net.krusher.graphics.KartGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.KartGraphics.DEFAULT_GFX );
+        }
         if ( mode.equals("x") )
         {
             System.out.println("=== extracting text ===");
@@ -109,6 +115,12 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== extracting sprite-mosaic graphics ===");
             net.krusher.graphics.SpriteGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.SPRITE_GRAPHICS, DefaultPaths.SPRITE_GFX_OUT } );
+
+            System.out.println();
+            System.out.println("=== extracting Iibis kart orientations and animation ===");
+            net.krusher.graphics.KartGraphics.extract( DefaultPaths.ROM,
+                    net.krusher.graphics.KartGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.KartGraphics.DEFAULT_VIEW );
 
             System.out.println();
             System.out.println("=== extracting the dialogue font ===");
@@ -213,6 +225,8 @@ public class CholeilSDK
             net.krusher.graphics.SonicScenePresence.insert( buildingRom, DefaultPaths.ROM );
 
             System.out.println();
+            // The shadow step only writes its guarded hook/reservation, never the kart.
+            net.krusher.graphics.KartGraphics.verifyAvailable(buildingRom);
             System.out.println("=== matching SonicGil shadow to the configured position ===");
             net.krusher.graphics.SonicShadowPosition.insert( buildingRom, DefaultPaths.ROM );
 
