@@ -95,6 +95,26 @@ public class CholeilSDK
                     DefaultPaths.ROM,
                     net.krusher.graphics.AppleGraphics.DEFAULT_GOLDEN_EDIT,
                     net.krusher.graphics.AppleGraphics.DEFAULT_GOLDEN_VIEW );
+            System.out.println();
+            System.out.println("=== extracting ending Fin. graphic ===");
+            net.krusher.graphics.FinGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.FinGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.FinGraphics.DEFAULT_VIEW );
+
+            System.out.println();
+            System.out.println("=== extracting Corona sword swing ===");
+            net.krusher.graphics.CoronaSwordGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_VIEW );
+
+            System.out.println();
+            System.out.println("=== extracting Sonic + hammock animation ===");
+            net.krusher.graphics.SonicHammockGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_VIEW );
 
             System.out.println();
             System.out.println("=== extracting raw (uncompressed) graphics ===");
@@ -153,11 +173,29 @@ public class CholeilSDK
             net.krusher.graphics.AppleGraphics.syncGolden(
                     DefaultPaths.ROM,
                     net.krusher.graphics.AppleGraphics.DEFAULT_GOLDEN_EDIT );
+            System.out.println();
+            System.out.println("=== arranging Sonic + hammock edit for compression ===");
+            net.krusher.graphics.SonicHammockGraphics.syncScene( DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== arranging ending Fin. edit for compression ===");
+            net.krusher.graphics.FinGraphics.sync(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.FinGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.FinGraphics.DEFAULT_GFX );
 
             System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
             List<int[]> occupiedGraphics = net.krusher.graphics.GraphicsInserter.insert(
                     buildingRom, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, buildingRom );
+
+            System.out.println();
+            System.out.println("=== centring expanded ending Fin. graphic ===");
+            net.krusher.graphics.FinGraphics.patchLayout( buildingRom );
+
+            System.out.println();
+            System.out.println("=== placing Jesus Gil from sonic_scene_positions.txt ===");
+            net.krusher.graphics.SonicHammockGraphics.patchPosition( buildingRom );
 
             System.out.println();
             System.out.println("=== inserting raw (uncompressed) graphics ===");
@@ -166,6 +204,13 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting sprite-mosaic graphics ===");
             net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { buildingRom, DefaultPaths.SPRITE_GFX_OUT, DefaultPaths.SPRITE_GRAPHICS, buildingRom } );
+
+            System.out.println();
+            System.out.println("=== inserting Corona sword swing ===");
+            net.krusher.graphics.CoronaSwordGraphics.insert(
+                    buildingRom,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_EDIT,
+                    buildingRom );
 
             System.out.println();
             System.out.println("=== setting the default hero name ===");
@@ -179,6 +224,22 @@ public class CholeilSDK
             System.out.println("=== inserting the intro ===");
             IntroInserter.run( buildingRom, DefaultPaths.INTRO, DefaultPaths.ROM,
                     DefaultPaths.FREE_SPACE, buildingRom, occupiedGraphics );
+
+            System.out.println();
+            System.out.println("=== inserting two-frame side-character animation ===");
+            net.krusher.graphics.SonicSideAnimation.insert( buildingRom, DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== placing SonicGil conversation detection ===");
+            net.krusher.graphics.SonicTalkDetection.insert( buildingRom, DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== matching side panels to SonicGil story presence ===");
+            net.krusher.graphics.SonicScenePresence.insert( buildingRom, DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== matching SonicGil shadow to the configured position ===");
+            net.krusher.graphics.SonicShadowPosition.insert( buildingRom, DefaultPaths.ROM );
 
             System.out.println();
             System.out.println("=== verifying every enabled apple editor in the final ROM ===");
