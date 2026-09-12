@@ -139,9 +139,7 @@ public class CholeilSDK
 
             System.out.println();
             System.out.println("=== arranging Sonic + hammock edit for compression ===");
-            net.krusher.graphics.SonicHammockGraphics.sync(
-                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_EDIT,
-                    net.krusher.graphics.SonicHammockGraphics.DEFAULT_GFX );
+            net.krusher.graphics.SonicHammockGraphics.syncScene( DefaultPaths.ROM );
 
             System.out.println();
             System.out.println("=== arranging ending Fin. edit for compression ===");
@@ -188,6 +186,22 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting the intro ===");
             IntroInserter.run( DefaultPaths.OUT_ROM, DefaultPaths.INTRO, DefaultPaths.ROM, DefaultPaths.FREE_SPACE, DefaultPaths.OUT_ROM );
+
+            System.out.println();
+            System.out.println("=== inserting two-frame side-character animation ===");
+            net.krusher.graphics.SonicSideAnimation.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== placing SonicGil conversation detection ===");
+            net.krusher.graphics.SonicTalkDetection.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== matching side panels to SonicGil story presence ===");
+            net.krusher.graphics.SonicScenePresence.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
+
+            System.out.println();
+            System.out.println("=== matching SonicGil shadow to the configured position ===");
+            net.krusher.graphics.SonicShadowPosition.insert( DefaultPaths.OUT_ROM, DefaultPaths.ROM );
 
             System.out.println();
             System.out.println("=== writing the IPS patch ===");
