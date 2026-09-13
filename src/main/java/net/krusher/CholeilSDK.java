@@ -213,9 +213,14 @@ public class CholeilSDK
             net.krusher.graphics.FontInserter.run( buildingRom, DefaultPaths.FONT, buildingRom );
 
             System.out.println();
+            System.out.println("=== inserting race-only PSG music ===");
+            List<int[]> occupiedBeforeIntro = new java.util.ArrayList<>(occupiedGraphics);
+            occupiedBeforeIntro.addAll(net.krusher.graphics.KartRaceMusic.insert(buildingRom, DefaultPaths.ROM,
+                    net.krusher.graphics.KartRaceMusic.DEFAULT_VGM, DefaultPaths.FREE_SPACE, occupiedGraphics));
+            System.out.println();
             System.out.println("=== inserting the intro ===");
             IntroInserter.run( buildingRom, DefaultPaths.INTRO, DefaultPaths.ROM,
-                    DefaultPaths.FREE_SPACE, buildingRom, occupiedGraphics );
+                    DefaultPaths.FREE_SPACE, buildingRom, occupiedBeforeIntro );
 
             System.out.println();
             System.out.println("=== inserting two-frame side-character animation ===");
@@ -238,6 +243,7 @@ public class CholeilSDK
             net.krusher.graphics.SonicShadowPosition.insert( buildingRom, DefaultPaths.ROM );
 
             System.out.println();
+            net.krusher.graphics.KartRaceMusic.verify(buildingRom, net.krusher.graphics.KartRaceMusic.DEFAULT_VGM);
             publishRom(Path.of(buildingRom), Path.of(DefaultPaths.OUT_ROM));
 
             System.out.println();
