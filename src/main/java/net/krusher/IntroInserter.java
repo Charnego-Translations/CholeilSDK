@@ -339,7 +339,7 @@ public final class IntroInserter {
         // the "ROM end" field at 0x1A4, and touching that hangs it on a red
         // screen. The checksum at 0x18E does have to be redone, because we
         // wrote inside the game's own address space.
-        writeU16(salida, 0x18E, checksumSega(salida, juego.length));
+        writeU16(salida, 0x18E, checksumSega(salida, TextInserter.checksumEnd(salida)));
 
         int ocupado = COD_TAM + tamCerca + tamLejos + pcm.length + vacio.length + drvlib.length + comp;
         System.out.println("Intro            : Charnego Translations INTRO FINAL (XGM, with fade)");
