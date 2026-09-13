@@ -50,6 +50,19 @@ en `0x0079C4` y su limpieza al cargar el mapa en `0x01927A`. No elimina los
 gráficos de Corona ni reserva espacio adicional en ROM o VRAM. El constructor
 comprueba esas instrucciones antes de parchear y verifica el resultado final.
 
+## Música durante la carrera
+
+`music/kart_race.vgm` contiene el tema aportado de **The A-Team — Title**.
+La reconstrucción normal `choleil i` lo integra: empieza al subir al kart,
+suena durante la cuenta atrás y la carrera, y repite su bucle de unos 30 segundos.
+Al abandonar con Start o finalizar se recupera la música original del mapa.
+A pie no se sustituye la música, ni se cambia el tema de otras zonas que
+comparten la misma selección musical original.
+
+Formato admitido, desactivación, espacio reservado y comprobaciones:
+[music/README.md](music/README.md). Esto es independiente del dibujo del
+vehículo y de `hide_driver`; añadir la música no convierte el kart en furgoneta.
+
 ## Paleta y transparencia
 
 El rosa `#FF00FF` representa el índice transparente 0, solamente en el editor.
