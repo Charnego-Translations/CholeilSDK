@@ -193,6 +193,11 @@ public class CholeilSDK
             net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { buildingRom, DefaultPaths.SPRITE_GFX_OUT, DefaultPaths.SPRITE_GRAPHICS, buildingRom } );
 
             System.out.println();
+            System.out.println("=== configuring kart driver visibility ===");
+            net.krusher.graphics.KartDriverVisibility.insert( buildingRom, DefaultPaths.ROM,
+                    net.krusher.graphics.KartDriverVisibility.DEFAULT_SETTINGS );
+
+            System.out.println();
             System.out.println("=== inserting Corona sword swing ===");
             net.krusher.graphics.CoronaSwordGraphics.insert(
                     buildingRom,
@@ -227,6 +232,8 @@ public class CholeilSDK
             System.out.println();
             // The shadow step only writes its guarded hook/reservation, never the kart.
             net.krusher.graphics.KartGraphics.verifyAvailable(buildingRom);
+            net.krusher.graphics.KartDriverVisibility.verify( buildingRom,
+                    net.krusher.graphics.KartDriverVisibility.DEFAULT_SETTINGS );
             System.out.println("=== matching SonicGil shadow to the configured position ===");
             net.krusher.graphics.SonicShadowPosition.insert( buildingRom, DefaultPaths.ROM );
 

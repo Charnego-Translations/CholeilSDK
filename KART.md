@@ -29,6 +29,27 @@ esas columnas modifica también su vista reflejada.
 El kart aparcado y el conducido comparten estos gráficos. **Corona se dibuja
 por separado** y no está dentro de esta hoja; Charlie tampoco.
 
+## Ocultar a Corona dentro de la furgoneta
+
+`kart_settings.txt` incluye `hide_driver=1`: al subir al kart se oculta a
+Corona, incluida la cuenta atrás y la animación de conducción. Así se verá
+solo el vehículo cuando Scorpion integre la fragoneta. Corona a pie y Charlie
+no se ocultan; al abandonar la carrera o terminarla, la carga del mapa restaura
+la visibilidad normal del jugador.
+
+Para recuperar el conductor original, poner `hide_driver=0` y reconstruir
+con `choleil i`. Si no existe el archivo, también se conserva el comportamiento
+original. El ajuste no modifica los PNG, la paleta ni los controles del kart.
+Un savestate antiguo ya montado puede conservar las banderas anteriores durante
+la cuenta atrás: para comprobar el cambio completo, cargar uno anterior a subir.
+
+El parche añade únicamente el bit 6 de `$B0A7` a las banderas que activa el
+actor del kart al subir (`0x020746`) y al conducir (`0x0209DE`), cambiando
+`ori.b #7` por `ori.b #$47`. Reutiliza la comprobación de visibilidad original
+en `0x0079C4` y su limpieza al cargar el mapa en `0x01927A`. No elimina los
+gráficos de Corona ni reserva espacio adicional en ROM o VRAM. El constructor
+comprueba esas instrucciones antes de parchear y verifica el resultado final.
+
 ## Paleta y transparencia
 
 El rosa `#FF00FF` representa el índice transparente 0, solamente en el editor.
