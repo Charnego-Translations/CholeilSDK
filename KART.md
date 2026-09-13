@@ -1,5 +1,13 @@
 # Kart de Iibis / carrera contra Charlie
 
+## Entrega para Scorpion
+
+`references/fragoneta.png` conserva el diseño facilitado por Antxiko, sin
+modificarlo. Es una **referencia de 2135×736**, no un PNG directamente insertable:
+hay que adaptar sus dibujos al interior de las cajas de 32×32 y a los colores
+de `special_gfx_out/kart_EDITAME.png`. El editable incluido sigue conteniendo
+el kart original; la fragoneta **todavía no está integrada en la ROM**.
+
 ## Qué editar
 
 **`special_gfx_out/kart_EDITAME.png`** es la fuente del vehículo completo.
