@@ -168,6 +168,13 @@ public final class IntroInserter {
 
     public static void run(String romPath, String introPath, String basePath,
                            String freeSpacePath, String outPath) throws IOException {
+        run(romPath, introPath, basePath, freeSpacePath, outPath, List.of());
+    }
+
+    /** Protect complete prior allocations, including bytes that still look like filler. */
+    public static void run(String romPath, String introPath, String basePath,
+                           String freeSpacePath, String outPath,
+                           List<int[]> occupiedGraphics) throws IOException {
         byte[] juego = Files.readAllBytes(Paths.get(romPath));
         byte[] intro = Files.readAllBytes(Paths.get(introPath));
         byte[] base  = Files.exists(Paths.get(basePath))
@@ -180,6 +187,13 @@ public final class IntroInserter {
             }
         }
 
+        for (int[] range : occupiedGraphics) {
+            if (range.length != 2 || range[0] < 0 || range[1] <= range[0]
+                    || range[1] > juego.length) {
+                throw new IllegalArgumentException("invalid graphics reservation");
+            }
+            banned.add(new Region(range[0], range[1] - range[0]));
+        }
         byte[] salida = inject(juego, intro, base, banned);
         Files.write(Paths.get(outPath), salida);
         System.out.println("Written: " + outPath + " (" + salida.length + " bytes)");
@@ -325,7 +339,7 @@ public final class IntroInserter {
         // the "ROM end" field at 0x1A4, and touching that hangs it on a red
         // screen. The checksum at 0x18E does have to be redone, because we
         // wrote inside the game's own address space.
-        writeU16(salida, 0x18E, checksumSega(salida, juego.length));
+        writeU16(salida, 0x18E, checksumSega(salida, TextInserter.checksumEnd(salida)));
 
         int ocupado = COD_TAM + tamCerca + tamLejos + pcm.length + vacio.length + drvlib.length + comp;
         System.out.println("Intro            : Charnego Translations INTRO FINAL (XGM, with fade)");

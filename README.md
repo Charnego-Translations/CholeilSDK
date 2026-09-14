@@ -65,6 +65,9 @@ names in `DefaultPaths` when run without any.
 | `pause_gfx_out/` | Friendly SAVE/TAKE OFF pause-menu icons (see `MENU_PAUSA.md`). |
 | `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`), the ending “Fin.” (`FIN.md`), and Corona’s sword swing (`ESPADA.md`). |
 | `sonic_scene_positions.txt` | X/Y pixel offset for Jesus Gil in the hammock scene. |
+| `special_gfx_out/kart_EDITAME.png` | Iibis kart: 18 boxed 32x32 drawings, original palette, automatic reinsertion and verification (see `KART.md`). |
+| `kart_settings.txt` | `hide_driver=1` hides Corona while riding, including the countdown; `0` restores the original driver. Rebuild after changing it (see `KART.md`). |
+| `music/kart_race.vgm` | Optional PSG music for the kart race only; starts on mounting and loops until the race ends. See `music/README.md`. |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `charnego_introFinal.md` | The Charnego Translations intro, a standalone Mega Drive ROM. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
