@@ -10,15 +10,22 @@ import java.util.Arrays;
 public final class AppleGraphics {
     private static final class Copy {
         final int blockOffset;
-        final int firstTile;
+        final int[] tileIndices;
         final int blockTileCount;
         final int pointerField;
+        final int pointerBase;
+        final int sheetPaletteOffset;
+        final int[] gamePaletteWords;
 
-        Copy(int blockOffset, int firstTile, int blockTileCount, int pointerField) {
+        Copy(int blockOffset, int[] tileIndices, int blockTileCount, int pointerField,
+             int pointerBase, int sheetPaletteOffset, int[] gamePaletteWords) {
             this.blockOffset = blockOffset;
-            this.firstTile = firstTile;
+            this.tileIndices = tileIndices;
             this.blockTileCount = blockTileCount;
             this.pointerField = pointerField;
+            this.pointerBase = pointerBase;
+            this.sheetPaletteOffset = sheetPaletteOffset;
+            this.gamePaletteWords = gamePaletteWords;
         }
 
         String gfxPath() {
@@ -26,11 +33,33 @@ public final class AppleGraphics {
         }
     }
 
-    /** The same red map-apple art is duplicated in these two zone tilesets. */
+    /** Row-major tile positions. The later zones keep rows 16 tiles apart. */
     private static final Copy[] MAP_COPIES = {
-            new Copy(0x135322, 459, 496, 0x12002C),
-            new Copy(0x14D3AE, 390, 480, 0x120058)
+            new Copy(0x135322, new int[]{459, 460, 461, 462}, 496,
+                    0x12002C, 0x120000, 0, null),
+            new Copy(0x14D3AE, new int[]{390, 391, 392, 393}, 480,
+                    0x120058, 0x120000, 0, null),
+            new Copy(0x12FE58, new int[]{392, 393, 408, 409}, 512,
+                    0x120024, 0x120000, 0, new int[]{
+                    0x04CA, 0x0EEE, 0x0888, 0x026E, 0x002E, 0x0000, 0x0C84, 0x002C,
+                    0x0466, 0x04AA, 0x068A, 0x0666, 0x04A6, 0x04CA, 0x0468, 0x08EE}),
+            new Copy(0x1260CA, new int[]{138, 139, 154, 155}, 640,
+                    0x120010, 0x120000, 0, new int[]{
+                    0x04CA, 0x0EEE, 0x0888, 0x048E, 0x026A, 0x0444, 0x0A60, 0x0C84,
+                    0x0466, 0x06AA, 0x068A, 0x0664, 0x04A6, 0x04CA, 0x0468, 0x08EE})
     };
+    /** This map mirrors one 8-pixel column, so it needs a symmetric editor. */
+    private static final Copy MIRRORED_MAP_COPY = new Copy(0x1528E4,
+            new int[]{328, 391}, 512, 0x120068, 0x120000, 0,
+            new int[]{0x024C, 0x0244, 0x0466, 0x0468, 0x048A, 0x0642, 0x0666,
+                    0x08CE, 0x088C, 0x04AE, 0x0484, 0x06CA, 0x006C, 0x0466,
+                    0x046A, 0x068C});
+    /** Same old apple artwork, but drawn over solid map colour 8 with shadow 13. */
+    private static final Copy EMBEDDED_MAP_COPY = new Copy(0x132946,
+            new int[]{350, 351, 366, 367}, 480, 0x120028, 0x120000, 0, null);
+    /** The 0xF4800 stream supplies the on-screen 16x16 pickup sprite. */
+    private static final Copy SPRITE_PICKUP_COPY = new Copy(0x0F4800,
+            new int[]{0, 2, 1, 3}, 69, 0x03123E, -1, 0x000548, null);
 
     private static final int TILES_W = 2;
     private static final int TILES_H = 2;
@@ -44,11 +73,12 @@ public final class AppleGraphics {
     private static final int[] RAW_APPLE_OFFSETS = {0x100, 0x180};
     private static final int GOLDEN_BLOCK = 0x0A5644;
     private static final int GOLDEN_BLOCK_TILE_COUNT = 36;
-    private static final int[] GOLDEN_FRAME_TILES = {9, 27};
+    private static final int[] GOLDEN_EDIT_FRAME_TILES = {9, 27};
+    private static final int[] GOLDEN_GAME_FRAME_TILES = {0, 9, 18, 27};
     private static final int GOLDEN_TILES_W = 3;
     private static final int GOLDEN_TILES_H = 3;
     private static final int GOLDEN_FRAME_TILE_COUNT = GOLDEN_TILES_W * GOLDEN_TILES_H;
-    private static final int GOLDEN_WIDTH = GOLDEN_TILES_W * 8 * GOLDEN_FRAME_TILES.length;
+    private static final int GOLDEN_WIDTH = GOLDEN_TILES_W * 8 * GOLDEN_EDIT_FRAME_TILES.length;
     private static final int GOLDEN_HEIGHT = GOLDEN_TILES_H * 8;
 
     public static final String DEFAULT_RED_EDIT = "apple_gfx_out/manzana_roja_EDITAME.png";
@@ -57,6 +87,7 @@ public final class AppleGraphics {
     public static final String DEFAULT_GREEN_VIEW = "apple_gfx_out/manzana_verde_x8_VISTA.png";
     public static final String DEFAULT_GOLDEN_EDIT = "apple_gfx_out/manzana_dorada_EDITAME.png";
     public static final String DEFAULT_GOLDEN_VIEW = "apple_gfx_out/manzana_dorada_x8_VISTA.png";
+    public static final String DEFAULT_MIRRORED_EDIT = "apple_gfx_out/manzana_simetrica_EDITAME.png";
     public static final String TOWN_PICKUP_SHEET = "sprite_gfx_out/sprite_0f4600.png";
 
     /* Captured CRAM line used by the map apple in QuickSave3. */
@@ -79,7 +110,9 @@ public final class AppleGraphics {
             System.out.println("  AppleGraphics sync-green [rom] [editPng]");
             System.out.println("  AppleGraphics sync-golden [rom] [editPng]");
             System.out.println("  AppleGraphics verify [rom] [redPng] [greenPng]");
+            System.out.println("  AppleGraphics verify-all [rom]");
             System.out.println("  AppleGraphics verify-golden [rom] [editPng]");
+            System.out.println("  AppleGraphics seed-symmetric [editPng]");
             return;
         }
 
@@ -110,6 +143,10 @@ public final class AppleGraphics {
             verify(rom, edit, green);
         } else if (mode.equals("verify-golden")) {
             verifyGolden(rom, edit);
+        } else if (mode.equals("verify-all")) {
+            verifyAvailable(rom);
+        } else if (mode.equals("seed-symmetric")) {
+            seedSymmetric(args.length > 1 ? args[1] : DEFAULT_MIRRORED_EDIT);
         } else {
             throw new IllegalArgumentException("unknown mode: " + mode);
         }
@@ -135,9 +172,9 @@ public final class AppleGraphics {
         if (edit.getParent() != null) Files.createDirectories(edit.getParent());
         if (view.getParent() != null) Files.createDirectories(view.getParent());
         TileRenderer.writePng(TileRenderer.renderSpriteSheet(golden, palette,
-                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_FRAME_TILES.length, 1, false), edit.toString());
+                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_EDIT_FRAME_TILES.length, 1, false), edit.toString());
         TileRenderer.writePng(TileRenderer.renderSpriteSheet(golden, palette,
-                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_FRAME_TILES.length, 8, false), view.toString());
+                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_EDIT_FRAME_TILES.length, 8, false), view.toString());
         System.out.println("Extracted golden apple: " + edit
                 + " (48x24, two column-major 24x24 frames)");
     }
@@ -160,9 +197,12 @@ public final class AppleGraphics {
         System.out.println("Extracted " + label + ": " + edit + " (16x16, row-major)");
     }
 
-    /** Copies the red edit into both confirmed fixed-map copies. */
+    /** Copies the red edit into every confirmed map and pickup-sprite route. */
     public static void syncRed(String romPath, String editPath) throws IOException {
         sync(romPath, editPath, "map apple", MAP_COPIES);
+        sync(romPath, editPath, "pickup sprite apple", new Copy[]{SPRITE_PICKUP_COPY});
+        syncEmbedded(romPath, editPath);
+        syncSymmetric(romPath, DEFAULT_MIRRORED_EDIT);
     }
 
     /** Copies the green edit into the two raw pickup-object slots. */
@@ -196,8 +236,8 @@ public final class AppleGraphics {
                     + GOLDEN_WIDTH + "x" + GOLDEN_HEIGHT);
         }
         byte[] golden = TileRenderer.decodeSpriteSheet(image, goldenEditPalette(rom),
-                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_FRAME_TILES.length, 1,
-                GOLDEN_FRAME_TILE_COUNT * GOLDEN_FRAME_TILES.length, false);
+                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_EDIT_FRAME_TILES.length, 1,
+                GOLDEN_FRAME_TILE_COUNT * GOLDEN_EDIT_FRAME_TILES.length, false);
 
         Path sheetPath = Paths.get(String.format("gfx_out/gfx_%06x.png", GOLDEN_BLOCK));
         byte[] current = LzToshio.decompress(rom, GOLDEN_BLOCK);
@@ -212,9 +252,9 @@ public final class AppleGraphics {
         }
 
         byte[] updated = Arrays.copyOf(current, current.length);
-        for (int frame = 0; frame < GOLDEN_FRAME_TILES.length; frame++) {
-            System.arraycopy(golden, frame * GOLDEN_FRAME_TILE_COUNT * TileRenderer.TILE_BYTES,
-                    updated, GOLDEN_FRAME_TILES[frame] * TileRenderer.TILE_BYTES,
+        for (int frame = 0; frame < GOLDEN_GAME_FRAME_TILES.length; frame++) {
+            System.arraycopy(golden, (frame / 2) * GOLDEN_FRAME_TILE_COUNT * TileRenderer.TILE_BYTES,
+                    updated, GOLDEN_GAME_FRAME_TILES[frame] * TileRenderer.TILE_BYTES,
                     GOLDEN_FRAME_TILE_COUNT * TileRenderer.TILE_BYTES);
         }
         if (Arrays.equals(updated, current)) {
@@ -224,8 +264,8 @@ public final class AppleGraphics {
         if (sheetPath.getParent() != null) Files.createDirectories(sheetPath.getParent());
         TileRenderer.writePng(TileRenderer.renderTileSheet(updated, romPalette, 16, 1),
                 sheetPath.toString());
-        System.out.println("Synced independent golden apple into block 0xA5644"
-                + " (tiles 9-17 and 27-35)");
+        System.out.println("Synced two golden-apple editor poses into all four game frames"
+                + " (tiles 0-35 of block 0xA5644)");
     }
 
     private static void sync(String romPath, String editPath, String label,
@@ -245,36 +285,148 @@ public final class AppleGraphics {
                 TILES_W, TILES_H, 1, 1, TILE_COUNT, true);
 
         for (Copy copy : copies) {
-            Path gfx = Paths.get(copy.gfxPath());
-            byte[] current = LzToshio.decompress(rom, copy.blockOffset);
-            if (current.length != copy.blockTileCount * 32) {
-                throw new IllegalStateException(String.format(
-                        "%s block 0x%X has %d bytes, expected %d",
-                        label,
-                        copy.blockOffset, current.length, copy.blockTileCount * 32));
-            }
-            if (Files.exists(gfx)) {
-                Bitmap sheet = TileRenderer.readPng(gfx.toString());
-                int expectedHeight = ((copy.blockTileCount + 15) / 16) * 8;
-                if (sheet.getWidth() != 128 || sheet.getHeight() != expectedHeight) {
-                    throw new IllegalStateException(gfx + " must stay 128x" + expectedHeight);
-                }
-                current = TileRenderer.decodeTileSheet(sheet,
-                        TileRenderer.defaultGrayscalePalette(), 16, 1, copy.blockTileCount);
-            }
-
-            byte[] updated = Arrays.copyOf(current, current.length);
-            System.arraycopy(apple, 0, updated, copy.firstTile * 32, apple.length);
-            if (Arrays.equals(updated, current)) {
-                System.out.println(label + " edit is unchanged in " + gfx);
-                continue;
-            }
-            if (gfx.getParent() != null) Files.createDirectories(gfx.getParent());
-            TileRenderer.writePng(TileRenderer.renderTileSheet(updated,
-                    TileRenderer.defaultGrayscalePalette(), 16, 1), gfx.toString());
-            System.out.println(String.format("Synced %s into %s (block 0x%X tile %d)",
-                    label, gfx, copy.blockOffset, copy.firstTile));
+            syncCopy(rom, copy, remapToGamePalette(apple, copy), label);
         }
+    }
+
+    private static void syncCopy(byte[] rom, Copy copy, byte[] tiles, String label) throws IOException {
+        Path gfx = Paths.get(copy.gfxPath());
+        byte[] current = LzToshio.decompress(rom, copy.blockOffset);
+        if (current.length != copy.blockTileCount * TileRenderer.TILE_BYTES) {
+            throw new IllegalStateException(String.format(
+                    "%s block 0x%X has %d bytes, expected %d", label,
+                    copy.blockOffset, current.length,
+                    copy.blockTileCount * TileRenderer.TILE_BYTES));
+        }
+        int[] sheetPalette = copy.sheetPaletteOffset == 0
+                ? TileRenderer.defaultGrayscalePalette()
+                : TileRenderer.readGenesisPalette(rom, copy.sheetPaletteOffset);
+        if (Files.exists(gfx)) {
+            Bitmap sheet = TileRenderer.readPng(gfx.toString());
+            int expectedHeight = ((copy.blockTileCount + 15) / 16) * 8;
+            if (sheet.getWidth() != 128 || sheet.getHeight() != expectedHeight) {
+                throw new IllegalStateException(gfx + " must stay 128x" + expectedHeight);
+            }
+            current = TileRenderer.decodeTileSheet(sheet, sheetPalette, 16, 1, copy.blockTileCount);
+        }
+        if (tiles.length != copy.tileIndices.length * TileRenderer.TILE_BYTES) {
+            throw new IllegalArgumentException("wrong tile count for " + label);
+        }
+        byte[] updated = Arrays.copyOf(current, current.length);
+        for (int i = 0; i < copy.tileIndices.length; i++) {
+            System.arraycopy(tiles, i * TileRenderer.TILE_BYTES, updated,
+                    copy.tileIndices[i] * TileRenderer.TILE_BYTES, TileRenderer.TILE_BYTES);
+        }
+        if (Arrays.equals(updated, current)) {
+            System.out.println(label + " edit is unchanged in " + gfx);
+            return;
+        }
+        if (gfx.getParent() != null) Files.createDirectories(gfx.getParent());
+        TileRenderer.writePng(TileRenderer.renderTileSheet(updated, sheetPalette, 16, 1),
+                gfx.toString());
+        System.out.println(String.format("Synced %s into %s (block 0x%X)",
+                label, gfx, copy.blockOffset));
+    }
+
+    private static byte[] remapToGamePalette(byte[] source, Copy copy) {
+        if (copy.gamePaletteWords == null) return source;
+        int[] from = editPalette();
+        int[] to = genesisPalette(copy.gamePaletteWords);
+        int[] mapping = new int[16];
+        mapping[0] = 0; // colour zero is transparent in these map tiles
+        for (int i = 1; i < 16; i++) {
+            int best = 1, bestDistance = Integer.MAX_VALUE;
+            for (int j = 1; j < 16; j++) {
+                int a = from[i], b = to[j];
+                int dr = (a >> 16 & 255) - (b >> 16 & 255);
+                int dg = (a >> 8 & 255) - (b >> 8 & 255);
+                int db = (a & 255) - (b & 255);
+                int distance = dr * dr + dg * dg + db * db;
+                if (distance < bestDistance) { bestDistance = distance; best = j; }
+            }
+            mapping[i] = best;
+        }
+        byte[] remapped = new byte[source.length];
+        for (int i = 0; i < source.length; i++) {
+            int value = source[i] & 255;
+            remapped[i] = (byte) (mapping[value >> 4] << 4 | mapping[value & 15]);
+        }
+        return remapped;
+    }
+
+    private static byte[] composeEmbedded(byte[] vanilla, byte[] edit) {
+        byte[] result = new byte[edit.length];
+        for (int i = 0; i < edit.length; i++) {
+            int original = vanilla[i] & 255, replacement = edit[i] & 255;
+            int hi = replacement >> 4, lo = replacement & 15;
+            int originalHi = original >> 4, originalLo = original & 15;
+            // Preserve only the map background and existing shadow; erase the old apple.
+            int outHi = hi != 0 ? hi : (originalHi == 13 ? 13 : 8);
+            int outLo = lo != 0 ? lo : (originalLo == 13 ? 13 : 8);
+            result[i] = (byte) (outHi << 4 | outLo);
+        }
+        return result;
+    }
+
+    private static void syncEmbedded(String romPath, String editPath) throws IOException {
+        if (!Files.exists(Paths.get(editPath))) return;
+        byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        syncCopy(rom, EMBEDDED_MAP_COPY,
+                composeEmbedded(readApple(rom, EMBEDDED_MAP_COPY), decodeNormalEdit(editPath)),
+                "background-embedded map apple");
+    }
+
+    private static int[] genesisPalette(int[] words) {
+        int[] palette = new int[words.length];
+        for (int i = 0; i < words.length; i++) {
+            int word = words[i];
+            int r = (word >> 1 & 7) * 34;
+            int g = (word >> 5 & 7) * 34;
+            int b = (word >> 9 & 7) * 34;
+            palette[i] = 0xFF000000 | r << 16 | g << 8 | b;
+        }
+        return palette;
+    }
+
+    /** A compact upright drumstick, whose left half is mirrored by the Sevilla map. */
+    private static void seedSymmetric(String path) throws IOException {
+        Path output = Paths.get(path);
+        if (Files.exists(output)) {
+            throw new IllegalStateException(output + " already exists; refusing to overwrite an edit");
+        }
+        String[] rows = {
+                "00000000", "00000EEE", "0000E555", "00EE5333",
+                "0E533333", "E5333333", "E5333333", "E5333333",
+                "0E5CCCCC", "00ECCCCE", "000EE66E", "00000E6F",
+                "00000E6F", "0000EEF6", "0000EFFF", "00000EEE"
+        };
+        Bitmap image = Bitmap.indexed(8, 16, editPalette());
+        for (int y = 0; y < rows.length; y++) {
+            for (int x = 0; x < 8; x++) {
+                image.setIndex(x, y, Character.digit(rows[y].charAt(x), 16));
+            }
+        }
+        if (output.getParent() != null) Files.createDirectories(output.getParent());
+        TileRenderer.writePng(image, output.toString());
+        System.out.println("Created mirrored-map drumstick editor " + output + " (8x16)");
+    }
+
+    private static byte[] decodeSymmetricEdit(String path) throws IOException {
+        Bitmap image = TileRenderer.readPng(path);
+        if (image.getWidth() != 8 || image.getHeight() != 16) {
+            throw new IllegalStateException(path + " must stay 8x16");
+        }
+        return TileRenderer.decodeTileSheet(image, editPalette(), 1, 1, 2);
+    }
+
+    private static void syncSymmetric(String romPath, String editPath) throws IOException {
+        if (!Files.exists(Paths.get(editPath))) {
+            throw new IllegalStateException("missing mirrored-map editor " + editPath);
+        }
+        byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        syncCopy(rom, MIRRORED_MAP_COPY,
+                remapToGamePalette(decodeSymmetricEdit(editPath), MIRRORED_MAP_COPY),
+                "mirrored map apple");
     }
 
     /**
@@ -317,29 +469,57 @@ public final class AppleGraphics {
 
     public static void verify(String romPath, String redEditPath, String greenEditPath) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
-        verifyRed(rom, redEditPath);
+        verifyRed(rom, redEditPath, false);
         verifyGreen(rom, greenEditPath);
-        System.out.println("Normal apples: red map copies and green raw copies are byte-identical to their editors");
+        System.out.println("Legacy apple check: first two map copies and two raw copies match their editors");
     }
 
     /** The full build validates every enabled editor against what the game actually loads. */
     public static void verifyAvailable(String romPath) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
-        if (Files.exists(Paths.get(DEFAULT_RED_EDIT))) verifyRed(rom, DEFAULT_RED_EDIT);
+        if (Files.exists(Paths.get(DEFAULT_RED_EDIT))) verifyRed(rom, DEFAULT_RED_EDIT, true);
+        if (Files.exists(Paths.get(DEFAULT_MIRRORED_EDIT))) verifySymmetric(rom, DEFAULT_MIRRORED_EDIT);
         if (Files.exists(Paths.get(DEFAULT_GREEN_EDIT))) verifyGreen(rom, DEFAULT_GREEN_EDIT);
         if (Files.exists(Paths.get(DEFAULT_GOLDEN_EDIT))) verifyGolden(romPath, DEFAULT_GOLDEN_EDIT);
         System.out.println("Apple editors verified against live ROM pointers and raw sprite slots");
     }
 
-    private static void verifyRed(byte[] rom, String redEditPath) throws IOException {
+    private static void verifyRed(byte[] rom, String redEditPath, boolean complete) throws IOException {
         byte[] expectedRed = decodeNormalEdit(redEditPath);
-        for (Copy copy : MAP_COPIES) {
+        for (int i = 0; i < (complete ? MAP_COPIES.length : 2); i++) {
+            Copy copy = MAP_COPIES[i];
             byte[] actual = readApple(rom, copy);
-            if (!Arrays.equals(expectedRed, actual)) {
+            if (!Arrays.equals(remapToGamePalette(expectedRed, copy), actual)) {
                 throw new IllegalStateException(String.format(
-                        "red map apple differs at live block 0x%X (original 0x%X); ROM is incomplete",
-                        resolveBlock(rom, 0x120000, copy.pointerField), copy.blockOffset));
+                    "red map apple differs at live block 0x%X (original 0x%X); ROM is incomplete",
+                        resolveCopyBlock(rom, copy), copy.blockOffset));
             }
+        }
+        if (complete && !Arrays.equals(expectedRed, readApple(rom, SPRITE_PICKUP_COPY))) {
+            throw new IllegalStateException("compressed pickup sprite still shows the original apple");
+        }
+        if (complete) {
+            int secondPointer = (rom[0x0316B8] & 255) << 24
+                    | (rom[0x0316B9] & 255) << 16
+                    | (rom[0x0316BA] & 255) << 8 | rom[0x0316BB] & 255;
+            if (secondPointer != resolveCopyBlock(rom, SPRITE_PICKUP_COPY)) {
+                throw new IllegalStateException("pickup sprite has inconsistent live pointers");
+            }
+        }
+        if (complete) {
+            byte[] originalRom = Files.readAllBytes(Paths.get(net.krusher.DefaultPaths.ROM));
+            byte[] expectedEmbedded = composeEmbedded(
+                    readApple(originalRom, EMBEDDED_MAP_COPY), expectedRed);
+            if (!Arrays.equals(expectedEmbedded, readApple(rom, EMBEDDED_MAP_COPY))) {
+                throw new IllegalStateException("background-embedded map apple is incomplete");
+            }
+        }
+    }
+
+    private static void verifySymmetric(byte[] rom, String editPath) throws IOException {
+        byte[] expected = remapToGamePalette(decodeSymmetricEdit(editPath), MIRRORED_MAP_COPY);
+        if (!Arrays.equals(expected, readApple(rom, MIRRORED_MAP_COPY))) {
+            throw new IllegalStateException("mirrored map apple differs at its live pointer");
         }
     }
 
@@ -375,14 +555,23 @@ public final class AppleGraphics {
                     + GOLDEN_WIDTH + "x" + GOLDEN_HEIGHT);
         }
         byte[] expected = TileRenderer.decodeSpriteSheet(image, goldenEditPalette(rom),
-                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_FRAME_TILES.length, 1,
-                GOLDEN_FRAME_TILE_COUNT * GOLDEN_FRAME_TILES.length, false);
-        byte[] actual = readGoldenFrames(LzToshio.decompress(rom,
-                resolveBlock(rom, 0x59000, 0x5938C)));
-        if (!Arrays.equals(expected, actual)) {
-            throw new IllegalStateException("built golden-apple frames differ from " + editPath);
+                GOLDEN_TILES_W, GOLDEN_TILES_H, GOLDEN_EDIT_FRAME_TILES.length, 1,
+                GOLDEN_FRAME_TILE_COUNT * GOLDEN_EDIT_FRAME_TILES.length, false);
+        byte[] block = LzToshio.decompress(rom, resolveBlock(rom, 0x59000, 0x5938C));
+        for (int frame = 0; frame < GOLDEN_GAME_FRAME_TILES.length; frame++) {
+            byte[] actual = Arrays.copyOfRange(block,
+                    GOLDEN_GAME_FRAME_TILES[frame] * TileRenderer.TILE_BYTES,
+                    (GOLDEN_GAME_FRAME_TILES[frame] + GOLDEN_FRAME_TILE_COUNT)
+                            * TileRenderer.TILE_BYTES);
+            byte[] pose = Arrays.copyOfRange(expected,
+                    (frame / 2) * GOLDEN_FRAME_TILE_COUNT * TileRenderer.TILE_BYTES,
+                    (frame / 2 + 1) * GOLDEN_FRAME_TILE_COUNT * TileRenderer.TILE_BYTES);
+            if (!Arrays.equals(pose, actual)) {
+                throw new IllegalStateException("built golden-apple frame " + frame
+                        + " differs from " + editPath);
+            }
         }
-        System.out.println("Golden-apple mapping: both animation frames are byte-identical");
+        System.out.println("Golden-apple mapping: all four game frames match the two editor poses");
     }
 
     /** TL,TR,BL,BR -> TL,BL,TR,BR. The permutation is its own inverse. */
@@ -401,12 +590,27 @@ public final class AppleGraphics {
     }
 
     private static byte[] readApple(byte[] rom, Copy copy) {
-        byte[] block = LzToshio.decompress(rom, resolveBlock(rom, 0x120000, copy.pointerField));
+        byte[] block = LzToshio.decompress(rom, resolveCopyBlock(rom, copy));
         if (block.length != copy.blockTileCount * TileRenderer.TILE_BYTES) {
             throw new IllegalStateException("unexpected apple tileset size at live pointer");
         }
-        return Arrays.copyOfRange(block, copy.firstTile * 32,
-                (copy.firstTile + TILE_COUNT) * 32);
+        byte[] tiles = new byte[copy.tileIndices.length * TileRenderer.TILE_BYTES];
+        for (int i = 0; i < copy.tileIndices.length; i++) {
+            System.arraycopy(block, copy.tileIndices[i] * TileRenderer.TILE_BYTES,
+                    tiles, i * TileRenderer.TILE_BYTES, TileRenderer.TILE_BYTES);
+        }
+        return tiles;
+    }
+
+    private static int resolveCopyBlock(byte[] rom, Copy copy) {
+        if (copy.pointerBase >= 0) return resolveBlock(rom, copy.pointerBase, copy.pointerField);
+        int field = copy.pointerField;
+        int target = (rom[field] & 255) << 24 | (rom[field + 1] & 255) << 16
+                | (rom[field + 2] & 255) << 8 | rom[field + 3] & 255;
+        if (target < 0 || target > rom.length - 8) {
+            throw new IllegalStateException("direct pickup pointer outside ROM");
+        }
+        return target;
     }
 
     /** Signed 32-bit offsets: relocated blocks can precede their pointer table. */
@@ -462,9 +666,9 @@ public final class AppleGraphics {
 
     private static byte[] readGoldenFrames(byte[] block) {
         byte[] frames = new byte[GOLDEN_FRAME_TILE_COUNT
-                * GOLDEN_FRAME_TILES.length * TileRenderer.TILE_BYTES];
-        for (int frame = 0; frame < GOLDEN_FRAME_TILES.length; frame++) {
-            System.arraycopy(block, GOLDEN_FRAME_TILES[frame] * TileRenderer.TILE_BYTES,
+                * GOLDEN_EDIT_FRAME_TILES.length * TileRenderer.TILE_BYTES];
+        for (int frame = 0; frame < GOLDEN_EDIT_FRAME_TILES.length; frame++) {
+            System.arraycopy(block, GOLDEN_EDIT_FRAME_TILES[frame] * TileRenderer.TILE_BYTES,
                     frames, frame * GOLDEN_FRAME_TILE_COUNT * TileRenderer.TILE_BYTES,
                     GOLDEN_FRAME_TILE_COUNT * TileRenderer.TILE_BYTES);
         }
