@@ -146,6 +146,11 @@ public class CholeilSDK
             TextInserter.run( buildingRom, DefaultPaths.SCRIPT, DefaultPaths.TBL, DefaultPaths.FREE_SPACE, buildingRom );
 
             System.out.println();
+            System.out.println("=== adding Heidi's three post-victory vehicle choices ===");
+            net.krusher.graphics.KartVehicleSelection.insertDialogue(
+                    buildingRom, DefaultPaths.ROM, DefaultPaths.TBL );
+
+            System.out.println();
             System.out.println("=== fixing map balloon widths ===");
             MapBalloonInserter.run( buildingRom, DefaultPaths.TBL, buildingRom );
 
@@ -217,6 +222,8 @@ public class CholeilSDK
             List<int[]> occupiedBeforeIntro = new java.util.ArrayList<>(occupiedGraphics);
             occupiedBeforeIntro.addAll(net.krusher.graphics.KartRaceMusic.insert(buildingRom, DefaultPaths.ROM,
                     net.krusher.graphics.KartRaceMusic.DEFAULT_VGM, DefaultPaths.FREE_SPACE, occupiedGraphics));
+            occupiedBeforeIntro.addAll(net.krusher.graphics.KartVehicleSelection.insertVehicles(
+                    buildingRom, DefaultPaths.ROM, DefaultPaths.FREE_SPACE, occupiedBeforeIntro));
             System.out.println();
             System.out.println("=== inserting the intro ===");
             IntroInserter.run( buildingRom, DefaultPaths.INTRO, DefaultPaths.ROM,
@@ -244,6 +251,7 @@ public class CholeilSDK
 
             System.out.println();
             net.krusher.graphics.KartRaceMusic.verify(buildingRom, net.krusher.graphics.KartRaceMusic.DEFAULT_VGM);
+            net.krusher.graphics.KartVehicleSelection.verify(buildingRom, DefaultPaths.ROM);
             publishRom(Path.of(buildingRom), Path.of(DefaultPaths.OUT_ROM));
 
             System.out.println();
