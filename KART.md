@@ -1,16 +1,36 @@
 # Kart de Iibis / carrera contra Charlie
 
-## Entrega para Scorpion
+## Los tres vehículos tras ganar a Carlos
 
-`references/fragoneta.png` conserva el diseño facilitado por Antxiko, sin
-modificarlo. Es una **referencia de 2135×736**, no un PNG directamente insertable:
-hay que adaptar sus dibujos al interior de las cajas de 32×32 y a los colores
-de `special_gfx_out/kart_EDITAME.png`. El editable incluido sigue conteniendo
-el kart original; la fragoneta **todavía no está integrada en la ROM**.
+La fragoneta de Scorpion está en `special_gfx_out/kart_EDITAME.png`.
+Después de pagar las 10 chapas para la contrarreloj, Heidi pregunta primero
+si quieres la fragoneta. Si respondes que no, pregunta por Kitty; responder
+que no otra vez elige el Mazda MX5 de Krusher. La primera carrera contra
+Carlos conserva su diálogo y sale con la fragoneta. El precio solo se cobra
+una vez por carrera, antes de elegir el vehículo.
+
+`special_gfx_out/kart_kitty_EDITAME.png` y
+`special_gfx_out/kart_mazdaMX5_EDITAME.png` son las otras dos fuentes. Ahora
+son **plantillas copiadas de la fragoneta**, no los dibujos terminados de
+Kitty ni del Mazda. Hasta que se editen, los tres se verán iguales aunque la
+ROM ya seleccione y cargue tres bloques gráficos distintos. No hemos
+inventado el diseño de los coches de Krusher.
+
+Las tres hojas tienen la misma paleta original, las mismas 18 cajas de 32×32
+y el mismo rosa transparente; se pueden editar de forma independiente. Cada
+vez que Corona sube al kart se actualiza la VRAM con la hoja elegida, sin
+cambiar la paleta, el mapa ni los controles. Al volver a elegir la fragoneta
+se limpian las banderas de Kitty y Mazda. Las variantes se comprimen y
+reservan antes de insertar la intro; el constructor aborta si no queda espacio
+o si una hoja tiene dimensiones o colores incompatibles.
+
+`references/fragoneta.png` conserva la referencia original facilitada por
+Antxiko. El editable de la fragoneta es el PNG paletizado indicado arriba.
 
 ## Qué editar
 
-**`special_gfx_out/kart_EDITAME.png`** es la fuente del vehículo completo.
+**`special_gfx_out/kart_EDITAME.png`** es la fuente de la fragoneta;
+las dos hojas alternativas usan exactamente el mismo formato.
 Tiene **298×67 píxeles**, 9 columnas y 2 filas. Cada dibujo ocupa un interior
 de **32×32** con una rejilla de 1 píxel que nunca se inserta en la ROM.
 
@@ -33,7 +53,7 @@ por separado** y no está dentro de esta hoja; Charlie tampoco.
 
 `kart_settings.txt` incluye `hide_driver=1`: al subir al kart se oculta a
 Corona, incluida la cuenta atrás y la animación de conducción. Así se verá
-solo el vehículo cuando Scorpion integre la fragoneta. Corona a pie y Charlie
+solo el vehículo. Corona a pie y Charlie
 no se ocultan; al abandonar la carrera o terminarla, la carga del mapa restaura
 la visibilidad normal del jugador.
 
@@ -61,7 +81,7 @@ comparten la misma selección musical original.
 
 Formato admitido, desactivación, espacio reservado y comprobaciones:
 [music/README.md](music/README.md). Esto es independiente del dibujo del
-vehículo y de `hide_driver`; añadir la música no convierte el kart en furgoneta.
+vehículo y de `hide_driver`.
 
 ## Paleta y transparencia
 
