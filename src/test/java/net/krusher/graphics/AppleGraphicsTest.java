@@ -46,11 +46,16 @@ final class AppleGraphicsTest {
         Path original=dir.resolve("original.md"),edit=dir.resolve("gold.png"),view=dir.resolve("view.png");
         Files.write(original,base);
         AppleGraphics.extractGolden(original.toString(),edit.toString(),view.toString());
-        byte[] rom=base.clone(),packed=LzToshio.compress(LzToshio.decompress(base,0xA5644));
+        byte[] frames=LzToshio.decompress(base,0xA5644);
+        System.arraycopy(frames,9*32,frames,0,9*32);
+        System.arraycopy(frames,27*32,frames,18*32,9*32);
+        byte[] rom=base.clone(),packed=LzToshio.compress(frames);
         System.arraycopy(packed,0,rom,0xE5000,packed.length);put32(rom,0x5938C,0xE5000-0x59000);
         Arrays.fill(rom,0xA5644,0xA564C,(byte)0);
         Path built=dir.resolve("built.md");Files.write(built,rom);
         AppleGraphics.verifyGolden(built.toString(),edit.toString());
+        rom[0xE5000+8]^=1;Files.write(built,rom);
+        assertThrows(RuntimeException.class,()->AppleGraphics.verifyGolden(built.toString(),edit.toString()));
     }
     @Test void distinctRedAndGreenEditorsRemainIndependent(@TempDir Path dir) throws Exception {
         Path original=dir.resolve("original.md"),red=dir.resolve("red.png"),green=dir.resolve("green.png"),view=dir.resolve("view.png");
