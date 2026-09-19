@@ -103,16 +103,30 @@ public final class Png {
         byte[] raw = inflate(idat.toByteArray(), what);
         int channels = channelsFor(colorType, what);
         int[] argb = new int[width * height];
+        byte[] indices = colorType == COLOR_TYPE_INDEXED ? new byte[width * height] : null;
         if (interlaced) {
-            decodeInterlaced(raw, argb, width, height, bitDepth, channels, colorType, plte, what);
+            decodeInterlaced(raw, argb, indices, width, height, bitDepth, channels, colorType, plte, what);
         } else {
-            decodePass(raw, 0, argb, 0, 0, 1, 1, width, height, width, bitDepth, channels, colorType, plte, what);
+            decodePass(raw, 0, argb, indices, 0, 0, 1, 1, width, height, width, bitDepth, channels, colorType, plte, what);
+        }
+        if (indices != null) {
+            int[] palette = new int[plte.length / 3];
+            for (int i = 0; i < palette.length; i++) {
+                int atPalette = i * 3;
+                palette[i] = 0xFF000000 | ((plte[atPalette] & 0xFF) << 16)
+                        | ((plte[atPalette + 1] & 0xFF) << 8) | (plte[atPalette + 2] & 0xFF);
+            }
+            Bitmap image = Bitmap.indexed(width, height, palette);
+            for (int y = 0; y < height; y++) {
+                for (int x = 0; x < width; x++) image.setIndex(x, y, indices[y * width + x] & 0xFF);
+            }
+            return image;
         }
         return Bitmap.trueColor(width, height, argb);
     }
 
     /** Adam7: seven passes, each a smaller image scattered over the full one. */
-    private static void decodeInterlaced(byte[] raw, int[] argb, int width, int height, int bitDepth,
+    private static void decodeInterlaced(byte[] raw, int[] argb, byte[] indices, int width, int height, int bitDepth,
                                          int channels, int colorType, byte[] plte, String what) throws IOException {
         int[] xStart = {0, 4, 0, 2, 0, 1, 0};
         int[] yStart = {0, 0, 4, 0, 2, 0, 1};
@@ -124,7 +138,7 @@ public final class Png {
             int passWidth = (width - xStart[pass] + xStep[pass] - 1) / xStep[pass];
             int passHeight = (height - yStart[pass] + yStep[pass] - 1) / yStep[pass];
             if (passWidth <= 0 || passHeight <= 0) continue;
-            offset += decodePass(raw, offset, argb, xStart[pass], yStart[pass], xStep[pass], yStep[pass],
+            offset += decodePass(raw, offset, argb, indices, xStart[pass], yStart[pass], xStep[pass], yStep[pass],
                     passWidth, passHeight, width, bitDepth, channels, colorType, plte, what);
         }
     }
@@ -133,7 +147,7 @@ public final class Png {
      * Un-filters one image (or one Adam7 pass) and expands it into {@code argb},
      * returning how many bytes of {@code raw} it consumed.
      */
-    private static int decodePass(byte[] raw, int offset, int[] argb,
+    private static int decodePass(byte[] raw, int offset, int[] argb, byte[] indices,
                                   int xStart, int yStart, int xStep, int yStep,
                                   int passWidth, int passHeight, int imageWidth,
                                   int bitDepth, int channels, int colorType, byte[] plte, String what)
@@ -157,6 +171,7 @@ public final class Png {
                 int x = xStart + col * xStep;
                 int y = yStart + row * yStep;
                 argb[y * imageWidth + x] = pixelAt(current, col, bitDepth, channels, colorType, plte);
+                if (indices != null) indices[y * imageWidth + x] = (byte) sample(current, col, bitDepth);
             }
             byte[] swap = previous;
             previous = current;

@@ -57,6 +57,12 @@ public final class Bitmap {
         return argb[y * width + x];
     }
 
+    /** Original palette index, if the image is indexed; needed when colors repeat. */
+    public int getIndex(int x, int y) {
+        if (indices == null) throw new IllegalStateException("not an indexed image");
+        return indices[y * width + x] & 0xFF;
+    }
+
     /** Paints one pixel; only valid on an indexed image. */
     public void setIndex(int x, int y, int index) {
         if (indices == null) throw new IllegalStateException("not an indexed image");
