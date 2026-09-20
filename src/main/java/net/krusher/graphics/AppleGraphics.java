@@ -57,6 +57,14 @@ public final class AppleGraphics {
     /** Same old apple artwork, but drawn over solid map colour 8 with shadow 13. */
     private static final Copy EMBEDDED_MAP_COPY = new Copy(0x132946,
             new int[]{350, 351, 366, 367}, 480, 0x120028, 0x120000, 0, null);
+    /** Otrolao bakes its apple into a speckled floor tile, using palette line 2. */
+    private static final Copy OTROLAO_MAP_COPY = new Copy(0x13791C,
+            new int[]{210, 211, 226, 227}, 464, 0x120030, 0x120000, 0,
+            new int[]{0x0262, 0x0EEE, 0x0AEE, 0x08CC, 0x06AA, 0x0222, 0x0EEC,
+                    0x0CCA, 0x0AA8, 0x0ACA, 0x0464, 0x0266, 0x08A8, 0x0028,
+                    0x004C, 0x048E});
+    private static final Copy OTROLAO_FLOOR_COPY = new Copy(0x13791C,
+            new int[]{20, 21, 36, 37}, 464, 0x120030, 0x120000, 0, null);
     /** The 0xF4800 stream supplies the on-screen 16x16 pickup sprite. */
     private static final Copy SPRITE_PICKUP_COPY = new Copy(0x0F4800,
             new int[]{0, 2, 1, 3}, 69, 0x03123E, -1, 0x000548, null);
@@ -202,6 +210,7 @@ public final class AppleGraphics {
         sync(romPath, editPath, "map apple", MAP_COPIES);
         sync(romPath, editPath, "pickup sprite apple", new Copy[]{SPRITE_PICKUP_COPY});
         syncEmbedded(romPath, editPath);
+        syncOtrolao(romPath, editPath);
         syncSymmetric(romPath, DEFAULT_MIRRORED_EDIT);
     }
 
@@ -376,6 +385,25 @@ public final class AppleGraphics {
                 "background-embedded map apple");
     }
 
+    private static byte[] composeOtrolao(byte[] floor, byte[] edit) {
+        byte[] result = new byte[edit.length];
+        for (int i = 0; i < edit.length; i++) {
+            int ground = floor[i] & 255, drawing = edit[i] & 255;
+            result[i] = (byte) (((drawing >> 4 == 0 ? ground >> 4 : drawing >> 4) << 4)
+                    | ((drawing & 15) == 0 ? ground & 15 : drawing & 15));
+        }
+        return result;
+    }
+
+    private static void syncOtrolao(String romPath, String editPath) throws IOException {
+        if (!Files.exists(Paths.get(editPath))) return;
+        byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        byte[] drawing = remapToGamePalette(decodeNormalEdit(editPath), OTROLAO_MAP_COPY);
+        syncCopy(rom, OTROLAO_MAP_COPY,
+                composeOtrolao(readApple(rom, OTROLAO_FLOOR_COPY), drawing),
+                "Otrolao apple over floor");
+    }
+
     private static int[] genesisPalette(int[] words) {
         int[] palette = new int[words.length];
         for (int i = 0; i < words.length; i++) {
@@ -512,6 +540,12 @@ public final class AppleGraphics {
                     readApple(originalRom, EMBEDDED_MAP_COPY), expectedRed);
             if (!Arrays.equals(expectedEmbedded, readApple(rom, EMBEDDED_MAP_COPY))) {
                 throw new IllegalStateException("background-embedded map apple is incomplete");
+            }
+            byte[] expectedOtrolao = composeOtrolao(
+                    readApple(originalRom, OTROLAO_FLOOR_COPY),
+                    remapToGamePalette(expectedRed, OTROLAO_MAP_COPY));
+            if (!Arrays.equals(expectedOtrolao, readApple(rom, OTROLAO_MAP_COPY))) {
+                throw new IllegalStateException("Otrolao map apple still shows the original art");
             }
         }
     }
