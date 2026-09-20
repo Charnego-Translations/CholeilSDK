@@ -5729,7 +5729,7 @@ collar de melones.
 ==== room=96 npc=0 str=2 textAddr=0x1d12d0 ptrFieldAddr=0x1d108e ====
 Ahora, magia potagia,
 aprende a descubrir la
-magintud de tus pecados y
+magnitud de tus pecados y
 todas esas gilichorradas.
 ¡Venga, a seguir!
 ¡Que menudo follón que
@@ -5805,7 +5805,7 @@ CURRELA: He escuchado que en
 Ibi está nevando de la
 hoxtia, y eso es raro porque
 en Alicante no nieva ni
-aunque eches cubutos de
+aunque eches cubitos de
 hielo de un avión.
 
 
