@@ -39,7 +39,7 @@ Al crecer un PNG, la recompresion puede obligar a mover todo su bloque. El
 parcheador comunica ahora esas reservas a la intro para que no las pise, y
 excluye la tabla viva de `0x03CE78` de los supuestos huecos libres.
 
-El comando `i` verifica al final las seis copias del mapa, la copia sprite
+El comando `i` verifica al final las siete copias del mapa, la copia sprite
 comprimida, las dos raw y las cuatro posiciones doradas, siguiendo los
 punteros que usa realmente el juego,
 incluso si los bloques se han movido. Si una edicion no se puede insertar,
@@ -73,7 +73,7 @@ Los cinco savestates adicionales han revelado otras rutas:
 |---|---:|---:|---|
 | `manzanaSevilla.State` | `0x1528E4` | 328 y 391, reflejados | `manzana_simetrica_EDITAME.png` |
 | `manzanaIbis.State` | `0x12FE58` | 392, 393, 408, 409 | `manzana_roja_EDITAME.png` |
-| `manzanaOtrolao.State` | `0x0F4800` | 0-3, orden por columnas | `manzana_roja_EDITAME.png` |
+| `manzanaOtrolao.State` | `0x13791C` | 210, 211, 226, 227 | `manzana_roja_EDITAME.png` |
 | `manzanaRabesa.State` | `0x1260CA` | 138, 139, 154, 155 | `manzana_roja_EDITAME.png` |
 
 Un barrido de los 508 bloques graficos catalogados encontro ademas el bloque
@@ -82,9 +82,14 @@ original dibuja *sobre* un tile de terreno, con fondo y sombra incorporados.
 El parche borra solo la manzana antigua, conserva el terreno y la sombra, y
 compone encima el editor rojo. Esta copia no aparecia en las cinco partidas.
 
+Otrolao tambien tiene la manzana incrustada en el mapa, pero sobre un suelo
+irregular. La version sin manzana de ese suelo esta en los tiles 20, 21, 36 y
+37 del mismo bloque. Se conserva ese fondo, se dibuja el muslo encima y se
+respetan los colores existentes de la paleta 2.
+
 Se volvio a escanear la ROM original de 2 MiB: contiene 508 bloques LZ validos,
 exactamente los 508 del catalogo. La comparacion de formas de 16x16, ignorando
-permutaciones de indices de color, encontro esas seis copias de mapa y el
+permutaciones de indices de color, encontro esas siete copias de mapa y el
 paquete sprite. La busqueda equivalente de 24x24 encontro solamente los cuatro
 fotogramas del bloque dorado `0x0A5644`; la variante reflejada de Sevilla
 tambien se busco por sus dos tiles y no aparecio en otro bloque. Los dos
@@ -93,9 +98,10 @@ de esa familia en la ROM original. Esto cubre todas las copias localizadas por
 el barrido; una manzana con arte completamente distinto no quedaria demostrada
 sin verla en el juego.
 
-La de Otrolao es un sprite: en el savestate aparece en VRAM como los tiles
-`0x6BA-0x6BD`. El bloque `0x0F4800` se carga tambien en las otras cuatro
-pruebas, de modo que el cambio puede cubrir mas manzanas de esa familia.
+El paquete sprite `0x0F4800` tambien contiene una manzana editable, pero no es
+la que se ve en `manzanaOtrolao.State`. Una primera inspeccion la confundio con
+los tiles `0x6BA-0x6BD` que habian quedado en VRAM; la lista activa de sprites
+no los utilizaba. La manzana visible corresponde al bloque de mapa `0x13791C`.
 
 Ademas, el cargador de esta familia copia de una vez `0x0F4600-0x0F47FF` a VRAM
 `0x7F0-0x7FF`. Sus dos ultimas figuras son otras dos copias exactas de la
@@ -121,7 +127,7 @@ aparece colocado en el mapa.
 
 ## Alcance confirmado
 
-Quedan localizadas seis copias del objeto rojo de mapa, el sprite comprimido,
+Quedan localizadas siete copias del objeto rojo de mapa, el sprite comprimido,
 las dos posiciones raw separadas para la verde y los iconos rojos/verdes del
 marcador. Una manzana soltada por un
 enemigo aun no se ha capturado en BizHawk; falta confirmar visualmente que esas
@@ -160,9 +166,11 @@ Esto separa la dorada confirmada de los PNG de la moneda. El grafico de
 se parece a lo que hay en pantalla, pero la tabla de sprites demuestra que la
 dorada visible no lo referencia.
 
-La prueba final se hizo recargando la sala del snapshot 5 para obligar a
-BizHawk a leer los graficos de la ROM reconstruida; la dorada volvio a aparecer
-correctamente. El editor queda verificado byte a byte en las cuatro posiciones.
+La prueba de recarga del snapshot 5 confirmo que BizHawk lee los graficos de
+la ROM reconstruida. El editor queda verificado byte a byte en las cuatro
+posiciones, pero Antxiko ha observado que la animacion parcheada se reproduce
+mal: queda pendiente comprobar y corregir su secuencia en el juego. No se da
+por validada visualmente la animacion dorada.
 
 Este resultado cubre la variante observada en Choleil. No se afirma aun que
 una variante de otra subzona use el mismo bloque: si aparece distinta, se
