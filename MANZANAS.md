@@ -168,9 +168,8 @@ dorada visible no lo referencia.
 
 La prueba de recarga del snapshot 5 confirmo que BizHawk lee los graficos de
 la ROM reconstruida. El editor queda verificado byte a byte en las cuatro
-posiciones, pero Antxiko ha observado que la animacion parcheada se reproduce
-mal: queda pendiente comprobar y corregir su secuencia en el juego. No se da
-por validada visualmente la animacion dorada.
+posiciones. Antxiko ha comprobado en BizHawk que la animacion parcheada se ve
+bien en `manzanaDorada.State`.
 
 Este resultado cubre la variante observada en Choleil. No se afirma aun que
 una variante de otra subzona use el mismo bloque: si aparece distinta, se
