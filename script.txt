@@ -1499,7 +1499,7 @@ el tiempo entonces?
 AMA DE CASA: ¡Ten cuidaíto
 en el campo de entrenamiento
 de Rabesa! ¡Como haya un
-satieta o algo te puede
+satireta o algo te puede
 romper el ojal! Eso sí, hay
 cosas pa mangar y moneditas
 escondías en la jierba.
@@ -1559,7 +1559,7 @@ el campo de Rabesa. Están
 todos agelipollaos y
 cualquier día les da un
 apechusque. Yo no puedo
-ir porque me duele un
+ir porque me duele un...
 bolsillo.
 
 
@@ -1686,8 +1686,6 @@ a todos los gitanos de las
 LIEBRE: ...............
 
 
-
-
 ==== room=13 npc=0 str=1 textAddr=0x1c52fa ptrFieldAddr=0x1c52ce ====
 LIEBRE: ¿Qué miras,
 soplapollas? ¿Cómo es que me
@@ -1802,10 +1800,10 @@ veces o así.
 
 
 ==== room=14 npc=2 str=1 textAddr=0x1c5942 ptrFieldAddr=0x1c58d8 ====
-ELEFANTE: Fuas, hasta Lili
-hay un pateo que te cagas,
-yo no iría ni harto de
-mandanga.
+ELEFANTE: Fuas, hasta
+Córdoba hay un pateo que te
+cagas, yo no iría ni harto
+de mandanga.
 
 
 ==== room=14 npc=2 str=2 textAddr=0x1c59b4 ptrFieldAddr=0x1c58da ====
@@ -1845,8 +1843,9 @@ que las pistolas del Coyote!
 MONO: Me paice que hay un
 nimalico al otro lao del
 piedro ese, pero paso de ir
-porque me pegan un bocao en
-las pelotas fijo.
+porque hace cantidad de
+viento y está to lleno
+de cholos.
 
 
 ==== room=16 npc=0 str=1 textAddr=0x1c5c1a ptrFieldAddr=0x1c5b7a ====
@@ -2262,7 +2261,7 @@ LOBO: Hostia con Caperucita,
 tiene más cabeza que una
 tienda de moñecos. ¡Ya que
 la vieja no sale, te voy
-a violear a tí! ¡Juas!
+a violear a ti! ¡Juas!
 
 
 ==== room=25 npc=1 str=1 textAddr=0x1c6fbc ptrFieldAddr=0x1c6f66 ====
@@ -2729,7 +2728,7 @@ la espicha ya!
 CHON GORDA: Los payos son
 mu malos, nos atacan sólo
 por ser cholos. Ten
-cuidaíco, miarma.
+cuidaíco, abonico.
 
 
 ==== room=32 npc=0 str=1 textAddr=0x1c85c4 ptrFieldAddr=0x1c8564 ====
@@ -2864,8 +2863,8 @@ pero les salió rana, cada
 uno empezó hablando en friki
 una cosa distinta y se fue
 todo a la puta, y ni
-acabarobn na. ¡Son como los
-de Charengo Translations!
+acabaron ni na. ¡Son como
+los Charengo Translations!
 
 
 ==== room=34 npc=0 str=1 textAddr=0x1c8d9a ptrFieldAddr=0x1c8d08 ====
@@ -3045,7 +3044,7 @@ Como un petardo nel culo.
 <SAME room=36 npc=2 str=1>
 
 ==== room=38 npc=0 str=0 textAddr=0x1c951e ptrFieldAddr=0x1c951a ====
-ROXIE: ¡Tú machirulo! ¿Cómo
+ROXIE: ¡Tú, machirulo! ¿Cómo
 te atreves a tocarme sin
 consentimiento? ¡Violador!
 
@@ -3084,7 +3083,7 @@ contigo a liarla parda.
 
 
 ==== room=39 npc=0 str=1 textAddr=0x1c9768 ptrFieldAddr=0x1c96a0 ====
-El leon se une al grupo de
+El león se une al grupo de
 los animalicos.
 
 
@@ -4012,9 +4011,9 @@ tinto ni tiene coloooor!
 ==== room=61 npc=0 str=0 textAddr=0x1cbf52 ptrFieldAddr=0x1cbf44 ====
 FLOR: ................ 
 
-¿Qué le ha pasao a esta?
+(¿Qué le ha pasao a esta?
 ¿Se ha quedado muda de un
-susto o algo?
+susto o algo?)
 
 
 ==== room=61 npc=0 str=1 textAddr=0x1cbfb0 ptrFieldAddr=0x1cbf46 ====
@@ -4044,6 +4043,7 @@ de na, pero si te arrimas
 sescucha algo chungo...
 ¿Que no oyes na? ¡Arrímate,
 no me seas una maricona!
+¡Ponte por ensima!
 
 
 ==== room=61 npc=0 str=4 textAddr=0x1cc190 ptrFieldAddr=0x1cbf4c ====
@@ -4979,10 +4979,10 @@ tus muertos!
 <NAME> trinca un
 cuenno de la Madre de los
 Cholos. El Valle de las
-Vailas era en verdás un
+Bailas era en verdás un
 cholo más grande que un día
 sin pan. Pero gracias a que
-le has puesto el piajama
+le has puesto el pijama
 de madera ya no nacerán
 más cholos de los bujeros
 de este valle.
@@ -5029,7 +5029,7 @@ cuelgue!
 
 
 ==== room=86 npc=1 str=1 textAddr=0x1cf3d8 ptrFieldAddr=0x1cf37a ====
-¡Que sascapao, paco! ¡El
+¡Que sascapao, Paco! ¡El
 cholo que estaba encerrao
 en la mazmorra del castillo
 se ha escapao! ¡Qué jiñe!
