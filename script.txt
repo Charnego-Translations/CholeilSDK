@@ -1544,7 +1544,7 @@ AMA DE CASA: Semos recién
 casaos, así que follamos más
 que los conejos, ¡a ver si
 el tonto este me hace un
-bomobo ya!
+bombo ya!
 
 
 ==== room=10 npc=1 str=0 textAddr=0x1c4bc6 ptrFieldAddr=0x1c4bc4 ====
@@ -1665,7 +1665,7 @@ laos. ¿Sabes por qué?
 
 ==== room=12 npc=0 str=9 textAddr=0x1c5198 ptrFieldAddr=0x1c4ea8 ====
 MUJER: Tú que eres, ¿un
-enteraíllo u qué?
+enteraíllo o qué?
 
 
 ==== room=12 npc=0 str=10 textAddr=0x1c51ce ptrFieldAddr=0x1c4eaa ====
@@ -3483,7 +3483,7 @@ mariconas.
 CURA: Mffs... ¿Te has
 pensado lo de venirte ahí
 detrás conmigo para que te
-de chucherías?
+dé chucherías?
 
 
 ==== room=48 npc=1 str=0 textAddr=0x1ca910 ptrFieldAddr=0x1ca8fc ====
