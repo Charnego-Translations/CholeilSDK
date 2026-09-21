@@ -1249,8 +1249,6 @@ FLOR: "..................."
 decir, tontopolla?)
 
 
-
-
 ==== room=7 npc=5 str=1 textAddr=0x1c3c50 ptrFieldAddr=0x1c3c2e ====
 FLOR: .................
 ...Anda, pero si tú me
