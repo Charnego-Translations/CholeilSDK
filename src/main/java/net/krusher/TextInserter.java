@@ -87,13 +87,13 @@ public final class TextInserter {
     // plus two data bytes -- not a printed line of three characters. Counting
     // them as text made alignYesNoPrompts pad one line short.
     //
-    // E0 sets an event flag and E1 clears one; both consume a 16-bit id.
-    // Operand bytes can look like glyphs in the extracted text, but must not
-    // count as printed characters or as a line of the dialogue box.
+    // 0xE0 is the only one identified so far, and firmly: all 84 occurrences in
+    // the script are {e0} followed by exactly two further bytes, the first
+    // always the glyph for 0x30 and the second ranging over the whole byte
+    // space. Add an entry here as other operand-taking opcodes are identified.
     static final Map<String, Integer> OPCODE_OPERANDS = new HashMap<String, Integer>();
     static {
         OPCODE_OPERANDS.put("{E0}", 2);
-        OPCODE_OPERANDS.put("{E1}", 2);
     }
 
     // Longest slot value still read as a relative offset by the fetch helper
@@ -377,9 +377,6 @@ public final class TextInserter {
         // Never place anything over the fetch helper block, even when a stale
         // free_space.txt (from before the 0xf6060 gap start) still offers it.
         excluded.add(new int[]{FETCH_HELPER_ADDR, 0xF6060});
-        // Heidi's expanded kart-choice table and text are installed after
-        // placement; do not hand their reserved bytes to another string.
-        excluded.add(new int[]{0x1D2B00, 0x1D2D20});
         List<int[]> ranges = subtractRanges(mergeRanges(pool), mergeRanges(excluded));
         System.out.println("Writable pool ranges (after reserving " + reservations.size() + " str=0 slots):");
         long totalCapacity = 0;

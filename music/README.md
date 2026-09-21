@@ -64,8 +64,10 @@ la reserva completa, incluidos ceros/relleno. En esta compilación queda en
 
 Código y música permanecen por debajo de 2 MiB para que los snapshots antiguos
 de BizHawk/GPGX no oculten el reproductor al restaurar su mapa de memoria.
-La intro puede ampliar la ROM por su cuenta. No se modifica el límite de ROM
-de la cabecera usado por la autocomprobación de Soleil.
+La intro utiliza además una reserva exclusiva en `0xF8000..0xFD000`; la
+construcción final debe medir exactamente 2 MiB y falla si cualquier pieza se
+derrama fuera. No se modifica el límite de ROM de la cabecera usado por la
+autocomprobación de Soleil.
 
 La compilación valida de nuevo hook, código y todos los paquetes después de
 los demás parches, antes de publicar `Choleil.md`; si falta espacio o hay un
