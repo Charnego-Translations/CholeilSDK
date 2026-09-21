@@ -32,7 +32,7 @@ public final class FreeSpaceScanner {
      * unlike the heuristic scan below, these aren't uniform byte runs, so
      * they'd never be found automatically.
      *
-     * 0xf6060-0xfd000: sits between the font glyph table (0xf5000-0xf5fff,
+     * 0xf6060-0xfd000 sits between the font glyph table (0xf5000-0xf5fff,
      * 256 reserved 16-byte slots, only up to index 0xaf ever populated --
      * confirmed live via the `lea $f5000,a3` in the character-tile renderer)
      * and the next real compressed graphics block (0xfd000, per
@@ -44,11 +44,20 @@ public final class FreeSpaceScanner {
      * unreferenced padding/noise. No code or pointer table in the ROM
      * targets any address in this range. The first 0x60 bytes (0xf6000-
      * 0xf6060) are excluded: TextInserter installs its absolute-pointer
-     * fetch helper there (see TextInserter.FETCH_HELPER_ADDR), and keeping
-     * the block out of this list keeps every free-space consumer off it.
+     * fetch helper there (see TextInserter.FETCH_HELPER_ADDR).
+     *
+     * The front 0x1fa0 bytes remain available to the normal text/credits
+     * allocators. The final 0x5000 bytes are deliberately withheld from
+     * free_space.txt and reserved for IntroInserter, which lets the complete
+     * fragoneta + A-Team build stay inside a 16-Mbit cartridge.
      */
+    static final int INTRO_GAP_START = 0xf8000;
+    static final int INTRO_GAP_END = 0xfd000;
     static final int[][] VERIFIED_GAPS = {
-            {0xf6060, 0xfd000},
+            {0xf6060, INTRO_GAP_START},
+    };
+    static final int[][] INTRO_RESERVED_GAPS = {
+            {INTRO_GAP_START, INTRO_GAP_END},
     };
 
     /**
@@ -101,6 +110,7 @@ public final class FreeSpaceScanner {
         List<int[]> allExcluded = new ArrayList<int[]>();
         if (excluded != null) allExcluded.addAll(excluded);
         for (int[] gap : VERIFIED_GAPS) allExcluded.add(gap);
+        for (int[] gap : INTRO_RESERVED_GAPS) allExcluded.add(gap);
 
         List<Region> regions = new ArrayList<Region>();
         int i = fromAddr;
@@ -171,11 +181,12 @@ public final class FreeSpaceScanner {
         sb.append("; Candidate free-space regions. Most are auto-detected by scanning for long\n");
         sb.append("; runs of a single repeated byte value -- a heuristic, not a guarantee, so\n");
         sb.append("; review before trusting and delete any line you're not sure is safe to\n");
-        sb.append("; overwrite. A few (currently just 0xf6060-0xfd000, fill byte 0x00 as a\n");
+        sb.append("; overwrite. The verified 0xf6060-0xf8000 gap (fill byte 0x00 as a\n");
         sb.append("; placeholder) are FreeSpaceScanner.VERIFIED_GAPS entries instead: manually\n");
         sb.append("; confirmed unreferenced by cross-checking every LEA-absolute instruction and\n");
         sb.append("; known table base in the ROM, not by the byte-run heuristic -- see that\n");
-        sb.append("; constant's comment for what's actually there.\n");
+        sb.append("; constant's comment for what's actually there. 0xf8000-0xfd000 is kept\n");
+        sb.append("; out of this file and reserved exclusively for the boot intro.\n");
         sb.append("; Format: 0xSTART,length,0xFILLBYTE\n");
         for (Region r : regions) {
             sb.append("0x").append(Integer.toHexString(r.start))

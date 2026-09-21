@@ -139,6 +139,8 @@ public final class IntroInserter {
     // starts exactly there. It is deliberately not in this list.
     static final int[][] HUECOS = {
             {0x0ACF08, 143608}, {0x0E4FE0, 45088}, {0x11BF6A, 16534},
+            {FreeSpaceScanner.INTRO_GAP_START,
+                    FreeSpaceScanner.INTRO_GAP_END - FreeSpaceScanner.INTRO_GAP_START},
             {0x1BE040,   8128}, {0x1E6785,  6267}, {0x113AC2,  5212},
             {0x1ED0FB,   3845}, {0x04F260,  3488}, {0x0532E8,  3352},
             {0x1F63AA,   3158}, {0x1D7419,  3047}, {0x0FE7A4,  2140},
@@ -339,7 +341,7 @@ public final class IntroInserter {
         // the "ROM end" field at 0x1A4, and touching that hangs it on a red
         // screen. The checksum at 0x18E does have to be redone, because we
         // wrote inside the game's own address space.
-        writeU16(salida, 0x18E, checksumSega(salida, juego.length));
+        writeU16(salida, 0x18E, checksumSega(salida, TextInserter.checksumEnd(salida)));
 
         int ocupado = COD_TAM + tamCerca + tamLejos + pcm.length + vacio.length + drvlib.length + comp;
         System.out.println("Intro            : Charnego Translations INTRO FINAL (XGM, with fade)");
