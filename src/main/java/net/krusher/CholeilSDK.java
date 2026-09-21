@@ -103,11 +103,13 @@ public class CholeilSDK
                     net.krusher.graphics.FinGraphics.DEFAULT_VIEW );
 
             System.out.println();
-            System.out.println("=== extracting Corona sword swing ===");
+            System.out.println("=== extracting Corona sword swing and static poses ===");
             net.krusher.graphics.CoronaSwordGraphics.extract(
                     DefaultPaths.ROM,
                     net.krusher.graphics.CoronaSwordGraphics.DEFAULT_EDIT,
-                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_VIEW );
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_VIEW,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_STATIC_EDIT,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_STATIC_VIEW );
 
             System.out.println();
             System.out.println("=== extracting Sonic + hammock animation ===");
@@ -215,13 +217,14 @@ public class CholeilSDK
 
             System.out.println();
             System.out.println("=== inserting all park flower poses ===");
-            net.krusher.graphics.FlowerParkGraphics.insert( DefaultPaths.OUT_ROM );
+            net.krusher.graphics.FlowerParkGraphics.insert( buildingRom );
 
             System.out.println();
-            System.out.println("=== inserting Corona sword swing ===");
+            System.out.println("=== inserting Corona sword swing and static poses ===");
             net.krusher.graphics.CoronaSwordGraphics.insert(
                     buildingRom,
                     net.krusher.graphics.CoronaSwordGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.CoronaSwordGraphics.DEFAULT_STATIC_EDIT,
                     buildingRom );
 
             System.out.println();
