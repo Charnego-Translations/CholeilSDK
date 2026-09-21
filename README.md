@@ -272,11 +272,13 @@ That is why `raw_gfx_out/raw_000e56.png` and `raw_001456.png` — the Charnego l
 stop being drawn once the intro is in.
 
 This runs **last**, over a ROM every other step has already rewritten, and the intro's
-filler list overlaps `free_space.txt` in five places. So `free_space.txt` is subtracted
-from its pool up front, and every piece is checked against the untouched ROM before
-being written: a byte an earlier step changed stops the build instead of silently
-eating a relocated string. The freed logo graphics are the one exemption, since
-removing the logo is what makes them dead.
+filler list overlaps `free_space.txt` in several places. So `free_space.txt` is
+subtracted from its pool up front. The verified range `0xF8000..0xFD000` is withheld
+from every earlier allocator and belongs exclusively to the intro, allowing the
+fragoneta + A-Team build to remain exactly 16 Mbit. Every piece is checked against
+the untouched ROM before being written: a byte an earlier step changed stops the
+build instead of silently eating a relocated string. The freed logo graphics are
+the other exemption, since removing the logo is what makes them dead.
 
 Ported from `insertar_intro.py` by ScorpioN-MsX; the Java step reproduces its output
 byte for byte. Only the path the pipeline uses came across — the uncompressed mode,
@@ -291,7 +293,10 @@ itself against it and hangs on a red screen if it changes.
 `FreeSpaceScanner` re-scans the ROM on every build for runs of filler, excluding
 everything the other tools know about, and writes `free_space.txt`. Regions that
 cannot be detected by scanning but have been verified by hand are listed as
-`VERIFIED_GAPS` in the source.
+`VERIFIED_GAPS` in the source. `0xF6060..0xF8000` is available to text and credits;
+the adjacent `0xF8000..0xFD000` is reserved for the intro and never published as
+general free space. The final pipeline rejects any ROM whose size is not exactly
+2,097,152 bytes.
 
 ### IPS patch
 

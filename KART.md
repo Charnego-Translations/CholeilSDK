@@ -1,36 +1,18 @@
 # Kart de Iibis / carrera contra Charlie
 
-## Los tres vehículos tras ganar a Carlos
+## Vehículo de la carrera
 
-La fragoneta de Scorpion está en `special_gfx_out/kart_EDITAME.png`.
-Después de pagar las 10 chapas para la contrarreloj, Heidi pregunta primero
-si quieres la fragoneta. Si respondes que no, pregunta por Kitty; responder
-que no otra vez elige el Mazda MX5 de Krusher. La primera carrera contra
-Carlos conserva su diálogo y sale con la fragoneta. El precio solo se cobra
-una vez por carrera, antes de elegir el vehículo.
-
-`special_gfx_out/kart_kitty_EDITAME.png` y
-`special_gfx_out/kart_mazdaMX5_EDITAME.png` son las otras dos fuentes. Ahora
-son **plantillas copiadas de la fragoneta**, no los dibujos terminados de
-Kitty ni del Mazda. Hasta que se editen, los tres se verán iguales aunque la
-ROM ya seleccione y cargue tres bloques gráficos distintos. No hemos
-inventado el diseño de los coches de Krusher.
-
-Las tres hojas tienen la misma paleta original, las mismas 18 cajas de 32×32
-y el mismo rosa transparente; se pueden editar de forma independiente. Cada
-vez que Corona sube al kart se actualiza la VRAM con la hoja elegida, sin
-cambiar la paleta, el mapa ni los controles. Al volver a elegir la fragoneta
-se limpian las banderas de Kitty y Mazda. Las variantes se comprimen y
-reservan antes de insertar la intro; el constructor aborta si no queda espacio
-o si una hoja tiene dimensiones o colores incompatibles.
+La carrera utiliza únicamente la fragoneta de Scorpion, almacenada en
+`special_gfx_out/kart_EDITAME.png`. Se conserva el diálogo normal de Heidi:
+no hay selector de coches ni bloques alternativos para Kitty o Mazda dentro
+de la ROM. Los dos PNG de plantilla antiguos no se leen durante la compilación.
 
 `references/fragoneta.png` conserva la referencia original facilitada por
 Antxiko. El editable de la fragoneta es el PNG paletizado indicado arriba.
 
 ## Qué editar
 
-**`special_gfx_out/kart_EDITAME.png`** es la fuente de la fragoneta;
-las dos hojas alternativas usan exactamente el mismo formato.
+**`special_gfx_out/kart_EDITAME.png`** es la fuente de la fragoneta.
 Tiene **298×67 píxeles**, 9 columnas y 2 filas. Cada dibujo ocupa un interior
 de **32×32** con una rejilla de 1 píxel que nunca se inserta en la ROM.
 
@@ -82,6 +64,10 @@ comparten la misma selección musical original.
 Formato admitido, desactivación, espacio reservado y comprobaciones:
 [music/README.md](music/README.md). Esto es independiente del dibujo del
 vehículo y de `hide_driver`.
+
+Esta es la única música añadida a la carrera. Al no incluir selector, Kitty,
+Mazda ni sus temas, la construcción completa termina en exactamente 16 Mbit
+(2.097.152 bytes); el proceso se detiene si alguna edición futura lo supera.
 
 ## Paleta y transparencia
 

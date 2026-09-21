@@ -6491,23 +6491,28 @@ a ninguna chavala.
 
 ==== room=114 npc=1 str=11 textAddr=0x1d3210 ptrFieldAddr=0x1d2d44 ====
 {E0}0{5A}
-HEIDI: Ya has pagao. Ahora
-elige coche. ¿La fragoneta?
+HEIDI: Bueno, a estas
+alturas sabrás conducir ya,
+¿no, chavalín?
 <YESNO>
 
 
 ==== room=114 npc=1 str=12 textAddr=0x1d3262 ptrFieldAddr=0x1d2d46 ====
-{E1}0{5B}
-{E1}0{5C}
-HEIDI: ¡Fragoneta elegida!
-¡A tumbar aguja! ¡Vamoooo!
+HEIDI: Poj claro, eres un
+profesional. ¡Venga, a
+tumbar aguja! ¡Vamoooo!
 
 
 ==== room=114 npc=1 str=13 textAddr=0x1d3280 ptrFieldAddr=0x1d2d48 ====
-HEIDI: ¿Prefieres Kitty?
-Si no, irás en el Mazda MX5
-de Krusher. ¿Qué dices?
-<YESNO>
+HEIDI: Pero mira que eres
+tontito, hijo. A ver, le das
+tres vueltas al circuito
+para marcar tu mejor tiempo.
+Le das a la A para acelerar
+y a la B para frenar, y pa
+los laos pa girar. No es que
+sea ingeniería aeroespacial,
+¿no? ¡Venga coño, dale ya!
 
 
 ==== room=115 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====

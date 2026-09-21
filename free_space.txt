@@ -1,11 +1,12 @@
 ; Candidate free-space regions. Most are auto-detected by scanning for long
 ; runs of a single repeated byte value -- a heuristic, not a guarantee, so
 ; review before trusting and delete any line you're not sure is safe to
-; overwrite. A few (currently just 0xf6060-0xfd000, fill byte 0x00 as a
+; overwrite. The verified 0xf6060-0xf8000 gap (fill byte 0x00 as a
 ; placeholder) are FreeSpaceScanner.VERIFIED_GAPS entries instead: manually
 ; confirmed unreferenced by cross-checking every LEA-absolute instruction and
 ; known table base in the ROM, not by the byte-run heuristic -- see that
-; constant's comment for what's actually there.
+; constant's comment for what's actually there. 0xf8000-0xfd000 is kept
+; out of this file and reserved exclusively for the boot intro.
 ; Format: 0xSTART,length,0xFILLBYTE
 0x1dfce0,800,0x00
 0x1e6785,6267,0x00
@@ -14,4 +15,4 @@
 0x1ef69b,2405,0xff
 0x1f63aa,3158,0xff
 0x1f7afd,1283,0xff
-0xf6060,28576,0x00
+0xf6060,8096,0x00
