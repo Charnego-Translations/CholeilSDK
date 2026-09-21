@@ -48,6 +48,19 @@ final class PngTest {
     }
 
     @Test
+    @DisplayName("an indexed PNG preserves distinct indices with identical RGB values")
+    void preservesDuplicateColorIndices() throws Exception {
+        int[] palette = TileRenderer.defaultGrayscalePalette();
+        palette[13] = palette[0];
+        Bitmap original = Bitmap.indexed(2, 1, palette);
+        original.setIndex(0, 0, 0);
+        original.setIndex(1, 0, 13);
+        Bitmap back = Png.decode(Png.encode(original), "duplicate palette colors");
+        assertEquals(0, back.getIndex(0, 0));
+        assertEquals(13, back.getIndex(1, 0));
+    }
+
+    @Test
     @DisplayName("what it writes, ImageIO reads identically")
     void whatItWritesImageIoReads() throws Exception {
         Bitmap original = noise(64, 24);

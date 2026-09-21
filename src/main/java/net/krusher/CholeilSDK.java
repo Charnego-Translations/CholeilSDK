@@ -117,6 +117,10 @@ public class CholeilSDK
                     net.krusher.graphics.SonicHammockGraphics.DEFAULT_VIEW );
 
             System.out.println();
+            System.out.println("=== extracting the park's dancing flower ===");
+            net.krusher.graphics.FlowerParkGraphics.extract( DefaultPaths.ROM );
+
+            System.out.println();
             System.out.println("=== extracting raw (uncompressed) graphics ===");
             net.krusher.graphics.RawGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.RAW_GRAPHICS, DefaultPaths.RAW_GFX_OUT } );
 
@@ -185,6 +189,10 @@ public class CholeilSDK
                     net.krusher.graphics.FinGraphics.DEFAULT_GFX );
 
             System.out.println();
+            System.out.println("=== arranging the park flower's shared stem ===");
+            net.krusher.graphics.FlowerParkGraphics.syncStem( DefaultPaths.ROM );
+
+            System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
             List<int[]> occupiedGraphics = net.krusher.graphics.GraphicsInserter.insert(
                     buildingRom, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, buildingRom );
@@ -204,6 +212,10 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== inserting sprite-mosaic graphics ===");
             net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { buildingRom, DefaultPaths.SPRITE_GFX_OUT, DefaultPaths.SPRITE_GRAPHICS, buildingRom } );
+
+            System.out.println();
+            System.out.println("=== inserting all park flower poses ===");
+            net.krusher.graphics.FlowerParkGraphics.insert( DefaultPaths.OUT_ROM );
 
             System.out.println();
             System.out.println("=== inserting Corona sword swing ===");
