@@ -6770,7 +6770,7 @@ petaíto!
 
 ==== room=122 npc=1 str=0 textAddr=0x1d343e ptrFieldAddr=0x1d343c ====
 ¡<NAME> ha trincao
-una manzana de la vida!
+una burger cangre-burger!
 ¡Qué tío más bravo! ¡Ahora
 tiene más cojones que antes!
 
@@ -6800,7 +6800,7 @@ me tengo que ganar la vida,
 ==== room=123 npc=0 str=2 textAddr=0x1d35ba ptrFieldAddr=0x1d349c ====
 {E0}0{65}
 ¡<NAME> ha trincao
-una manzana de la vida!
+una burger cangre-burger!
 ¡Qué tío más bravo! ¡Ahora
 tiene más cojones que antes!
 
@@ -6816,7 +6816,7 @@ el carnet de identidad!
 
 ==== room=123 npc=0 str=4 textAddr=0x1d366c ptrFieldAddr=0x1d34a0 ====
 SIRENA: Ya me he quedado sin
-manzanas, bonico, esa era la
+burgers, bonico, esa era la
 última. Anda, vete por ahí
 a zurrarte la sardina, que
 este sitio es para mayores.
