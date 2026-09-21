@@ -6,9 +6,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-/** Friendly extractor/inserter for every Corona sword and its four swing poses. */
+/** Friendly extractor/inserter for the static pose and four swing poses of every Corona sword. */
 public final class CoronaSwordGraphics {
     public static final int BLOCK_OFFSET = 0x54200;
+    public static final int STATIC_BLOCK_OFFSET = BLOCK_OFFSET - 0x200;
     public static final int VARIANT_COUNT = 8;
     public static final int VARIANT_STRIDE = 0xA00;
     public static final int POSE_COUNT = 4;
@@ -17,6 +18,7 @@ public final class CoronaSwordGraphics {
     public static final int TILES_PER_POSE = POSE_TILES_W * POSE_TILES_H;
     public static final int TILES_PER_VARIANT = POSE_COUNT * TILES_PER_POSE;
     public static final int VARIANT_LENGTH = TILES_PER_VARIANT * TileRenderer.TILE_BYTES;
+    public static final int STATIC_VARIANT_LENGTH = TILES_PER_POSE * TileRenderer.TILE_BYTES;
     public static final int TILE_COUNT = VARIANT_COUNT * TILES_PER_VARIANT;
     public static final int BLOCK_LENGTH = VARIANT_COUNT * VARIANT_LENGTH;
     public static final int POSE_SIZE = POSE_TILES_W * TileRenderer.TILE_SIZE;
@@ -31,11 +33,13 @@ public final class CoronaSwordGraphics {
 
     public static final String DEFAULT_EDIT = "special_gfx_out/espada_corona_EDITAME.png";
     public static final String DEFAULT_VIEW = "special_gfx_out/espada_corona_x4_VISTA.png";
+    public static final String DEFAULT_STATIC_EDIT = "special_gfx_out/espada_corona_estatica_EDITAME.png";
+    public static final String DEFAULT_STATIC_VIEW = "special_gfx_out/espada_corona_estatica_x4_VISTA.png";
 
     /*
      * CRAM line 0 captured in the player-supplied slot 4 while the sword was
      * visible. It is used only to colour/decode the PNG. Insertion writes the
-     * tile indices at 0x54200 and never changes CRAM or any palette data.
+     * tile indices at 0x54000-0x58FFF and never changes CRAM or any palette data.
      */
     private static final byte[] CAPTURED_CRAM = {
         0x00, 0x00, 0x04, 0x24, 0x0E, 0x66, 0x04, 0x4C,
@@ -49,23 +53,32 @@ public final class CoronaSwordGraphics {
     public static void main(String[] args) throws IOException {
         if (args.length == 0) {
             System.out.println("usage:");
-            System.out.println("  CoronaSwordGraphics extract [rom] [editPng] [viewPng]");
-            System.out.println("  CoronaSwordGraphics insert [rom] [editPng] [outRom]");
-            System.out.println("  CoronaSwordGraphics verify [rom] [editPng]");
+            System.out.println("  CoronaSwordGraphics extract [rom] [swingPng] [swingView] [staticPng] [staticView]");
+            System.out.println("  CoronaSwordGraphics derive-static [swingPng] [staticPng] [staticView]");
+            System.out.println("  CoronaSwordGraphics insert [rom] [swingPng] [outRom] [staticPng]");
+            System.out.println("  CoronaSwordGraphics verify [rom] [swingPng] [staticPng]");
             return;
         }
         String mode = args[0];
         if (mode.equals("extract")) {
             extract(args.length > 1 ? args[1] : "Soleil (Spain).md",
                     args.length > 2 ? args[2] : DEFAULT_EDIT,
-                    args.length > 3 ? args[3] : DEFAULT_VIEW);
+                    args.length > 3 ? args[3] : DEFAULT_VIEW,
+                    args.length > 4 ? args[4] : DEFAULT_STATIC_EDIT,
+                    args.length > 5 ? args[5] : DEFAULT_STATIC_VIEW);
+        } else if (mode.equals("derive-static")) {
+            deriveStaticFromSwing(args.length > 1 ? args[1] : DEFAULT_EDIT,
+                    args.length > 2 ? args[2] : DEFAULT_STATIC_EDIT,
+                    args.length > 3 ? args[3] : DEFAULT_STATIC_VIEW);
         } else if (mode.equals("insert")) {
             insert(args.length > 1 ? args[1] : "Choleil.md",
                     args.length > 2 ? args[2] : DEFAULT_EDIT,
+                    args.length > 4 ? args[4] : DEFAULT_STATIC_EDIT,
                     args.length > 3 ? args[3] : "Choleil.md");
         } else if (mode.equals("verify")) {
             verify(args.length > 1 ? args[1] : "Soleil (Spain).md",
-                    args.length > 2 ? args[2] : DEFAULT_EDIT);
+                    args.length > 2 ? args[2] : DEFAULT_EDIT,
+                    args.length > 3 ? args[3] : DEFAULT_STATIC_EDIT);
         } else {
             throw new IllegalArgumentException("unknown mode: " + mode);
         }
@@ -81,50 +94,137 @@ public final class CoronaSwordGraphics {
 
         Bitmap content = TileRenderer.renderSpriteSheet(tiles, editPalette(),
                 POSE_TILES_W, POSE_TILES_H, POSE_COUNT, 1, false);
-        Bitmap editor = addEditorGrid(content);
+        Bitmap editor = addEditorGrid(content, POSE_COUNT);
         TileRenderer.writePng(editor, edit.toString());
         TileRenderer.writePng(scale(editor, VIEW_SCALE), view.toString());
         System.out.println("Extracted Corona swords: " + edit
                 + " (eight variants, four boxed 32x32 poses each)");
     }
 
-    public static void insert(String romPath, String editPath, String outPath) throws IOException {
+    public static void extract(String romPath, String editPath, String viewPath,
+            String staticEditPath, String staticViewPath) throws IOException {
+        extract(romPath, editPath, viewPath);
+        byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        Bitmap content = TileRenderer.renderSpriteSheet(readStaticTiles(rom), editPalette(),
+                POSE_TILES_W, POSE_TILES_H, 1, 1, false);
+        writeStaticEditor(addEditorGrid(content, 1), staticEditPath, staticViewPath);
+        System.out.println("Extracted eight static Corona sword poses: " + staticEditPath);
+    }
+
+    /** Start the new static-pose editor from the first pose of Scorpion's swing sheet. */
+    public static void deriveStaticFromSwing(String swingPath, String staticEditPath,
+            String staticViewPath) throws IOException {
+        Bitmap swing = TileRenderer.readPng(swingPath);
+        validateSize(swing, Paths.get(swingPath), POSE_COUNT);
+        int[] palette = editPalette();
+        Bitmap content = Bitmap.indexed(POSE_SIZE, VARIANT_COUNT * POSE_SIZE, palette);
+        for (int variant = 0; variant < VARIANT_COUNT; variant++) {
+            copyToIndexed(swing, GRID_SIZE, GRID_SIZE + variant * CELL_STRIDE,
+                    content, 0, variant * POSE_SIZE, POSE_SIZE, POSE_SIZE, palette);
+        }
+        writeStaticEditor(addEditorGrid(content, 1), staticEditPath, staticViewPath);
+        System.out.println("Derived eight static sword poses from the edited swing sheet: " + staticEditPath);
+    }
+
+    private static void writeStaticEditor(Bitmap editor, String editPath, String viewPath) throws IOException {
         Path edit = Paths.get(editPath);
-        if (!Files.exists(edit)) {
-            System.out.println("Corona sword edit PNG not found; leaving all eight variants untouched.");
+        Path view = Paths.get(viewPath);
+        if (edit.getParent() != null) Files.createDirectories(edit.getParent());
+        if (view.getParent() != null) Files.createDirectories(view.getParent());
+        TileRenderer.writePng(editor, edit.toString());
+        TileRenderer.writePng(scale(editor, VIEW_SCALE), view.toString());
+    }
+
+    public static void insert(String romPath, String editPath, String outPath) throws IOException {
+        insert(romPath, editPath, null, outPath);
+    }
+
+    public static void insert(String romPath, String editPath, String staticEditPath,
+            String outPath) throws IOException {
+        Path edit = Paths.get(editPath);
+        Path staticEdit = staticEditPath == null ? null : Paths.get(staticEditPath);
+        if (!Files.exists(edit) && (staticEdit == null || !Files.exists(staticEdit))) {
+            System.out.println("Corona sword PNGs not found; leaving all eight variants untouched.");
             return;
         }
 
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
-        Bitmap image = TileRenderer.readPng(edit.toString());
-        validateSize(image, edit);
-        byte[] tiles = TileRenderer.decodeSpriteSheet(removeEditorGrid(image), editPalette(),
-                POSE_TILES_W, POSE_TILES_H, POSE_COUNT, 1, TILE_COUNT, false);
-        byte[] original = readTiles(rom);
-
-        if (Arrays.equals(original, tiles)) {
+        boolean changed = false;
+        if (Files.exists(edit)) {
+            Bitmap image = TileRenderer.readPng(edit.toString());
+            validateSize(image, edit, POSE_COUNT);
+            byte[] tiles = TileRenderer.decodeSpriteSheet(removeEditorGrid(image, POSE_COUNT), editPalette(),
+                    POSE_TILES_W, POSE_TILES_H, POSE_COUNT, 1, TILE_COUNT, false);
+            if (!Arrays.equals(readTiles(rom), tiles)) {
+                writeTiles(rom, tiles);
+                changed = true;
+            }
+        }
+        if (staticEdit != null && Files.exists(staticEdit)) {
+            Bitmap image = TileRenderer.readPng(staticEdit.toString());
+            validateSize(image, staticEdit, 1);
+            byte[] tiles = TileRenderer.decodeSpriteSheet(removeEditorGrid(image, 1), editPalette(),
+                    POSE_TILES_W, POSE_TILES_H, 1, 1, VARIANT_COUNT * TILES_PER_POSE, false);
+            if (!Arrays.equals(readStaticTiles(rom), tiles)) {
+                writeStaticTiles(rom, tiles);
+                changed = true;
+            }
+        }
+        if (!changed) {
             System.out.println("Corona sword is unchanged; keeping ROM bytes untouched.");
             if (!samePath(romPath, outPath)) Files.write(Paths.get(outPath), rom);
             return;
         }
 
-        writeTiles(rom, tiles);
         net.krusher.TextInserter.fixChecksum(rom);
         Files.write(Paths.get(outPath), rom);
-        System.out.println("Updated all eight Corona sword variants (palette and 0x200-byte gaps untouched); wrote "
+        System.out.println("Updated Corona sword swing/static tiles (palette untouched); wrote "
                 + outPath);
     }
 
     public static void verify(String romPath, String editPath) throws IOException {
+        verify(romPath, editPath, null);
+    }
+
+    public static void verify(String romPath, String editPath, String staticEditPath) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         Bitmap image = TileRenderer.readPng(editPath);
-        validateSize(image, Paths.get(editPath));
-        byte[] decoded = TileRenderer.decodeSpriteSheet(removeEditorGrid(image), editPalette(),
+        validateSize(image, Paths.get(editPath), POSE_COUNT);
+        byte[] decoded = TileRenderer.decodeSpriteSheet(removeEditorGrid(image, POSE_COUNT), editPalette(),
                 POSE_TILES_W, POSE_TILES_H, POSE_COUNT, 1, TILE_COUNT, false);
         if (!Arrays.equals(readTiles(rom), decoded)) {
             throw new IllegalStateException("Corona sword PNG does not round-trip to the ROM tile bytes");
         }
-        System.out.println("Corona sword round-trip verified: 512 tiles across eight variants match byte-for-byte.");
+        if (staticEditPath != null && Files.exists(Paths.get(staticEditPath))) {
+            Bitmap staticImage = TileRenderer.readPng(staticEditPath);
+            validateSize(staticImage, Paths.get(staticEditPath), 1);
+            byte[] staticDecoded = TileRenderer.decodeSpriteSheet(removeEditorGrid(staticImage, 1), editPalette(),
+                    POSE_TILES_W, POSE_TILES_H, 1, 1, VARIANT_COUNT * TILES_PER_POSE, false);
+            if (!Arrays.equals(readStaticTiles(rom), staticDecoded)) {
+                throw new IllegalStateException("Corona static sword PNG does not round-trip to the ROM tile bytes");
+            }
+            System.out.println("Corona sword round-trip verified: 640 swing/static tiles across eight variants match byte-for-byte.");
+        } else {
+            System.out.println("Corona sword round-trip verified: 512 swing tiles across eight variants match byte-for-byte.");
+        }
+    }
+
+    private static byte[] readStaticTiles(byte[] rom) {
+        int lastEnd = STATIC_BLOCK_OFFSET + (VARIANT_COUNT - 1) * VARIANT_STRIDE + STATIC_VARIANT_LENGTH;
+        if (rom.length < lastEnd) throw new IllegalStateException("ROM is too short for the static Corona swords");
+        byte[] tiles = new byte[VARIANT_COUNT * STATIC_VARIANT_LENGTH];
+        for (int variant = 0; variant < VARIANT_COUNT; variant++) {
+            System.arraycopy(rom, STATIC_BLOCK_OFFSET + variant * VARIANT_STRIDE,
+                    tiles, variant * STATIC_VARIANT_LENGTH, STATIC_VARIANT_LENGTH);
+        }
+        return tiles;
+    }
+
+    private static void writeStaticTiles(byte[] rom, byte[] tiles) {
+        for (int variant = 0; variant < VARIANT_COUNT; variant++) {
+            System.arraycopy(tiles, variant * STATIC_VARIANT_LENGTH,
+                    rom, STATIC_BLOCK_OFFSET + variant * VARIANT_STRIDE, STATIC_VARIANT_LENGTH);
+        }
     }
 
     private static byte[] readTiles(byte[] rom) {
@@ -158,16 +258,16 @@ public final class CoronaSwordGraphics {
     }
 
     /** Adds guide-only one-pixel boxes around every 32x32 pose. */
-    private static Bitmap addEditorGrid(Bitmap content) {
+    private static Bitmap addEditorGrid(Bitmap content, int columns) {
         int[] palette = editPalette();
-        Bitmap editor = Bitmap.indexed(EDIT_WIDTH, EDIT_HEIGHT, palette);
-        for (int y = 0; y < EDIT_HEIGHT; y++) {
-            for (int x = 0; x < EDIT_WIDTH; x++) {
+        Bitmap editor = Bitmap.indexed(GRID_SIZE + columns * CELL_STRIDE, EDIT_HEIGHT, palette);
+        for (int y = 0; y < editor.getHeight(); y++) {
+            for (int x = 0; x < editor.getWidth(); x++) {
                 editor.setIndex(x, y, GRID_PALETTE_INDEX);
             }
         }
         for (int variant = 0; variant < VARIANT_COUNT; variant++) {
-            for (int pose = 0; pose < POSE_COUNT; pose++) {
+            for (int pose = 0; pose < columns; pose++) {
                 int sourceX = pose * POSE_SIZE;
                 int sourceY = variant * POSE_SIZE;
                 int destinationX = GRID_SIZE + pose * CELL_STRIDE;
@@ -180,11 +280,11 @@ public final class CoronaSwordGraphics {
     }
 
     /** Removes guide pixels before decoding, so boxes can never enter the ROM. */
-    private static Bitmap removeEditorGrid(Bitmap editor) {
+    private static Bitmap removeEditorGrid(Bitmap editor, int columns) {
         int[] palette = editPalette();
-        Bitmap content = Bitmap.indexed(CONTENT_WIDTH, CONTENT_HEIGHT, palette);
+        Bitmap content = Bitmap.indexed(columns * POSE_SIZE, CONTENT_HEIGHT, palette);
         for (int variant = 0; variant < VARIANT_COUNT; variant++) {
-            for (int pose = 0; pose < POSE_COUNT; pose++) {
+            for (int pose = 0; pose < columns; pose++) {
                 int sourceX = GRID_SIZE + pose * CELL_STRIDE;
                 int sourceY = GRID_SIZE + variant * CELL_STRIDE;
                 int destinationX = pose * POSE_SIZE;
@@ -242,10 +342,11 @@ public final class CoronaSwordGraphics {
         return best;
     }
 
-    private static void validateSize(Bitmap image, Path path) {
-        if (image.getWidth() != EDIT_WIDTH || image.getHeight() != EDIT_HEIGHT) {
-            throw new IllegalStateException(path + " must stay " + EDIT_WIDTH + "x" + EDIT_HEIGHT
-                    + " (eight rows of four boxed 32x32 poses)");
+    private static void validateSize(Bitmap image, Path path, int columns) {
+        int expectedWidth = GRID_SIZE + columns * CELL_STRIDE;
+        if (image.getWidth() != expectedWidth || image.getHeight() != EDIT_HEIGHT) {
+            throw new IllegalStateException(path + " must stay " + expectedWidth + "x" + EDIT_HEIGHT
+                    + " (eight rows of " + columns + " boxed 32x32 poses)");
         }
     }
 
