@@ -223,7 +223,8 @@ espárragos al campo.
 ==== room=2 npc=0 str=3 textAddr=0x1c0b7c ptrFieldAddr=0x1c09ba ====
 MAMA: <NAME>, ¿Aonde
 vas? ¿Tienes un cobete nel
-culo o qué?
+culo o qué? ¡Que han venío
+tus amigotes!
 
 
 ==== room=2 npc=0 str=4 textAddr=0x1c0bb6 ptrFieldAddr=0x1c09bc ====
@@ -235,10 +236,12 @@ sí.
 
 
 ==== room=2 npc=0 str=5 textAddr=0x1c0c18 ptrFieldAddr=0x1c09be ====
-MAMA: Dile al orejúo del Rey
-que ya has cumplido los 14.
-Y no te pierdas, que eres
-capaz de llegar a Utrera.
+MAMA: ¡Ale, a tomar por culo
+la tarta! Ve y dile al
+orejúo del Rey que ya has
+cumplido los 14. Y no te
+pierdas, que eres capaz de
+llegar a Utrera.
 
 
 ==== room=2 npc=0 str=6 textAddr=0x1c0c54 ptrFieldAddr=0x1c09c0 ====
@@ -6327,8 +6330,9 @@ nos pase media bellotita.
 ==== room=114 npc=0 str=0 textAddr=0x1d2a8e ptrFieldAddr=0x1d2a7e ====
 CARLOS: ¡La virgen, corres
 más que una gallina en
-Somalia! Vale, me uniré
-a ti.
+Somalia! ¿Quién eres, el
+puto Forest Gump? Vale,
+me uniré a ti.
 
 
 ==== room=114 npc=0 str=1 textAddr=0x1d2acc ptrFieldAddr=0x1d2a80 ====
@@ -6407,7 +6411,7 @@ ya sabes, reune pelas.
 {E0}0é
 HEIDI: ¡Bienvenido al
 circuito de carreras! Por
-20 chapas te dejo correr
+20 pavías te dejo correr
 contra Carlos el guepardo.
 Si ganas te quedas con el
 bicho. ¿Qué te parece?
@@ -6417,9 +6421,10 @@ bicho. ¿Qué te parece?
 ==== room=114 npc=1 str=2 textAddr=0x1d2ea0 ptrFieldAddr=0x1d2d32 ====
 {E0}0ú
 HEIDI: ¡Así se habla,
-machote! ¡Dale duro, que
-el guepardo es un bicho
-que corre que te cagas!
+a la fragoneta, machote!
+¡Dale duro, que el guepardo
+es un bicho que corre que
+te cagas!
 
 
 ==== room=114 npc=1 str=3 textAddr=0x1d2ef4 ptrFieldAddr=0x1d2d34 ====
@@ -6438,7 +6443,7 @@ el carnet de conducir, ¿no?
 
 ==== room=114 npc=1 str=5 textAddr=0x1d2f74 ptrFieldAddr=0x1d2d38 ====
 HEIDI: Claro que sí, ¡Venga,
-dale caña, tío!
+dale caña, tío! ¡A la furgo!
 
 
 ==== room=114 npc=1 str=6 textAddr=0x1d2f9a ptrFieldAddr=0x1d2d3a ====
@@ -6458,7 +6463,7 @@ al guepardo antes de correr!
 ==== room=114 npc=1 str=7 textAddr=0x1d305c ptrFieldAddr=0x1d2d3c ====
 HEIDI: Bueh, pues esto es la
 pista de carreras, por 10
-chapas puedes correr pero
+pelas puedes correr pero
 contra el reloj, ya que te
 has sisao mi bicho. Pero eso
 da igual, ¡estás más tieso
@@ -6480,7 +6485,7 @@ qué, ¿te mola correr?
 {E0}0{59}
 HEIDI: ¡Dale ahí! Ya sabes,
 ¡A tabla y frenar es de
-maricones!
+maricones! ¡A la furgo!
 
 
 ==== room=114 npc=1 str=10 textAddr=0x1d31dc ptrFieldAddr=0x1d2d42 ====
