@@ -61,6 +61,12 @@ public class CholeilSDK
 
     private static void run( String mode ) throws IOException
     {
+        if (mode.equals("i")) {
+            System.out.println("=== arranging Iibis kart edits for compression ===");
+            net.krusher.graphics.KartGraphics.sync( DefaultPaths.ROM,
+                    net.krusher.graphics.KartGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.KartGraphics.DEFAULT_GFX );
+        }
         if ( mode.equals("x") )
         {
             System.out.println("=== extracting text ===");
@@ -129,6 +135,12 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== extracting sprite-mosaic graphics ===");
             net.krusher.graphics.SpriteGraphicsExtractor.main( new String[] { DefaultPaths.ROM, DefaultPaths.SPRITE_GRAPHICS, DefaultPaths.SPRITE_GFX_OUT } );
+
+            System.out.println();
+            System.out.println("=== extracting Iibis kart orientations and animation ===");
+            net.krusher.graphics.KartGraphics.extract( DefaultPaths.ROM,
+                    net.krusher.graphics.KartGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.KartGraphics.DEFAULT_VIEW );
 
             System.out.println();
             System.out.println("=== extracting the dialogue font ===");
@@ -220,6 +232,11 @@ public class CholeilSDK
             net.krusher.graphics.FlowerParkGraphics.insert( buildingRom );
 
             System.out.println();
+            System.out.println("=== configuring kart driver visibility ===");
+            net.krusher.graphics.KartDriverVisibility.insert( buildingRom, DefaultPaths.ROM,
+                    net.krusher.graphics.KartDriverVisibility.DEFAULT_SETTINGS );
+
+            System.out.println();
             System.out.println("=== inserting Corona sword swing and static poses ===");
             net.krusher.graphics.CoronaSwordGraphics.insert(
                     buildingRom,
@@ -236,9 +253,14 @@ public class CholeilSDK
             net.krusher.graphics.FontInserter.run( buildingRom, DefaultPaths.FONT, buildingRom );
 
             System.out.println();
+            System.out.println("=== inserting race-only PSG music ===");
+            List<int[]> occupiedBeforeIntro = new java.util.ArrayList<>(occupiedGraphics);
+            occupiedBeforeIntro.addAll(net.krusher.graphics.KartRaceMusic.insert(buildingRom, DefaultPaths.ROM,
+                    net.krusher.graphics.KartRaceMusic.DEFAULT_VGM, DefaultPaths.FREE_SPACE, occupiedGraphics));
+            System.out.println();
             System.out.println("=== inserting the intro ===");
             IntroInserter.run( buildingRom, DefaultPaths.INTRO, DefaultPaths.ROM,
-                    DefaultPaths.FREE_SPACE, buildingRom, occupiedGraphics );
+                    DefaultPaths.FREE_SPACE, buildingRom, occupiedBeforeIntro );
 
             System.out.println();
             System.out.println("=== inserting two-frame side-character animation ===");
@@ -253,12 +275,23 @@ public class CholeilSDK
             net.krusher.graphics.SonicScenePresence.insert( buildingRom, DefaultPaths.ROM );
 
             System.out.println();
+            // The shadow step only writes its guarded hook/reservation, never the kart.
+            net.krusher.graphics.KartGraphics.verifyAvailable(buildingRom);
+            net.krusher.graphics.KartDriverVisibility.verify( buildingRom,
+                    net.krusher.graphics.KartDriverVisibility.DEFAULT_SETTINGS );
             System.out.println("=== matching SonicGil shadow to the configured position ===");
             net.krusher.graphics.SonicShadowPosition.insert( buildingRom, DefaultPaths.ROM );
 
             System.out.println();
             System.out.println("=== verifying every enabled apple editor in the final ROM ===");
             net.krusher.graphics.AppleGraphics.verifyAvailable(buildingRom);
+            net.krusher.graphics.KartRaceMusic.verify(buildingRom, net.krusher.graphics.KartRaceMusic.DEFAULT_VGM);
+            long completedSize = Files.size(Path.of(buildingRom));
+            if (completedSize != 2 * 1024 * 1024) {
+                throw new IllegalStateException("Final ROM must be exactly 16 Mbit / 2097152 bytes, got "
+                        + completedSize);
+            }
+            System.out.println("Final ROM size: 16 Mbit / 2097152 bytes.");
             publishRom(Path.of(buildingRom), Path.of(DefaultPaths.OUT_ROM));
 
             System.out.println();

@@ -809,21 +809,30 @@ public final class TextInserter {
     }
 
     /**
-     * Recomputes the Genesis header checksum (big-endian sum of all 16-bit
-     * words from 0x200 to the end of the ROM, mod 0x10000) and writes it to
-     * 0x18E-0x18F. Real Genesis hardware doesn't verify this at boot, but
-     * some emulators/flashcarts do, and every legitimate ROM patcher fixes
-     * it as a matter of course.
+     * Recomputes the game's checksum and writes it to 0x18E-0x18F. Soleil's
+     * own boot check stops at the header's inclusive ROM-end field, not the
+     * physical file length: the intro may append data beyond that address.
+     * Every later graphics patch must keep using the same declared span.
      */
     public static void fixChecksum(byte[] rom) {
         int sum = 0;
-        for (int i = 0x200; i + 1 < rom.length; i += 2) {
+        int end = checksumEnd(rom);
+        for (int i = 0x200; i + 1 < end; i += 2) {
             int word = ((rom[i] & 0xFF) << 8) | (rom[i + 1] & 0xFF);
             sum = (sum + word) & 0xFFFF;
         }
         rom[0x18e] = (byte) ((sum >> 8) & 0xFF);
         rom[0x18f] = (byte) (sum & 0xFF);
         System.out.println("Checksum fixed: 0x" + Integer.toHexString(sum));
+    }
+
+    /** Exclusive end; malformed/absent headers retain the old full-file fallback. */
+    static int checksumEnd(byte[] rom) {
+        if (rom.length >= 0x1A8) {
+            long declared = Integer.toUnsignedLong(TextExtractor.readU32(rom, 0x1A4));
+            if (declared >= 0x200 && declared < rom.length) return (int)declared + 1;
+        }
+        return rom.length;
     }
 
     static void writeS32(byte[] rom, int off, int value) {

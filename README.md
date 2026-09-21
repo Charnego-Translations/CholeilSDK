@@ -66,6 +66,9 @@ names in `DefaultPaths` when run without any.
 | `apple_gfx_out/` | Friendly editors for the normal 16x16 apple and the two-frame 24x24 golden apple (see `MANZANAS.md`). |
 | `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`), the ending “Fin.” (`FIN.md`), Corona’s static sword and swing (`ESPADA.md`), and the park dancing flower (`FLOR_PARQUE.md`). |
 | `sonic_scene_positions.txt` | X/Y pixel offset for Jesus Gil in the hammock scene. |
+| `special_gfx_out/kart_EDITAME.png` | Fragoneta del Equipo A para la carrera de Iibis: 18 dibujos de 32x32, paleta original, reinserción y verificación automáticas (see `KART.md`). |
+| `kart_settings.txt` | `hide_driver=1` hides Corona while riding, including the countdown; `0` restores the original driver. Rebuild after changing it (see `KART.md`). |
+| `music/kart_race.vgm` | Tema del Equipo A para la carrera en la fragoneta; empieza al montar y se repite hasta que termina la carrera. See `music/README.md`. |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `charnego_introFinal.md` | The Charnego Translations intro, a standalone Mega Drive ROM. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |
@@ -270,11 +273,13 @@ That is why `raw_gfx_out/raw_000e56.png` and `raw_001456.png` — the Charnego l
 stop being drawn once the intro is in.
 
 This runs **last**, over a ROM every other step has already rewritten, and the intro's
-filler list overlaps `free_space.txt` in five places. So `free_space.txt` is subtracted
-from its pool up front, and every piece is checked against the untouched ROM before
-being written: a byte an earlier step changed stops the build instead of silently
-eating a relocated string. The freed logo graphics are the one exemption, since
-removing the logo is what makes them dead.
+filler list overlaps `free_space.txt` in several places. So `free_space.txt` is
+subtracted from its pool up front. The verified range `0xF8000..0xFD000` is withheld
+from every earlier allocator and belongs exclusively to the intro, allowing the
+fragoneta + A-Team build to remain exactly 16 Mbit. Every piece is checked against
+the untouched ROM before being written: a byte an earlier step changed stops the
+build instead of silently eating a relocated string. The freed logo graphics are
+the other exemption, since removing the logo is what makes them dead.
 
 Ported from `insertar_intro.py` by ScorpioN-MsX; the Java step reproduces its output
 byte for byte. Only the path the pipeline uses came across — the uncompressed mode,
@@ -289,7 +294,10 @@ itself against it and hangs on a red screen if it changes.
 `FreeSpaceScanner` re-scans the ROM on every build for runs of filler, excluding
 everything the other tools know about, and writes `free_space.txt`. Regions that
 cannot be detected by scanning but have been verified by hand are listed as
-`VERIFIED_GAPS` in the source.
+`VERIFIED_GAPS` in the source. `0xF6060..0xF8000` is available to text and credits;
+the adjacent `0xF8000..0xFD000` is reserved for the intro and never published as
+general free space. The final pipeline rejects any ROM whose size is not exactly
+2,097,152 bytes.
 
 ### IPS patch
 
