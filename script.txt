@@ -2864,7 +2864,8 @@ uno empezó hablando en friki
 una cosa distinta y se fue
 todo a la puta, y ni
 acabaron ni na. ¡Son como
-los Charengo Translations!
+los de Charnego
+Translations!
 
 
 ==== room=34 npc=0 str=1 textAddr=0x1c8d9a ptrFieldAddr=0x1c8d08 ====
