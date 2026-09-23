@@ -54,9 +54,10 @@ comprueba esas instrucciones antes de parchear y verifica el resultado final.
 
 ## Música durante la carrera
 
-`music/kart_race.vgm` contiene el tema aportado de **The A-Team — Title**.
+`music/kart_race.vgm` contiene el nuevo `a-team_md.vgm` aportado por Antxiko:
+una versión nativa de Mega Drive que usa PSG y los dos puertos del YM2612.
 La reconstrucción normal `choleil i` lo integra: empieza al subir al kart,
-suena durante la cuenta atrás y la carrera, y repite su bucle de unos 30 segundos.
+suena durante la cuenta atrás y la carrera, y repite su bucle de 68,16 segundos.
 Al abandonar con Start o finalizar se recupera la música original del mapa.
 A pie no se sustituye la música, ni se cambia el tema de otras zonas que
 comparten la misma selección musical original.
@@ -67,7 +68,9 @@ vehículo y de `hide_driver`.
 
 Esta es la única música añadida a la carrera. Al no incluir selector, Kitty,
 Mazda ni sus temas, la construcción completa termina en exactamente 16 Mbit
-(2.097.152 bytes); el proceso se detiene si alguna edición futura lo supera.
+(2.097.152 bytes). El flujo musical se compacta con un diccionario de paquetes
+y ocupa 14.501 bytes; el proceso se detiene si alguna edición futura desborda
+el cartucho.
 
 ## Paleta y transparencia
 
