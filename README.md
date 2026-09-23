@@ -64,7 +64,7 @@ names in `DefaultPaths` when run without any.
 | `sprite_gfx_out/` | Graphics stored as sprite mosaics (the title logo, the ground-money coin). |
 | `pause_gfx_out/` | Friendly SAVE/TAKE OFF pause-menu icons (see `MENU_PAUSA.md`). |
 | `apple_gfx_out/` | Friendly editors for the normal 16x16 apple and the two-frame 24x24 golden apple (see `MANZANAS.md`). |
-| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`), the ending “Fin.” (`FIN.md`), Corona’s static sword and swing (`ESPADA.md`), and the park dancing flower (`FLOR_PARQUE.md`). |
+| `special_gfx_out/` | Friendly arranged assets that need a custom tile map: Sonic + hammock (`SONIC_HAMACA.md`), the ending “Fin.” (`FIN.md`), Corona’s attack poses and separately equipped Sacred Sword (`ESPADA.md`), and the park dancing flower (`FLOR_PARQUE.md`). |
 | `sonic_scene_positions.txt` | X/Y pixel offset for Jesus Gil in the hammock scene. |
 | `special_gfx_out/kart_EDITAME.png` | Fragoneta del Equipo A para la carrera de Iibis: 18 dibujos de 32x32, paleta original, reinserción y verificación automáticas (see `KART.md`). |
 | `kart_settings.txt` | `hide_driver=1` hides Corona while riding, including the countdown; `0` restores the original driver. Rebuild after changing it (see `KART.md`). |
