@@ -68,7 +68,7 @@ names in `DefaultPaths` when run without any.
 | `sonic_scene_positions.txt` | X/Y pixel offset for Jesus Gil in the hammock scene. |
 | `special_gfx_out/kart_EDITAME.png` | Fragoneta del Equipo A para la carrera de Iibis: 18 dibujos de 32x32, paleta original, reinserción y verificación automáticas (see `KART.md`). |
 | `kart_settings.txt` | `hide_driver=1` hides Corona while riding, including the countdown; `0` restores the original driver. Rebuild after changing it (see `KART.md`). |
-| `music/kart_race.vgm` | Tema del Equipo A para la carrera en la fragoneta; empieza al montar y se repite hasta que termina la carrera. See `music/README.md`. |
+| `music/kart_race.vgm` | Tema nativo de Mega Drive del Equipo A para la carrera en la fragoneta (PSG + YM2612); empieza al montar y se repite hasta que termina la carrera. See `music/README.md`. |
 | `font.png` | The 8×16 dialogue font, one editable sheet. |
 | `charnego_introFinal.md` | The Charnego Translations intro, a standalone Mega Drive ROM. |
 | `graphics_offsets.txt`, `raw_graphics.txt`, `sprite_graphics.txt` | Registries saying where each graphics block lives. |

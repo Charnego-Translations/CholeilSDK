@@ -14,7 +14,7 @@ final class KartRaceMusicTest {
 
     @BeforeAll static void load() throws Exception {
         source = Files.readAllBytes(Path.of(KartRaceMusic.DEFAULT_VGM));
-        try (var in = new GZIPInputStream(new ByteArrayInputStream(source))) { vgm = in.readAllBytes(); }
+        vgm = source;
         track = KartRaceMusic.readTrack(source);
         Path path = Path.of("Soleil (Spain).md");
         Assumptions.assumeTrue(Files.exists(path), "original ROM required");
@@ -23,44 +23,64 @@ final class KartRaceMusicTest {
 
     @Test void suppliedTrackHasExpectedChipDurationLoopAndWrites() {
         assertEquals(3579545, track.clock());
-        assertEquals(1322118, track.samples());
-        assertEquals(5032, track.writes());
-        assertEquals(0, track.loopOffset());
-        assertEquals(11256, track.packets().length);
+        assertEquals(7670454, track.ymClock());
+        assertEquals(3005856, track.samples());
+        assertEquals(8318, track.writes());
+        assertEquals(5105, track.psgWrites());
+        assertEquals(2112, track.ym0Writes());
+        assertEquals(1101, track.ym1Writes());
+        assertEquals(208, track.dictionaryCount());
+        assertEquals(1653, track.sequenceOffset());
+        assertEquals(track.sequenceOffset(), track.loopOffset());
+        assertEquals(14501, track.packets().length);
+        assertTrue(KartRaceMusic.DATA_OFFSET + track.packets().length
+                <= KartRaceMusic.POOL[0][1] - KartRaceMusic.POOL[0][0]);
     }
 
     @Test void gzipAndUncompressedVgmProduceIdenticalPackets() throws Exception {
-        var raw = KartRaceMusic.readTrack(vgm);
-        assertArrayEquals(track.packets(), raw.packets());
-        assertEquals(track.loopOffset(), raw.loopOffset());
-        assertEquals(track.samples(), raw.samples());
+        ByteArrayOutputStream compressed = new ByteArrayOutputStream();
+        try (var gzip = new GZIPOutputStream(compressed)) { gzip.write(vgm); }
+        var zipped = KartRaceMusic.readTrack(compressed.toByteArray());
+        assertArrayEquals(track.packets(), zipped.packets());
+        assertEquals(track.loopOffset(), zipped.loopOffset());
+        assertEquals(track.samples(), zipped.samples());
     }
 
     @Test void packetConversionPreservesEveryRegisterWriteAndExactSampleTime() {
-        List<Long> expected = new ArrayList<>(), actual = new ArrayList<>();
+        record Event(long sample, int type, int register, int value) {}
+        List<Event> expected = new ArrayList<>(), actual = new ArrayList<>();
         long sample = 0;
         for (int p = 0x40; p < vgm.length;) {
             int op = vgm[p++] & 255;
             if (op == 0x66) break;
             if (op == 0x4F) p++;
-            else if (op == 0x50) expected.add(sample << 8 | (vgm[p++] & 255));
+            else if (op == 0x50) expected.add(new Event(sample, 0, 0, vgm[p++] & 255));
+            else if (op == 0x52 || op == 0x53) {
+                expected.add(new Event(sample, op == 0x52 ? 1 : 2, vgm[p] & 255, vgm[p + 1] & 255));
+                p += 2;
+            } else if (op == 0x62) sample += 735;
             else if (op == 0x63) sample += 882;
             else if (op == 0x61) { sample += (vgm[p] & 255) | (vgm[p+1] & 255) << 8; p += 2; }
+            else if (op >= 0x70 && op <= 0x7F) sample += op - 0x6F;
             else fail("unexpected command in supplied source");
         }
-        byte[] packets = track.packets();
         sample = 0;
-        for (int p = 0; p < packets.length;) {
-            int wait = u16(packets, p), count = u16(packets, p+2); p += 4;
-            for (int n = 0; n < count; n++) actual.add(sample << 8 | (packets[p++] & 255));
-            p += count & 1; sample += wait;
+        for (byte[] packet : assertDoesNotThrow(() -> KartRaceMusic.decodePackets(track))) {
+            int count = packet[1] & 255, typeBytes = (count + 3) / 4, data = 2 + typeBytes;
+            for (int n = 0; n < count; n++) {
+                int type = packet[2 + n / 4] >>> ((n & 3) * 2) & 3;
+                if (type == 0) actual.add(new Event(sample, type, 0, packet[data++] & 255));
+                else actual.add(new Event(sample, type, packet[data++] & 255, packet[data++] & 255));
+            }
+            assertEquals(packet.length, data);
+            sample += (packet[0] & 255) * 441L;
         }
         assertEquals(expected, actual);
         assertEquals(track.samples(), sample);
     }
 
     @Test void frameQuantizationDoesNotAccumulateDriftOnPalOrNtsc() {
-        byte[] packets = track.packets();
+        List<byte[]> packets = assertDoesNotThrow(() -> KartRaceMusic.decodePackets(track));
         for (int delta : new int[]{882,735}) {
             int pointer = 0, debt = 0, loops = 0;
             long emitted = 0;
@@ -68,15 +88,14 @@ final class KartRaceMusicTest {
                 int iterations = 0;
                 while (debt <= 0) {
                     assertTrue(++iterations <= 64);
-                    if (pointer == packets.length) { pointer = track.loopOffset(); loops++; }
-                    int delay = u16(packets,pointer), count = u16(packets,pointer+2);
+                    if (pointer == packets.size()) { pointer = 0; loops++; }
+                    int delay = (packets.get(pointer++)[0] & 255) * 441;
                     debt += delay; emitted += delay;
-                    pointer += 4 + count + (count & 1);
                 }
                 assertEquals((long)frame * delta + debt, emitted);
                 debt -= delta;
             }
-            assertTrue(loops >= 6);
+            assertTrue(loops >= 2);
         }
     }
 
@@ -91,19 +110,21 @@ final class KartRaceMusicTest {
     }
 
     @Test void stereoMasksUnknownCommandsAndMidCommandLoopsAreRejected() {
-        byte[] stereo = vgm.clone(); stereo[0x41] = 0;
+        byte[] stereo = vgm.clone(); stereo[0x40] = 0x4F; stereo[0x41] = 0;
         assertThrows(IOException.class, () -> KartRaceMusic.readTrack(stereo));
-        byte[] unsupported = vgm.clone(); unsupported[0x42] = 0x52;
+        byte[] unsupported = vgm.clone(); unsupported[0x40] = 0x55;
         assertThrows(IOException.class, () -> KartRaceMusic.readTrack(unsupported));
-        byte[] loop = vgm.clone(); le32(loop,0x1C,0x43-0x1C);
+        byte[] loop = vgm.clone(); le32(loop,0x1C,0x41-0x1C);
         assertThrows(IOException.class, () -> KartRaceMusic.readTrack(loop));
     }
 
     @Test void pathologicalFastLoopsAreRejectedInsteadOfHangingTheGame() {
-        byte[] dense = Arrays.copyOf(vgm,0x44);
+        byte[] dense = Arrays.copyOf(vgm, 0x40 + 65 * 3 + 3 + 1);
         le32(dense,4,dense.length-4); le32(dense,0x14,0);
-        le32(dense,0x18,1); le32(dense,0x20,1);
-        dense[0x40]=0x50; dense[0x41]=(byte)0x9F; dense[0x42]=0x70; dense[0x43]=0x66;
+        le32(dense,0x18,441); le32(dense,0x20,441); le32(dense,0x1C,0x40-0x1C);
+        int p = 0x40;
+        for (int i = 0; i < 65; i++) { dense[p++]=0x61; dense[p++]=0; dense[p++]=0; }
+        dense[p++]=0x61; dense[p++]=(byte)0xB9; dense[p++]=1; dense[p]=0x66;
         assertThrows(IOException.class, () -> KartRaceMusic.readTrack(dense));
     }
 
@@ -150,15 +171,22 @@ final class KartRaceMusicTest {
 
     @Test void playerGuardsOriginalRaceCounterAndReplaysDisplacedInstructions() {
         byte[] code = KartRaceMusic.code(0x11BF6A,track);
-        assertArrayEquals(HexFormat.of().parseHex("40e748e7fffe"),Arrays.copyOf(code,6));
-        assertArrayEquals(HexFormat.of().parseHex("4cdf7fff46df34280004362800084e75"),
-                Arrays.copyOfRange(code,code.length-16,code.length));
+        assertArrayEquals(HexFormat.of().parseHex("40e748e7fffe46fc2700"),Arrays.copyOf(code,10));
+        String hex = HexFormat.of().formatHex(code);
+        assertTrue(hex.contains("33fc010000a11100"));
+        assertTrue(hex.contains("33fc000000a11100"));
+        for (String port : new String[]{"00a04000", "00a04001", "00a04002", "00a04003"}) {
+            assertTrue(hex.contains(port));
+        }
+        assertTrue(hex.contains("4cdf7fff46df34280004362800084e75"));
         assertTrue(KartRaceMusic.ENTRY_OFFSET + code.length <= KartRaceMusic.DATA_OFFSET);
     }
 
     @Test void editingTheMusicInvalidatesSavedPlaybackPointers() {
         byte[] changed = track.packets().clone(); changed[4] ^= 1;
-        var edited = new KartRaceMusic.Track(changed,track.loopOffset(),track.samples(),track.clock(),track.writes());
+        var edited = new KartRaceMusic.Track(changed, track.sequenceOffset(), track.loopOffset(),
+                track.dictionaryCount(), track.samples(), track.clock(), track.ymClock(), track.writes(),
+                track.psgWrites(), track.ym0Writes(), track.ym1Writes());
         assertNotEquals(KartRaceMusic.stateMagic(track),KartRaceMusic.stateMagic(edited));
         byte[] patched = KartRaceMusic.patchRom(original,original,track,List.of());
         assertThrows(IllegalStateException.class, () -> KartRaceMusic.patchRom(patched,original,edited,List.of()));
@@ -192,7 +220,6 @@ final class KartRaceMusicTest {
         assertThrows(IllegalStateException.class, () -> KartRaceMusic.verify(rom.toString(),song.toString()));
     }
 
-    private static int u16(byte[] b,int p) { return (b[p]&255)<<8 | (b[p+1]&255); }
     private static int base(byte[] b) { int p=KartRaceMusic.HOOK+2; return ((b[p]&255)<<24|(b[p+1]&255)<<16|(b[p+2]&255)<<8|(b[p+3]&255))-KartRaceMusic.ENTRY_OFFSET; }
     private static void le32(byte[] b,int p,int v) { for(int i=0;i<4;i++) b[p+i]=(byte)(v>>>(8*i)); }
 }
