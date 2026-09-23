@@ -1,4 +1,8 @@
-# Flor bailarina del parque
+# Jeringuilla del Parque de Soleil / flor bailarina
+
+La edición de este PNG se muestra como jeringuilla **solo en el Parque de
+Soleil** (sala `0x32`, donde aparece la gitana). Las apariciones de esta misma
+animación en cualquier otra sala conservan la flor bailarina original.
 
 Editable principal: [`special_gfx_out/flor_parque_EDITAME.png`](special_gfx_out/flor_parque_EDITAME.png).
 Mide **64×64 px**: cuatro fotogramas por fila, dos filas; cada fotograma ocupa
@@ -39,15 +43,31 @@ paleta, vuelve a exportarlo como PNG indexado con esta misma paleta.
 ## Integración
 
 Con la ROM original `Soleil (Spain).md` en la raíz, la extracción normal (`x`)
-genera el PNG. La compilación normal (`i`) copia los seis tiles de cada uno de
-los ocho fotogramas a la ROM y sincroniza el tallo con el bloque comprimido del
-parque. También se puede regenerar solo el PNG con:
+genera el PNG. La compilación normal (`i`) guarda aparte los seis tiles de cada
+uno de los ocho fotogramas editados y sincroniza el tallo con el bloque
+comprimido del parque. El banco compartido de flores no se sobrescribe. También
+se puede regenerar solo el PNG con:
 
 ```text
 java -cp target/classes net.krusher.graphics.FlowerParkGraphics extract "Soleil (Spain).md"
 ```
 
 No se versiona ni se distribuye la ROM ni ningún IPS.
+
+## Selección por sala
+
+El juego identifica esta animación con el slot `0x03` (que convierte en el
+desplazamiento de tabla `0x0C`). La rutina original de
+`0x01EBFA` obtiene su banco de tiles a partir de la tabla de `0x0D0000`. El
+parche conserva esa ruta salvo cuando coinciden **slot `0x03` y sala
+`0x0032`**; solo entonces usa los fotogramas editados guardados en
+`0x000E96..0x001495`. Ese espacio era el gráfico del logo de arranque, que ya
+no se muestra porque la intro personalizada lo salta, y queda reservado para
+que la propia intro no lo reutilice.
+
+Por tanto, `0x0D3C60..0x0D425F` vuelve a contener siempre los fotogramas
+originales. Cualquier sala distinta de `0x32` cae necesariamente por esa ruta
+original, sin depender de una lista de mapas conocidos.
 
 ## Localización comprobada
 
@@ -57,5 +77,6 @@ ocho bloques consecutivos de **192 bytes** en la ROM original, desde
 `0x0D3C60` hasta `0x0D425F`. Hay poses visualmente repetidas, pero se exponen
 los ocho bloques porque el juego recorre los ocho. El tallo compartido ocupa
 los tiles de VRAM `0x1D2..0x1D3`; proviene del bloque LZ-Toshio `0x14D3AE`
-en los desplazamientos descomprimidos `+0x1A40..+0x1A7F`. La paleta es la
-línea 1 de CRAM capturada en esa misma partida, no una paleta estimada.
+en los desplazamientos descomprimidos `+0x1A40..+0x1A7F`. Ese tallo pertenece
+al bloque gráfico específico del parque. La paleta es la línea 1 de CRAM
+capturada en esa misma partida, no una paleta estimada.
