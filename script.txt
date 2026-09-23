@@ -571,7 +571,7 @@ símbolo de un maromo.
 
 
 ==== room=3 npc=3 str=7 textAddr=0x1c1dd0 ptrFieldAddr=0x1c1a5e ====
-SABIO Epa, <NAME>.
+SABIO: Epa, <NAME>.
 ¿Babeando a las chavalitas
 que salen del colegio? Ah
 no, ese soy yo, hue hue hue.
