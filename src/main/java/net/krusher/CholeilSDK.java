@@ -118,6 +118,13 @@ public class CholeilSDK
                     net.krusher.graphics.CoronaSwordGraphics.DEFAULT_STATIC_VIEW );
 
             System.out.println();
+            System.out.println("=== extracting the equipped Sacred Sword orientations ===");
+            net.krusher.graphics.CoronaSacredSwordGraphics.extract(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.CoronaSacredSwordGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.CoronaSacredSwordGraphics.DEFAULT_VIEW );
+
+            System.out.println();
             System.out.println("=== extracting Sonic + hammock animation ===");
             net.krusher.graphics.SonicHammockGraphics.extract(
                     DefaultPaths.ROM,
@@ -245,6 +252,13 @@ public class CholeilSDK
                     buildingRom );
 
             System.out.println();
+            System.out.println("=== inserting the equipped Sacred Sword orientations ===");
+            net.krusher.graphics.CoronaSacredSwordGraphics.insert(
+                    buildingRom,
+                    net.krusher.graphics.CoronaSacredSwordGraphics.DEFAULT_EDIT,
+                    buildingRom );
+
+            System.out.println();
             System.out.println("=== setting the default hero name ===");
             DefaultNameInserter.run( buildingRom, DefaultPaths.TBL, buildingRom );
 
@@ -285,6 +299,9 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== verifying every enabled apple editor in the final ROM ===");
             net.krusher.graphics.AppleGraphics.verifyAvailable(buildingRom);
+            net.krusher.graphics.CoronaSacredSwordGraphics.verifyAvailable(
+                    buildingRom,
+                    net.krusher.graphics.CoronaSacredSwordGraphics.DEFAULT_EDIT );
             net.krusher.graphics.KartRaceMusic.verify(buildingRom, net.krusher.graphics.KartRaceMusic.DEFAULT_VGM);
             long completedSize = Files.size(Path.of(buildingRom));
             if (completedSize != 2 * 1024 * 1024) {
