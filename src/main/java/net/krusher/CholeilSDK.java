@@ -267,7 +267,7 @@ public class CholeilSDK
             net.krusher.graphics.FontInserter.run( buildingRom, DefaultPaths.FONT, buildingRom );
 
             System.out.println();
-            System.out.println("=== inserting race-only PSG music ===");
+            System.out.println("=== inserting race-only Mega Drive music ===");
             List<int[]> occupiedBeforeIntro = new java.util.ArrayList<>(occupiedGraphics);
             occupiedBeforeIntro.addAll(net.krusher.graphics.KartRaceMusic.insert(buildingRom, DefaultPaths.ROM,
                     net.krusher.graphics.KartRaceMusic.DEFAULT_VGM, DefaultPaths.FREE_SPACE, occupiedGraphics));
