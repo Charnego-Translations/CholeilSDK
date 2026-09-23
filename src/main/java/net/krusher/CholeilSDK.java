@@ -271,6 +271,10 @@ public class CholeilSDK
             List<int[]> occupiedBeforeIntro = new java.util.ArrayList<>(occupiedGraphics);
             occupiedBeforeIntro.addAll(net.krusher.graphics.KartRaceMusic.insert(buildingRom, DefaultPaths.ROM,
                     net.krusher.graphics.KartRaceMusic.DEFAULT_VGM, DefaultPaths.FREE_SPACE, occupiedGraphics));
+            // Park-only syringe frames live in the boot-logo art made dead by
+            // the intro. Reserve those bytes so the intro allocator cannot
+            // silently reuse them later in this same pipeline.
+            occupiedBeforeIntro.addAll(net.krusher.graphics.FlowerParkGraphics.reservedRanges());
             System.out.println();
             System.out.println("=== inserting the intro ===");
             IntroInserter.run( buildingRom, DefaultPaths.INTRO, DefaultPaths.ROM,
