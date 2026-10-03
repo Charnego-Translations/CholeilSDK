@@ -11,12 +11,14 @@ las dimensiones. Los archivos `*_x8_VISTA.png` son solo ampliaciones para verlos
 mejor y no se reinsertan. El antiguo `manzana_mapa_EDITAME.png` queda como copia
 de seguridad de la primera prueba, pero el pipeline ya no lo lee.
 
-Sevilla usa ademas `apple_gfx_out/manzana_simetrica_EDITAME.png` (8x16).
-El mapa refleja horizontalmente esa mitad para formar el objeto entero, por
-lo que no puede mostrar el muslo diagonal de 16x16 sin rehacer el mapa.
-Este editor contiene un muslo vertical propio; se puede retocar sin cambiar
-su tamano. Las paletas del juego no se modifican. En Sevilla, Ibis y Rabesa
-el parche adapta los colores del dibujo a los colores existentes de la zona.
+La pareja de la sala de lava usa un caso distinto: el mapa refleja
+horizontalmente dos tiles de 8x8 para formar cada manzana. El antiguo
+`apple_gfx_out/manzana_simetrica_EDITAME.png` convertia el color transparente
+en rojo de escenario y las hacia parecer quemadas. El pipeline ahora conserva
+el suelo original bajo los pixeles transparentes y compone encima el muslo
+vertical del editor. Solo cambia esos dos objetos; los arbustos de la sala no
+se modifican. En Ibis y Rabesa el parche adapta los colores del dibujo editable
+a los colores existentes de la zona.
 
 ### Apariciones que seguian rojas y estado del paquete
 
@@ -39,9 +41,11 @@ Al crecer un PNG, la recompresion puede obligar a mover todo su bloque. El
 parcheador comunica ahora esas reservas a la intro para que no las pise, y
 excluye la tabla viva de `0x03CE78` de los supuestos huecos libres.
 
-El comando `i` verifica al final las siete copias del mapa, la copia sprite
-comprimida, las dos raw y las cuatro posiciones doradas, siguiendo los
-punteros que usa realmente el juego,
+El comando `i` verifica al final las siete copias comprimidas editables del
+mapa, incluida la pareja especial de lava compuesta sobre su suelo, las dos
+copias globales raw de las salas tardias, la copia sprite comprimida, las dos
+raw de objetos y las cuatro posiciones doradas, siguiendo los punteros que usa
+realmente el juego,
 incluso si los bloques se han movido. Si una edicion no se puede insertar,
 se aborta: no se acepta una mezcla silenciosa de dibujos nuevos y originales.
 Se trabaja en `Choleil.building.md` y solo se reemplaza `Choleil.md` cuando
@@ -67,11 +71,16 @@ La primera pareja esta duplicada en dos tilesets LZ-Toshio:
 El pipeline `i` copia automaticamente `manzana_roja_EDITAME.png` a esas dos
 ubicaciones comprimidas antes de recomprimir los graficos.
 
+Las salas tardias reutilizan ademas dos copias raw row-major del mismo dibujo,
+en `0x0E36C0` y `0x0E3EC0`. No son parches ligados a una coordenada: son los dos
+recursos globales que cargan esas salas. El pipeline escribe en ambos el mismo
+`manzana_roja_EDITAME.png` y comprueba los 128 bytes de cada copia al terminar.
+
 Los cinco savestates adicionales han revelado otras rutas:
 
 | partida | origen LZ de ROM | tiles internos | editor |
 |---|---:|---:|---|
-| `manzanaSevilla.State` | `0x1528E4` | 328 y 391, reflejados | `manzana_simetrica_EDITAME.png` |
+| `manzanaSevilla.State` / `esodeberiansermanzanas.State` | `0x1528E4` | 328 y 391, reflejados sobre tiles de suelo 12 y 369 | `manzana_simetrica_EDITAME.png` |
 | `manzanaIbis.State` | `0x12FE58` | 392, 393, 408, 409 | `manzana_roja_EDITAME.png` |
 | `manzanaOtrolao.State` | `0x13791C` | 210, 211, 226, 227 | `manzana_roja_EDITAME.png` |
 | `manzanaRabesa.State` | `0x1260CA` | 138, 139, 154, 155 | `manzana_roja_EDITAME.png` |

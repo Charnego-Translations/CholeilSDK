@@ -54,6 +54,9 @@ public final class AppleGraphics {
             new int[]{0x024C, 0x0244, 0x0466, 0x0468, 0x048A, 0x0642, 0x0666,
                     0x08CE, 0x088C, 0x04AE, 0x0484, 0x06CA, 0x006C, 0x0466,
                     0x046A, 0x068C});
+    /** Clean left-hand floor tiles under each mirrored lava-room pickup. */
+    private static final Copy MIRRORED_MAP_FLOOR_COPY = new Copy(0x1528E4,
+            new int[]{12, 369}, 512, 0x120068, 0x120000, 0, null);
     /** Same old apple artwork, but drawn over solid map colour 8 with shadow 13. */
     private static final Copy EMBEDDED_MAP_COPY = new Copy(0x132946,
             new int[]{350, 351, 366, 367}, 480, 0x120028, 0x120000, 0, null);
@@ -79,6 +82,8 @@ public final class AppleGraphics {
     private static final int TOWN_PICKUP_SPRITES = 4;
     private static final int TOWN_PALETTE_OFFSET = 0x000548;
     private static final int[] RAW_APPLE_OFFSETS = {0x100, 0x180};
+    /** Late-game map package: two exact row-major copies missed by the old room scan. */
+    private static final int[] LATE_MAP_APPLE_OFFSETS = {0x0E36C0, 0x0E3EC0};
     private static final int GOLDEN_BLOCK = 0x0A5644;
     private static final int GOLDEN_BLOCK_TILE_COUNT = 36;
     private static final int[] GOLDEN_EDIT_FRAME_TILES = {9, 27};
@@ -228,6 +233,39 @@ public final class AppleGraphics {
         byte[] green = TileRenderer.decodeSpriteSheet(image, editPalette(),
                 TILES_W, TILES_H, 1, 1, TILE_COUNT, true);
         syncRawPickupCopies(Files.readAllBytes(Paths.get(romPath)), green);
+    }
+
+    /**
+     * Inserts the normal red-editor drawing into both uncompressed late-game map
+     * copies. These are global resources used by rooms after the old 0x7C audit
+     * limit, not coordinate-specific room patches.
+     */
+    public static void insertLateMapCopies(String romPath, String editPath) throws IOException {
+        Path edit = Paths.get(editPath);
+        if (!Files.exists(edit)) {
+            throw new IllegalStateException("missing normal-apple editor " + editPath);
+        }
+        byte[] replacement = decodeNormalEdit(editPath);
+        byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        byte[] original = Files.readAllBytes(Paths.get(net.krusher.DefaultPaths.ROM));
+        for (int offset : LATE_MAP_APPLE_OFFSETS) {
+            if (offset < 0 || offset + replacement.length > rom.length
+                    || offset + replacement.length > original.length) {
+                throw new IllegalStateException(String.format(
+                        "late-game map apple outside ROM at 0x%X", offset));
+            }
+            byte[] current = Arrays.copyOfRange(rom, offset, offset + replacement.length);
+            byte[] vanilla = Arrays.copyOfRange(original, offset, offset + replacement.length);
+            if (!Arrays.equals(current, vanilla) && !Arrays.equals(current, replacement)) {
+                throw new IllegalStateException(String.format(
+                        "late-game map apple at 0x%X was changed by another step", offset));
+            }
+            System.arraycopy(replacement, 0, rom, offset, replacement.length);
+        }
+        net.krusher.TextInserter.fixChecksum(rom);
+        Files.write(Paths.get(romPath), rom);
+        System.out.println("Inserted normal-apple editor into global raw map copies"
+                + " at 0xE36C0 and 0xE3EC0");
     }
 
     /** Places the independent two-frame golden edit in its compressed tileset. */
@@ -416,7 +454,7 @@ public final class AppleGraphics {
         return palette;
     }
 
-    /** A compact upright drumstick, whose left half is mirrored by the Sevilla map. */
+    /** A compact upright drumstick, whose left half is mirrored by this map. */
     private static void seedSymmetric(String path) throws IOException {
         Path output = Paths.get(path);
         if (Files.exists(output)) {
@@ -447,14 +485,30 @@ public final class AppleGraphics {
         return TileRenderer.decodeTileSheet(image, editPalette(), 1, 1, 2);
     }
 
+    private static byte[] composeSymmetric(byte[] floor, byte[] drawing,
+                                           byte[] remappedDrawing) {
+        byte[] result = new byte[drawing.length];
+        for (int i = 0; i < drawing.length; i++) {
+            int ground = floor[i] & 255;
+            int source = drawing[i] & 255;
+            int replacement = remappedDrawing[i] & 255;
+            int hi = source >> 4 == 0 ? ground >> 4 : replacement >> 4;
+            int lo = (source & 15) == 0 ? ground & 15 : replacement & 15;
+            result[i] = (byte) (hi << 4 | lo);
+        }
+        return result;
+    }
+
     private static void syncSymmetric(String romPath, String editPath) throws IOException {
         if (!Files.exists(Paths.get(editPath))) {
             throw new IllegalStateException("missing mirrored-map editor " + editPath);
         }
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
+        byte[] drawing = decodeSymmetricEdit(editPath);
+        byte[] remapped = remapToGamePalette(drawing, MIRRORED_MAP_COPY);
         syncCopy(rom, MIRRORED_MAP_COPY,
-                remapToGamePalette(decodeSymmetricEdit(editPath), MIRRORED_MAP_COPY),
-                "mirrored map apple");
+                composeSymmetric(readApple(rom, MIRRORED_MAP_FLOOR_COPY), drawing, remapped),
+                "two mirrored lava-room drumsticks over their original floor");
     }
 
     /**
@@ -506,7 +560,9 @@ public final class AppleGraphics {
     public static void verifyAvailable(String romPath) throws IOException {
         byte[] rom = Files.readAllBytes(Paths.get(romPath));
         if (Files.exists(Paths.get(DEFAULT_RED_EDIT))) verifyRed(rom, DEFAULT_RED_EDIT, true);
-        if (Files.exists(Paths.get(DEFAULT_MIRRORED_EDIT))) verifySymmetric(rom, DEFAULT_MIRRORED_EDIT);
+        if (Files.exists(Paths.get(DEFAULT_MIRRORED_EDIT))) {
+            verifySymmetricApple(rom, DEFAULT_MIRRORED_EDIT);
+        }
         if (Files.exists(Paths.get(DEFAULT_GREEN_EDIT))) verifyGreen(rom, DEFAULT_GREEN_EDIT);
         if (Files.exists(Paths.get(DEFAULT_GOLDEN_EDIT))) verifyGolden(romPath, DEFAULT_GOLDEN_EDIT);
         System.out.println("Apple editors verified against live ROM pointers and raw sprite slots");
@@ -547,13 +603,24 @@ public final class AppleGraphics {
             if (!Arrays.equals(expectedOtrolao, readApple(rom, OTROLAO_MAP_COPY))) {
                 throw new IllegalStateException("Otrolao map apple still shows the original art");
             }
+            for (int offset : LATE_MAP_APPLE_OFFSETS) {
+                byte[] actual = Arrays.copyOfRange(rom, offset,
+                        offset + expectedRed.length);
+                if (!Arrays.equals(expectedRed, actual)) {
+                    throw new IllegalStateException(String.format(
+                            "late-game raw map apple still shows old art at 0x%X", offset));
+                }
+            }
         }
     }
 
-    private static void verifySymmetric(byte[] rom, String editPath) throws IOException {
-        byte[] expected = remapToGamePalette(decodeSymmetricEdit(editPath), MIRRORED_MAP_COPY);
+    private static void verifySymmetricApple(byte[] rom, String editPath) throws IOException {
+        byte[] original = Files.readAllBytes(Paths.get(net.krusher.DefaultPaths.ROM));
+        byte[] drawing = decodeSymmetricEdit(editPath);
+        byte[] expected = composeSymmetric(readApple(original, MIRRORED_MAP_FLOOR_COPY), drawing,
+                remapToGamePalette(drawing, MIRRORED_MAP_COPY));
         if (!Arrays.equals(expected, readApple(rom, MIRRORED_MAP_COPY))) {
-            throw new IllegalStateException("mirrored map apple differs at its live pointer");
+            throw new IllegalStateException("the two lava-room drumsticks differ from their editor");
         }
     }
 

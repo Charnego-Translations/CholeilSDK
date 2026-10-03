@@ -235,6 +235,12 @@ public class CholeilSDK
             net.krusher.graphics.SpriteGraphicsInserter.main( new String[] { buildingRom, DefaultPaths.SPRITE_GFX_OUT, DefaultPaths.SPRITE_GRAPHICS, buildingRom } );
 
             System.out.println();
+            System.out.println("=== inserting global late-game map apples ===");
+            net.krusher.graphics.AppleGraphics.insertLateMapCopies(
+                    buildingRom,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_RED_EDIT );
+
+            System.out.println();
             System.out.println("=== inserting all park flower poses ===");
             net.krusher.graphics.FlowerParkGraphics.insert( buildingRom );
 

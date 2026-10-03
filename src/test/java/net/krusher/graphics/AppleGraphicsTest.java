@@ -69,4 +69,15 @@ final class AppleGraphicsTest {
         AppleGraphics.verify(built.toString(),red.toString(),green.toString());
         assertThrows(IllegalStateException.class,()->AppleGraphics.verify(built.toString(),green.toString(),red.toString()));
     }
+    @Test void lateGameRawMapCopiesUseTheNormalEditor(@TempDir Path dir) throws Exception {
+        Path original=dir.resolve("original.md"),edit=dir.resolve("red.png"),view=dir.resolve("view.png");
+        Files.write(original,base);
+        AppleGraphics.extractRed(original.toString(),edit.toString(),view.toString());
+        AppleGraphics.insertLateMapCopies(original.toString(),edit.toString());
+        byte[] built=Files.readAllBytes(original);
+        byte[] block=LzToshio.decompress(base,0x135322),expected=new byte[128];
+        for(int tile=0;tile<4;tile++)System.arraycopy(block,(459+tile)*32,expected,tile*32,32);
+        assertArrayEquals(expected,Arrays.copyOfRange(built,0xE36C0,0xE3740));
+        assertArrayEquals(expected,Arrays.copyOfRange(built,0xE3EC0,0xE3F40));
+    }
 }
