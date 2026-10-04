@@ -379,55 +379,55 @@ A LA GENTE DEL CANAL
 DE CHARNEGO DE TELEGRAMO
 
 ==== ascii addr=0x3b377 len=10 ====
-.GRASIA.A.TOS
+GRASIA A TOS
 
 ==== ascii addr=0x3b382 len=16 ====
-VLADIMIR KONOVICH
+COMPRESION GRAF.
 
 ==== ascii addr=0x3b393 len=8 ====
-.COMPRESIONES
+VLADIMIR
 
 ==== ascii addr=0x3b39c len=12 ====
-.DE.GRAFICOS
+KONONOVICH
 
 ==== ascii addr=0x3b3a9 len=16 ====
  EVILJAGAGENIUS
 
 ==== ascii addr=0x3b3ba len=9 ====
-.PUNTEROS
+PUNTEROS
 
 ==== ascii addr=0x3b3c4 len=8 ====
-.CHUNGOS
+CHUNGOS
 
 ==== ascii addr=0x3b3cd len=24 ====
 ADIO
 
 ==== ascii addr=0x3b3e6 len=6 ====
-.ARSA.AHI
+ARSA@AHI
 
 ==== ascii addr=0x3b3ed len=12 ====
 NO SER QUE MAS PONER
 
 ==== ascii addr=0x3b3fa len=9 ====
-.ASI.QUE.NA
+ASI QUE NA
 
 ==== ascii addr=0x3b404 len=16 ====
 ESPERAMO QUE TE HAYA
 
 ==== ascii addr=0x3b415 len=9 ====
-.MOLAO
+MOLAO
 
 ==== ascii addr=0x3b41f len=16 ====
 EL PEASO DE
 
 ==== ascii addr=0x3b430 len=9 ====
-.CHOLEIL
+CHOLEIL
 
 ==== ascii addr=0x3b43a len=16 ====
 ARSA AHI
 
 ==== ascii addr=0x3b44b len=5 ====
-.VA.POR.USTEDE
+VA POR USTEDE
 
 ==== ascii addr=0x3b451 len=11 ====
 ARSA.AHI
@@ -436,5 +436,4 @@ ARSA.AHI
 PRESENTED BY
 
 ==== ascii addr=0x3b472 len=8 ====
-.CHARNEGO.
-
+CHARNEGO
