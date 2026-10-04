@@ -214,9 +214,22 @@ public class CholeilSDK
             net.krusher.graphics.FlowerParkGraphics.syncStem( DefaultPaths.ROM );
 
             System.out.println();
+            System.out.println("=== arranging Cholo final-enemy portrait ===");
+            net.krusher.graphics.CholoFinalGraphics.sync(
+                    net.krusher.graphics.CholoFinalGraphics.DEFAULT_EDIT,
+                    net.krusher.graphics.CholoFinalGraphics.DEFAULT_GFX );
+            net.krusher.graphics.CholoFinalGraphics.syncMouth(
+                    net.krusher.graphics.CholoFinalGraphics.DEFAULT_MOUTH_EDIT,
+                    net.krusher.graphics.CholoFinalGraphics.DEFAULT_MOUTH_GFX );
+
+            System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
             List<int[]> occupiedGraphics = net.krusher.graphics.GraphicsInserter.insert(
                     buildingRom, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, buildingRom );
+
+            System.out.println();
+            System.out.println("=== centring Cholo portrait and animated mouth ===");
+            net.krusher.graphics.CholoFinalGraphics.positionMouth( buildingRom );
 
             System.out.println();
             System.out.println("=== centring expanded ending Fin. graphic ===");
@@ -309,6 +322,8 @@ public class CholeilSDK
             System.out.println();
             System.out.println("=== verifying every enabled apple editor in the final ROM ===");
             net.krusher.graphics.AppleGraphics.verifyAvailable(buildingRom);
+            net.krusher.graphics.CholoFinalGraphics.verify(
+                    buildingRom, net.krusher.graphics.CholoFinalGraphics.DEFAULT_EDIT );
             net.krusher.graphics.CoronaSacredSwordGraphics.verifyAvailable(
                     buildingRom,
                     net.krusher.graphics.CoronaSacredSwordGraphics.DEFAULT_EDIT );
