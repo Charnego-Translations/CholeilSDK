@@ -42,8 +42,8 @@ parcheador comunica ahora esas reservas a la intro para que no las pise, y
 excluye la tabla viva de `0x03CE78` de los supuestos huecos libres.
 
 El comando `i` verifica al final las siete copias comprimidas editables del
-mapa, incluida la pareja especial de lava compuesta sobre su suelo, las dos
-copias globales raw de las salas tardias, la copia sprite comprimida, las dos
+mapa, incluida la pareja especial de lava compuesta sobre su suelo, las cuatro
+variantes globales raw de las salas tardias, la copia sprite comprimida, las dos
 raw de objetos y las cuatro posiciones doradas, siguiendo los punteros que usa
 realmente el juego,
 incluso si los bloques se han movido. Si una edicion no se puede insertar,
@@ -71,10 +71,13 @@ La primera pareja esta duplicada en dos tilesets LZ-Toshio:
 El pipeline `i` copia automaticamente `manzana_roja_EDITAME.png` a esas dos
 ubicaciones comprimidas antes de recomprimir los graficos.
 
-Las salas tardias reutilizan ademas dos copias raw row-major del mismo dibujo,
-en `0x0E36C0` y `0x0E3EC0`. No son parches ligados a una coordenada: son los dos
-recursos globales que cargan esas salas. El pipeline escribe en ambos el mismo
-`manzana_roja_EDITAME.png` y comprueba los 128 bytes de cada copia al terminar.
+Las salas tardias reutilizan ademas cuatro variantes raw row-major del mismo
+dibujo, en `0x0E36C0`, `0x0E3AC0`, `0x0E3EC0` y `0x0E42C0`. El primer barrido
+solo encontro las copias exactas de `0x0E36C0` y `0x0E3EC0`; las variantes del
+desierto y la zona del agua cambian algunos pixeles del brillo y por eso
+escaparon a esa busqueda. No son parches ligados a una coordenada: son recursos
+globales que cargan esas salas. El pipeline escribe en las cuatro el mismo
+`manzana_roja_EDITAME.png` y comprueba los 128 bytes de cada variante al terminar.
 
 Los cinco savestates adicionales han revelado otras rutas:
 

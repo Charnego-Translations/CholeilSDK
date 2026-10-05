@@ -77,7 +77,9 @@ final class AppleGraphicsTest {
         byte[] built=Files.readAllBytes(original);
         byte[] block=LzToshio.decompress(base,0x135322),expected=new byte[128];
         for(int tile=0;tile<4;tile++)System.arraycopy(block,(459+tile)*32,expected,tile*32,32);
-        assertArrayEquals(expected,Arrays.copyOfRange(built,0xE36C0,0xE3740));
-        assertArrayEquals(expected,Arrays.copyOfRange(built,0xE3EC0,0xE3F40));
+        for(int offset:new int[]{0xE36C0,0xE3AC0,0xE3EC0,0xE42C0}) {
+            assertArrayEquals(expected,Arrays.copyOfRange(built,offset,offset+128),
+                    String.format("raw map apple at 0x%X",offset));
+        }
     }
 }

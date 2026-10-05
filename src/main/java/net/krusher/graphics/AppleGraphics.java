@@ -82,8 +82,15 @@ public final class AppleGraphics {
     private static final int TOWN_PICKUP_SPRITES = 4;
     private static final int TOWN_PALETTE_OFFSET = 0x000548;
     private static final int[] RAW_APPLE_OFFSETS = {0x100, 0x180};
-    /** Late-game map package: two exact row-major copies missed by the old room scan. */
-    private static final int[] LATE_MAP_APPLE_OFFSETS = {0x0E36C0, 0x0E3EC0};
+    /**
+     * Late-game map packages: four row-major variants of the same apple. The
+     * desert/water variants at E3AC0/E42C0 differ slightly from the two copies
+     * found by the old exact-byte scan, but use the same tile order and palette
+     * indices. They therefore share the normal 16x16 editor as well.
+     */
+    private static final int[] LATE_MAP_APPLE_OFFSETS = {
+            0x0E36C0, 0x0E3AC0, 0x0E3EC0, 0x0E42C0
+    };
     private static final int GOLDEN_BLOCK = 0x0A5644;
     private static final int GOLDEN_BLOCK_TILE_COUNT = 36;
     private static final int[] GOLDEN_EDIT_FRAME_TILES = {9, 27};
@@ -236,9 +243,9 @@ public final class AppleGraphics {
     }
 
     /**
-     * Inserts the normal red-editor drawing into both uncompressed late-game map
-     * copies. These are global resources used by rooms after the old 0x7C audit
-     * limit, not coordinate-specific room patches.
+     * Inserts the normal red-editor drawing into all four uncompressed
+     * late-game map variants. These are global resources, not
+     * coordinate-specific room patches.
      */
     public static void insertLateMapCopies(String romPath, String editPath) throws IOException {
         Path edit = Paths.get(editPath);
@@ -264,8 +271,8 @@ public final class AppleGraphics {
         }
         net.krusher.TextInserter.fixChecksum(rom);
         Files.write(Paths.get(romPath), rom);
-        System.out.println("Inserted normal-apple editor into global raw map copies"
-                + " at 0xE36C0 and 0xE3EC0");
+        System.out.println("Inserted normal-apple editor into all four global raw map copies"
+                + " at 0xE36C0, 0xE3AC0, 0xE3EC0 and 0xE42C0");
     }
 
     /** Places the independent two-frame golden edit in its compressed tileset. */
