@@ -80,8 +80,23 @@ final class DefaultNameInserterTest {
     }
 
     @Test
-    @DisplayName("nothing outside the branch's immediates is touched")
-    void nothingOutsideTheImmediatesIsTouched() {
+    @DisplayName("the 18x21 selection frame moves five pixels left and two up")
+    void offsetsTheSelectionFrameAroundTheGlyph() {
+        Problems p = new Problems();
+        for (int[][] patch : DefaultNameInserter.CURSOR_OFFSET_PATCHES) {
+            p.bytesAt(named, patch[0][0], patch[2],
+                    String.format("cursor offset patched at 0x%x", patch[0][0]));
+        }
+        for (int[][] patch : DefaultNameInserter.CURSOR_SPRITE_PATCHES) {
+            p.bytesAt(named, patch[0][0], patch[2],
+                    String.format("cursor sprite layout patched at 0x%x", patch[0][0]));
+        }
+        p.assertNone();
+    }
+
+    @Test
+    @DisplayName("nothing outside the name and cursor immediates is touched")
+    void nothingOutsideTheNameAndCursorImmediatesIsTouched() {
         // The whole point of this patch is that no instruction moves: the
         // branch keeps its length and writes the same twelve bytes it always did.
         byte[] before = SmokeRom.built();
@@ -92,9 +107,13 @@ final class DefaultNameInserterTest {
             boolean isImmediate = off >= 0
                     && off < DefaultNameInserter.MOVE_COUNT * 4
                     && (off % 4) >= 2;
+            boolean isCursorImmediate = i == DefaultNameInserter.CURSOR_Y_ADD_ADDR + 3
+                    || i == DefaultNameInserter.CURSOR_X_ADD_ADDR + 3;
+            boolean isCursorTemplate = i >= DefaultNameInserter.CURSOR_TEMPLATE_ADDR
+                    && i < DefaultNameInserter.CURSOR_TEMPLATE_ADDR + 4;
             boolean isChecksum = i == 0x18e || i == 0x18f;
-            p.check(isImmediate || isChecksum,
-                    String.format("byte 0x%x changed but is neither an immediate nor the header checksum", i));
+            p.check(isImmediate || isCursorImmediate || isCursorTemplate || isChecksum,
+                    String.format("byte 0x%x changed outside the expected name/cursor immediates", i));
         }
         p.assertNone();
     }

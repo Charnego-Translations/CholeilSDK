@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import net.krusher.graphics.NameEntryCursorGraphics;
+
 /**
  * Gives the hero a real name when the player confirms the name-entry screen
  * without typing anything.
@@ -38,6 +40,14 @@ import java.nio.file.Paths;
  * reads $d990 or $d99a, so leaving the length at zero is as safe as it is
  * today, and re-entering the screen resets both through the initialiser at
  * 0x555c.
+ *
+ * The same screen draws its yellow selection frame at 0x54e2. Stock adds
+ * 0x80 to both screen coordinates and submits a 2x2-tile sprite at tile
+ * 0x315. The replacement uses X - 5 / Y - 2 and selects the 3x3-tile cell
+ * prepared by NameEntryCursorGraphics. Its visible
+ * 18x21 frame is transparent across the unused part of the 24x24 hardware
+ * cell. The keyboard, hit testing, and stored selection coordinates stay
+ * untouched.
  */
 public final class DefaultNameInserter {
 
@@ -58,6 +68,26 @@ public final class DefaultNameInserter {
 
     /** The entry screen's own cap (cmpi.w #$a at 0x524e). */
     static final int MAX_NAME_LENGTH = 10;
+
+    /** Cursor-sprite offsets in the draw routine at 0x54e2. */
+    static final int CURSOR_X_ADD_ADDR = 0x54EE;
+    static final int CURSOR_Y_ADD_ADDR = 0x54F6;
+    static final int CURSOR_TEMPLATE_ADDR = 0x5514;
+    static final int[][][] CURSOR_OFFSET_PATCHES = {
+        { {CURSOR_X_ADD_ADDR},
+          {0x06, 0x42, 0x00, 0x80},           // addi.w #$80,d2
+          {0x06, 0x42, 0x00, 0x7B} },         // five pixels left
+        { {CURSOR_Y_ADD_ADDR},
+          {0x06, 0x43, 0x00, 0x80},           // addi.w #$80,d3
+          {0x06, 0x43, 0x00, 0x7E} }          // two pixels up
+    };
+    static final int[][][] CURSOR_SPRITE_PATCHES = {
+        { {CURSOR_TEMPLATE_ADDR},
+          {0x05, 0x00, 0x03, 0x15},           // 2x2 tiles, base tile 0x315
+          {0x0A, 0x00,
+           (NameEntryCursorGraphics.EXPANDED_CURSOR_VRAM_TILE >>> 8) & 0xFF,
+           NameEntryCursorGraphics.EXPANDED_CURSOR_VRAM_TILE & 0xFF} }
+    };
 
     /** usage: DefaultNameInserter [romPath] [tblPath] [outPath] */
     public static void main(String[] args) throws IOException {
@@ -98,8 +128,11 @@ public final class DefaultNameInserter {
             rom[FIRST_MOVE_ADDR + i * 4 + 2] = payload[i * 2];
             rom[FIRST_MOVE_ADDR + i * 4 + 3] = payload[i * 2 + 1];
         }
+        TextInserter.applyCodePatches(rom, CURSOR_OFFSET_PATCHES);
+        TextInserter.applyCodePatches(rom, CURSOR_SPRITE_PATCHES);
         System.out.println("Default name set to \"" + DEFAULT_NAME + "\" ("
                 + TextInserter.bytesToHex(payload) + " at $fffe4a).");
+        System.out.println("Name-entry cursor set to visible 18x21, five pixels left and two up.");
     }
 
     /**

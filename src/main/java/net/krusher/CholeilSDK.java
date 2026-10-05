@@ -223,6 +223,12 @@ public class CholeilSDK
                     net.krusher.graphics.CholoFinalGraphics.DEFAULT_MOUTH_GFX );
 
             System.out.println();
+            System.out.println("=== enlarging the name-entry selection frame ===");
+            net.krusher.graphics.NameEntryCursorGraphics.sync(
+                    DefaultPaths.ROM,
+                    net.krusher.graphics.NameEntryCursorGraphics.DEFAULT_GFX );
+
+            System.out.println();
             System.out.println("=== recompressing and inserting graphics ===");
             List<int[]> occupiedGraphics = net.krusher.graphics.GraphicsInserter.insert(
                     buildingRom, DefaultPaths.GFX_OUT, DefaultPaths.GRAPHICS_OFFSETS, buildingRom );
