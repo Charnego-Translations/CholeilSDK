@@ -5432,7 +5432,10 @@ magia potagia.
 ¡Mal rayo la parta! Si la
 destruyéramo podríamos
 vover a nuestro mundo de los
-cholos.
+cholos. Pero está protegida
+por el cholo más cholo de
+todos los cholos: ¡¡El Cholo
+Simeone!!
 
 
 ==== room=91 npc=0 str=4 textAddr=0x1d079c ptrFieldAddr=0x1d042e ====
@@ -5466,7 +5469,8 @@ más peligro que una piraña
 en un bidet! Todos los que
 han entrado han quedado
 Palmolive y Coronita sin
-limón.
+limón. El Cholo no perdona
+a nadie.
 
 
 ==== room=91 npc=0 str=6 textAddr=0x1d09d0 ptrFieldAddr=0x1d0432 ====
@@ -5528,16 +5532,15 @@ que el puto Vietnam.
 
 ==== room=91 npc=4 str=0 textAddr=0x1d0c22 ptrFieldAddr=0x1d0c20 ====
 Los sinco sentidos protegen
-a la energía espíritu. Ni
-folla de por qué tiene un
-nombre tan moña, pero es
-más dura que el Alcoyano.
+al Cholo Simeone. Ni folla
+de por qué está ahí, pero es
+más duro que el Alcoyano.
 
 
 ==== room=91 npc=5 str=0 textAddr=0x1d0c70 ptrFieldAddr=0x1d0c6e ====
 Cantidad de peña ha
-intentado darle madera a la
-energía espírutu esa de
+intentado darle madera al
+Cholo Simeone este de
 los cojones, pero la han
 diñao como cucarachas.
 
@@ -5546,7 +5549,7 @@ diñao como cucarachas.
 Cuando se purifique la
 puerta de los sentíos,
 aparecerá la verdadera
-forma. O algo.
+forma: El Cholo Simeone.
 
 
 ==== room=92 npc=0 str=0 textAddr=0x1d0438 ptrFieldAddr=0x1d0426 ====
@@ -5607,7 +5610,7 @@ saco!
 
 
 ==== room=93 npc=0 str=1 textAddr=0x1d0d54 ptrFieldAddr=0x1d0d24 ====
-KLIN: ¿La chon gorda se
+KLIN: ¿La Chon Gorda se
 ha coscao? Pues claro, tiene
 un olfato del copón, y es
 una madre. Fijo que estaba
@@ -6831,7 +6834,7 @@ Echate una vuelta por el
 barrio, como la has estado
 liando parda por allá por
 donde has ido navajeando
-al persona, has cambiado la
+al personal, has cambiado la
 historia y esas cosas. Pero
 eso ya te lo imaginabas,
 ¿no? Y no olvides, los payos
@@ -6840,10 +6843,11 @@ de este mundo de majaras...
 
 
 ==== room=125 npc=0 str=0 textAddr=0x1d37e4 ptrFieldAddr=0x1d37e2 ====
-La Energía Espíritu que
-protegían los cinco sentidos
-ha estirao la pata y está
-seca como un bacalao.
+Has dejao al Cholo Simeone,
+que estaba protegido por las
+puertas de los sinco
+sentidos seco como el
+bacalao y la ha espichao.
 La puerta del mundo de los
 cholos se abre y los
 Mossos Desquadra se los
