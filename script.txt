@@ -3149,7 +3149,7 @@ que tus pelotas congeladas
 estén a salvo! Estamos aquí
 escondíos porque tenemos
 jiñe de todos los cholos que
-anadn por aquí.
+andan por aquí.
 
 
 ==== room=43 npc=0 str=1 textAddr=0x1c99a2 ptrFieldAddr=0x1c9914 ====
