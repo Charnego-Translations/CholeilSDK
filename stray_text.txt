@@ -349,13 +349,13 @@ TEXTOS Y
 ROMHACK     
 
 ==== ascii addr=0x3b2fc len=7 ====
- KRUSHER
+@KRUSHER
 
 ==== ascii addr=0x3b304 len=12 ====
 GRASFICOS
 
 ==== ascii addr=0x3b311 len=6 ====
- SCORPIONMSX
+@SCORPIONMSX
 
 ==== ascii addr=0x3b318 len=12 ====
 COSA
@@ -364,13 +364,13 @@ COSA
 Y DETALLITO 
 
 ==== ascii addr=0x3b336 len=8 ====
- ANTXIKO
+@ANTXIKO
 
 ==== ascii addr=0x3b33f len=12 ====
 SALUDITOS 
 
 ==== ascii addr=0x3b34c len=8 ====
- CHRONO Y POS
+@CHRONO@Y@POS
 
 ==== ascii addr=0x3b355 len=12 ====
 A LA GENTE DEL CANAL
@@ -379,7 +379,7 @@ A LA GENTE DEL CANAL
 DE CHARNEGO DE TELEGRAMO
 
 ==== ascii addr=0x3b377 len=10 ====
-GRASIA A TOS
+GRASIA@A@TOS
 
 ==== ascii addr=0x3b382 len=16 ====
 COMPRESION GRAF.
@@ -409,7 +409,7 @@ ARSA@AHI
 NO SER QUE MAS PONER
 
 ==== ascii addr=0x3b3fa len=9 ====
-ASI QUE NA
+ASI@QUE@NA
 
 ==== ascii addr=0x3b404 len=16 ====
 ESPERAMO QUE TE HAYA
@@ -427,10 +427,10 @@ CHOLEIL
 ARSA AHI
 
 ==== ascii addr=0x3b44b len=5 ====
-VA POR USTEDE
+VA@POR@USTEDE
 
 ==== ascii addr=0x3b451 len=11 ====
-ARSA.AHI
+ARSA@AHI
 
 ==== ascii addr=0x3b45d len=20 ====
 PRESENTED BY
