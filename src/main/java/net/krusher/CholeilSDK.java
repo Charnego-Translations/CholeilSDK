@@ -306,6 +306,12 @@ public class CholeilSDK
                     DefaultPaths.FREE_SPACE, buildingRom, occupiedBeforeIntro );
 
             System.out.println();
+            System.out.println("=== inserting water/desert map apples inside 2 MiB ===");
+            net.krusher.graphics.AppleGraphics.insertRegionalMapCopiesCompact(
+                    buildingRom,
+                    net.krusher.graphics.AppleGraphics.DEFAULT_RED_EDIT );
+
+            System.out.println();
             System.out.println("=== inserting two-frame side-character animation ===");
             net.krusher.graphics.SonicSideAnimation.insert( buildingRom, DefaultPaths.ROM );
 

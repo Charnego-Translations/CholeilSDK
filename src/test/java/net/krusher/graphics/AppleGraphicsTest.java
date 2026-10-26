@@ -19,7 +19,37 @@ final class AppleGraphicsTest {
     @Test void originalPointersResolve() {
         assertEquals(0x135322,AppleGraphics.resolveBlock(base,0x120000,0x12002C));
         assertEquals(0x14D3AE,AppleGraphics.resolveBlock(base,0x120000,0x120058));
+        assertEquals(0x12D708,AppleGraphics.resolveBlock(base,0x120000,0x120020));
+        assertEquals(0x13EBE8,AppleGraphics.resolveBlock(base,0x120000,0x120040));
         assertEquals(0xA5644,AppleGraphics.resolveBlock(base,0x59000,0x5938C));
+    }
+    @Test void symmetricEditorComesFromTheOriginalApple(@TempDir Path dir) throws Exception {
+        Path edit=dir.resolve("symmetric.png"),view=dir.resolve("symmetric-view.png");
+        AppleGraphics.extractSymmetric(net.krusher.DefaultPaths.ROM,
+                edit.toString(),view.toString());
+        Bitmap editable=TileRenderer.readPng(edit.toString());
+        Bitmap preview=TileRenderer.readPng(view.toString());
+        assertEquals(8,editable.getWidth());
+        assertEquals(16,editable.getHeight());
+        assertEquals(128,preview.getWidth());
+        assertEquals(128,preview.getHeight());
+    }
+    @Test void asymmetricReservationsAreUnusedInEveryAssociatedVanillaMap() {
+        assertTilesUnused(new int[]{22,78,79,86},new int[]{0x06D,0x0C9});
+        assertTilesUnused(new int[]{43,49,50,51,84,85},new int[]{0x057,0x0B7});
+    }
+    private static void assertTilesUnused(int[] mapIndices,int[] tiles) {
+        for(int index:mapIndices) {
+            int field=0x15E000+index*4;
+            int relative=(base[field]&255)<<24|(base[field+1]&255)<<16
+                    |(base[field+2]&255)<<8|base[field+3]&255;
+            byte[] map=LzToshio.decompress(base,0x15E000+relative);
+            for(int at=0;at+1<Math.min(0x2000,map.length);at+=2) {
+                int referenced=((map[at]&255)<<8|map[at+1]&255)&0x7FF;
+                for(int tile:tiles) assertNotEquals(tile,referenced,
+                        String.format("tile 0x%03X used by map-table entry %d",tile,index));
+            }
+        }
     }
     @Test void invalidLivePointersFail() {
         byte[] rom=base.clone();put32(rom,0x12002C,Integer.MAX_VALUE);

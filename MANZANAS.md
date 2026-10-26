@@ -11,14 +11,25 @@ las dimensiones. Los archivos `*_x8_VISTA.png` son solo ampliaciones para verlos
 mejor y no se reinsertan. El antiguo `manzana_mapa_EDITAME.png` queda como copia
 de seguridad de la primera prueba, pero el pipeline ya no lo lee.
 
-La pareja de la sala de lava usa un caso distinto: el mapa refleja
-horizontalmente dos tiles de 8x8 para formar cada manzana. El antiguo
-`apple_gfx_out/manzana_simetrica_EDITAME.png` convertia el color transparente
-en rojo de escenario y las hacia parecer quemadas. El pipeline ahora conserva
-el suelo original bajo los pixeles transparentes y compone encima el muslo
-vertical del editor. Solo cambia esos dos objetos; los arbustos de la sala no
-se modifican. En Ibis y Rabesa el parche adapta los colores del dibujo editable
-a los colores existentes de la zona.
+La pareja de la sala de lava y varias apariciones del desierto eran distintas:
+el mapa original reflejaba horizontalmente dos tiles de 8x8 y por eso cualquier
+dibujo quedaba simetrico. El pipeline amplia ahora esas definiciones a cuatro
+tiles y usa el mismo `manzana_roja_EDITAME.png` completo de 16x16. En lava se
+conserva el suelo bajo los pixeles transparentes.
+
+No se han escogido huecos por parecer vacios. Se trazaron todas las salas que
+cargan ambos bancos, sus variantes de mapa, las definiciones construidas en RAM,
+las tablas vivas del VDP y las cargas secundarias. Solo despues se reservaron
+`0x06D`/`0x0C9` en `0x1528E4` y `0x057`/`0x0B7` en `0x13EBE8`. La construccion
+repite el barrido estatico de todos los mapas asociados y aborta si alguno de
+esos tiles aparece ocupado. No se modifican los arbustos ni otros elementos del
+escenario.
+
+`apple_gfx_out/manzana_simetrica_EDITAME.png` queda como diagnostico historico
+de la antigua ruta reflejada y ya no se reinserta. El comando
+`extract-symmetric` puede regenerar desde la ROM original la media manzana real
+de 8x16 y una vista del reflejo completo; sirve para documentar por que el
+montaje original no permitia un muslo asimetrico.
 
 ### Apariciones que seguian rojas y estado del paquete
 
@@ -37,11 +48,15 @@ esas apariciones reutilizan los dos bloques ya catalogados.
 
 ### Construccion comprobada y espacio de los graficos
 
-Al crecer un PNG, la recompresion puede obligar a mover todo su bloque. El
-parcheador comunica ahora esas reservas a la intro para que no las pise, y
-excluye la tabla viva de `0x03CE78` de los supuestos huecos libres.
+Al crecer un PNG, la recompresion puede obligar a mover todo su bloque. Las
+rutas ordinarias comunican esas reservas a la intro para que no las pise. Las
+rutas especiales de agua, desierto y lava se insertan despues de empaquetar la
+intro, dentro de tres huecos verificados de la ROM: asi el constructor conserva
+exactamente los 2 MiB. Antes de usarlos vuelve a comprobar que siguen siendo
+relleno uniforme y que ninguna tabla ni instruccion conocida apunta a ellos.
+Tambien excluye la tabla viva de `0x03CE78` de los supuestos huecos libres.
 
-El comando `i` verifica al final las siete copias comprimidas editables del
+El comando `i` verifica al final las nueve copias comprimidas editables del
 mapa, incluida la pareja especial de lava compuesta sobre su suelo, las cuatro
 variantes globales raw de las salas tardias, la copia sprite comprimida, las dos
 raw de objetos y las cuatro posiciones doradas, siguiendo los punteros que usa
@@ -83,10 +98,25 @@ Los cinco savestates adicionales han revelado otras rutas:
 
 | partida | origen LZ de ROM | tiles internos | editor |
 |---|---:|---:|---|
-| `manzanaSevilla.State` / `esodeberiansermanzanas.State` | `0x1528E4` | 328 y 391, reflejados sobre tiles de suelo 12 y 369 | `manzana_simetrica_EDITAME.png` |
+| `manzanaSevilla.State` / `esodeberiansermanzanas.State` / `musloPocho1.State` | `0x1528E4` | 328/109/391/201; suelo original 12 y 369 | `manzana_roja_EDITAME.png` |
 | `manzanaIbis.State` | `0x12FE58` | 392, 393, 408, 409 | `manzana_roja_EDITAME.png` |
 | `manzanaOtrolao.State` | `0x13791C` | 210, 211, 226, 227 | `manzana_roja_EDITAME.png` |
 | `manzanaRabesa.State` | `0x1260CA` | 138, 139, 154, 155 | `manzana_roja_EDITAME.png` |
+
+Los dos savestates de Genplus-gx entregados despues encontraron dos rutas que
+faltaban de verdad en el parche anterior:
+
+| partida | origen LZ de ROM | tiles internos | editor |
+|---|---:|---:|---|
+| `Choleil.Genplus-gx.QuickSave1.State` (agua) | `0x12D708` | 306, 307, 322, 323, compuestos sobre suelo 56, 57, 72, 73 | `manzana_roja_EDITAME.png` |
+| `Choleil.Genplus-gx.QuickSave2.State` (desierto) | `0x13EBE8` | 372/87/388/183 | `manzana_roja_EDITAME.png` |
+
+La copia del agua conserva el suelo original y dibuja el muslo encima. La del
+desierto sustituye el montaje reflejado por cuatro tiles asimetricos. Ambas son
+recursos globales de sus zonas: no son arreglos limitados a las coordenadas que
+aparecen en esas partidas. Se aplican directamente a los bloques que carga el
+juego despues de insertar la intro; no dependen de una ROM de prueba ni de los
+datos de VRAM guardados en un savestate.
 
 Un barrido de los 508 bloques graficos catalogados encontro ademas el bloque
 `0x132946`, tiles 350, 351, 366 y 367. Es la misma manzana que el mapa
@@ -101,8 +131,11 @@ respetan los colores existentes de la paleta 2.
 
 Se volvio a escanear la ROM original de 2 MiB: contiene 508 bloques LZ validos,
 exactamente los 508 del catalogo. La comparacion de formas de 16x16, ignorando
-permutaciones de indices de color, encontro esas siete copias de mapa y el
-paquete sprite. La busqueda equivalente de 24x24 encontro solamente los cuatro
+permutaciones de indices de color, encontro las siete copias inicialmente
+catalogadas, pero no detecto las dos variantes de agua y desierto porque su
+composicion grafica era diferente. Los savestates permitieron seguirlas desde
+VRAM hasta sus dos bloques de ROM, elevando a nueve las rutas comprimidas de
+mapa verificadas. La busqueda equivalente de 24x24 encontro solamente los cuatro
 fotogramas del bloque dorado `0x0A5644`; la variante reflejada de Sevilla
 tambien se busco por sus dos tiles y no aparecio en otro bloque. Los dos
 objetos raw de `0xF4700` y `0xF4780` son las unicas copias exactas de 128 bytes
@@ -139,7 +172,7 @@ aparece colocado en el mapa.
 
 ## Alcance confirmado
 
-Quedan localizadas siete copias del objeto rojo de mapa, el sprite comprimido,
+Quedan localizadas nueve rutas comprimidas del objeto de mapa, el sprite comprimido,
 las dos posiciones raw separadas para la verde y los iconos rojos/verdes del
 marcador. Una manzana soltada por un
 enemigo aun no se ha capturado en BizHawk; falta confirmar visualmente que esas
